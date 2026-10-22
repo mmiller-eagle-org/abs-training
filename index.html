@@ -461,17 +461,29 @@
     </section>
 
     <!-- NEWSLETTER BAND -->
-    <section class="relative overflow-hidden bg-abs-blue" aria-labelledby="newsletter-title">
-        <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50">
-        <div class="absolute inset-0 bg-gradient-to-r from-abs-blue via-abs-blue/90 to-abs-blue/70"></div>
-        <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-14 flex flex-col lg:flex-row lg:items-center lg:justify-center gap-6 lg:gap-16">
-            <div class="max-w-xl">
-                <h2 id="newsletter-title" class="text-white text-lg lg:text-xl font-semibold uppercase tracking-[0.08em] mb-2">Stay informed with ABS Training</h2>
-                <p class="text-white/90 font-medium leading-relaxed">Receive regulatory updates, course schedules and safety insights in your inbox.</p>
+    <section class="relative overflow-hidden bg-abs-blue py-16 lg:py-20" aria-labelledby="newsletter-title">
+        <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
+             class="absolute inset-0 w-full h-full object-cover object-center opacity-55"
+             onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
+        <div class="absolute inset-0 bg-gradient-to-r from-abs-blue/90 via-abs-blue/80 to-abs-blue/60"></div>
+
+        <div class="relative container mx-auto px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto rounded-xl border border-white/25 bg-abs-blue/55 backdrop-blur-md p-8 sm:p-10 lg:px-12 lg:py-10 shadow-card-hover flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+                <div class="max-w-xl">
+                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <h2 id="newsletter-title" class="text-2xl lg:text-3xl text-white uppercase tracking-tight mb-3">
+                        <span class="font-light">Stay informed with</span> <span class="font-extrabold">ABS Training</span>
+                    </h2>
+                    <p class="font-serif text-gray-100 leading-relaxed">
+                        Receive regulatory updates, course schedules and safety insights in your inbox.
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <a href="https://ww2.eagle.org/en/news/subscribe.html" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">
+                        Join our mailing list <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span><span class="sr-only"> (opens in a new tab)</span>
+                    </a>
+                </div>
             </div>
-            <a href="https://ww2.eagle.org/en/news/subscribe.html" target="_blank" rel="noopener noreferrer" class="self-start lg:self-auto inline-flex items-center justify-center min-h-[44px] px-6 bg-abs-red text-white font-semibold rounded-sm whitespace-nowrap transition-colors hover:bg-abs-red-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-abs-blue">
-                Join our mailing list<span class="sr-only"> (opens in a new tab)</span>
-            </a>
         </div>
     </section>
 </body>
