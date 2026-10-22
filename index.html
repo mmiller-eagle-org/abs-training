@@ -127,9 +127,36 @@
 </head>
 <body class="bg-gray-50 text-abs-blue-dark">
 
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="bg-abs-blue-dark border-b border-white/10" aria-label="Primary navigation">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto flex items-center justify-between min-h-[72px] py-3 gap-6">
+                <a href="https://ww2.eagle.org" class="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-abs-blue-dark rounded-sm" aria-label="American Bureau of Shipping home">
+                    <img src="https://ww2.eagle.org/content/dam/eagle/logos/trademark/abs-white/abs-logo-white.svg" alt="ABS - American Bureau of Shipping" class="h-9 sm:h-10 w-auto">
+                </a>
+
+                <div class="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-white/85">
+                    <a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Industries</a>
+                    <a href="#courses-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Courses</a>
+                    <a href="#why-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Why ABS</a>
+                    <a href="#help-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Support</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="/catalog" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white/90 hover:text-white px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full">
+                        Course Catalog
+                    </a>
+                    <a href="/catalog" class="btn btn-outline-light !min-h-[40px] !px-5 !text-xs uppercase tracking-wider focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark">
+                        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">login</span> Log in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <!-- TIER 2 BANNER -->
     <header class="relative overflow-hidden bg-abs-blue">
-        <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
+        <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
              class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
              onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
         <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
@@ -462,7 +489,7 @@
 
     <!-- NEWSLETTER BAND -->
     <section class="relative overflow-hidden bg-abs-blue py-16 lg:py-20" aria-labelledby="newsletter-title">
-        <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
+        <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
              class="absolute inset-0 w-full h-full object-cover object-center opacity-55"
              onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
         <div class="absolute inset-0 bg-gradient-to-r from-abs-blue/90 via-abs-blue/80 to-abs-blue/60"></div>
@@ -486,5 +513,72 @@
             </div>
         </div>
     </section>
+
+    <!-- SITE FOOTER -->
+    <footer class="bg-abs-blue-dark text-white border-t border-white/15" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+        <div class="container mx-auto px-6 lg:px-8 py-14 lg:py-16">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.3fr] gap-10 lg:gap-8">
+                <!-- Brand column: corporate ABS logo kept visually distinct from internal/program titles per ABS Brand Guidelines -->
+                <div>
+                    <a href="https://ww2.eagle.org" class="inline-block mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm" aria-label="American Bureau of Shipping">
+                        <img src="https://ww2.eagle.org/content/dam/eagle/logos/trademark/abs-white/abs-logo-white.svg" alt="ABS - American Bureau of Shipping" class="h-10 w-auto">
+                    </a>
+                    <p class="font-serif text-sm text-gray-200 leading-relaxed">
+                        Regulatory, technical and operational training programs delivered worldwide by the American Bureau of Shipping.
+                    </p>
+                </div>
+
+                <!-- Training Catalog links -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.16em] text-white mb-4">Training Catalog</h3>
+                    <ul class="space-y-2.5 text-sm text-gray-200">
+                        <li><a href="/catalog" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Browse All Courses</a></li>
+                        <li><a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Maritime Training</a></li>
+                        <li><a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Offshore Training</a></li>
+                        <li><a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Government</a></li>
+                        <li><a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Digital &amp; Cyber</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Resources -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.16em] text-white mb-4">Support</h3>
+                    <ul class="space-y-2.5 text-sm text-gray-200">
+                        <li><a href="#help-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Verify a Certificate</a></li>
+                        <li><a href="#help-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Training Locations</a></li>
+                        <li><a href="#help-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Contact Us</a></li>
+                        <li><a href="https://ww2.eagle.org" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">ABS.org<span class="sr-only"> (opens in a new tab)</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Learner Portal / LMS Log In -->
+                <div class="rounded-lg border border-white/15 bg-abs-blue/60 p-6">
+                    <h3 class="text-xs font-bold uppercase tracking-[0.16em] text-white mb-2">Learner Portal</h3>
+                    <p class="font-serif text-xs text-gray-200 leading-relaxed mb-5">
+                        Sign in to your LearningCart account to launch courses, track progress and download certificates.
+                    </p>
+                    <div class="flex flex-col gap-2.5">
+                        <a href="/catalog" class="btn btn-primary w-full justify-center focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark">
+                            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">login</span> Log in to LMS
+                        </a>
+                        <a href="/catalog" class="btn btn-outline-light w-full justify-center !min-h-[40px] !text-xs focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark">
+                            Explore Catalog <span class="material-symbols-outlined text-[18px] btn-arrow" aria-hidden="true">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Legal Bar -->
+            <div class="max-w-5xl mx-auto mt-12 pt-6 border-t border-white/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-gray-300">
+                <p>&copy; 2026 American Bureau of Shipping. All rights reserved.</p>
+                <div class="flex flex-wrap items-center gap-6">
+                    <a href="https://ww2.eagle.org/en/legal-notices/terms-of-use.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Terms of Use</a>
+                    <a href="https://ww2.eagle.org/en/legal-notices/privacy-policy.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Privacy Policy</a>
+                    <a href="https://ww2.eagle.org/en/legal-notices/cookie-notice.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Cookie Notice</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
