@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABS Training | Leading Maritime & Offshore Education</title>
+    
+    <!-- Fonts: Montserrat (headings/UI) + Maitree (body copy), per ABS Digital Components -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Maitree:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Google Material Symbols (Outlined, weight 400) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=block">
+
+    <!-- Tailwind CSS (for styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config for ABS Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Maitree', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        abs: {
+                            blue: '#002A4E',
+                            red: '#DA1F33',
+                            'blue-dark': '#001E40',
+                            'blue-mid': '#335572',
+                            'blue-light': '#5E8AB4',
+                            'red-dark': '#B51227',
+                            'red-light': '#DF444E',
+                            yellow: '#FFAD0A',
+                            green: '#4CA342',
+                            gray: '#DBDCDD',
+                            light: '#F8F9FA'
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 2px 10px rgba(0, 42, 78, 0.08)',
+                        'card-hover': '0 18px 36px -12px rgba(0, 42, 78, 0.35)',
+                        'search': '0 20px 40px -5px rgba(0, 0, 0, 0.15)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'shimmer': 'shimmer 3s infinite linear',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for LearningCart Compatibility */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ABS brand colors as RGB channels so they can be layered with transparency */
+        :root {
+            --abs-blue: 0, 42, 78;
+            --abs-blue-dark: 0, 30, 64;
+            --abs-blue-mid: 51, 85, 114;
+            --abs-blue-light: 94, 138, 180;
+            --abs-red: 218, 31, 51;
+            --abs-yellow: 255, 173, 10;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+
+    <!-- ABS Digital Components -->
+    <style type="text/tailwindcss">
+        @layer components {
+            /* Button: Red = one primary action per view, Navy = secondary, Outline = tertiary */
+            .btn {
+                @apply inline-flex items-center justify-center gap-2 min-h-[44px] px-6 rounded-full font-bold text-sm whitespace-nowrap transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2;
+            }
+            .btn-lg { @apply min-h-[52px] px-7 text-base; }
+            .btn-primary { @apply bg-abs-red text-white hover:bg-abs-red-dark hover:shadow-[0_8px_20px_-6px_rgba(218,31,51,0.6)] active:shadow-none; }
+            .btn-secondary { @apply bg-abs-blue text-white hover:bg-abs-blue-dark hover:shadow-[0_8px_20px_-6px_rgba(0,42,78,0.5)] active:shadow-none; }
+            .btn-outline { @apply border-2 border-abs-blue text-abs-blue hover:bg-[#E6EAEF]; }
+            .btn-outline-light { @apply border-2 border-white text-white hover:bg-white/10; }
+            .btn-arrow { @apply transition-transform duration-200; }
+            .btn:hover .btn-arrow, .group:hover .btn-arrow { transform: translateX(5px); }
+
+            /* Tag: non-interactive label, Montserrat Bold caps 12px */
+            .tag { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide leading-none; }
+            .tag-navy { @apply bg-abs-blue text-white; }
+            .tag-gray { @apply bg-abs-gray text-abs-blue; }
+            .tag-red { @apply bg-abs-red text-white; }
+            .tag-outline { @apply border border-[#B1B3B5] text-abs-blue; }
+            .tag-green { @apply bg-abs-green text-abs-blue-dark; }
+
+            /* Eyebrow: red signal line + caps label */
+            .eyebrow { @apply inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em]; }
+            .eyebrow::before { content: ''; @apply block w-6 h-0.5 bg-abs-red; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-abs-blue-dark">
+
+    <!-- TIER 2 BANNER -->
+    <header class="relative overflow-hidden bg-abs-blue">
+        <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
+             class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
+             onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
+        <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
+        <div class="absolute inset-0 bg-abs-blue/65"></div>
+
+        <div class="relative container mx-auto px-6 lg:px-8 py-14 lg:py-24">
+            <div class="max-w-5xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_300px] gap-10 lg:gap-16 items-center">
+                <div>
+                    <p class="eyebrow text-white mb-4">ABS Training</p>
+                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">Train smart. Work safer.</h1>
+                    <p class="font-serif text-white leading-relaxed max-w-lg mb-8">
+                        Equip your workforce with world-class regulatory, technical and operational training from the American Bureau of Shipping.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="courses.html" class="btn btn-primary">Browse courses</a>
+                        <a href="#" class="btn btn-outline-light">Contact us</a>
+                    </div>
+                </div>
+
+                <!-- Frosted-glass stat panel -->
+                <aside class="rounded-lg border border-white/30 bg-abs-blue/55 backdrop-blur-md p-6" aria-labelledby="glance-title">
+                    <h2 id="glance-title" class="text-white font-bold text-lg mb-4">ABS Training at a glance</h2>
+                    <dl class="grid grid-cols-2 gap-x-6 gap-y-5">
+                        <div class="flex flex-col-reverse justify-end">
+                            <dt class="text-white text-xs leading-snug mt-1">Specialized courses</dt>
+                            <dd class="text-abs-yellow text-3xl font-extrabold">200+</dd>
+                        </div>
+                        <div class="flex flex-col-reverse justify-end">
+                            <dt class="text-white text-xs leading-snug mt-1">Countries served</dt>
+                            <dd class="text-abs-yellow text-3xl font-extrabold">160+</dd>
+                        </div>
+                        <div class="flex flex-col-reverse justify-end">
+                            <dt class="text-white text-xs leading-snug mt-1">Professionals trained</dt>
+                            <dd class="text-abs-yellow text-3xl font-extrabold">5,000+</dd>
+                        </div>
+                        <div class="flex flex-col-reverse justify-end">
+                            <dt class="text-white text-xs leading-snug mt-1">Years of experience</dt>
+                            <dd class="text-abs-yellow text-3xl font-extrabold">160</dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+        </div>
+    </header>
+
+    <!-- INDUSTRY SECTORS: Product Teaser tiles -->
+    <section class="py-16 lg:py-24 bg-gray-50" aria-labelledby="industries-title">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="block w-16 h-1 bg-abs-red mx-auto mb-5"></span>
+                <h2 id="industries-title" class="text-3xl lg:text-4xl text-abs-blue uppercase tracking-tight"><span class="font-light">Training by</span> <span class="font-extrabold">Industry</span></h2>
+                <p class="font-serif text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">Specific technical and safety training tailored to the unique challenges of your operational environment.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Tile 1: Maritime -->
+                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
+                    <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_765469201.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
+                    <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity duration-300 group-hover:opacity-80 group-focus-visible:opacity-80"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-6 text-center transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
+                        <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
+                        <h3 class="text-white text-xl font-bold">Maritime</h3>
+                    </div>
+                    <div class="absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                        <p class="text-white font-bold text-lg mb-1" aria-hidden="true">Maritime</p>
+                        <p class="font-serif text-gray-100 text-sm leading-relaxed mb-4">Navigate regulations with confidence.</p>
+                        <span class="btn btn-primary">Explore <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span></span>
+                    </div>
+                </a>
+
+                <!-- Tile 2: Offshore -->
+                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
+                    <img src="https://images.unsplash.com/photo-1727434032773-af3cd98375ba?q=80&w=3132&auto=format&fit=crop" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
+                    <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity duration-300 group-hover:opacity-80 group-focus-visible:opacity-80"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-6 text-center transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
+                        <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
+                        <h3 class="text-white text-xl font-bold">Offshore</h3>
+                    </div>
+                    <div class="absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                        <p class="text-white font-bold text-lg mb-1" aria-hidden="true">Offshore</p>
+                        <p class="font-serif text-gray-100 text-sm leading-relaxed mb-4">Safety and compliance for energy assets.</p>
+                        <span class="btn btn-primary">Explore <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span></span>
+                    </div>
+                </a>
+
+                <!-- Tile 3: Government -->
+                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
+                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
+                    <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity duration-300 group-hover:opacity-80 group-focus-visible:opacity-80"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-6 text-center transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
+                        <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
+                        <h3 class="text-white text-xl font-bold">Government</h3>
+                    </div>
+                    <div class="absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                        <p class="text-white font-bold text-lg mb-1" aria-hidden="true">Government</p>
+                        <p class="font-serif text-gray-100 text-sm leading-relaxed mb-4">Specialized training for the public sector.</p>
+                        <span class="btn btn-primary">Explore <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span></span>
+                    </div>
+                </a>
+
+                <!-- Tile 4: Digital & Cyber -->
+                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
+                    <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity duration-300 group-hover:opacity-80 group-focus-visible:opacity-80"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-6 text-center transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
+                        <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
+                        <h3 class="text-white text-xl font-bold">Digital &amp; Cyber</h3>
+                    </div>
+                    <div class="absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                        <p class="text-white font-bold text-lg mb-1" aria-hidden="true">Digital &amp; Cyber</p>
+                        <p class="font-serif text-gray-100 text-sm leading-relaxed mb-4">Future-proofing your operations.</p>
+                        <span class="btn btn-primary">Explore <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED COURSES: Feature Cards + Tags -->
+    <section class="py-16 lg:py-24 bg-white" aria-labelledby="courses-title">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-10">
+                <div>
+                    <span class="block w-16 h-1 bg-abs-red mb-5"></span>
+                    <h2 id="courses-title" class="text-3xl lg:text-4xl text-abs-blue uppercase tracking-tight"><span class="font-light">Featured</span> <span class="font-extrabold">Courses</span></h2>
+                    <p class="font-serif text-gray-600 mt-3">Most in-demand training from across the globe.</p>
+                </div>
+                <a href="courses.html" class="btn btn-outline self-start md:self-auto">
+                    View all courses <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span>
+                </a>
+            </div>
+
+            <!-- Top line groups related cards: Navy = core, Green = sustainability -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Course 1 -->
+                <article class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
+                        <span class="tag tag-gray self-start mb-4">Maritime</span>
+                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
+                            <a href="#" class="focus-visible:outline-none after:absolute after:inset-0">Internal Auditor Training for ISM/ISPS/MLC</a>
+                        </h3>
+                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Comprehensive training for auditors covering the integrated management system requirements.</p>
+                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 2 days</span>
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">laptop_windows</span> Classroom / Virtual</span>
+                        </div>
+                        <span class="btn btn-outline self-start" aria-hidden="true">View course <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
+                    </div>
+                </article>
+
+                <!-- Course 2 -->
+                <article class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-green shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
+                        <span class="tag tag-gray self-start mb-4">Sustainability</span>
+                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
+                            <a href="#" class="focus-visible:outline-none after:absolute after:inset-0">LNG as a Marine Fuel</a>
+                        </h3>
+                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Understand the technical and safety aspects of using LNG as a marine fuel in modern shipping.</p>
+                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 1 day</span>
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">play_circle</span> E-learning</span>
+                        </div>
+                        <span class="btn btn-outline self-start" aria-hidden="true">View course <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
+                    </div>
+                </article>
+
+                <!-- Course 3 -->
+                <article class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
+                        <span class="tag tag-gray self-start mb-4">Cyber</span>
+                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
+                            <a href="#" class="focus-visible:outline-none after:absolute after:inset-0">Maritime Cyber Security Awareness</a>
+                        </h3>
+                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Essential cyber hygiene practices for crew and onshore staff to protect assets.</p>
+                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 4 hours</span>
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">laptop_windows</span> Virtual</span>
+                        </div>
+                        <span class="btn btn-outline self-start" aria-hidden="true">View course <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
+                    </div>
+                </article>
+
+                <!-- Course 4 -->
+                <article class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
+                        <span class="tag tag-gray self-start mb-4">Safety</span>
+                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
+                            <a href="#" class="focus-visible:outline-none after:absolute after:inset-0">Process Safety Management</a>
+                        </h3>
+                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Master the principles of PSM to prevent major accidents and ensure operational integrity.</p>
+                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 3 days</span>
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">groups</span> Classroom</span>
+                        </div>
+                        <span class="btn btn-outline self-start" aria-hidden="true">View course <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
+                    </div>
+                </article>
+
+                <!-- Course 5 -->
+                <article class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-green shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
+                        <span class="tag tag-gray self-start mb-4">Renewables</span>
+                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
+                            <a href="#" class="focus-visible:outline-none after:absolute after:inset-0">Offshore Wind Farm Safety</a>
+                        </h3>
+                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Critical safety protocols for personnel working on offshore wind turbine installations.</p>
+                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 2 days</span>
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">laptop_windows</span> Hybrid</span>
+                        </div>
+                        <span class="btn btn-outline self-start" aria-hidden="true">View course <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
+                    </div>
+                </article>
+
+                <!-- Course 6 -->
+                <article class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
+                        <span class="tag tag-gray self-start mb-4">Management</span>
+                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
+                            <a href="#" class="focus-visible:outline-none after:absolute after:inset-0">Root Cause Analysis &amp; Investigation</a>
+                        </h3>
+                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Learn effective techniques to identify the underlying causes of incidents and prevent recurrence.</p>
+                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 1 day</span>
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">laptop_windows</span> Virtual</span>
+                        </div>
+                        <span class="btn btn-outline self-start" aria-hidden="true">View course <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY ABS TRAINING: Media Feature + Value Pillars -->
+    <section class="py-16 lg:py-24 bg-gray-50" aria-labelledby="why-title">
+        <div class="container mx-auto px-6 lg:px-8">
+            <!-- Media Feature -->
+            <div class="grid lg:grid-cols-2 rounded-xl overflow-hidden bg-white shadow-card-hover">
+                <div class="p-8 lg:p-14 flex flex-col justify-center">
+                    <span class="block w-10 h-1 bg-abs-red mb-5"></span>
+                    <h2 id="why-title" class="text-2xl lg:text-3xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">Why</span> <span class="font-extrabold">ABS Training</span></h2>
+                    <p class="font-serif text-gray-600 leading-relaxed mb-8">
+                        <strong class="font-semibold text-gray-800">More than just certification: operational excellence.</strong> As a world-leading classification society, ABS is uniquely positioned to provide training that goes beyond theory. Our instructors are industry veterans who understand the complex regulatory landscape you navigate every day.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#" class="btn btn-primary">
+                            About ABS Training <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span>
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">location_on</span> Find a training location
+                        </a>
+                    </div>
+                </div>
+                <div class="relative min-h-[280px] lg:min-h-[420px]">
+                    <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_765469201.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Value Pillars -->
+            <div class="mt-16 lg:mt-20 grid lg:grid-cols-[280px_1fr] gap-10 lg:gap-6 items-center">
+                <div class="text-center lg:text-left">
+                    <h3>
+                        <span class="block text-lg font-light uppercase tracking-wide text-abs-blue-mid">Three value pillars of</span>
+                        <span class="block text-3xl font-extrabold uppercase text-abs-blue">ABS Training</span>
+                    </h3>
+                    <span class="block w-16 h-1 bg-abs-red mt-4 mx-auto lg:mx-0"></span>
+                </div>
+                <ul class="grid sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x divide-gray-200">
+                    <li class="px-6 text-center">
+                        <span class="material-symbols-outlined text-[48px] text-abs-blue" aria-hidden="true">public</span>
+                        <h4 class="mt-3 text-xs font-bold uppercase tracking-wider text-abs-blue">Global consistency</h4>
+                        <p class="font-serif text-sm text-gray-600 leading-relaxed mt-3">Standardized training across our global network of centers.</p>
+                    </li>
+                    <li class="px-6 text-center">
+                        <span class="material-symbols-outlined text-[48px] text-abs-blue" aria-hidden="true">verified</span>
+                        <h4 class="mt-3 text-xs font-bold uppercase tracking-wider text-abs-blue">Regulatory expertise</h4>
+                        <p class="font-serif text-sm text-gray-600 leading-relaxed mt-3">Direct insights from the organization setting the standards.</p>
+                    </li>
+                    <li class="px-6 text-center">
+                        <span class="material-symbols-outlined text-[48px] text-abs-blue" aria-hidden="true">laptop_windows</span>
+                        <h4 class="mt-3 text-xs font-bold uppercase tracking-wider text-abs-blue">Flexible delivery</h4>
+                        <p class="font-serif text-sm text-gray-600 leading-relaxed mt-3">In-person, virtual or customized on-site programs.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW CAN WE HELP: Icon CTA Cards -->
+    <section class="py-16 lg:py-20 bg-white" aria-labelledby="help-title">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="block w-16 h-1 bg-abs-red mx-auto mb-5"></span>
+                <h2 id="help-title" class="text-3xl lg:text-4xl text-abs-blue uppercase tracking-tight"><span class="font-light">How can we</span> <span class="font-extrabold">help?</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="group relative bg-white rounded-lg border-t-4 border-abs-blue shadow-card p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-abs-red focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                    <span class="w-12 h-12 rounded-full bg-abs-gray text-abs-blue flex items-center justify-center mb-5 transition-colors group-hover:bg-abs-blue group-hover:text-white">
+                        <span class="material-symbols-outlined text-[24px]" aria-hidden="true">mail</span>
+                    </span>
+                    <h3 class="text-xl font-bold text-abs-blue mb-3">
+                        <a href="#" class="focus-visible:outline-none after:absolute after:inset-0">Contact us</a>
+                    </h3>
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-abs-red" aria-hidden="true">Talk to our team <span class="material-symbols-outlined text-[18px] btn-arrow">arrow_forward</span></span>
+                </div>
+
+                <div class="group relative bg-white rounded-lg border-t-4 border-abs-blue shadow-card p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-abs-red focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                    <span class="w-12 h-12 rounded-full bg-abs-gray text-abs-blue flex items-center justify-center mb-5 transition-colors group-hover:bg-abs-blue group-hover:text-white">
+                        <span class="material-symbols-outlined text-[24px]" aria-hidden="true">verified</span>
+                    </span>
+                    <h3 class="text-xl font-bold text-abs-blue mb-3">
+                        <a href="#" class="focus-visible:outline-none after:absolute after:inset-0">Verify a certificate</a>
+                    </h3>
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-abs-red" aria-hidden="true">Verify now <span class="material-symbols-outlined text-[18px] btn-arrow">arrow_forward</span></span>
+                </div>
+
+                <div class="group relative bg-white rounded-lg border-t-4 border-abs-blue shadow-card p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-abs-red focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                    <span class="w-12 h-12 rounded-full bg-abs-gray text-abs-blue flex items-center justify-center mb-5 transition-colors group-hover:bg-abs-blue group-hover:text-white">
+                        <span class="material-symbols-outlined text-[24px]" aria-hidden="true">location_on</span>
+                    </span>
+                    <h3 class="text-xl font-bold text-abs-blue mb-3">
+                        <a href="#" class="focus-visible:outline-none after:absolute after:inset-0">Find a location</a>
+                    </h3>
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-abs-red" aria-hidden="true">View locations <span class="material-symbols-outlined text-[18px] btn-arrow">arrow_forward</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER BAND -->
+    <section class="relative overflow-hidden bg-abs-blue" aria-labelledby="newsletter-title">
+        <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50">
+        <div class="absolute inset-0 bg-gradient-to-r from-abs-blue via-abs-blue/90 to-abs-blue/70"></div>
+        <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-14 flex flex-col lg:flex-row lg:items-center lg:justify-center gap-6 lg:gap-16">
+            <div class="max-w-xl">
+                <h2 id="newsletter-title" class="text-white text-lg lg:text-xl font-semibold uppercase tracking-[0.08em] mb-2">Stay informed with ABS Training</h2>
+                <p class="text-white/90 font-medium leading-relaxed">Receive regulatory updates, course schedules and safety insights in your inbox.</p>
+            </div>
+            <a href="https://ww2.eagle.org/en/news/subscribe.html" target="_blank" rel="noopener noreferrer" class="self-start lg:self-auto inline-flex items-center justify-center min-h-[44px] px-6 bg-abs-red text-white font-semibold rounded-sm whitespace-nowrap transition-colors hover:bg-abs-red-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-abs-blue">
+                Join our mailing list<span class="sr-only"> (opens in a new tab)</span>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
