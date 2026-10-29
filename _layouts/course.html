@@ -1,0 +1,160 @@
+---
+layout: default
+---
+<!-- COURSE HEADER -->
+<header class="relative overflow-hidden bg-abs-blue">
+    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
+         class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
+         onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
+    <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
+    <div class="absolute inset-0 bg-abs-blue/65"></div>
+
+    <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-20">
+        <div class="max-w-5xl mx-auto">
+            <nav aria-label="Breadcrumb" class="mb-6">
+                <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-white/80">
+                    <li><a href="{{ '/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Home</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li><a href="{{ '/#courses-title' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Courses</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li aria-current="page" class="text-white">{{ page.title | escape }}</li>
+                </ol>
+            </nav>
+            <p class="eyebrow text-white mb-4">{{ page.tag | escape }}</p>
+            <h1 class="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-5 max-w-3xl">{{ page.title | escape }}</h1>
+            <p class="font-serif text-white leading-relaxed max-w-2xl mb-6">{{ page.description | escape }}</p>
+            <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-white mb-8">
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">schedule</span> {{ page.duration | escape }}</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">groups</span> {{ page.format | escape }}</li>
+            </ul>
+            <a href="#dates" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">
+                View dates <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_downward</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- COURSE DETAILS -->
+<main class="py-14 lg:py-20 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_340px] gap-12 lg:gap-14 items-start">
+            <div class="space-y-12">
+                <section aria-labelledby="about-title">
+                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <h2 id="about-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">About this</span> <span class="font-extrabold">Course</span></h2>
+                    <div class="font-serif text-gray-700 leading-relaxed space-y-4">
+                        {{ content }}
+                    </div>
+                </section>
+
+                {% if page.objectives %}
+                <section aria-labelledby="learn-title">
+                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <h2 id="learn-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-5"><span class="font-light">What you'll</span> <span class="font-extrabold">Learn</span></h2>
+                    <ul class="space-y-3">
+                        {% for objective in page.objectives %}
+                        <li class="flex gap-3 font-serif text-gray-700 leading-relaxed">
+                            <span class="material-symbols-outlined text-[22px] text-abs-blue shrink-0" aria-hidden="true">check_circle</span>
+                            <span>{{ objective | escape }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                {% endif %}
+
+                {% if page.audience %}
+                <section aria-labelledby="audience-title">
+                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <h2 id="audience-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">Who should</span> <span class="font-extrabold">Attend</span></h2>
+                    <p class="font-serif text-gray-700 leading-relaxed">{{ page.audience | escape }}</p>
+                </section>
+                {% endif %}
+            </div>
+
+            <!-- Upcoming classes: filled in live from the Seertech offerings feed -->
+            <aside id="dates" class="scroll-mt-6 lg:sticky lg:top-6 rounded-lg border border-gray-200 border-t-4 border-t-abs-blue bg-white shadow-card p-6" aria-labelledby="dates-title">
+                <h2 id="dates-title" class="text-xs font-bold uppercase tracking-[0.16em] text-abs-blue mb-4">Upcoming classes</h2>
+                <div data-offerings data-course-id="{{ page.course_id }}" aria-live="polite">
+                    <p class="text-sm text-gray-600">Loading class dates…</p>
+                </div>
+                <p class="mt-5 pt-4 border-t border-gray-100 text-xs text-gray-600 leading-relaxed">
+                    Registration and payment are completed on the ABS Training portal.
+                    <a href="{{ site.portal.catalog }}" class="font-bold text-abs-blue underline-offset-2 hover:underline focus-visible:outline-none focus-visible:underline">Browse the full catalog</a>
+                </p>
+            </aside>
+        </div>
+    </div>
+</main>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    "inLanguage": "en",
+    "provider": {
+        "@type": "Organization",
+        "name": "American Bureau of Shipping",
+        "sameAs": "https://ww2.eagle.org"
+    }{% if page.objectives %},
+    "teaches": {{ page.objectives | jsonify }}{% endif %}{% if page.audience %},
+    "audience": {
+        "@type": "Audience",
+        "audienceType": {{ page.audience | jsonify }}
+    }{% endif %}
+}
+</script>
+
+<script src="{{ '/assets/js/course-offerings.js' | relative_url }}"></script>
+<script>
+(function () {
+    var box = document.querySelector('[data-offerings]');
+    var catalogUrl = {{ site.portal.catalog | jsonify }};
+
+    function el(tag, className, text) {
+        var node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text) node.textContent = text;
+        return node;
+    }
+
+    function linkButton(href, label, primary) {
+        var a = el('a', 'btn ' + (primary ? 'btn-primary' : 'btn-outline') + ' w-full justify-center !min-h-[40px] !text-xs', label);
+        a.href = href;
+        return a;
+    }
+
+    function render(result) {
+        box.textContent = '';
+        if (result.upcoming.length) {
+            var list = el('ul', 'divide-y divide-gray-100 -my-1');
+            result.upcoming.forEach(function (o) {
+                var item = el('li', 'py-4 first:pt-1');
+                item.appendChild(el('p', 'text-base font-bold text-abs-blue', o.dateShort.trim()));
+                var details = [window.absOfferings.timeRange(o), window.absOfferings.formatLabel(o) + (o.location ? ', ' + o.location : '')].filter(Boolean).join(' \u00b7 ');
+                item.appendChild(el('p', 'text-xs text-gray-600 mt-1', details));
+                var seats = window.absOfferings.seatsLeft(o);
+                if (seats) item.appendChild(el('p', 'text-xs text-gray-600 mt-0.5', seats + (seats === 1 ? ' seat' : ' seats') + ' left'));
+                var cta = el('div', 'mt-3');
+                cta.appendChild(linkButton(o.courseDetailsURL, 'Register', true));
+                item.appendChild(cta);
+                list.appendChild(item);
+            });
+            box.appendChild(list);
+            return;
+        }
+        box.appendChild(el('p', 'text-sm text-gray-700 leading-relaxed mb-4', 'No classes are scheduled right now. Let us know you are interested and we will contact you when new dates are added.'));
+        box.appendChild(linkButton(result.interest ? result.interest.courseDetailsURL : catalogUrl, result.interest ? 'Register interest' : 'Browse the catalog', true));
+    }
+
+    window.absOfferings.load(box.getAttribute('data-course-id'))
+        .then(render)
+        .catch(function () {
+            box.textContent = '';
+            box.appendChild(el('p', 'text-sm text-gray-700 leading-relaxed mb-4', 'Class dates could not be loaded. You can see all dates in the ABS Training catalog.'));
+            box.appendChild(linkButton(catalogUrl, 'Browse the catalog', true));
+        });
+})();
+</script>

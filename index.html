@@ -1,159 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABS Training | Leading Maritime & Offshore Education</title>
-    
-    <!-- Fonts: Montserrat (headings/UI) + Maitree (body copy), per ABS Digital Components -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Maitree:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Icons: Google Material Symbols (Outlined, weight 400) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=block">
-
-    <!-- Tailwind CSS (for styling) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Config for ABS Colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Maitree', 'Georgia', 'serif'],
-                    },
-                    colors: {
-                        abs: {
-                            blue: '#002A4E',
-                            red: '#DA1F33',
-                            'blue-dark': '#001E40',
-                            'blue-mid': '#335572',
-                            'blue-light': '#5E8AB4',
-                            'red-dark': '#B51227',
-                            'red-light': '#DF444E',
-                            yellow: '#FFAD0A',
-                            green: '#4CA342',
-                            gray: '#DBDCDD',
-                            light: '#F8F9FA'
-                        }
-                    },
-                    boxShadow: {
-                        'card': '0 2px 10px rgba(0, 42, 78, 0.08)',
-                        'card-hover': '0 18px 36px -12px rgba(0, 42, 78, 0.35)',
-                        'search': '0 20px 40px -5px rgba(0, 0, 0, 0.15)',
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                        'shimmer': 'shimmer 3s infinite linear',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        shimmer: {
-                            '0%': { backgroundPosition: '-200% center' },
-                            '100%': { backgroundPosition: '200% center' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Custom Styles for LearningCart Compatibility */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* ABS brand colors as RGB channels so they can be layered with transparency */
-        :root {
-            --abs-blue: 0, 42, 78;
-            --abs-blue-dark: 0, 30, 64;
-            --abs-blue-mid: 51, 85, 114;
-            --abs-blue-light: 94, 138, 180;
-            --abs-red: 218, 31, 51;
-            --abs-yellow: 255, 173, 10;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-    </style>
-
-    <!-- ABS Digital Components -->
-    <style type="text/tailwindcss">
-        @layer components {
-            /* Button: Red = one primary action per view, Navy = secondary, Outline = tertiary */
-            .btn {
-                @apply inline-flex items-center justify-center gap-2 min-h-[44px] px-6 rounded-full font-bold text-sm whitespace-nowrap transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2;
-            }
-            .btn-lg { @apply min-h-[52px] px-7 text-base; }
-            .btn-primary { @apply bg-abs-red text-white hover:bg-abs-red-dark hover:shadow-[0_8px_20px_-6px_rgba(218,31,51,0.6)] active:shadow-none; }
-            .btn-secondary { @apply bg-abs-blue text-white hover:bg-abs-blue-dark hover:shadow-[0_8px_20px_-6px_rgba(0,42,78,0.5)] active:shadow-none; }
-            .btn-outline { @apply border-2 border-abs-blue text-abs-blue hover:bg-[#E6EAEF]; }
-            .btn-outline-light { @apply border-2 border-white text-white hover:bg-white/10; }
-            .btn-arrow { @apply transition-transform duration-200; }
-            .btn:hover .btn-arrow, .group:hover .btn-arrow { transform: translateX(5px); }
-
-            /* Tag: non-interactive label, Montserrat Bold caps 12px */
-            .tag { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide leading-none; }
-            .tag-navy { @apply bg-abs-blue text-white; }
-            .tag-gray { @apply bg-abs-gray text-abs-blue; }
-            .tag-red { @apply bg-abs-red text-white; }
-            .tag-outline { @apply border border-[#B1B3B5] text-abs-blue; }
-            .tag-green { @apply bg-abs-green text-abs-blue-dark; }
-
-            /* Eyebrow: red signal line + caps label */
-            .eyebrow { @apply inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em]; }
-            .eyebrow::before { content: ''; @apply block w-6 h-0.5 bg-abs-red; }
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-abs-blue-dark">
-
-    <!-- TOP NAVIGATION BAR -->
-    <nav class="bg-abs-blue-dark border-b border-white/10" aria-label="Primary navigation">
-        <div class="container mx-auto px-6 lg:px-8">
-            <div class="max-w-5xl mx-auto flex items-center justify-between min-h-[72px] py-3 gap-6">
-                <a href="https://ww2.eagle.org" class="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-abs-blue-dark rounded-sm" aria-label="American Bureau of Shipping home">
-                    <img src="assets/abs-affiliated-logo-white.png" alt="ABS &amp; Affiliated Companies" width="1893" height="747" class="h-12 sm:h-14 w-auto">
-                </a>
-
-                <div class="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-white/85">
-                    <a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Industries</a>
-                    <a href="#courses-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Courses</a>
-                    <a href="#why-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Why ABS</a>
-                    <a href="#help-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Support</a>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white/90 hover:text-white px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full">
-                        Course Catalog
-                    </a>
-                    <a href="https://portal.abs-training.com/lmt/xlr8login.login?site=abs&amp;in_language_identifier=en-us&amp;in_region=gl" class="btn btn-outline-light !min-h-[40px] !px-5 !text-xs uppercase tracking-wider focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark">
-                        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">login</span> Log in
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
+---
+layout: default
+---
     <!-- TIER 2 BANNER -->
     <header class="relative overflow-hidden bg-abs-blue">
         <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
@@ -289,109 +136,26 @@
                 </a>
             </div>
 
-            <!-- Course IDs come from the Seertech catalog; dates are filled in live by the script at the end of <body> -->
+            <!-- Cards come from _courses/ (sorted by featured_order); next-class dates are filled in live by the script below -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <!-- Course 1 -->
-                <article data-course-id="226074836" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                {% assign featured_courses = site.courses | sort: "featured_order" %}
+                {% for course in featured_courses %}
+                <article data-course-id="{{ course.course_id }}" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
                     <div class="p-6 lg:p-7 flex flex-col flex-grow">
-                        <span class="tag tag-gray self-start mb-4">Maritime</span>
+                        <span class="tag tag-gray self-start mb-4">{{ course.tag | escape }}</span>
                         <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
-                            <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" data-course-link class="focus-visible:outline-none after:absolute after:inset-0">DPA Requirements: Effective SMS Implementation</a>
+                            <a href="{{ course.url | relative_url }}" class="focus-visible:outline-none after:absolute after:inset-0">{{ course.title | escape }}</a>
                         </h3>
-                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Understand the authority and liability of the Designated Person Ashore role and its place in your safety management system.</p>
+                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{{ course.description | escape }}</p>
                         <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
-                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 2 days</span>
-                            <span class="flex items-center gap-1.5" data-course-next><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">event</span> <span data-course-next-text>Checking dates?</span></span>
-                            <span class="hidden items-center gap-1.5" data-course-where><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true" data-course-where-icon>laptop_windows</span> <span data-course-where-text></span></span>
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> {{ course.duration | escape }}</span>
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">event</span> <span data-course-next-text>Checking dates?</span></span>
+                            <span class="hidden items-center gap-1.5" data-course-where><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true" data-course-where-icon>groups</span> <span data-course-where-text></span></span>
                         </div>
-                        <span class="btn btn-outline self-start" aria-hidden="true"><span data-course-cta>View course</span> <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
+                        <span class="btn btn-outline self-start" aria-hidden="true">Learn more <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
                     </div>
                 </article>
-
-                <!-- Course 2 -->
-                <article data-course-id="226074851" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
-                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
-                        <span class="tag tag-gray self-start mb-4">Tankers</span>
-                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
-                            <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" data-course-link class="focus-visible:outline-none after:absolute after:inset-0">Tanker Management and Self-Assessment (TMSA 3) Essentials</a>
-                        </h3>
-                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Learn the structure and requirements of OCIMF's TMSA 3 and how to build them into your management system.</p>
-                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
-                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 2 days</span>
-                            <span class="flex items-center gap-1.5" data-course-next><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">event</span> <span data-course-next-text>Checking dates?</span></span>
-                            <span class="hidden items-center gap-1.5" data-course-where><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true" data-course-where-icon>laptop_windows</span> <span data-course-where-text></span></span>
-                        </div>
-                        <span class="btn btn-outline self-start" aria-hidden="true"><span data-course-cta>View course</span> <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
-                    </div>
-                </article>
-
-                <!-- Course 3 -->
-                <article data-course-id="226074850" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
-                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
-                        <span class="tag tag-gray self-start mb-4">Classification</span>
-                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
-                            <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" data-course-link class="focus-visible:outline-none after:absolute after:inset-0">Orientation to In-Service Classification and Statutory Surveys</a>
-                        </h3>
-                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Gain insight into classification and statutory requirements, with emphasis on in-service surveys.</p>
-                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
-                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 3 days</span>
-                            <span class="flex items-center gap-1.5" data-course-next><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">event</span> <span data-course-next-text>Checking dates?</span></span>
-                            <span class="hidden items-center gap-1.5" data-course-where><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true" data-course-where-icon>laptop_windows</span> <span data-course-where-text></span></span>
-                        </div>
-                        <span class="btn btn-outline self-start" aria-hidden="true"><span data-course-cta>View course</span> <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
-                    </div>
-                </article>
-
-                <!-- Course 4 -->
-                <article data-course-id="224266683" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
-                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
-                        <span class="tag tag-gray self-start mb-4">Auditing</span>
-                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
-                            <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" data-course-link class="focus-visible:outline-none after:absolute after:inset-0">ISM Code Internal Auditor</a>
-                        </h3>
-                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Develop an internal audit program, conduct ISM Code audits and report nonconformities with confidence.</p>
-                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
-                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 3 days</span>
-                            <span class="flex items-center gap-1.5" data-course-next><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">event</span> <span data-course-next-text>Checking dates?</span></span>
-                            <span class="hidden items-center gap-1.5" data-course-where><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true" data-course-where-icon>laptop_windows</span> <span data-course-where-text></span></span>
-                        </div>
-                        <span class="btn btn-outline self-start" aria-hidden="true"><span data-course-cta>View course</span> <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
-                    </div>
-                </article>
-
-                <!-- Course 5 -->
-                <article data-course-id="226074858" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
-                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
-                        <span class="tag tag-gray self-start mb-4">Gas Carriers</span>
-                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
-                            <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" data-course-link class="focus-visible:outline-none after:absolute after:inset-0">Gas Carrier Systems and Cargo Handling Equipment Introduction</a>
-                        </h3>
-                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Follow the full loading and discharging cycle and the systems that handle liquefied gas cargo.</p>
-                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
-                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 2 days</span>
-                            <span class="flex items-center gap-1.5" data-course-next><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">event</span> <span data-course-next-text>Checking dates?</span></span>
-                            <span class="hidden items-center gap-1.5" data-course-where><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true" data-course-where-icon>laptop_windows</span> <span data-course-where-text></span></span>
-                        </div>
-                        <span class="btn btn-outline self-start" aria-hidden="true"><span data-course-cta>View course</span> <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
-                    </div>
-                </article>
-
-                <!-- Course 6 -->
-                <article data-course-id="226074832" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
-                    <div class="p-6 lg:p-7 flex flex-col flex-grow">
-                        <span class="tag tag-gray self-start mb-4">Safety</span>
-                        <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
-                            <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" data-course-link class="focus-visible:outline-none after:absolute after:inset-0">Maritime Incident Investigation and Root Cause Analysis</a>
-                        </h3>
-                        <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">Apply the ABS Marine Root Cause Analysis Technique (MaRCAT) to find root causes and prevent recurrence.</p>
-                        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
-                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> 2 days</span>
-                            <span class="flex items-center gap-1.5" data-course-next><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">event</span> <span data-course-next-text>Checking dates?</span></span>
-                            <span class="hidden items-center gap-1.5" data-course-where><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true" data-course-where-icon>laptop_windows</span> <span data-course-where-text></span></span>
-                        </div>
-                        <span class="btn btn-outline self-start" aria-hidden="true"><span data-course-cta>View course</span> <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
-                    </div>
-                </article>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -520,139 +284,31 @@
         </div>
     </section>
 
-    <!-- SITE FOOTER -->
-    <footer class="relative bg-abs-blue text-white" aria-labelledby="footer-heading">
-        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-abs-blue-light via-abs-red to-abs-yellow" aria-hidden="true"></div>
-        <h2 id="footer-heading" class="sr-only">Footer</h2>
-        <div class="container mx-auto px-6 lg:px-8 py-14 lg:py-16">
-            <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-                <!-- About -->
-                <div>
-                    <a href="https://ww2.eagle.org" class="inline-block mb-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm" aria-label="American Bureau of Shipping home">
-                        <img src="assets/abs-affiliated-logo-white.png" alt="ABS &amp; Affiliated Companies" width="1893" height="747" class="h-14 w-auto">
-                    </a>
-                    <h3 class="text-base font-bold text-white mb-4">ABS Training</h3>
-                    <p class="text-[13px] text-gray-300 leading-relaxed mb-5">
-                        Delivering world-class training to help you improve the safety, reliability and efficiency of your operations.
-                    </p>
-                    <a href="https://www.linkedin.com/company/american-bureau-of-shipping" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/15 text-sm font-bold text-white hover:bg-white/25 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white" aria-label="ABS on LinkedIn (opens in a new tab)">
-                        <span aria-hidden="true">in</span>
-                    </a>
-                </div>
-
-                <!-- Industries -->
-                <div>
-                    <h3 class="text-base font-bold text-white mb-4">Industries</h3>
-                    <ul class="space-y-2.5 text-[13px] text-gray-300">
-                        <li><a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Maritime</a></li>
-                        <li><a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Offshore</a></li>
-                        <li><a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Government</a></li>
-                        <li><a href="#industries-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Gas Solutions</a></li>
-                    </ul>
-                </div>
-
-                <!-- Support -->
-                <div>
-                    <h3 class="text-base font-bold text-white mb-4">Support</h3>
-                    <ul class="space-y-2.5 text-[13px] text-gray-300">
-                        <li><a href="#help-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Contact Us</a></li>
-                        <li><a href="#help-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Locations</a></li>
-                        <li><a href="#help-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">FAQs</a></li>
-                        <li><a href="https://portal.abs-training.com/lmt/!clmscertificate.prVerify?site=abs&amp;in_region=gl&amp;in_lang=en-us" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Verify Certificate</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div>
-                    <h3 class="text-base font-bold text-white mb-4">Newsletter</h3>
-                    <p class="text-[13px] text-gray-300 leading-relaxed mb-5">
-                        Subscribe for the latest regulatory updates and training news.
-                    </p>
-                    <a href="https://ww2.eagle.org/en/news/subscribe.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light !min-h-[40px] !px-5 !text-xs focus-visible:ring-white focus-visible:ring-offset-abs-blue">
-                        Subscribe <span class="material-symbols-outlined text-[18px] btn-arrow" aria-hidden="true">arrow_forward</span><span class="sr-only"> (opens in a new tab)</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Bottom Legal Bar -->
-            <div class="max-w-5xl mx-auto mt-12 pt-6 border-t border-white/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-gray-300">
-                <p>&copy; 2026 American Bureau of Shipping. All rights reserved.</p>
-                <div class="flex flex-wrap items-center gap-6">
-                    <a href="https://ww2.eagle.org/en/legal-notices/privacy-policy.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Privacy Policy</a>
-                    <a href="https://ww2.eagle.org/en/legal-notices/terms-of-use.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Terms of Use</a>
-                    <a href="https://ww2.eagle.org/en/legal-notices/cookie-notice.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
     <!-- Featured courses: live next-class data from the Seertech public offerings feed -->
+    <script src="{{ '/assets/js/course-offerings.js' | relative_url }}"></script>
     <script>
     (function () {
-        var FEED = 'https://portal.abs-training.com/ws/report/out/abs/CatalogObjectOfferingsOut';
-        var MONTHS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
-
-        // Seertech dates look like "17-Nov-26 08:45 (GMT-5) EST"
-        function parseStart(value) {
-            var m = /^(\d{1,2})-([A-Za-z]{3})-(\d{2})/.exec(value || '');
-            if (!m) return null;
-            return new Date(2000 + Number(m[3]), MONTHS[m[2].toLowerCase()], Number(m[1]));
-        }
-
-        // offeringType C = classroom; the feed's contentType field is not reliable for this
-        function formatLabel(o) {
-            if (o.offeringType === 'C') return 'Classroom';
-            if (/online/i.test(o.contentType || '')) return 'Online';
-            return 'Virtual';
-        }
-
-        function isRealOffering(o) {
-            return o.isEOI !== 'Y' && !/^zzz/i.test(o.offeringName || '') && parseStart(o.startDate);
-        }
-
-        function update(card) {
-            var id = card.getAttribute('data-course-id');
+        document.querySelectorAll('[data-course-id]').forEach(function (card) {
             var nextText = card.querySelector('[data-course-next-text]');
-            var where = card.querySelector('[data-course-where]');
-            var url = FEED + '?offset=1&limit=50&date_from=%25&available_only=Y&content_object_id=' + encodeURIComponent(id) +
-                '&p_region=gl&location=%25&offering_language=%25';
-
-            fetch(url)
-                .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-                .then(function (data) {
-                    var items = (data && data.items) || [];
-                    var today = new Date(); today.setHours(0, 0, 0, 0);
-                    var upcoming = items.filter(isRealOffering)
-                        .filter(function (o) { return parseStart(o.startDate) >= today; })
-                        .sort(function (a, b) { return parseStart(a.startDate) - parseStart(b.startDate); });
-
-                    if (upcoming.length) {
-                        var next = upcoming[0];
-                        var more = upcoming.length - 1;
-                        nextText.textContent = 'Next: ' + next.dateShort.trim() + (more ? ' (+' + more + ' more)' : '');
-                        var format = formatLabel(next);
-                        card.querySelector('[data-course-where-text]').textContent = next.location ? format + ', ' + next.location : format;
-                        card.querySelector('[data-course-where-icon]').textContent = next.location ? 'location_on' : (format === 'Classroom' ? 'groups' : 'laptop_windows');
-                        where.classList.remove('hidden');
-                        where.classList.add('flex');
-                        card.querySelector('[data-course-link]').href = next.courseDetailsURL;
-                        card.querySelector('[data-course-cta]').textContent = 'View dates';
+            window.absOfferings.load(card.getAttribute('data-course-id'))
+                .then(function (result) {
+                    if (!result.upcoming.length) {
+                        nextText.textContent = 'New dates coming soon';
                         return;
                     }
-
-                    var interest = items.filter(function (o) { return o.isEOI === 'Y'; })[0];
-                    nextText.textContent = 'New dates coming soon';
-                    if (interest) {
-                        card.querySelector('[data-course-link]').href = interest.courseDetailsURL;
-                        card.querySelector('[data-course-cta]').textContent = 'Register interest';
-                    }
+                    var next = result.upcoming[0];
+                    var more = result.upcoming.length - 1;
+                    var format = window.absOfferings.formatLabel(next);
+                    var where = card.querySelector('[data-course-where]');
+                    nextText.textContent = 'Next: ' + next.dateShort.trim() + (more ? ' (+' + more + ' more)' : '');
+                    card.querySelector('[data-course-where-text]').textContent = next.location ? format + ', ' + next.location : format;
+                    card.querySelector('[data-course-where-icon]').textContent = next.location ? 'location_on' : (format === 'Classroom' ? 'groups' : 'laptop_windows');
+                    where.classList.remove('hidden');
+                    where.classList.add('flex');
                 })
                 .catch(function () {
-                    nextText.textContent = 'See catalog for dates';
+                    nextText.textContent = 'See course for dates';
                 });
-        }
-
-        document.querySelectorAll('[data-course-id]').forEach(update);
+        });
     })();
     </script>
-</body>
-</html>
