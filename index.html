@@ -598,6 +598,13 @@
             return new Date(2000 + Number(m[3]), MONTHS[m[2].toLowerCase()], Number(m[1]));
         }
 
+        // offeringType C = classroom; the feed's contentType field is not reliable for this
+        function formatLabel(o) {
+            if (o.offeringType === 'C') return 'Classroom';
+            if (/online/i.test(o.contentType || '')) return 'Online';
+            return 'Virtual';
+        }
+
         function isRealOffering(o) {
             return o.isEOI !== 'Y' && !/^zzz/i.test(o.offeringName || '') && parseStart(o.startDate);
         }
@@ -622,8 +629,9 @@
                         var next = upcoming[0];
                         var more = upcoming.length - 1;
                         nextText.textContent = 'Next: ' + next.dateShort.trim() + (more ? ' (+' + more + ' more)' : '');
-                        card.querySelector('[data-course-where-text]').textContent = next.location || 'Virtual';
-                        card.querySelector('[data-course-where-icon]').textContent = next.location ? 'location_on' : 'laptop_windows';
+                        var format = formatLabel(next);
+                        card.querySelector('[data-course-where-text]').textContent = next.location ? format + ', ' + next.location : format;
+                        card.querySelector('[data-course-where-icon]').textContent = next.location ? 'location_on' : (format === 'Classroom' ? 'groups' : 'laptop_windows');
                         where.classList.remove('hidden');
                         where.classList.add('flex');
                         card.querySelector('[data-course-link]').href = next.courseDetailsURL;
