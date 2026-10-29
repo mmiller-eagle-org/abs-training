@@ -42,13 +42,28 @@
         return o.isEOI !== 'Y' && !/^zzz/i.test(o.offeringName || '') && parseStart(o.startDate);
     }
 
-    function load(courseId) {
-        var url = FEED + '?offset=1&limit=50&date_from=%25&available_only=Y&content_object_id=' + encodeURIComponent(courseId) +
-            '&p_region=gl&location=%25&offering_language=%25';
+    var PAGE_SIZE = 50;
+    var MAX_PAGES = 20;
+
+    // offset is the 1-based record to start from; the feed sets hasMore when more records follow
+    function fetchAll(courseId, offset, items, page) {
+        var url = FEED + '?offset=' + offset + '&limit=' + PAGE_SIZE + '&date_from=%25&available_only=Y&content_object_id=' +
+            encodeURIComponent(courseId) + '&p_region=gl&location=%25&offering_language=%25';
         return fetch(url)
             .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
             .then(function (data) {
-                var items = (data && data.items) || [];
+                var batch = (data && data.items) || [];
+                items = items.concat(batch);
+                if (data && data.hasMore && batch.length && page < MAX_PAGES) {
+                    return fetchAll(courseId, offset + batch.length, items, page + 1);
+                }
+                return items;
+            });
+    }
+
+    function load(courseId) {
+        return fetchAll(courseId, 1, [], 1)
+            .then(function (items) {
                 var today = new Date(); today.setHours(0, 0, 0, 0);
                 return {
                     upcoming: items.filter(isRealOffering)
