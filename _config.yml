@@ -1,0 +1,38 @@
+title: ABS Training
+tagline: Leading Maritime & Offshore Education
+description: >-
+  Equip your workforce with industry-driven regulatory, technical and operational
+  training to improve the safety, reliability and efficiency of your operations.
+url: "https://abs-training.com"
+lang: en_US
+
+# Seertech LMS portal (site "abs", region "gl")
+portal:
+  base: "https://portal.abs-training.com"
+  site: abs
+  region: gl
+  catalog: "https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/"
+
+social:
+  name: American Bureau of Shipping
+  links:
+    - https://www.linkedin.com/company/american-bureau-of-shipping
+
+collections:
+  courses:
+    output: true
+    permalink: /courses/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: courses
+    values:
+      layout: course
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - "*.tmp"

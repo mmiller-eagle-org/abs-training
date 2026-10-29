@@ -1,0 +1,39 @@
+# Builds the site with the same Jekyll action GitHub Pages uses, so a broken build
+# shows up on the pull request instead of on abs-training.com. Does not deploy.
+name: Pages build check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build with Jekyll (GitHub Pages)
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Check expected pages exist
+        run: |
+          set -e
+          for f in index.html sitemap.xml robots.txt CNAME assets/js/course-offerings.js; do
+            test -f "_site/$f" || { echo "Missing _site/$f"; exit 1; }
+          done
+          count=$(find _site/courses -name index.html | wc -l)
+          echo "Course pages built: $count"
+          test "$count" -ge 1
+
+      - name: Upload built site for preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: _site
+          retention-days: 7

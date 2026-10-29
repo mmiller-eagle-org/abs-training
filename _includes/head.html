@@ -1,0 +1,120 @@
+    
+    <!-- Fonts: Montserrat (headings/UI) + Maitree (body copy), per ABS Digital Components -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Maitree:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Google Material Symbols (Outlined, weight 400) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=block">
+
+    <!-- Tailwind CSS (for styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config for ABS Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Maitree', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        abs: {
+                            blue: '#002A4E',
+                            red: '#DA1F33',
+                            'blue-dark': '#001E40',
+                            'blue-mid': '#335572',
+                            'blue-light': '#5E8AB4',
+                            'red-dark': '#B51227',
+                            'red-light': '#DF444E',
+                            yellow: '#FFAD0A',
+                            green: '#4CA342',
+                            gray: '#DBDCDD',
+                            light: '#F8F9FA'
+                        }
+                    },
+                    boxShadow: {
+                        'card': '0 2px 10px rgba(0, 42, 78, 0.08)',
+                        'card-hover': '0 18px 36px -12px rgba(0, 42, 78, 0.35)',
+                        'search': '0 20px 40px -5px rgba(0, 0, 0, 0.15)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'shimmer': 'shimmer 3s infinite linear',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for LearningCart Compatibility */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ABS brand colors as RGB channels so they can be layered with transparency */
+        :root {
+            --abs-blue: 0, 42, 78;
+            --abs-blue-dark: 0, 30, 64;
+            --abs-blue-mid: 51, 85, 114;
+            --abs-blue-light: 94, 138, 180;
+            --abs-red: 218, 31, 51;
+            --abs-yellow: 255, 173, 10;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+
+    <!-- ABS Digital Components -->
+    <style type="text/tailwindcss">
+        @layer components {
+            /* Button: Red = one primary action per view, Navy = secondary, Outline = tertiary */
+            .btn {
+                @apply inline-flex items-center justify-center gap-2 min-h-[44px] px-6 rounded-full font-bold text-sm whitespace-nowrap transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2;
+            }
+            .btn-lg { @apply min-h-[52px] px-7 text-base; }
+            .btn-primary { @apply bg-abs-red text-white hover:bg-abs-red-dark hover:shadow-[0_8px_20px_-6px_rgba(218,31,51,0.6)] active:shadow-none; }
+            .btn-secondary { @apply bg-abs-blue text-white hover:bg-abs-blue-dark hover:shadow-[0_8px_20px_-6px_rgba(0,42,78,0.5)] active:shadow-none; }
+            .btn-outline { @apply border-2 border-abs-blue text-abs-blue hover:bg-[#E6EAEF]; }
+            .btn-outline-light { @apply border-2 border-white text-white hover:bg-white/10; }
+            .btn-arrow { @apply transition-transform duration-200; }
+            .btn:hover .btn-arrow, .group:hover .btn-arrow { transform: translateX(5px); }
+
+            /* Tag: non-interactive label, Montserrat Bold caps 12px */
+            .tag { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide leading-none; }
+            .tag-navy { @apply bg-abs-blue text-white; }
+            .tag-gray { @apply bg-abs-gray text-abs-blue; }
+            .tag-red { @apply bg-abs-red text-white; }
+            .tag-outline { @apply border border-[#B1B3B5] text-abs-blue; }
+            .tag-green { @apply bg-abs-green text-abs-blue-dark; }
+
+            /* Eyebrow: red signal line + caps label */
+            .eyebrow { @apply inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em]; }
+            .eyebrow::before { content: ''; @apply block w-6 h-0.5 bg-abs-red; }
+        }
+    </style>
