@@ -7,19 +7,33 @@
     <script src="{{ '/assets/js/analytics.js' | relative_url }}"></script>
     {% assign gtm_id = site.analytics.gtm_id | default: "" | strip %}
     {% if gtm_id != "" %}
-    <!-- Consent Mode v2 defaults; must run before Tag Manager loads. Until a consent banner is added,
-         EEA, UK and Swiss visitors stay denied (Google gets cookieless signals only); elsewhere is granted. -->
+    <!-- Consent Mode v2: must run before Tag Manager loads. EEA, UK and Swiss visitors default to denied;
+         elsewhere defaults to granted (advertising denied when the browser sends Global Privacy Control).
+         A saved choice from the cookie banner (assets/js/consent.js, key abs_consent_v1) overrides both. -->
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-        ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
-        region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
-    });
-    gtag('consent', 'default', {
-        ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted'
-    });
-    gtag('set', 'ads_data_redaction', true);
+    (function () {
+        var adsDefault = navigator.globalPrivacyControl === true ? 'denied' : 'granted';
+        gtag('consent', 'default', {
+            ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+            region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
+        });
+        gtag('consent', 'default', {
+            ad_storage: adsDefault, ad_user_data: adsDefault, ad_personalization: adsDefault, analytics_storage: 'granted'
+        });
+        gtag('set', 'ads_data_redaction', true);
+        try {
+            var saved = JSON.parse(localStorage.getItem('abs_consent_v1'));
+            if (saved && typeof saved.analytics === 'boolean' && typeof saved.ads === 'boolean') {
+                var ads = saved.ads ? 'granted' : 'denied';
+                gtag('consent', 'update', {
+                    analytics_storage: saved.analytics ? 'granted' : 'denied',
+                    ad_storage: ads, ad_user_data: ads, ad_personalization: ads
+                });
+            }
+        } catch (e) {}
+    })();
     </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',{{ gtm_id | jsonify }});</script>
@@ -28,9 +42,6 @@
 {% include head.html %}
 </head>
 <body class="bg-gray-50 text-abs-blue-dark">
-{% if gtm_id != "" %}
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ gtm_id | url_encode }}" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
-{% endif %}
 
 <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-5 focus:py-3 focus:text-sm focus:font-bold focus:text-abs-blue focus:shadow-card-hover focus:outline-none focus:ring-2 focus:ring-abs-red">Skip to main content</a>
 
@@ -43,5 +54,8 @@
 </main>
 
 {% include footer.html %}
+{% if gtm_id != "" %}
+{% include consent-banner.html %}
+{% endif %}
 </body>
 </html>

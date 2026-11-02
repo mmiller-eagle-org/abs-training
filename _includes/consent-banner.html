@@ -1,0 +1,46 @@
+<!-- Cookie consent banner (Consent Mode v2). Behavior: assets/js/consent.js; defaults: _layouts/default.html -->
+<section id="consent-banner" class="fixed inset-x-0 bottom-0 z-40 max-h-[85vh] overflow-y-auto overscroll-contain bg-abs-blue-dark text-white border-t border-white/15 shadow-[0_-12px_32px_-12px_rgba(0,0,0,0.45)]" aria-labelledby="consent-title" hidden>
+    <div class="container mx-auto px-6 lg:px-8 py-5 lg:py-6">
+        <div class="max-w-5xl mx-auto flex flex-col lg:flex-row lg:items-end gap-5 lg:gap-10">
+            <div class="flex-1 min-w-0">
+                <h2 id="consent-title" tabindex="-1" class="text-base font-bold text-white mb-2 focus:outline-none">Cookies on ABS Training</h2>
+                <p class="text-sm text-gray-200 leading-relaxed">
+                    We use cookies to understand how visitors use this site and to measure our advertising. Choose which cookies to allow; you can change this anytime under Cookie Settings in the footer.
+                    <a href="https://ww2.eagle.org/en/legal-privacy.html" target="_blank" rel="noopener noreferrer" class="font-bold text-white underline underline-offset-2 hover:text-abs-yellow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm">Privacy policy<span class="sr-only"> (opens in a new tab)</span></a>
+                </p>
+
+                <fieldset data-consent-options class="mt-4 grid sm:grid-cols-3 gap-3" hidden>
+                    <legend class="sr-only">Cookie categories</legend>
+                    <div class="rounded-lg border border-white/15 bg-white/5 p-4">
+                        <p class="flex items-center gap-3 text-sm font-bold text-white">
+                            <span class="material-symbols-outlined text-[20px] text-abs-yellow" aria-hidden="true">lock</span> Strictly necessary
+                        </p>
+                        <p class="mt-1 text-xs text-gray-300 leading-relaxed">Always on. Remembers your cookie choice.</p>
+                    </div>
+                    <label class="flex gap-3 rounded-lg border border-white/15 bg-white/5 p-4 cursor-pointer hover:border-white/40 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-white">
+                        <input type="checkbox" name="consent_analytics" class="mt-0.5 h-5 w-5 shrink-0 cursor-pointer accent-abs-red focus-visible:outline-none">
+                        <span>
+                            <span class="block text-sm font-bold text-white">Analytics</span>
+                            <span class="mt-1 block text-xs text-gray-300 leading-relaxed">Google Analytics: which pages and courses people view.</span>
+                        </span>
+                    </label>
+                    <label class="flex gap-3 rounded-lg border border-white/15 bg-white/5 p-4 cursor-pointer hover:border-white/40 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-white">
+                        <input type="checkbox" name="consent_ads" class="mt-0.5 h-5 w-5 shrink-0 cursor-pointer accent-abs-red focus-visible:outline-none">
+                        <span>
+                            <span class="block text-sm font-bold text-white">Advertising</span>
+                            <span class="mt-1 block text-xs text-gray-300 leading-relaxed">Google Ads: measures which ads lead to registrations.</span>
+                        </span>
+                    </label>
+                </fieldset>
+            </div>
+
+            <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 shrink-0">
+                <button type="button" data-consent-accept class="btn bg-white text-abs-blue hover:bg-gray-100 focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark">Accept all</button>
+                <button type="button" data-consent-reject class="btn bg-white text-abs-blue hover:bg-gray-100 focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark">Reject all</button>
+                <button type="button" data-consent-customize aria-expanded="false" class="btn btn-outline-light focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark">Customize</button>
+                <button type="button" data-consent-save class="btn btn-outline-light focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark" hidden>Save choices</button>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{{ '/assets/js/consent.js' | relative_url }}"></script>
