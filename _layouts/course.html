@@ -2,8 +2,8 @@
 layout: default
 ---
 <!-- COURSE HEADER -->
-<header class="relative overflow-hidden bg-abs-blue">
-    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
+<section class="relative overflow-hidden bg-abs-blue" aria-labelledby="course-title">
+    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" fetchpriority="high"
          class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
          onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
     <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
@@ -21,7 +21,7 @@ layout: default
                 </ol>
             </nav>
             <p class="eyebrow text-white mb-4">{{ page.tag | escape }}</p>
-            <h1 class="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-5 max-w-3xl">{{ page.title | escape }}</h1>
+            <h1 id="course-title" class="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-5 max-w-3xl">{{ page.title | escape }}</h1>
             <p class="font-serif text-white leading-relaxed max-w-2xl mb-6">{{ page.description | escape }}</p>
             <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-white mb-8">
                 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">schedule</span> {{ page.duration | escape }}</li>
@@ -32,10 +32,10 @@ layout: default
             </a>
         </div>
     </div>
-</header>
+</section>
 
 <!-- COURSE DETAILS -->
-<main class="py-14 lg:py-20 bg-white">
+<div class="py-14 lg:py-20 bg-white">
     <div class="container mx-auto px-6 lg:px-8">
         <div class="max-w-5xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_340px] gap-12 lg:gap-14 items-start">
             <div class="space-y-12">
@@ -84,7 +84,7 @@ layout: default
             </aside>
         </div>
     </div>
-</main>
+</div>
 
 <script type="application/ld+json">
 {

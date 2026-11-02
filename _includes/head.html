@@ -88,6 +88,24 @@
                 scroll-behavior: auto !important;
             }
         }
+
+        /* Icons render from a ligature font; reserve a 1em square so names like "laptop_windows"
+           never widen the layout while the font loads or if it is blocked */
+        .material-symbols-outlined {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            line-height: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* Touch screens have no hover, so industry tiles show their description panel up front */
+        @media (hover: none) {
+            .tile-reveal { opacity: 1 !important; transform: none !important; }
+            .tile-title { opacity: 0 !important; }
+        }
     </style>
 
     <!-- ABS Digital Components -->
@@ -95,7 +113,7 @@
         @layer components {
             /* Button: Red = one primary action per view, Navy = secondary, Outline = tertiary */
             .btn {
-                @apply inline-flex items-center justify-center gap-2 min-h-[44px] px-6 rounded-full font-bold text-sm whitespace-nowrap transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2;
+                @apply inline-flex items-center justify-center gap-2 min-h-[44px] px-6 rounded-full font-bold text-sm whitespace-nowrap transition-[color,background-color,border-color,box-shadow] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2;
             }
             .btn-lg { @apply min-h-[52px] px-7 text-base; }
             .btn-primary { @apply bg-abs-red text-white hover:bg-abs-red-dark hover:shadow-[0_8px_20px_-6px_rgba(218,31,51,0.6)] active:shadow-none; }
