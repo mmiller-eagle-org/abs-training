@@ -23,6 +23,7 @@ social:
 # Consent Mode defaults: _layouts/default.html; cookie banner: _includes/consent-banner.html + assets/js/consent.js.
 analytics:
   gtm_id: "GTM-5W4KPWDJ"
+  ga4_id: "G-0LT6YRRFZH"  # used to name the _ga_ cookie on /cookie-policy/
 
 collections:
   courses:
