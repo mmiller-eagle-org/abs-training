@@ -2,8 +2,8 @@
 layout: default
 ---
     <!-- TIER 2 BANNER -->
-    <header class="relative overflow-hidden bg-abs-blue">
-        <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
+    <section class="relative overflow-hidden bg-abs-blue" aria-labelledby="hero-title">
+        <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" fetchpriority="high"
              class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
              onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
         <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
@@ -13,7 +13,7 @@ layout: default
             <div class="max-w-5xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_300px] gap-10 lg:gap-16 items-center">
                 <div>
                     <p class="eyebrow text-white mb-4">ABS Training</p>
-                    <h1 class="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">Train smart. Work safer.</h1>
+                    <h1 id="hero-title" class="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">Train smart. Work safer.</h1>
                     <p class="font-serif text-white leading-relaxed max-w-lg mb-8">
                         Equip your workforce with industry-driven regulatory, technical and operational training to improve the safety, reliability and efficiency of your operations.
                     </p>
@@ -24,7 +24,7 @@ layout: default
                 </div>
 
                 <!-- Frosted-glass stat panel -->
-                <aside class="rounded-lg border border-white/30 bg-abs-blue/55 backdrop-blur-md p-6" aria-labelledby="glance-title">
+                <section class="rounded-lg border border-white/30 bg-abs-blue/55 backdrop-blur-md p-6" aria-labelledby="glance-title">
                     <h2 id="glance-title" class="text-white font-bold text-lg mb-4">ABS Training at a glance</h2>
                     <dl class="grid grid-cols-2 gap-x-6 gap-y-5">
                         <div class="flex flex-col-reverse justify-end">
@@ -44,10 +44,10 @@ layout: default
                             <dd class="text-abs-yellow text-3xl font-extrabold">160</dd>
                         </div>
                     </dl>
-                </aside>
+                </section>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- INDUSTRY SECTORS: Product Teaser tiles -->
     <section class="py-16 lg:py-24 bg-gray-50" aria-labelledby="industries-title">
@@ -60,14 +60,14 @@ layout: default
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Tile 1: Maritime -->
-                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
-                    <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_765469201.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
+                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
+                    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_765469201.jpg" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
                     <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity duration-300 group-hover:opacity-80 group-focus-visible:opacity-80"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 text-center transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
+                    <div class="tile-title absolute inset-x-0 bottom-0 p-6 text-center transition-[opacity,transform] duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
                         <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
                         <h3 class="text-white text-xl font-bold">Maritime</h3>
                     </div>
-                    <div class="absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                    <div class="tile-reveal absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-[opacity,transform] duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
                         <p class="text-white font-bold text-lg mb-1" aria-hidden="true">Maritime</p>
                         <p class="font-serif text-gray-100 text-sm leading-relaxed mb-4">Navigate regulations with confidence.</p>
                         <span class="btn btn-primary">Explore <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span></span>
@@ -75,14 +75,14 @@ layout: default
                 </a>
 
                 <!-- Tile 2: Offshore -->
-                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
-                    <img src="https://images.unsplash.com/photo-1727434032773-af3cd98375ba?q=80&w=3132&auto=format&fit=crop" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
+                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
+                    <img src="https://images.unsplash.com/photo-1727434032773-af3cd98375ba?q=80&w=3132&auto=format&fit=crop" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
                     <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity duration-300 group-hover:opacity-80 group-focus-visible:opacity-80"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 text-center transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
+                    <div class="tile-title absolute inset-x-0 bottom-0 p-6 text-center transition-[opacity,transform] duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
                         <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
                         <h3 class="text-white text-xl font-bold">Offshore</h3>
                     </div>
-                    <div class="absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                    <div class="tile-reveal absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-[opacity,transform] duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
                         <p class="text-white font-bold text-lg mb-1" aria-hidden="true">Offshore</p>
                         <p class="font-serif text-gray-100 text-sm leading-relaxed mb-4">Safety and compliance for energy assets.</p>
                         <span class="btn btn-primary">Explore <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span></span>
@@ -90,14 +90,14 @@ layout: default
                 </a>
 
                 <!-- Tile 3: Government -->
-                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
-                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
+                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
+                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
                     <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity duration-300 group-hover:opacity-80 group-focus-visible:opacity-80"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 text-center transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
+                    <div class="tile-title absolute inset-x-0 bottom-0 p-6 text-center transition-[opacity,transform] duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
                         <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
                         <h3 class="text-white text-xl font-bold">Government</h3>
                     </div>
-                    <div class="absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                    <div class="tile-reveal absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-[opacity,transform] duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
                         <p class="text-white font-bold text-lg mb-1" aria-hidden="true">Government</p>
                         <p class="font-serif text-gray-100 text-sm leading-relaxed mb-4">Specialized training for the public sector.</p>
                         <span class="btn btn-primary">Explore <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span></span>
@@ -105,14 +105,14 @@ layout: default
                 </a>
 
                 <!-- Tile 4: Digital and Cyber -->
-                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
+                <a href="#" class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-visible:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.07] group-focus-visible:scale-[1.07]">
                     <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity duration-300 group-hover:opacity-80 group-focus-visible:opacity-80"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 text-center transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
+                    <div class="tile-title absolute inset-x-0 bottom-0 p-6 text-center transition-[opacity,transform] duration-300 group-hover:opacity-0 group-hover:translate-y-2 group-focus-visible:opacity-0">
                         <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
                         <h3 class="text-white text-xl font-bold">Digital and Cyber</h3>
                     </div>
-                    <div class="absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                    <div class="tile-reveal absolute inset-x-4 bottom-4 p-5 rounded-lg border border-white/25 bg-abs-blue/55 backdrop-blur-md opacity-0 translate-y-6 transition-[opacity,transform] duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
                         <p class="text-white font-bold text-lg mb-1" aria-hidden="true">Digital and Cyber</p>
                         <p class="font-serif text-gray-100 text-sm leading-relaxed mb-4">Future-proofing your operations.</p>
                         <span class="btn btn-primary">Explore <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span></span>
@@ -140,7 +140,7 @@ layout: default
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 {% assign featured_courses = site.courses | sort: "featured_order" %}
                 {% for course in featured_courses %}
-                <article data-course-id="{{ course.course_id }}" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                <article data-course-id="{{ course.course_id }}" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
                     <div class="p-6 lg:p-7 flex flex-col flex-grow">
                         <span class="tag tag-gray self-start mb-4">{{ course.tag | escape }}</span>
                         <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">
@@ -149,7 +149,7 @@ layout: default
                         <p class="font-serif text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{{ course.description | escape }}</p>
                         <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-600 font-medium pt-5 mb-5 border-t border-gray-100">
                             <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">schedule</span> {{ course.duration | escape }}</span>
-                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">event</span> <span data-course-next-text>Checking dates?</span></span>
+                            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true">event</span> <span data-course-next-text>Checking dates…</span></span>
                             <span class="hidden items-center gap-1.5" data-course-where><span class="material-symbols-outlined text-[20px] text-abs-blue" aria-hidden="true" data-course-where-icon>groups</span> <span data-course-where-text></span></span>
                         </div>
                         <span class="btn btn-outline self-start" aria-hidden="true">Learn more <span class="material-symbols-outlined text-[20px] btn-arrow">arrow_forward</span></span>
@@ -181,7 +181,7 @@ layout: default
                     </div>
                 </div>
                 <div class="relative min-h-[280px] lg:min-h-[420px]">
-                    <img src="http://ww2.eagle.org/content/dam/eagle/Images/shutterstock_765469201.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_765469201.jpg" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
                 </div>
             </div>
 
@@ -224,7 +224,7 @@ layout: default
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <div class="group relative bg-white rounded-lg border-t-4 border-abs-blue shadow-card p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-abs-red focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                <div class="group relative bg-white rounded-lg border-t-4 border-abs-blue shadow-card p-7 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-abs-red focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
                     <span class="w-12 h-12 rounded-full bg-abs-gray text-abs-blue flex items-center justify-center mb-5 transition-colors group-hover:bg-abs-blue group-hover:text-white">
                         <span class="material-symbols-outlined text-[24px]" aria-hidden="true">mail</span>
                     </span>
@@ -234,7 +234,7 @@ layout: default
                     <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-abs-red" aria-hidden="true">Talk to our team <span class="material-symbols-outlined text-[18px] btn-arrow">arrow_forward</span></span>
                 </div>
 
-                <div class="group relative bg-white rounded-lg border-t-4 border-abs-blue shadow-card p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-abs-red focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                <div class="group relative bg-white rounded-lg border-t-4 border-abs-blue shadow-card p-7 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-abs-red focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
                     <span class="w-12 h-12 rounded-full bg-abs-gray text-abs-blue flex items-center justify-center mb-5 transition-colors group-hover:bg-abs-blue group-hover:text-white">
                         <span class="material-symbols-outlined text-[24px]" aria-hidden="true">verified</span>
                     </span>
@@ -244,7 +244,7 @@ layout: default
                     <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-abs-red" aria-hidden="true">Verify now <span class="material-symbols-outlined text-[18px] btn-arrow">arrow_forward</span></span>
                 </div>
 
-                <div class="group relative bg-white rounded-lg border-t-4 border-abs-blue shadow-card p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-abs-red focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                <div class="group relative bg-white rounded-lg border-t-4 border-abs-blue shadow-card p-7 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-abs-red focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
                     <span class="w-12 h-12 rounded-full bg-abs-gray text-abs-blue flex items-center justify-center mb-5 transition-colors group-hover:bg-abs-blue group-hover:text-white">
                         <span class="material-symbols-outlined text-[24px]" aria-hidden="true">location_on</span>
                     </span>
@@ -259,7 +259,7 @@ layout: default
 
     <!-- NEWSLETTER BAND -->
     <section class="relative overflow-hidden bg-abs-blue py-16 lg:py-20" aria-labelledby="newsletter-title">
-        <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt=""
+        <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" loading="lazy" decoding="async"
              class="absolute inset-0 w-full h-full object-cover object-center opacity-55"
              onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
         <div class="absolute inset-0 bg-gradient-to-r from-abs-blue/90 via-abs-blue/80 to-abs-blue/60"></div>
@@ -276,7 +276,7 @@ layout: default
                     </p>
                 </div>
                 <div class="flex-shrink-0">
-                    <a href="https://ww2.eagle.org/en/news/subscribe.html" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">
+                    <a href="https://absinfo.eagle.org/acton/media/16130/subscription-management" target="_blank" rel="noopener noreferrer" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">
                         Join our mailing list <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span><span class="sr-only"> (opens in a new tab)</span>
                     </a>
                 </div>
