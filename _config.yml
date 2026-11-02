@@ -18,6 +18,12 @@ social:
   links:
     - https://www.linkedin.com/company/american-bureau-of-shipping
 
+# Google Tag Manager container for abs-training.com (account "ABS Training"). Empty = tracking off.
+# GA4 property "ABS Training (abs-training.com)", measurement ID G-0LT6YRRFZH, is configured inside it.
+# Consent Mode defaults: _layouts/default.html; cookie banner: _includes/consent-banner.html + assets/js/consent.js.
+analytics:
+  gtm_id: "GTM-5W4KPWDJ"
+
 collections:
   courses:
     output: true
