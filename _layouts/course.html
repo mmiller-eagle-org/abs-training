@@ -25,7 +25,7 @@ layout: default
             <p class="font-serif text-white leading-relaxed max-w-2xl mb-6">{{ page.description | escape }}</p>
             <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-white mb-8">
                 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">schedule</span> {{ page.duration | escape }}</li>
-                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">groups</span> {{ page.format | escape }}</li>
+                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">{% if page.format contains "Classroom" %}groups{% else %}laptop_windows{% endif %}</span> {{ page.format | escape }}</li>
             </ul>
             <a href="#dates" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">
                 View dates <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_downward</span>
@@ -133,7 +133,7 @@ layout: default
             result.upcoming.forEach(function (o) {
                 var item = el('li', 'py-4 first:pt-1');
                 item.appendChild(el('p', 'text-base font-bold text-abs-blue', o.dateShort.trim()));
-                var details = [window.absOfferings.timeRange(o), window.absOfferings.formatLabel(o) + (o.location ? ', ' + o.location : '')].filter(Boolean).join(' \u00b7 ');
+                var details = [window.absOfferings.timeRange(o), window.absOfferings.placeLabel(o)].filter(Boolean).join(' \u00b7 ');
                 item.appendChild(el('p', 'text-xs text-gray-600 mt-1', details));
                 var seats = window.absOfferings.seatsLeft(o);
                 if (seats) item.appendChild(el('p', 'text-xs text-gray-600 mt-0.5', seats + (seats === 1 ? ' seat' : ' seats') + ' left'));

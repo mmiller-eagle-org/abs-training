@@ -4,8 +4,8 @@ description: "Develop an internal audit program, conduct ISM Code audits and rep
 course_id: "224266683"
 tag: "Auditing"
 duration: "3 days"
-format: Classroom
-featured_order: 4
+format: Virtual Class
+featured_order: 2
 objectives:
   - "Describe ISM Code Parts A and B."
   - "Apply ISM risk management principles."
@@ -17,4 +17,4 @@ objectives:
 audience: "This course suits ship and shore professionals with safety and environmental duties, including those who serve in supervisory roles in shipowning, operating or management firms, need to develop or improve internal audit skills for ISM Code compliance, are tasked with maintaining or enhancing a safety management system, or seek certification as internal auditors."
 ---
 
-This three-day course covers the requirements of ISM Code Parts A and B and shows participants how to apply ISM risk management principles, develop an internal audit program and carry out internal audits. Participants practice separating facts from inferences, identifying nonconformances and corrective actions, and preparing internal audit reports.
+This three-day course provides the knowledge and techniques to plan, conduct and report internal audits of a safety management system (SMS) under the International Safety Management (ISM) Code. Through immersive visual scenarios, group discussions and workshops, participants build practical audit skills, identify nonconformances and strengthen audit competency.

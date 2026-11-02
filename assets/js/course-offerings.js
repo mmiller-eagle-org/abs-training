@@ -27,6 +27,22 @@
         return 'Virtual';
     }
 
+    // Virtual classes report a host room such as "ABS Training Virtual Classroom Greece" as their location
+    function venue(o) {
+        var location = (o.location || '').trim();
+        return location && !/virtual classroom/i.test(location) ? location : '';
+    }
+
+    function placeLabel(o) {
+        var place = venue(o);
+        return place ? formatLabel(o) + ', ' + place : formatLabel(o);
+    }
+
+    function placeIcon(o) {
+        if (venue(o)) return 'location_on';
+        return formatLabel(o) === 'Classroom' ? 'groups' : 'laptop_windows';
+    }
+
     function timeRange(o) {
         var start = timeOf(o.startDate), end = timeOf(o.endDate), tz = timeZoneOf(o.startDate);
         if (!start) return '';
@@ -74,5 +90,5 @@
             });
     }
 
-    window.absOfferings = { load: load, formatLabel: formatLabel, timeRange: timeRange, seatsLeft: seatsLeft };
+    window.absOfferings = { load: load, formatLabel: formatLabel, placeLabel: placeLabel, placeIcon: placeIcon, timeRange: timeRange, seatsLeft: seatsLeft };
 })();
