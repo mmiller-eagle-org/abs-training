@@ -116,6 +116,8 @@
     });
 
     window.addEventListener('resize', function () { if (!banner.hidden) reserveSpace(true); });
+    // Tailwind's CDN styles the banner after this script runs, so re-measure whenever its size changes
+    if (window.ResizeObserver) new ResizeObserver(function () { if (!banner.hidden) reserveSpace(true); }).observe(banner);
 
     window.absConsent = { open: function () { open(document.activeElement); }, get: read };
 

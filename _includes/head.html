@@ -89,6 +89,9 @@
             }
         }
 
+        /* Tailwind display utilities (grid, inline-flex) would otherwise override the hidden attribute */
+        [hidden] { display: none !important; }
+
         /* Icons render from a ligature font; reserve a 1em square so names like "laptop_windows"
            never widen the layout while the font loads or if it is blocked */
         .material-symbols-outlined {
