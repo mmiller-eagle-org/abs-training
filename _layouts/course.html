@@ -28,7 +28,7 @@ layout: default
                 <li class="flex items-center gap-2"><span class="material-symbols-outlined text-[20px]" aria-hidden="true">{% if page.format contains "Classroom" %}groups{% else %}laptop_windows{% endif %}</span> {{ page.format | escape }}</li>
             </ul>
             <a href="#dates" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">
-                View dates <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_downward</span>
+                View Dates <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_downward</span>
             </a>
         </div>
     </div>
@@ -157,7 +157,7 @@ layout: default
             return;
         }
         box.appendChild(el('p', 'text-sm text-gray-700 leading-relaxed mb-4', 'No classes are scheduled right now. Let us know you are interested and we will contact you when new dates are added.'));
-        var next = linkButton(result.interest ? result.interest.courseDetailsURL : catalogUrl, result.interest ? 'Register interest' : 'Browse the catalog', true);
+        var next = linkButton(result.interest ? result.interest.courseDetailsURL : catalogUrl, result.interest ? 'Register Interest' : 'Browse the Catalog', true);
         if (result.interest) {
             next.dataset.track = 'register_interest';
             next.dataset.offeringId = result.interest.offeringId;
@@ -170,7 +170,7 @@ layout: default
         .catch(function () {
             box.textContent = '';
             box.appendChild(el('p', 'text-sm text-gray-700 leading-relaxed mb-4', 'Class dates could not be loaded. You can see all dates in the ABS Training catalog.'));
-            box.appendChild(linkButton(catalogUrl, 'Browse the catalog', true));
+            box.appendChild(linkButton(catalogUrl, 'Browse the Catalog', true));
         });
 })();
 </script>
