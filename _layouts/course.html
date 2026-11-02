@@ -111,7 +111,10 @@ layout: default
 <script>
 (function () {
     window.absCoursePage = { id: {{ page.course_id | jsonify }}, name: {{ page.title | jsonify }}, category: {{ page.tag | jsonify }} };
-    window.absAnalytics.track('view_item', {}, [window.absAnalytics.courseItem(window.absCoursePage)]);
+    // Tracking is optional: privacy extensions may block analytics.js, and class dates must still load
+    try {
+        if (window.absAnalytics) window.absAnalytics.track('view_item', {}, [window.absAnalytics.courseItem(window.absCoursePage)]);
+    } catch (e) {}
 
     var box = document.querySelector('[data-offerings]');
     var catalogUrl = {{ site.portal.catalog | jsonify }};
