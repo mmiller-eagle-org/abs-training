@@ -91,9 +91,9 @@ layout: default
                 </a>
             </div>
 
-            <!-- Cards come from _courses/ (sorted by featured_order); next-class dates are filled in live by the script below -->
+            <!-- Cards: _courses/ entries that have featured_order, in that order; next-class dates are filled in live by the script below -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                {% assign featured_courses = site.courses | sort: "featured_order" %}
+                {% assign featured_courses = site.courses | where_exp: "course", "course.featured_order" | sort: "featured_order" %}
                 {% for course in featured_courses %}
                 <article data-course-id="{{ course.course_id }}" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
                     <div class="p-6 lg:p-7 flex flex-col flex-grow">
@@ -253,11 +253,10 @@ layout: default
                     }
                     var next = result.upcoming[0];
                     var more = result.upcoming.length - 1;
-                    var format = window.absOfferings.formatLabel(next);
                     var where = card.querySelector('[data-course-where]');
                     nextText.textContent = 'Next: ' + next.dateShort.trim() + (more ? ' (+' + more + ' more)' : '');
-                    card.querySelector('[data-course-where-text]').textContent = next.location ? format + ', ' + next.location : format;
-                    card.querySelector('[data-course-where-icon]').textContent = next.location ? 'location_on' : (format === 'Classroom' ? 'groups' : 'laptop_windows');
+                    card.querySelector('[data-course-where-text]').textContent = window.absOfferings.placeLabel(next);
+                    card.querySelector('[data-course-where-icon]').textContent = window.absOfferings.placeIcon(next);
                     where.classList.remove('hidden');
                     where.classList.add('flex');
                 })

@@ -5,7 +5,6 @@ course_id: "226074851"
 tag: "Tankers"
 duration: "2 days"
 format: Classroom
-featured_order: 2
 objectives:
   - "Review fast facts and frequently asked questions."
   - "Apply the analysis and structure approach."

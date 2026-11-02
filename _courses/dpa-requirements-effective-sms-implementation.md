@@ -5,7 +5,7 @@ course_id: "226074836"
 tag: "Maritime"
 duration: "2 days"
 format: Classroom
-featured_order: 1
+featured_order: 3
 objectives:
   - "Describe the ISM Code and its legal implications."
   - "Identify pertinent mandatory legislation and applicable codes, guidelines and standards."

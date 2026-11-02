@@ -4,8 +4,8 @@ description: "Apply the ABS Marine Root Cause Analysis Technique (MaRCAT) to fin
 course_id: "226074832"
 tag: "Safety"
 duration: "2 days"
-format: Classroom
-featured_order: 6
+format: Virtual Class
+featured_order: 1
 objectives:
   - "Describe the fundamentals of incident investigation and the stages involved."
   - "Gather and preserve the data needed to carry out an incident investigation."
