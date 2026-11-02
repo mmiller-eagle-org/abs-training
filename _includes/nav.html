@@ -1,8 +1,8 @@
     <!-- TOP NAVIGATION BAR -->
     <nav class="bg-abs-blue-dark border-b border-white/10" aria-label="Primary navigation">
         <div class="container mx-auto px-6 lg:px-8">
-            <div class="max-w-5xl mx-auto flex items-center justify-between min-h-[72px] py-3 gap-6">
-                <a href="{{ '/' | relative_url }}" class="inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-abs-blue-dark rounded-sm" aria-label="ABS Training home">
+            <div class="max-w-5xl mx-auto flex items-center justify-between min-h-[72px] py-3 gap-3 sm:gap-6">
+                <a href="{{ '/' | relative_url }}" class="shrink-0 inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-abs-blue-dark rounded-sm" aria-label="ABS Training home">
                     <img src="/assets/abs-affiliated-logo-white.png" alt="ABS &amp; Affiliated Companies" width="1893" height="747" class="h-12 sm:h-14 w-auto">
                 </a>
 
@@ -13,14 +13,15 @@
                     <a href="/#help-title" class="hover:text-white transition-colors focus-visible:outline-none focus-visible:underline">Support</a>
                 </div>
 
-                <div class="flex items-center gap-3">
+                <!-- Below 360px the logo, Log in and menu button don't fit side by side, so Log in moves into the phone menu -->
+                <div class="shrink-0 flex items-center gap-3">
                     <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white/90 hover:text-white px-3 py-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full">
                         Course Catalog
                     </a>
-                    <a href="https://portal.abs-training.com/lmt/xlr8login.login?site=abs&amp;in_language_identifier=en-us&amp;in_region=gl" class="btn btn-outline-light !min-h-[40px] !px-5 !text-xs uppercase tracking-wider focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark">
+                    <a href="https://portal.abs-training.com/lmt/xlr8login.login?site=abs&amp;in_language_identifier=en-us&amp;in_region=gl" class="btn btn-outline-light hidden min-[360px]:inline-flex !min-h-[40px] !px-5 !text-xs uppercase tracking-wider focus-visible:ring-white focus-visible:ring-offset-abs-blue-dark">
                         <span class="material-symbols-outlined text-[18px]" aria-hidden="true">login</span> Log in
                     </a>
-                    <button type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" class="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-full text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                    <button type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" class="md:hidden shrink-0 inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-full text-white hover:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
                         <span class="material-symbols-outlined text-[28px]" aria-hidden="true" data-menu-icon>menu</span>
                         <span class="sr-only">Menu</span>
                     </button>
@@ -36,6 +37,7 @@
                 <li><a href="/#why-title" class="block py-3 hover:text-abs-yellow transition-colors focus-visible:outline-none focus-visible:underline">Why ABS</a></li>
                 <li><a href="/#help-title" class="block py-3 hover:text-abs-yellow transition-colors focus-visible:outline-none focus-visible:underline">Support</a></li>
                 <li><a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" class="block py-3 hover:text-abs-yellow transition-colors focus-visible:outline-none focus-visible:underline">Course Catalog</a></li>
+                <li class="min-[360px]:hidden"><a href="https://portal.abs-training.com/lmt/xlr8login.login?site=abs&amp;in_language_identifier=en-us&amp;in_region=gl" class="block py-3 hover:text-abs-yellow transition-colors focus-visible:outline-none focus-visible:underline">Log in</a></li>
             </ul>
         </div>
     </nav>

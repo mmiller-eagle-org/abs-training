@@ -89,6 +89,18 @@
             }
         }
 
+        /* Icons render from a ligature font; reserve a 1em square so names like "laptop_windows"
+           never widen the layout while the font loads or if it is blocked */
+        .material-symbols-outlined {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            line-height: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
         /* Touch screens have no hover, so industry tiles show their description panel up front */
         @media (hover: none) {
             .tile-reveal { opacity: 1 !important; transform: none !important; }
