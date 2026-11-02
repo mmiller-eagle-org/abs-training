@@ -121,7 +121,7 @@ layout: default
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 {% assign featured_courses = site.courses | where_exp: "course", "course.featured_order" | sort: "featured_order" %}
                 {% for course in featured_courses %}
-                <article data-course-id="{{ course.course_id }}" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                <article data-course-id="{{ course.course_id }}" data-course-name="{{ course.title | escape }}" data-course-tag="{{ course.tag | escape }}" class="group relative bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
                     <div class="p-6 lg:p-7 flex flex-col flex-grow">
                         <span class="tag tag-gray self-start mb-4">{{ course.tag | escape }}</span>
                         <h3 class="text-lg font-bold text-abs-blue leading-snug mb-2 transition-colors group-hover:text-abs-red">

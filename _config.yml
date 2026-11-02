@@ -18,6 +18,11 @@ social:
   links:
     - https://www.linkedin.com/company/american-bureau-of-shipping
 
+# Google Tag Manager container for abs-training.com, e.g. "GTM-XXXXXXX". Empty = tracking off.
+# Set it only after the cookie consent banner (Consent Mode v2) is configured in that container.
+analytics:
+  gtm_id: ""
+
 collections:
   courses:
     output: true

@@ -24,7 +24,7 @@ jobs:
       - name: Check expected pages exist
         run: |
           set -e
-          for f in index.html sitemap.xml robots.txt CNAME assets/js/course-offerings.js; do
+          for f in index.html sitemap.xml robots.txt CNAME assets/js/course-offerings.js assets/js/analytics.js; do
             test -f "_site/$f" || { echo "Missing _site/$f"; exit 1; }
           done
           count=$(find _site/courses -name index.html | wc -l)

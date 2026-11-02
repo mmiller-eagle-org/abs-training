@@ -110,6 +110,9 @@ layout: default
 <script src="{{ '/assets/js/course-offerings.js' | relative_url }}"></script>
 <script>
 (function () {
+    window.absCoursePage = { id: {{ page.course_id | jsonify }}, name: {{ page.title | jsonify }}, category: {{ page.tag | jsonify }} };
+    window.absAnalytics.track('view_item', {}, [window.absAnalytics.courseItem(window.absCoursePage)]);
+
     var box = document.querySelector('[data-offerings]');
     var catalogUrl = {{ site.portal.catalog | jsonify }};
 
@@ -138,7 +141,12 @@ layout: default
                 var seats = window.absOfferings.seatsLeft(o);
                 if (seats) item.appendChild(el('p', 'text-xs text-gray-600 mt-0.5', seats + (seats === 1 ? ' seat' : ' seats') + ' left'));
                 var cta = el('div', 'mt-3');
-                cta.appendChild(linkButton(o.courseDetailsURL, 'Register', true));
+                var register = linkButton(o.courseDetailsURL, 'Register', true);
+                register.dataset.track = 'register';
+                register.dataset.offeringId = o.offeringId;
+                register.dataset.classDate = o.dateShort.trim();
+                register.dataset.classFormat = window.absOfferings.formatLabel(o);
+                cta.appendChild(register);
                 item.appendChild(cta);
                 list.appendChild(item);
             });
@@ -146,7 +154,12 @@ layout: default
             return;
         }
         box.appendChild(el('p', 'text-sm text-gray-700 leading-relaxed mb-4', 'No classes are scheduled right now. Let us know you are interested and we will contact you when new dates are added.'));
-        box.appendChild(linkButton(result.interest ? result.interest.courseDetailsURL : catalogUrl, result.interest ? 'Register interest' : 'Browse the catalog', true));
+        var next = linkButton(result.interest ? result.interest.courseDetailsURL : catalogUrl, result.interest ? 'Register interest' : 'Browse the catalog', true);
+        if (result.interest) {
+            next.dataset.track = 'register_interest';
+            next.dataset.offeringId = result.interest.offeringId;
+        }
+        box.appendChild(next);
     }
 
     window.absOfferings.load(box.getAttribute('data-course-id'))
