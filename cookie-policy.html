@@ -1,0 +1,172 @@
+---
+layout: default
+title: Cookie Policy
+description: How abs-training.com uses cookies and similar technologies, and how to change your choices.
+permalink: /cookie-policy/
+last_updated: November 2, 2026
+---
+{% assign tracking_on = false %}{% if site.analytics.gtm_id and site.analytics.gtm_id != "" %}{% assign tracking_on = true %}{% endif %}
+{% assign ga_cookie = site.analytics.ga4_id | default: "G-XXXXXXX" | remove: "G-" | prepend: "_ga_" %}
+{% capture th %}scope="col" class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-abs-blue"{% endcapture %}
+{% capture td %}class="px-4 py-3 align-top text-sm text-gray-700 leading-relaxed"{% endcapture %}
+{% capture name %}class="px-4 py-3 align-top text-sm font-bold text-abs-blue whitespace-nowrap"{% endcapture %}
+{% capture table_wrap %}class="mt-4 overflow-x-auto rounded-lg border border-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue" tabindex="0"{% endcapture %}
+
+<!-- PAGE HEADER -->
+<section class="bg-abs-blue" aria-labelledby="policy-title">
+    <div class="container mx-auto px-6 lg:px-8 py-12 lg:py-16">
+        <div class="max-w-3xl mx-auto">
+            <nav aria-label="Breadcrumb" class="mb-6">
+                <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-white/80">
+                    <li><a href="{{ '/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Home</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li aria-current="page" class="text-white">Cookie Policy</li>
+                </ol>
+            </nav>
+            <p class="eyebrow text-white mb-4">Legal</p>
+            <h1 id="policy-title" class="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Cookie Policy</h1>
+            <p class="text-sm text-white/80">Last updated <time datetime="2026-11-02">{{ page.last_updated }}</time></p>
+        </div>
+    </div>
+</section>
+
+<!-- POLICY -->
+<div class="py-12 lg:py-16 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto space-y-12 font-serif text-gray-700 leading-relaxed">
+
+            <section aria-labelledby="intro-title" class="space-y-4">
+                <h2 id="intro-title" class="sr-only">About this policy</h2>
+                <p>
+                    This Cookie Policy explains how ABS Training, part of the American Bureau of Shipping (“ABS”, “we”, “us”), uses cookies and similar technologies on <strong class="font-semibold text-abs-blue">abs-training.com</strong>, and how you can control them. It should be read together with the <a href="https://ww2.eagle.org/en/legal-privacy.html" target="_blank" rel="noopener noreferrer" class="font-sans font-bold text-abs-blue underline underline-offset-2 hover:text-abs-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue rounded-sm">ABS Privacy Policy<span class="sr-only"> (opens in a new tab)</span></a>.
+                </p>
+                <p>
+                    Course registration, sign-in and payment take place on the ABS Training portal at portal.abs-training.com, which is provided by our learning platform partner and uses its own cookies. This policy covers abs-training.com only.
+                </p>
+            </section>
+
+            {% if tracking_on %}
+            <section aria-labelledby="choices-title" class="rounded-lg bg-gray-50 border border-gray-200 p-6 font-sans">
+                <h2 id="choices-title" class="text-lg font-bold text-abs-blue mb-2">Your cookie choices</h2>
+                <p class="text-sm text-gray-700 leading-relaxed mb-4">You can accept or reject analytics and advertising cookies at any time. Changes apply right away, and rejecting deletes the cookies those services have already set on this site.</p>
+                <button type="button" data-consent-open class="btn btn-secondary">
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">tune</span> Change Cookie Settings
+                </button>
+            </section>
+            {% endif %}
+
+            <section aria-labelledby="what-title" class="space-y-4">
+                <span class="block w-12 h-1 bg-abs-red"></span>
+                <h2 id="what-title" class="font-sans text-2xl text-abs-blue uppercase tracking-tight"><span class="font-light">What are</span> <span class="font-extrabold">cookies?</span></h2>
+                <p>
+                    Cookies are small text files that a website stores in your browser. Similar technologies, such as your browser’s local storage, work in the same way. They let a site remember information between pages and visits. In this policy, “cookies” includes these similar technologies.
+                </p>
+                <p>
+                    <strong class="font-semibold text-abs-blue">First-party</strong> cookies are set by abs-training.com. <strong class="font-semibold text-abs-blue">Third-party</strong> cookies are set by another company’s domain, such as google.com.
+                </p>
+            </section>
+
+            <section aria-labelledby="types-title" class="space-y-8">
+                <div class="space-y-4">
+                    <span class="block w-12 h-1 bg-abs-red"></span>
+                    <h2 id="types-title" class="font-sans text-2xl text-abs-blue uppercase tracking-tight"><span class="font-light">Cookies</span> <span class="font-extrabold">we use</span></h2>
+                    <p>We group cookies into three categories. Only strictly necessary storage is used without your choice where consent is required.</p>
+                </div>
+
+                <div>
+                    <h3 id="necessary-title" class="font-sans text-lg font-bold text-abs-blue">Strictly necessary</h3>
+                    <p class="mt-2">Needed for the site to work as you expect. These can’t be switched off in our cookie settings.</p>
+                    <div {{ table_wrap }} role="region" aria-labelledby="necessary-title">
+                        <table class="min-w-full divide-y divide-gray-200 font-sans">
+                            <thead class="bg-gray-50"><tr><th {{ th }}>Name</th><th {{ th }}>Provider</th><th {{ th }}>Purpose</th><th {{ th }}>Duration</th></tr></thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr><td {{ name }}>abs_consent_v1</td><td {{ td }}>abs-training.com (local storage)</td><td {{ td }}>Remembers your cookie choices so we don’t ask on every page.</td><td {{ td }}>Until you change your choice or clear your browser data</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 id="analytics-title" class="font-sans text-lg font-bold text-abs-blue">Analytics</h3>
+                    <p class="mt-2">
+                        Google Analytics helps us understand how visitors use the site, such as which pages and courses are viewed and which buttons are clicked, so we can improve it. We don’t send names, email addresses or other information that identifies you to Google; email addresses in links are removed before data is sent.
+                    </p>
+                    <div {{ table_wrap }} role="region" aria-labelledby="analytics-title">
+                        <table class="min-w-full divide-y divide-gray-200 font-sans">
+                            <thead class="bg-gray-50"><tr><th {{ th }}>Name</th><th {{ th }}>Provider</th><th {{ th }}>Purpose</th><th {{ th }}>Duration</th></tr></thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr><td {{ name }}>_ga</td><td {{ td }}>Google Analytics (first-party)</td><td {{ td }}>Distinguishes one visitor’s browser from another.</td><td {{ td }}>Up to 2 years</td></tr>
+                                <tr><td {{ name }}>{{ ga_cookie }}</td><td {{ td }}>Google Analytics (first-party)</td><td {{ td }}>Keeps track of the current visit.</td><td {{ td }}>Up to 2 years</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-3 text-sm text-gray-600">Some browsers limit how long cookies are kept, for example to about 13 months.</p>
+                </div>
+
+                <div>
+                    <h3 id="advertising-title" class="font-sans text-lg font-bold text-abs-blue">Advertising</h3>
+                    <p class="mt-2">
+                        Google Ads cookies tell us when someone who clicked one of our ads goes on to register for a course, so we can measure and improve our advertising. Google may also set its own cookies on its domains.
+                    </p>
+                    <div {{ table_wrap }} role="region" aria-labelledby="advertising-title">
+                        <table class="min-w-full divide-y divide-gray-200 font-sans">
+                            <thead class="bg-gray-50"><tr><th {{ th }}>Name</th><th {{ th }}>Provider</th><th {{ th }}>Purpose</th><th {{ th }}>Duration</th></tr></thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr><td {{ name }}>_gcl_au</td><td {{ td }}>Google Ads (first-party)</td><td {{ td }}>Measures how our ads lead to visits and registrations.</td><td {{ td }}>90 days</td></tr>
+                                <tr><td {{ name }}>_gcl_aw</td><td {{ td }}>Google Ads (first-party)</td><td {{ td }}>Stores the ad click ID when you arrive from a Google ad.</td><td {{ td }}>90 days</td></tr>
+                                <tr><td {{ name }}>_gcl_ls</td><td {{ td }}>Google Ads (local storage)</td><td {{ td }}>Stores ad click information as a backup to the cookies above.</td><td {{ td }}>Until removed by Google or your browser</td></tr>
+                                <tr><td {{ name }}>GCL_AW_P and others</td><td {{ td }}>Google (third-party: google.com, doubleclick.net)</td><td {{ td }}>Set by Google to measure ad clicks and conversions.</td><td {{ td }}>Up to 90 days; see Google’s policies</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-labelledby="defaults-title" class="space-y-4">
+                <span class="block w-12 h-1 bg-abs-red"></span>
+                <h2 id="defaults-title" class="font-sans text-2xl text-abs-blue uppercase tracking-tight"><span class="font-light">How your</span> <span class="font-extrabold">choices work</span></h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>When you first visit, a banner lets you <strong class="font-semibold text-abs-blue">accept all</strong>, <strong class="font-semibold text-abs-blue">reject all</strong> or <strong class="font-semibold text-abs-blue">customize</strong> analytics and advertising cookies.</li>
+                    <li>If you visit from the European Economic Area, the United Kingdom or Switzerland, analytics and advertising cookies stay off unless you accept them.</li>
+                    <li>If you visit from elsewhere, analytics and advertising cookies are on until you make a choice. You can reject them at any time.</li>
+                    <li>If your browser sends a Global Privacy Control signal, advertising cookies are off by default.</li>
+                    <li>When analytics or advertising is off, Google may still receive basic information without cookies, such as that a page was viewed, so it can produce aggregated, anonymous reports. These signals don’t identify you and don’t store anything on your device.</li>
+                    <li>Rejecting a category deletes the cookies that category has set on abs-training.com.</li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="other-title" class="space-y-4">
+                <span class="block w-12 h-1 bg-abs-red"></span>
+                <h2 id="other-title" class="font-sans text-2xl text-abs-blue uppercase tracking-tight"><span class="font-light">Other services</span> <span class="font-extrabold">on this site</span></h2>
+                <p>These services don’t set cookies on abs-training.com, but your browser connects to them to load parts of the page, which shares your IP address and browser details with the provider:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong class="font-semibold text-abs-blue">Google Fonts</strong> (fonts.googleapis.com, fonts.gstatic.com): text fonts and icons.</li>
+                    <li><strong class="font-semibold text-abs-blue">Tailwind CSS</strong> (cdn.tailwindcss.com): page styling.</li>
+                    <li><strong class="font-semibold text-abs-blue">ABS</strong> (ww2.eagle.org) and <strong class="font-semibold text-abs-blue">Unsplash</strong> (images.unsplash.com): images.</li>
+                    <li><strong class="font-semibold text-abs-blue">ABS Training portal</strong> (portal.abs-training.com): upcoming class dates shown on course pages.</li>
+                </ul>
+                <p>Links to the ABS Training portal, eagle.org and LinkedIn take you to sites with their own cookie and privacy policies.</p>
+            </section>
+
+            <section aria-labelledby="manage-title" class="space-y-4">
+                <span class="block w-12 h-1 bg-abs-red"></span>
+                <h2 id="manage-title" class="font-sans text-2xl text-abs-blue uppercase tracking-tight"><span class="font-light">Managing</span> <span class="font-extrabold">cookies</span></h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>{% if tracking_on %}Use <strong class="font-semibold text-abs-blue">Cookie Settings</strong> in the footer of any page, or the button at the top of this page.{% else %}This site currently sets no analytics or advertising cookies.{% endif %}</li>
+                    <li>Use your browser settings to block or delete cookies. Blocking all cookies may affect how some websites work.</li>
+                    <li>Opt out of Google Analytics on all websites with the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="font-sans font-bold text-abs-blue underline underline-offset-2 hover:text-abs-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue rounded-sm">Google Analytics opt-out browser add-on<span class="sr-only"> (opens in a new tab)</span></a>.</li>
+                    <li>Learn how Google uses data in <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" class="font-sans font-bold text-abs-blue underline underline-offset-2 hover:text-abs-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue rounded-sm">How Google uses information from sites that use its services<span class="sr-only"> (opens in a new tab)</span></a>.</li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="changes-title" class="space-y-4">
+                <span class="block w-12 h-1 bg-abs-red"></span>
+                <h2 id="changes-title" class="font-sans text-2xl text-abs-blue uppercase tracking-tight"><span class="font-light">Changes and</span> <span class="font-extrabold">contact</span></h2>
+                <p>We may update this policy when we change the cookies we use. The date at the top shows when it was last updated.</p>
+                <p>
+                    Questions about this policy? Email <a href="mailto:abstraining@eagle.org" class="font-sans font-bold text-abs-blue underline underline-offset-2 hover:text-abs-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue rounded-sm">abstraining@eagle.org</a>. For how ABS handles personal information and your privacy rights, see the <a href="https://ww2.eagle.org/en/legal-privacy.html" target="_blank" rel="noopener noreferrer" class="font-sans font-bold text-abs-blue underline underline-offset-2 hover:text-abs-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue rounded-sm">ABS Privacy Policy<span class="sr-only"> (opens in a new tab)</span></a>.
+                </p>
+            </section>
+        </div>
+    </div>
+</div>

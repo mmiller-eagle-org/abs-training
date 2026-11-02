@@ -52,7 +52,10 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: 'consent_update', consent_analytics: c.analytics, consent_ads: c.ads });
         if (!c.analytics) clearCookies('_ga');
-        if (!c.ads) clearCookies('_gcl');
+        if (!c.ads) {
+            clearCookies('_gcl');
+            try { localStorage.removeItem('_gcl_ls'); } catch (e) {}
+        }
     }
 
     // Keep fixed-banner space clear so it never covers the page end or a focused element (WCAG 2.4.11)
