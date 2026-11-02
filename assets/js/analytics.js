@@ -1,6 +1,6 @@
 // Site analytics: pushes events into window.dataLayer for Google Tag Manager.
-// Nothing is sent and no cookies are set until a GTM container ID is configured
-// (analytics.gtm_id in _config.yml); consent is handled inside that container.
+// Nothing is sent and no cookies are set unless a GTM container ID is configured
+// (analytics.gtm_id in _config.yml); Consent Mode defaults are set in _layouts/default.html.
 //
 // Events
 //   view_item                course page viewed           ecommerce.items[0] = the course

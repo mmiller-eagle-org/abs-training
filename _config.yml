@@ -18,10 +18,11 @@ social:
   links:
     - https://www.linkedin.com/company/american-bureau-of-shipping
 
-# Google Tag Manager container for abs-training.com, e.g. "GTM-XXXXXXX". Empty = tracking off.
-# Set it only after the cookie consent banner (Consent Mode v2) is configured in that container.
+# Google Tag Manager container for abs-training.com (account "ABS Training"). Empty = tracking off.
+# GA4 property "ABS Training (abs-training.com)", measurement ID G-0LT6YRRFZH, is configured inside it.
+# Consent Mode defaults are set in _layouts/default.html; add a consent banner before running EU/UK ads.
 analytics:
-  gtm_id: ""
+  gtm_id: "GTM-5W4KPWDJ"
 
 collections:
   courses:
