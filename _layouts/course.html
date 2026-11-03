@@ -138,7 +138,8 @@ layout: default
             var list = el('ul', 'divide-y divide-gray-100 -my-1');
             result.upcoming.forEach(function (o) {
                 var item = el('li', 'py-4 first:pt-1');
-                item.appendChild(el('p', 'text-base font-bold text-abs-blue', o.dateShort.trim()));
+                // h3 so each class is reachable by heading navigation under the "Upcoming classes" h2
+                item.appendChild(el('h3', 'text-base font-bold text-abs-blue', window.absOfferings.dateRange(o)));
                 var details = [window.absOfferings.timeRange(o), window.absOfferings.placeLabel(o)].filter(Boolean).join(' \u00b7 ');
                 item.appendChild(el('p', 'text-xs text-gray-600 mt-1', details));
                 var seats = window.absOfferings.seatsLeft(o);
@@ -147,7 +148,7 @@ layout: default
                 var register = linkButton(o.courseDetailsURL, 'Register', true);
                 register.dataset.track = 'register';
                 register.dataset.offeringId = o.offeringId;
-                register.dataset.classDate = o.dateShort.trim();
+                register.dataset.classDate = window.absOfferings.dateRange(o);
                 register.dataset.classFormat = window.absOfferings.formatLabel(o);
                 cta.appendChild(register);
                 item.appendChild(cta);

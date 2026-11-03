@@ -15,6 +15,23 @@
         return m ? m[1] : '';
     }
 
+    var MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    // US month-day-year from the class's own start and end dates: "Dec 8, 2026", "Dec 14–15, 2026",
+    // "Nov 30 – Dec 2, 2026", "Dec 30, 2026 – Jan 2, 2027". The feed's dateShort ("30 Nov -2 Dec 2026")
+    // is only a fallback; its hyphen before a digit is read as "minus" by screen readers.
+    function dateRange(o) {
+        var s = parseStart(o.startDate);
+        var e = parseStart(o.endDate) || s;
+        if (!s) return (o.dateShort || '').trim();
+        var md = function (d) { return MONTH_NAMES[d.getMonth()] + ' ' + d.getDate(); };
+        var y = function (d) { return d.getFullYear(); };
+        if (s.getTime() === e.getTime()) return md(s) + ', ' + y(s);
+        if (y(s) !== y(e)) return md(s) + ', ' + y(s) + ' \u2013 ' + md(e) + ', ' + y(e);
+        if (s.getMonth() !== e.getMonth()) return md(s) + ' \u2013 ' + md(e) + ', ' + y(e);
+        return md(s) + '\u2013' + e.getDate() + ', ' + y(e);
+    }
+
     function timeZoneOf(value) {
         var m = /\)\s*([A-Z]{2,5})\s*$/.exec(value || '');
         return m ? m[1] : '';
@@ -90,5 +107,5 @@
             });
     }
 
-    window.absOfferings = { load: load, formatLabel: formatLabel, placeLabel: placeLabel, placeIcon: placeIcon, timeRange: timeRange, seatsLeft: seatsLeft };
+    window.absOfferings = { load: load, dateRange: dateRange, formatLabel: formatLabel, placeLabel: placeLabel, placeIcon: placeIcon, timeRange: timeRange, seatsLeft: seatsLeft };
 })();

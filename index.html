@@ -225,7 +225,7 @@ layout: default
                     var next = result.upcoming[0];
                     var more = result.upcoming.length - 1;
                     var where = card.querySelector('[data-course-where]');
-                    nextText.textContent = 'Next: ' + next.dateShort.trim() + (more ? ' (+' + more + ' more)' : '');
+                    nextText.textContent = 'Next: ' + window.absOfferings.dateRange(next) + (more ? ' (+' + more + ' more)' : '');
                     card.querySelector('[data-course-where-text]').textContent = window.absOfferings.placeLabel(next);
                     card.querySelector('[data-course-where-icon]').textContent = window.absOfferings.placeIcon(next);
                     where.classList.remove('hidden');
