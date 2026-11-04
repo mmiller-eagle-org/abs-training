@@ -1,6 +1,7 @@
-// Course list for the on-site catalog (/courses/) and course view (/courses/view/): the Seertech public
-// CatalogOut feed (report "Logged out catalog"), merged with the site's own course pages (_courses/).
-// The feed allows abs-training.com by CORS and needs no login. Course IDs match _courses/ course_id.
+// Course list for the on-site catalog (/courses/) and course view (/courses/view/): the site's course pages
+// (_courses/: hand-written plus the ones scripts/sync_catalog.py generates from the portal every day), merged
+// with the Seertech public CatalogOut feed so a course added on the portal since the last sync still appears
+// (linked to /courses/view/). The feed allows abs-training.com by CORS and needs no login.
 (function () {
     var FEED = 'https://portal.abs-training.com/ws/report/out/abs/CatalogOut';
     var VIEW_PATH = '/courses/view/';
@@ -26,8 +27,9 @@
         return 'virtual';
     }
 
-    // Course pages state their format in words, such as "Classroom and Virtual Class"
+    // Course pages state their format in words, such as "Classroom and Virtual Class" or "Online Bundle"
     function siteFormats(text) {
+        if (/bundle/i.test(text)) return ['bundle'];
         var list = [];
         if (/virtual/i.test(text)) list.push('virtual');
         if (/classroom/i.test(text)) list.push('classroom');
@@ -60,7 +62,7 @@
             return {
                 id: String(c.id), title: c.title, description: c.description || '', tag: c.tag || '',
                 duration: c.duration || '', formats: siteFormats(c.format || ''), formatText: c.format || '',
-                url: c.url, onSite: true, inFeed: false, code: '', detailsUrl: ''
+                url: c.url, onSite: true, inFeed: false, code: c.code || '', detailsUrl: '', search: c.search || ''
             };
         });
     }
@@ -165,12 +167,17 @@
         return fold(cleanQuery(text)).split(' ').filter(Boolean);
     }
 
-    // 1 = every word in the title, 2 = every word somewhere in what the site knows about the course, 0 = no match
+    // 1 = every word in the title, 2 = every word somewhere in what the site knows about the course (its page's
+    // description, objectives, audience and skills), 0 = no match
     function matchRank(course, words) {
         if (!words.length) return 1;
         var has = function (haystack) { return words.every(function (w) { return haystack.indexOf(w) !== -1; }); };
         if (has(fold(course.title))) return 1;
-        var text = fold([course.title, course.description, course.tag, course.formatText, course.code, course.id].join(' '));
+        if (course.folded === undefined) {
+            course.folded = fold([course.title, course.description, course.tag, course.formatText, course.code, course.id,
+                course.search].join(' '));
+        }
+        var text = course.folded;
         return has(text) ? 2 : 0;
     }
 
