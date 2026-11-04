@@ -1,0 +1,116 @@
+---
+layout: default
+title: Course Catalog
+description: Search and browse ABS Training courses in maritime and offshore safety, auditing, classification, marine fuels and more, then pick a class date and register.
+permalink: /courses/
+---
+{% include site-courses-json.html %}
+<!-- CATALOG HEADER -->
+<section class="relative overflow-hidden bg-abs-blue" aria-labelledby="catalog-title">
+    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" fetchpriority="high"
+         class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
+         onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
+    <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
+    <div class="absolute inset-0 bg-abs-blue/65"></div>
+
+    <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-16">
+        <div class="max-w-5xl mx-auto">
+            <nav aria-label="Breadcrumb" class="mb-6">
+                <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-white/80">
+                    <li><a href="{{ '/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Home</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li aria-current="page" class="text-white">Course Catalog</li>
+                </ol>
+            </nav>
+            <p class="eyebrow text-white mb-4">ABS Training</p>
+            <h1 id="catalog-title" class="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-5">Course Catalog</h1>
+            <p class="font-serif text-white leading-relaxed max-w-2xl mb-8">Find a course by name or topic, choose a class date and register.</p>
+
+            <!-- Works without JavaScript too: it submits ?q= to this page, which the script reads -->
+            <form role="search" action="{{ '/courses/' | relative_url }}" method="get" class="max-w-2xl" data-catalog-form>
+                <label for="course-search" class="block text-sm font-bold text-white mb-2">Search courses</label>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1 min-w-0">
+                        <span class="material-symbols-outlined pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[22px] text-gray-600" aria-hidden="true">search</span>
+                        <input id="course-search" name="q" type="search" maxlength="100" autocomplete="off" spellcheck="false" enterkeyhint="search"
+                               aria-describedby="course-search-hint" placeholder="Course name or topic"
+                               class="scroll-mt-6 w-full min-h-[52px] rounded-full border-2 border-white bg-white pl-12 pr-5 text-base text-abs-blue-dark placeholder:text-gray-600 shadow-search focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-abs-blue">
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">Search</button>
+                </div>
+                <p id="course-search-hint" class="mt-3 text-sm text-white">Try a topic such as auditor, fuel, hull or incident.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- RESULTS: filled in live by assets/js/catalog-page.js from the portal feed plus the course pages on this site -->
+<section class="py-12 lg:py-16 bg-gray-50" aria-labelledby="results-title">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col gap-6 mb-8">
+                <div>
+                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <h2 id="results-title" class="text-2xl lg:text-3xl text-abs-blue uppercase tracking-tight"><span class="font-light">Browse</span> <span class="font-extrabold">Courses</span></h2>
+                </div>
+
+                <fieldset class="min-w-0" data-format-filter>
+                    <legend class="mb-3 text-xs font-bold uppercase tracking-wider text-gray-700">Format</legend>
+                    <div class="flex flex-wrap gap-2">
+                        {% assign format_options = "|All,virtual|Virtual Class,classroom|Classroom,online|Self-Paced Online,bundle|Online Bundle" | split: "," %}
+                        {% for option in format_options %}
+                        {% assign parts = option | split: "|" %}
+                        <label class="relative cursor-pointer" data-format-option="{{ parts[0] }}">
+                            <input type="radio" name="format" value="{{ parts[0] }}" class="peer sr-only"{% if forloop.first %} checked{% endif %}>
+                            <span class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border-2 border-abs-blue-light bg-white px-4 text-sm font-bold text-abs-blue transition-colors hover:border-abs-blue hover:bg-[#E6EAEF] peer-checked:border-abs-blue peer-checked:bg-abs-blue peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-abs-blue peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-gray-50">
+                                {{ parts[1] }} <span class="font-medium" data-format-count></span>
+                            </span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                </fieldset>
+
+                <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-gray-200 pt-5">
+                    <p class="text-sm font-medium text-gray-700" data-results-summary>Loading courses…</p>
+                    <button type="button" class="btn btn-outline !min-h-[40px] !px-4" data-clear-search hidden>
+                        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">close</span> Clear Search
+                    </button>
+                </div>
+                <!-- Screen-reader announcement of the result count, sent once typing pauses -->
+                <p role="status" class="sr-only" data-catalog-status></p>
+            </div>
+
+            <div data-results-notice hidden></div>
+            <div data-results data-portal-catalog="{{ site.portal.catalog }}">
+                <noscript>
+                    <p class="font-serif text-gray-700 leading-relaxed mb-6">Course search needs JavaScript. You can <a href="{{ site.portal.catalog }}" class="font-bold text-abs-blue underline underline-offset-2">browse every course on the ABS Training portal</a>, or open one of these course pages:</p>
+                    <ul class="grid gap-3 md:grid-cols-2">
+                        {% assign sorted_courses = site.courses | sort: "title" %}
+                        {% for course in sorted_courses %}
+                        <li><a href="{{ course.url | relative_url }}" class="font-bold text-abs-blue underline underline-offset-2">{{ course.title | escape }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </noscript>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HELP -->
+<section class="py-12 lg:py-16 bg-white" aria-labelledby="catalog-help-title">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6 rounded-xl border border-gray-200 bg-abs-light p-7 lg:p-9">
+            <div class="max-w-xl">
+                <h2 id="catalog-help-title" class="text-xl font-bold text-abs-blue mb-2">Need Help Choosing a Course?</h2>
+                <p class="font-serif text-gray-700 leading-relaxed">Our team can recommend courses, plan group training or bring a course to your site. You can also see every course and class date on the ABS Training portal.</p>
+            </div>
+            <div class="flex flex-wrap gap-3 shrink-0">
+                <a href="mailto:abstraining@eagle.org" class="btn btn-secondary">Contact Us</a>
+                <a href="{{ site.portal.catalog }}" class="btn btn-outline">Full Portal Catalog <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_outward</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{{ '/assets/js/course-catalog.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/catalog-page.js' | relative_url }}"></script>

@@ -16,9 +16,21 @@ layout: default
                 <p class="font-serif text-white text-lg leading-relaxed max-w-2xl mx-auto mb-8">
                     Equip your workforce with industry-driven regulatory, technical and operational training to improve the safety, reliability and efficiency of your operations.
                 </p>
+                <!-- Opens the on-site catalog at /courses/?q=, which runs the search -->
+                <form role="search" action="{{ '/courses/' | relative_url }}" method="get" class="max-w-xl mx-auto mb-5">
+                    <label for="hero-search" class="sr-only">Search courses</label>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <div class="relative flex-1 min-w-0">
+                            <span class="material-symbols-outlined pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[22px] text-gray-600" aria-hidden="true">search</span>
+                            <input id="hero-search" name="q" type="search" maxlength="100" autocomplete="off" spellcheck="false" enterkeyhint="search" placeholder="Search courses"
+                                   class="w-full min-h-[52px] rounded-full border-2 border-white bg-white pl-12 pr-5 text-base text-abs-blue-dark placeholder:text-gray-600 shadow-search focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-abs-blue">
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">Search</button>
+                    </div>
+                </form>
                 <div class="flex flex-wrap justify-center gap-3">
-                    <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" class="btn btn-primary">Browse Courses</a>
-                    <a href="mailto:abstraining@eagle.org" class="btn btn-outline-light">Contact Us</a>
+                    <a href="{{ '/courses/' | relative_url }}" class="btn btn-outline-light focus-visible:ring-white focus-visible:ring-offset-abs-blue">Browse Courses</a>
+                    <a href="mailto:abstraining@eagle.org" class="btn btn-outline-light focus-visible:ring-white focus-visible:ring-offset-abs-blue">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -35,7 +47,7 @@ layout: default
                         A network of instructors is available worldwide in key maritime and industrial regions, offering flexible delivery options: in person, virtual or tailored training on-site at your office.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" class="btn btn-primary">
+                        <a href="{{ '/courses/#course-search' | relative_url }}" class="btn btn-primary">
                             <span class="material-symbols-outlined text-[20px]" aria-hidden="true">search</span> Search Courses
                         </a>
                         <a href="https://portal.abs-training.com/lmt/clmscoursecalendar.prMain?site=abs&amp;in_language_logged_out=en-us&amp;in_region=gl" class="btn btn-secondary">
@@ -112,7 +124,7 @@ layout: default
                     <h2 id="courses-title" class="text-3xl lg:text-4xl text-abs-blue uppercase tracking-tight"><span class="font-light">Featured</span> <span class="font-extrabold">Courses</span></h2>
                     <p class="font-serif text-gray-600 mt-3">Our most popular courses.</p>
                 </div>
-                <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" class="btn btn-outline self-start md:self-auto">
+                <a href="{{ '/courses/' | relative_url }}" class="btn btn-outline self-start md:self-auto">
                     View All Courses <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_forward</span>
                 </a>
             </div>
@@ -165,7 +177,7 @@ layout: default
                         <span class="material-symbols-outlined text-[24px]" aria-hidden="true">menu_book</span>
                     </span>
                     <h3 class="text-xl font-bold text-abs-blue mb-3">
-                        <a href="https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/" class="focus-visible:outline-none after:absolute after:inset-0">Course Catalog</a>
+                        <a href="{{ '/courses/' | relative_url }}" class="focus-visible:outline-none after:absolute after:inset-0">Course Catalog</a>
                     </h3>
                     <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-abs-red" aria-hidden="true">View Courses <span class="material-symbols-outlined text-[18px] btn-arrow">arrow_forward</span></span>
                 </div>

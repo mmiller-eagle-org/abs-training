@@ -4,8 +4,11 @@
 //
 // Events
 //   view_item                course page viewed           ecommerce.items[0] = the course
-//   select_item              featured course card clicked ecommerce.items[0] = the course, item_list_name
-//   register_click           Register on a scheduled class    course_id, course_name, offering_id, class_date, class_format
+//   select_item              course card clicked          ecommerce.items[0] = the course, item_list_name
+//                            ("Featured Courses" on the home page, "Course Catalog" on /courses/)
+//   search                   course search on /courses/   search_term (sent by assets/js/catalog-page.js)
+//   register_click           Register on a scheduled class, or Enroll Now on a self-paced course
+//                            course_id, course_name, offering_id, class_date, class_format
 //   register_interest_click  Register interest (no classes)   course_id, course_name, offering_id
 //   contact_click            any mailto: link                 link_url
 //   outbound_click           link to the portal or another site   link_name, link_url
@@ -68,7 +71,7 @@
 
         var card = a.closest('article[data-course-id]');
         if (card) {
-            track('select_item', { item_list_name: 'Featured Courses', link_location: where }, [courseItem({
+            track('select_item', { item_list_name: card.dataset.listName || 'Featured Courses', link_location: where }, [courseItem({
                 id: card.dataset.courseId, name: card.dataset.courseName, category: card.dataset.courseTag
             })]);
             return;

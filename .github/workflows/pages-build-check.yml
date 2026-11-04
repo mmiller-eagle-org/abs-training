@@ -24,12 +24,19 @@ jobs:
       - name: Check expected pages exist
         run: |
           set -e
-          for f in index.html cookie-policy/index.html sitemap.xml robots.txt CNAME assets/js/course-offerings.js assets/js/analytics.js assets/js/consent.js; do
+          for f in index.html cookie-policy/index.html courses/index.html courses/view/index.html sitemap.xml robots.txt CNAME \
+                   assets/js/course-offerings.js assets/js/upcoming-classes.js assets/js/course-catalog.js \
+                   assets/js/catalog-page.js assets/js/course-view.js assets/js/analytics.js assets/js/consent.js; do
             test -f "_site/$f" || { echo "Missing _site/$f"; exit 1; }
           done
-          count=$(find _site/courses -name index.html | wc -l)
+          count=$(find _site/courses -mindepth 2 -name index.html -not -path '_site/courses/view/*' | wc -l)
           echo "Course pages built: $count"
           test "$count" -ge 1
+          # The catalog lists the course pages as JSON; a bad value would break search
+          python3 -c "import json,re,sys; h=open('_site/courses/index.html',encoding='utf-8').read(); m=re.search(r'<script type=\"application/json\" id=\"site-courses\">(.*?)</script>',h,re.S); d=json.loads(m.group(1)); print('Catalog course pages:',len(d)); sys.exit(0 if len(d)==$count else 1)"
+          # The course view page must stay out of search results and the sitemap
+          grep -q 'name="robots" content="noindex' _site/courses/view/index.html
+          ! grep -q '/courses/view/' _site/sitemap.xml
 
       - name: Upload built site for preview
         uses: actions/upload-artifact@v4

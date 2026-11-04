@@ -1,0 +1,93 @@
+---
+layout: default
+title: Course Details
+description: Course format and live class dates for an ABS Training course.
+permalink: /courses/view/
+sitemap: false
+noindex: true
+---
+{% include site-courses-json.html %}
+<!-- Generic page for courses that have no page of their own in _courses/: /courses/view/?id=<Seertech course ID>.
+     Filled in by assets/js/course-view.js. Not indexed and not in the sitemap. -->
+<section class="relative overflow-hidden bg-abs-blue" aria-labelledby="course-title">
+    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" fetchpriority="high"
+         class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
+         onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
+    <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
+    <div class="absolute inset-0 bg-abs-blue/65"></div>
+
+    <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-20">
+        <div class="max-w-5xl mx-auto">
+            <nav aria-label="Breadcrumb" class="mb-6">
+                <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-white/80">
+                    <li><a href="{{ '/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Home</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li><a href="{{ '/courses/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Course Catalog</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li aria-current="page" class="text-white" data-view-crumb>Course Details</li>
+                </ol>
+            </nav>
+            <p class="eyebrow text-white mb-4" data-view-format>Course</p>
+            <h1 id="course-title" class="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-5 max-w-3xl" data-view-title>Course Details</h1>
+            <p class="font-serif text-white leading-relaxed max-w-2xl mb-6" data-view-lede>Loading course…</p>
+            <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-white mb-8" data-view-meta hidden></ul>
+            <a href="#dates" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue" data-view-jump hidden>
+                <span data-view-jump-label>View Dates</span> <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_downward</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- COURSE DETAILS -->
+<div class="py-14 lg:py-20 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_340px] gap-12 lg:gap-14 items-start" data-view-content hidden>
+            <div class="space-y-12">
+                <section aria-labelledby="about-title">
+                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <h2 id="about-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">About this</span> <span class="font-extrabold">Course</span></h2>
+                    <div class="font-serif text-gray-700 leading-relaxed space-y-4">
+                        <p data-view-about hidden></p>
+                        <p>The full course description, learning objectives and who should attend are on the ABS Training portal, where you also register.</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <a href="{{ site.portal.catalog }}" class="btn btn-secondary" data-view-details>
+                            <span>Full Course Details<span class="sr-only"> on the ABS Training portal</span></span>
+                            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_outward</span>
+                        </a>
+                        <a href="{{ '/courses/' | relative_url }}" class="btn btn-outline">
+                            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_back</span> Back to Course Catalog
+                        </a>
+                    </div>
+                </section>
+
+                <section aria-labelledby="questions-title">
+                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <h2 id="questions-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">Have</span> <span class="font-extrabold">Questions?</span></h2>
+                    <p class="font-serif text-gray-700 leading-relaxed">Our team can help you choose a course, plan group training or bring a course to your site. Email <a href="mailto:abstraining@eagle.org" class="font-bold text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm">abstraining@eagle.org</a>.</p>
+                </section>
+            </div>
+
+            {% include upcoming-classes.html course_id="" %}
+        </div>
+
+        <!-- Shown instead of the details when the course is not found or the course list could not be loaded -->
+        <div class="max-w-2xl mx-auto rounded-xl border border-gray-200 bg-white px-6 py-10 text-center shadow-card" data-view-problem hidden>
+            <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#E6EAEF] text-abs-blue" aria-hidden="true">
+                <span class="material-symbols-outlined text-[28px]" data-view-problem-icon>search_off</span>
+            </div>
+            <h2 class="text-lg font-bold text-abs-blue" data-view-problem-title></h2>
+            <p class="mx-auto mt-2 mb-6 max-w-lg font-serif text-sm leading-relaxed text-gray-600" data-view-problem-text></p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="{{ '/courses/' | relative_url }}" class="btn btn-primary">Browse All Courses</a>
+                <a href="{{ site.portal.catalog }}" class="btn btn-outline">Search the Portal Catalog</a>
+            </div>
+        </div>
+        <p role="status" class="sr-only" data-view-status></p>
+    </div>
+</div>
+
+<script src="{{ '/assets/js/course-offerings.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/course-catalog.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/upcoming-classes.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/course-view.js' | relative_url }}"></script>

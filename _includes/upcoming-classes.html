@@ -1,0 +1,20 @@
+<!-- Upcoming classes: filled in live from the Seertech offerings feed by assets/js/upcoming-classes.js.
+     The empty-state and footer links go to the on-site catalog; the error state goes to the portal catalog. -->
+<aside id="dates" class="scroll-mt-6 lg:sticky lg:top-6 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-card" aria-labelledby="dates-title"
+       data-portal-catalog="{{ site.portal.catalog }}" data-site-catalog="{{ '/courses/' | relative_url }}">
+    <div class="flex items-center justify-between gap-2 bg-abs-blue px-5 py-4">
+        <h2 id="dates-title" class="flex items-center gap-2 text-base uppercase tracking-tight text-white">
+            <span class="material-symbols-outlined text-[22px]" aria-hidden="true" data-dates-icon>calendar_month</span>
+            <span data-dates-heading><span class="font-light">Upcoming</span> <span class="font-extrabold">Classes</span></span>
+        </h2>
+        <span data-offerings-count class="rounded-full bg-white/15 px-2 py-1 text-xs font-bold text-white whitespace-nowrap" hidden></span>
+    </div>
+    <div class="p-5">
+        <p role="status" data-offerings-status class="mb-5 text-sm text-gray-600">Loading class dates…</p>
+        <div data-offerings data-course-id="{{ include.course_id }}"></div>
+    </div>
+    <p class="border-t border-gray-200 bg-abs-light px-5 py-4 text-xs text-gray-600 leading-relaxed">
+        Registration and payment are completed on the ABS Training portal.
+        <a href="{{ '/courses/' | relative_url }}" data-catalog-link class="font-bold text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 focus-visible:ring-offset-abs-light rounded-sm">Browse all courses</a>
+    </p>
+</aside>
