@@ -1,7 +1,7 @@
-    {%- comment -%} Course links: "page" on the catalog itself, "true" on a course page inside it {%- endcomment -%}
+    {%- comment -%} Course links: "page" on the catalog itself, "location" on a course page inside it {%- endcomment -%}
     {%- assign nav_courses_current = nil -%}
     {%- if page.url == '/courses/' -%}{%- assign nav_courses_current = 'page' -%}
-    {%- elsif page.url contains '/courses/' -%}{%- assign nav_courses_current = 'true' -%}{%- endif -%}
+    {%- elsif page.url contains '/courses/' -%}{%- assign nav_courses_current = 'location' -%}{%- endif -%}
     <!-- TOP NAVIGATION BAR -->
     <nav class="bg-abs-blue-dark border-b border-white/10" aria-label="Primary navigation">
         <div class="container mx-auto px-6 lg:px-8">
