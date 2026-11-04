@@ -173,12 +173,12 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 | [#9](https://github.com/mmiller-eagle-org/abs-training/pull/9) | Nov 2 | GA4 through GTM, Consent Mode v2, cookie banner, site events |
 | [#10](https://github.com/mmiller-eagle-org/abs-training/pull/10) | Nov 2 | Cookie Policy page; Search Courses and Course Calendar buttons; title-case buttons site-wide |
 | [#11](https://github.com/mmiller-eagle-org/abs-training/pull/11) | Nov 3 | US date format; redesigned Upcoming Classes panel (12-hour times with GMT offset, weekday and length, seats, compact Register button, empty/error/loading states, screen-reader fixes, 10-second feed timeout); these notes |
-| (this branch) | **open** | On-site Course Catalog at `/courses/` with live search and format filter, course view page for courses without a page, home hero search box, catalog links moved on site, self-paced Enroll Now, `search` event |
+| [#12](https://github.com/mmiller-eagle-org/abs-training/pull/12) | **open** | On-site Course Catalog at `/courses/` with live search and format filter, course view page for courses without a page, home hero search box, catalog links moved on site, self-paced Enroll Now, `search` event |
 
 ## Outstanding items
 
 ### Course catalog
-- [ ] Review and merge the course catalog pull request.
+- [ ] Review and merge [#12](https://github.com/mmiller-eagle-org/abs-training/pull/12), the course catalog.
 - [ ] In GTM, send the new `search` event to GA4: add `search` to the site-actions trigger and a data layer variable for `search_term` (GA4 reports it as a built-in parameter). Until then it stays in the data layer only.
 - [ ] Ask Seertech why 226074832 (Maritime Incident Investigation and Root Cause Analysis) is missing from the CatalogOut feed although it is in the portal catalog and has classes.
 - [ ] Course descriptions, objectives and audiences exist only on the portal's HTML detail pages, which do not allow other sites to read them. Option: a scheduled GitHub Action that copies them into `_courses/` pages, so every course gets a full page and better search results.
