@@ -1,0 +1,1836 @@
+{
+ "source": "https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/",
+ "count": 56,
+ "courses": [
+  {
+   "id": "223753426",
+   "offering_id": "223753431",
+   "title": "ABS: Ammonia as Marine Fuel Introduction",
+   "code": "",
+   "format": "Self-Paced Online",
+   "duration": "",
+   "tag": "Marine Fuels",
+   "summary": "",
+   "description": [],
+   "objectives": [],
+   "audience": "",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [],
+   "price": "USD 500.00",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/E0291B0095780843DA026105F65B98C91FABDDC52DDE7713962EABB250046D63?v1109121925",
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=223753431"
+  },
+  {
+   "id": "226070634",
+   "offering_id": "",
+   "title": "Advanced Maritime Incident Investigation and Root Cause Analysis",
+   "code": "C-ASC001",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Safety",
+   "summary": "This three-day course provides a structured approach to investigating incidents and uncovering their root causes.",
+   "description": [
+    "This three-day course provides a structured approach to investigating incidents and uncovering their root causes. Using ABS Group SOURCE investigation techniques and the ABS Marine Root Cause Analysis Technique (MaRCAT), participants move beyond surface findings to identify management system weaknesses, analyze evidence, develop recommendations and write clear investigation reports."
+   ],
+   "objectives": [
+    "Explain why incident investigation and root cause analysis matter.",
+    "Use a systematic process to solve problems.",
+    "Initiate an investigation and preserve key data.",
+    "Gather, organize and analyze evidence.",
+    "Conduct effective witness interviews.",
+    "Use analysis tools to identify root causes.",
+    "Apply ABS MaRCAT to code root causes.",
+    "Develop corrective and systemic recommendations.",
+    "Write clear reports and communicate findings."
+   ],
+   "audience": "This course is for professionals who lead, support or participate in incident investigations and root cause analyses, including those who investigate accidents, near misses, failures or environmental events, oversee safety, quality, reliability or environmental programs, need to address management system weaknesses, or develop corrective actions and track recommendations.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Safety, Security and Risk"
+   ],
+   "skills": [
+    "Incident Investigation and Root Cause Analysis"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ASC001_Thumbnail.jpg?.06&v0810121950",
+   "portal_url": ""
+  },
+  {
+   "id": "226074852",
+   "offering_id": "",
+   "title": "Ammonia as Marine Fuel",
+   "code": "C-AST002",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Marine Fuels",
+   "summary": "This three-day course provides a practical introduction to ammonia as a marine fuel and its role in the maritime energy transition.",
+   "description": [
+    "This three-day course provides a practical introduction to ammonia as a marine fuel and its role in the maritime energy transition. Participants learn why ammonia is gaining attention as a zero-carbon fuel option, how it supports compliance with tightening emissions requirements and the operational, safety and technical factors to consider when designing, operating and supporting ammonia-fueled vessels."
+   ],
+   "objectives": [
+    "Explain ammonia's role as a marine fuel.",
+    "Describe key rules and emissions requirements.",
+    "Recognize ammonia health, safety and environmental risks.",
+    "Identify vessel design and arrangement considerations.",
+    "Describe fuel containment and fuel supply systems.",
+    "Describe onboard control, monitoring and safety systems.",
+    "Discuss bunkering, fire safety, risk assessment and survey activities."
+   ],
+   "audience": "This course is for maritime professionals involved in alternative fuel adoption, vessel design, compliance and operations, including those who support vessel design, engineering or newbuilding projects, work in safety, risk, compliance or environmental roles, oversee fuel system design, machinery or shipboard operations, or participate in fuel transition planning, approvals or survey activities.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Marine Fuel Management"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/992E7EAC9C882F7FC89D68AA8BC1DB19E9F0BA03C757D96B1C61792205A39583?v0810122125",
+   "portal_url": ""
+  },
+  {
+   "id": "224892634",
+   "offering_id": "",
+   "title": "ASC003 Maritime Incident Investigation",
+   "code": "ASC003",
+   "format": "Classroom",
+   "duration": "",
+   "tag": "Safety",
+   "summary": "",
+   "description": [],
+   "objectives": [],
+   "audience": "",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Safety, Security and Risk"
+   ],
+   "skills": [
+    "Incident Investigation and Root Cause Analysis"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/D19A5A05CBE309571481F28B980CD0762C8C7D8BA3838AFB0A9CF1F2C165AEB6?v0810094708",
+   "portal_url": ""
+  },
+  {
+   "id": "226074854",
+   "offering_id": "",
+   "title": "Batteries and Electrical Propulsion",
+   "code": "C-AST005",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Engineering",
+   "summary": "This one-day course gives a practical, application-focused understanding of lithium-ion (Li-ion) batteries in marine and offshore environments.",
+   "description": [
+    "This one-day course gives a practical, application-focused understanding of lithium-ion (Li-ion) batteries in marine and offshore environments. Participants learn how batteries support propulsion and power generation, how they integrate into hybrid systems and what is required to use them safely and in compliance with classification and regulatory requirements."
+   ],
+   "objectives": [
+    "Identify key battery components and operating principles.",
+    "Explain how Li-ion batteries integrate into hybrid propulsion and power systems.",
+    "Recognize requirements for using Li-ion batteries on marine and offshore units.",
+    "Describe energy storage system concepts.",
+    "Apply Li-ion battery fire safety strategies.",
+    "Identify survey and class-related considerations."
+   ],
+   "audience": "This course is for maritime and offshore professionals involved in the specification, integration, operation or oversight of battery-based propulsion and power systems, including those who design or integrate electrical and hybrid propulsion systems, operate or manage vessels, rigs or offshore units using or considering Li-ion batteries, work in engineering, health, safety, quality and environment or technical management and need to understand battery-related risks and requirements, or support class, regulatory compliance, surveys or inspections involving energy storage systems.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Propulsion and Machinery Reliability"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST005_Thumbnail.jpg?.06&v0810122228",
+   "portal_url": ""
+  },
+  {
+   "id": "226074835",
+   "offering_id": "",
+   "title": "Behavior-Based Safety: Awareness and Implementation",
+   "code": "C-AML001",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Safety",
+   "summary": "This one-day interactive course builds a practical understanding of behavior-based safety (BBS) and how it strengthens an organization's safety culture.",
+   "description": [
+    "This one-day interactive course builds a practical understanding of behavior-based safety (BBS) and how it strengthens an organization's safety culture. Participants cover the fundamentals of occupational health and safety as they relate to human behavior, explore BBS concepts and methodologies and practice observation and feedback techniques they can apply immediately to reduce workplace risk and support safer, more consistent performance."
+   ],
+   "objectives": [
+    "Explain the purpose and fundamentals of behavior-based safety (BBS).",
+    "Recognize at-risk and safe behaviors.",
+    "Apply BBS methods and tools.",
+    "Develop and use BBS checklists.",
+    "Provide effective feedback and coaching.",
+    "Support the implementation and sustainment of a BBS system."
+   ],
+   "audience": "This course is for anyone responsible for influencing or improving workplace safety performance, including those who work in health, safety and environment or health, safety, quality and environment roles, supervise or lead frontline teams in industrial, maritime, offshore or facility operations, participate in or manage safety programs, observation initiatives or safety committees, or are involved in implementing, maintaining or enhancing a safety management system.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Leadership and Management"
+   ],
+   "skills": [
+    "Human Factors and Operational Performance"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AML001_Thumbnail.jpg?.06&v0810122315",
+   "portal_url": ""
+  },
+  {
+   "id": "226074873",
+   "offering_id": "",
+   "title": "Classification Requirements of Underwater Submersibles",
+   "code": "C-AIS001",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Offshore",
+   "summary": "This two-day course gives you a practical understanding of the ABS classification requirements that apply to submarine rescue systems, with a focus on rescue submersibles and the supporting systems required for safe design, construction, certification and continued service.",
+   "description": [
+    "This two-day course gives you a practical understanding of the ABS classification requirements that apply to submarine rescue systems, with a focus on rescue submersibles and the supporting systems required for safe design, construction, certification and continued service. You will learn how ABS requirements are applied across pressure hulls, viewports, piping, life support, electrical and control systems, hyperbaric facilities, handling systems, training fixtures, materials, welding and lifecycle surveys. Through technical instruction and real casualty case studies, the course connects design expectations, verification activities, and operational safeguards so participants can better evaluate compliance, identify risk and support safe rescue system performance."
+   ],
+   "objectives": [
+    "Interpret ABS classification requirements for underwater vehicles, rescue submersibles and supporting systems.",
+    "Evaluate critical design expectations for pressure hulls, viewports, life support, electrical systems and piping.",
+    "Assess ballast, buoyancy, propulsion, stability and emergency ascent features used to support safe rescue submersible operations.",
+    "Recognize survey, testing and certification requirements across new construction and in-service lifecycle stages.",
+    "Apply lessons learned from real casualty case studies to identify risk, strengthen safeguards and improve operational readiness."
+   ],
+   "audience": "This course is for professionals involved in the design, construction, review, certification, survey, testing, operation or oversight of submarine rescue systems and classed underwater units, including those who review or apply ABS requirements for underwater submersibles and related systems, support engineering, design approval, new construction or fabrication activities, participate in survey, inspection, testing, commissioning or lifecycle maintenance of underwater units or need a stronger working knowledge of how technical requirements, risk controls and class verification activities fit together. It is especially valuable for engineers, surveyors, inspectors, program managers, technical authorities, operators, and other personnel who need to understand how rescue submersibles and their supporting systems are evaluated for safe and compliant service.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Survey and Vetting Readiness"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AIS001_Thumbnail.jpg?.06&v0810122403",
+   "portal_url": ""
+  },
+  {
+   "id": "226074836",
+   "offering_id": "",
+   "title": "DPA Requirements: Effective SMS Implementation",
+   "code": "C-ARC008",
+   "format": "Classroom and Virtual Class",
+   "duration": "2 days",
+   "tag": "Maritime",
+   "summary": "The International Safety Management (ISM) Code recommends that each company assign a designated person ashore (DPA) and DPA Assistant to monitor the safety and pollution prevention aspects of each ship's operation.",
+   "description": [
+    "The International Safety Management (ISM) Code recommends that each company assign a designated person ashore (DPA) and DPA Assistant to monitor the safety and pollution prevention aspects of each ship's operation. This two-day course builds an understanding of the authority and liability issues of the DPA role, with particular attention to the safety management system, planned maintenance system, vessel response plan and theVessel General Permit . Reference is made to current International Maritime Organization (IMO) regulations, and case studies provide practical approaches for avoiding undesirable outcomes. This course satisfies the requirements for element 6 of the Designated Person Ashore standard."
+   ],
+   "objectives": [
+    "Describe the ISM Code and its legal implications.",
+    "Identify pertinent mandatory legislation and applicable codes, guidelines and standards.",
+    "Explain the DPA's authority and liability.",
+    "Apply assessment techniques for examining, evaluating and reporting.",
+    "Review safety and integrated management systems.",
+    "Maintain the integrity of a management system.",
+    "Handle audit findings and follow-up actions.",
+    "Describe associated shipboard operations and procedures.",
+    "Communicate effectively with senior management and shipboard staff.",
+    "Promote a proactive safety culture with safe working practices."
+   ],
+   "audience": "This course is designed for professionals responsible for safety management, compliance and operational oversight, including Designated Person Ashores and Designated Person Ashore assistants, safety, quality and compliance personnel, marine superintendents and fleet managers, internal auditors, management system coordinators or operations leaders who support effective Safety Management System implementation.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/806C3C04E8CD88BA0034BA1419301AF2B2990AF469616FE4A01F474E2086C79F?v0810122526",
+   "portal_url": ""
+  },
+  {
+   "id": "226074855",
+   "offering_id": "",
+   "title": "Drydocking and Repairs",
+   "code": "C-AST021",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Hull and Structures",
+   "summary": "This two-day course provides a practical understanding of the planning, coordination and oversight required for successful drydocking and repair projects.",
+   "description": [
+    "This two-day course provides a practical understanding of the planning, coordination and oversight required for successful drydocking and repair projects. Participants learn to prepare for docking, manage repair activities, support classification survey requirements and oversee the commercial and operational decisions that affect safety, schedule, quality and cost."
+   ],
+   "objectives": [
+    "Explain why vessels enter drydock.",
+    "Prepare safely for drydock operations.",
+    "Support classification surveys in drydock.",
+    "Review tenders and repair contracts.",
+    "Track shipyard schedules and progress.",
+    "Manage quality, safety and time constraints.",
+    "Document drydock completion effectively.",
+    "Handle repair delays and extensions."
+   ],
+   "audience": "This course is for professionals involved in vessel maintenance, repair planning and drydock execution, including those who serve as marine inspectors, surveyors or superintendents, oversee vessel repair periods, shipyard coordination or maintenance planning, support technical, operational or project management aspects of drydocking, or participate in contract review, repair scope development or post-drydock reporting.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Asset Operations and Reliability"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/65052A719BC392B2D5BEFBCB74800B764E0522289F35FD2A7FF530CCB6116DC7?v1310095900",
+   "portal_url": ""
+  },
+  {
+   "id": "226074856",
+   "offering_id": "",
+   "title": "Electrical and Automation Systems",
+   "code": "C-AST008",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Engineering",
+   "summary": "Participants become familiar with ABS requirements for the installation and testing of electrical and automation systems.",
+   "description": [
+    "This two-day course provides an in-depth discussion of the critical issues associated with installing and testing the electrical and automation systems used in the fabrication of steel ships, and how to assess those issues in line with classification and statutory requirements. Participants become familiar with ABS requirements for the installation and testing of electrical and automation systems."
+   ],
+   "objectives": [
+    "Perform electrical load and short circuit analysis.",
+    "Conduct protective device coordination studies.",
+    "Apply wiring practices and cable installation requirements.",
+    "Assess AC generators and switchboards.",
+    "Evaluate general equipment, ingress protection ratings and ship-type specifics.",
+    "Assess motor starters and variable frequency drives.",
+    "Identify essential and emergency services.",
+    "Meet drawing submission and test requirements.",
+    "Address grounding, harmonics and hazardous areas.",
+    "Evaluate dynamic positioning.",
+    "Assess automation for electric propulsion, steering and programmable logic controllers.",
+    "Address safety issues and high-voltage systems.",
+    "Review new technology including solar panels, cold ironing, wireless systems and fuel cells."
+   ],
+   "audience": "This course is for engineers, surveyors, inspectors and technical personnel involved in the design, construction, review, inspection, testing or approval of marine electrical and automation systems. It is especially relevant to professionals supporting shipyard installation, commissioning, new construction or retrofit projects, and those who review plans for class and statutory compliance.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Electrical and Automation Systems"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/6A3FB713AD88BD9D4BB6CFBDB9537C3E1C635157FA212B9B76D0332580E84975?v1310100018",
+   "portal_url": ""
+  },
+  {
+   "id": "226417341",
+   "offering_id": "226837651",
+   "title": "Final Examination: Welding, Metallurgy, Inspections and Nondestructive Evaluation (NDE)",
+   "code": "",
+   "format": "Self-Paced Online",
+   "duration": "",
+   "tag": "Materials and Welding",
+   "summary": "",
+   "description": [],
+   "objectives": [],
+   "audience": "",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [],
+   "skills": [],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/logo-footer.svg?v1308055950",
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226837651"
+  },
+  {
+   "id": "226074834",
+   "offering_id": "",
+   "title": "Fire and Lifesaving Aspects of Floating Offshore Installations",
+   "code": "C-ASC002",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Offshore",
+   "summary": "A fire at sea poses significant risk because a crew cannot walk away and rely on a local fire department.",
+   "description": [
+    "A fire at sea poses significant risk because a crew cannot walk away and rely on a local fire department. Offshore oil and gas exploration and production require particularly extensive safety measures given the hydrocarbon production and processing systems and their associated utility and safety systems. This two-day course covers the principal fire and lifesaving concerns of floating offshore installations, including the classification and statutory requirements that apply to each category of installation."
+   ],
+   "objectives": [
+    "Identify applicable classification Rules, statutory requirements and reference sources.",
+    "Describe overall facility layout and the concept of safe design.",
+    "Identify, classify and separate potential ignition sources from fuel inventory.",
+    "Evaluate pool, spray, jet fire and explosion considerations.",
+    "Apply fire and explosion mitigation techniques.",
+    "Explain the underlying principles of structural fire protection.",
+    "Describe safety case requirements and guidance documents.",
+    "Apply the principles of escape, evacuation and rescue including the safety refuge concept.",
+    "Identify statutory requirements for lifesaving appliances.",
+    "Review a facility design case study.",
+    "Survey related items during and after construction."
+   ],
+   "audience": "This course is for professionals who design, construct, operate, inspect or support floating offshore installations, including offshore engineers, designers and project personnel, regulatory and safety professionals, inspectors and construction personnel, operations and maintenance personnel responsible for fire and lifesaving systems or personnel who need a practical understanding of fire, explosion, evacuation and rescue considerations for floating offshore facilities.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Safety, Security and Risk"
+   ],
+   "skills": [
+    "Asset Operations and Reliability"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/3D37D78578AFFEF33BC8721E950AE9DFC204A1F9629C0D71523C7C21D2C6C30F?v1310100141",
+   "portal_url": ""
+  },
+  {
+   "id": "226074844",
+   "offering_id": "",
+   "title": "FPSO Classification Requirements and Risk-Based Inspection (RBI)",
+   "code": "C-AIS002",
+   "format": "Virtual Class",
+   "duration": "4 days",
+   "tag": "Offshore",
+   "summary": "This four-day course builds a practical understanding of the classification requirements for floating production, storage and offloading units (FPSOs) and floating storage units (FSOs).",
+   "description": [
+    "This four-day course builds a practical understanding of the classification requirements for floating production, storage and offloading units (FPSOs) and floating storage units (FSOs). Participants learn how ABS Rules, Guides, standards and regulations are applied across the design, conversion, installation and operation of F(P)SO projects to better evaluate technical requirements, reduce project risk and support sound classification decisions."
+   ],
+   "objectives": [
+    "Identify applicable ABS classification requirements for FPSO projects.",
+    "Interpret Rules, Guides, standards and regulations for ABS-classed offshore facilities.",
+    "Assess load modeling, fatigue, scantling evaluation and total strength considerations.",
+    "Evaluate hazardous areas, risk assessment methods, fire, blast and egress issues.",
+    "Distinguish key process, marine and support system classification requirements.",
+    "Analyze mooring and environmental design factors affecting floating unit performance.",
+    "Apply lessons learned from conversions to design review and project planning."
+   ],
+   "audience": "This course is for professionals involved in the design, review, delivery and operation of FPSO projects, including those who design or engineer offshore floating production or storage facilities, plan or manage FPSO projects and conversions, oversee installation, operations or technical compliance, or support owners, operators, shipyards and engineering teams working with ABS-classed assets.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Survey and Vetting Readiness"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/26D51C648C5BED0FF1F8BAAC1E2BE7FF0948058DA9EA1263C81D515C19703876?v1310100225",
+   "portal_url": ""
+  },
+  {
+   "id": "226074845",
+   "offering_id": "",
+   "title": "FPSOs FSOs Structural Assessment",
+   "code": "C-AIS003",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Offshore",
+   "summary": "Whether converting an oil tanker to a floating production, storage and offloading unit (FPSO) or building new, structural assessment is central to a successful project.",
+   "description": [
+    "Whether converting an oil tanker to a floating production, storage and offloading unit (FPSO) or building new, structural assessment is central to a successful project. This three-day course covers the requirements for verification of FPSO and FSO structures as outlined in the ABS Rules for Building and Classing Floating Production Installations. Participants are guided through the ABS design review process to build an understanding of how to prepare submissions for classification review."
+   ],
+   "objectives": [
+    "Describe ABS ship-type floating production installation requirements.",
+    "Apply initial scantling evaluation strength methods covering midship section scantlings, model generation, transverse bulkheads and longitudinal and main supporting members.",
+    "Apply sea environment assessment system modeling including metocean and design waves, motions, loads, fatigue and the environmental severity factors concept.",
+    "Complete environmental severity factor calculations for onsite and history routes.",
+    "Apply fatigue damage criteria for critical locations.",
+    "Set up and run a simplified fatigue evaluation of longitudinal stiffeners in ABS Eagle FPSO and interpret the results against FPI Rule criteria.",
+    "Observe a finite element analysis software demonstration."
+   ],
+   "audience": "This course is intended for companies considering either a newbuild FPSO or conversion to an FPSO.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Structural Assessment and Inspection"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/CEDEE65DFDEA96818BF32573721D7EA5E68C6CBA1F085071D1BAA74A09E078EA?v2610122637",
+   "portal_url": ""
+  },
+  {
+   "id": "225921103",
+   "offering_id": "226138044",
+   "title": "Fundamentals of Hazardous Areas",
+   "code": "",
+   "format": "Self-Paced Online",
+   "duration": "1 hour",
+   "tag": "Hazardous Areas",
+   "summary": "Chart a course for safety and compliance! This course explains the basics of hazardous areas and the fire triangle.",
+   "description": [
+    "Chart a course for safety and compliance! This course explains the basics of hazardous areas and the fire triangle. Be aware of possible hazardous areas and methods to reduce the likelihood of ignition sources that could ignite a flammable atmosphere. Upon completion of this module, you will be able to recall the basics of hazardous areas and the three methods used to classify them."
+   ],
+   "objectives": [
+    "Identify the elements of the fire triangle.",
+    "Describe hazardous area classification methods.",
+    "Recognize the role of hazardous area classification in evaluating electrical installations."
+   ],
+   "audience": "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [],
+   "price": "USD 150.00",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/ECB4755161AF7DAF6A5543C7D925BA3F83912A2E921488919D66DAE4655FB5A1?v2109094442",
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138044"
+  },
+  {
+   "id": "226074857",
+   "offering_id": "",
+   "title": "Gas Carrier Ship Types and Hazards",
+   "code": "C-AST011",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Gas Carriers",
+   "summary": "Safeguarding the crew, the ship and the marine environment is the first priority.",
+   "description": [
+    "Safeguarding the crew, the ship and the marine environment is the first priority. This one-day course covers the differences between ships carrying liquefied gas in bulk, cargo hazards and ship survival capabilities, along with an overview of gas carrier safety systems. Hazards include fire and explosion risk from flammable cargo, structural damage from cargo carried at high pressure and low temperature, and health risk from toxic cargo released into the environment."
+   ],
+   "objectives": [
+    "Recognize the relationship between temperature, pressure and volume required for gas carriers to carry cargo safely.",
+    "Describe ships carrying liquefied gases, including the IGC Code and ABS Rules, saturated vapor pressure and gas carrier design.",
+    "Describe safety systems including gas detection, emergency shutdown and fire extinguishing systems.",
+    "Identify cargo hazards, hazardous area zones, equipment arrangements in hazardous areas and safety measures for liquefied gas.",
+    "Explain how the IGC Code establishes minimum standards to safeguard cargo tanks from penetration by external forces and the carriage requirements for liquefied gas carriers."
+   ],
+   "audience": "This course is for professionals who work with gas carriers or need foundational knowledge of gas carriage, including shipboard officers and crew, ship operators and technical managers, marine superintendents and safety personnel, engineers, surveyors and inspectors or shipyard and terminal personnel supporting gas carrier operations.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Asset Operations and Reliability"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/C031DB4A3CAD70994D8F46E9C5489400C6B1DA999A68A2C9B4F6257D06F49111?v1310100432",
+   "portal_url": ""
+  },
+  {
+   "id": "226074858",
+   "offering_id": "",
+   "title": "Gas Carrier Systems and Cargo Handling Equipment Introduction",
+   "code": "C-AST012",
+   "format": "Classroom and Virtual Class",
+   "duration": "2 days",
+   "tag": "Gas Carriers",
+   "summary": "This two-day course explains the ship loading and discharging operations cycle from a gas-free condition until a cargo change is planned, along with an overview of the systems involved in cargo handling operations.",
+   "description": [
+    "This two-day course explains the ship loading and discharging operations cycle from a gas-free condition until a cargo change is planned, along with an overview of the systems involved in cargo handling operations. Gas carriers use cargo handling systems designed for liquefied gases in bulk, including discharging and control systems featuring main cargo pumps, booster pumps, cargo heaters, level gauging and a high-level alarm system."
+   ],
+   "objectives": [
+    "Explain the sequence of cargo handling operations and procedures including preloading, loading, discharging, unloading, preparing for cargo entry and inspection.",
+    "Recognize high-level control and monitoring systems and associated tasks within the cargo control room.",
+    "Identify subsystems that provide data to the integrated automation system.",
+    "Describe fabrication and testing requirements for gas carrier piping and cryogenic testing for piping components.",
+    "Explain certification requirements for cargo pumps, motors, control units and compressors.",
+    "Recall the function and types of heat exchangers used on gas carriers.",
+    "Explain how pressure and temperature are monitored.",
+    "Describe pressure control as it relates to gas management for the modern gas carrier.",
+    "Identify the components of inert gas and nitrogen systems and their functions.",
+    "Recognize the types of gauges used for liquid-level measurements.",
+    "Describe the design and operational requirements of gas detection systems."
+   ],
+   "audience": "This course is for professionals involved in the operation, inspection or oversight of gas carrier systems, including those who operate or supervise cargo system activities, support gas carrier engineering or design, inspect or maintain cargo-related systems or need stronger knowledge of cargo safety systems.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Asset Operations and Reliability"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST012_Thumbnail.jpg?.06&v1310100523",
+   "portal_url": ""
+  },
+  {
+   "id": "225921278",
+   "offering_id": "226138165",
+   "title": "Hazardous Area Zoning Classification",
+   "code": "",
+   "format": "Self-Paced Online",
+   "duration": "1 hour",
+   "tag": "Hazardous Areas",
+   "summary": "This course provides an in-depth overview of hazardous area zoning classification for vessels and offshore units.",
+   "description": [
+    "This course provides an in-depth overview of hazardous area zoning classification for vessels and offshore units. Learners examine Zone and Division systems, their applications and differences, and the requirements in ABS Rules and industry standards for identifying hazardous locations."
+   ],
+   "objectives": [
+    "Identify hazardous locations using ABS Rules and industry standards.",
+    "Describe the application of Zones 0, 1 and 2 based on the frequency and duration of hazardous material presence.",
+    "Distinguish between Divisions 1 and 2 based on the likelihood of explosive atmospheres during normal and abnormal conditions."
+   ],
+   "audience": "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [],
+   "price": "USD 150.00",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/F1388FA532FD7F4F627CAE85F0A7AAA9E8CFCE81CE99CEE07CD76DB39EE5B82C?v2109094503",
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138165"
+  },
+  {
+   "id": "226074846",
+   "offering_id": "",
+   "title": "Hazardous Areas Classification",
+   "code": "C-AIS004",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Hazardous Areas",
+   "summary": "This one-day course highlights how hazardous areas are classified on ships and offshore units, and the common principles behind the various codes and standards that apply.",
+   "description": [
+    "This one-day course highlights how hazardous areas are classified on ships and offshore units, and the common principles behind the various codes and standards that apply. Participants discuss the criteria and precautions for selecting and installing equipment in hazardous areas based on ABS Rules and industry standards, and learn how addressing hazardous area issues early in the design process avoids suboptimal solutions later."
+   ],
+   "objectives": [
+    "Apply procedures for designating hazardous areas and the application of various codes.",
+    "Assess the effect of boundaries, openings, cable penetrations, ventilation, over-pressurization and air locks.",
+    "Explain the principles of key protection techniques and why some techniques are limited.",
+    "Identify designated non-hazardous areas.",
+    "Review examples of hazardous area identification for different assets and operating areas."
+   ],
+   "audience": "This course is for professionals involved in the design, construction, installation, inspection or approval of equipment in hazardous areas on ships and offshore units, including marine and offshore engineers, electrical engineers and designers, surveyors and inspectors, shipyard and technical personnel or personnel responsible for hazardous area compliance",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Survey and Vetting Readiness"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/192A01C3F36171B52035944291CF652518BC2FF5788AA5BCC28EE236CAAFDE98?v1310100605",
+   "portal_url": ""
+  },
+  {
+   "id": "226137654",
+   "offering_id": "226137655",
+   "title": "Hazardous Areas Self-Paced Training Bundle",
+   "code": "",
+   "format": "Online Bundle",
+   "duration": "",
+   "tag": "Hazardous Areas",
+   "summary": "This is bundle of self-paced content about Hazardous Areas",
+   "description": [
+    "This is bundle of self-paced content about Hazardous Areas"
+   ],
+   "objectives": [],
+   "audience": "",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [],
+   "skills": [],
+   "price": "USD 150.00",
+   "image": "",
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226137655"
+  },
+  {
+   "id": "225921282",
+   "offering_id": "226138702",
+   "title": "Hazardous Areas: Certifications and Standards",
+   "code": "E-AST033C",
+   "format": "Self-Paced Online",
+   "duration": "1 hour",
+   "tag": "Hazardous Areas",
+   "summary": "This course provides an orientation to standards governing the design and installation of electrical equipment in hazardous areas.",
+   "description": [
+    "This course provides an orientation to standards governing the design and installation of electrical equipment in hazardous areas. Learners examine International Electrotechnical Commission standards recognized by ABS Rules, navigate inconsistencies among standards and recognize the basis for appropriate certification of electrical components used in potentially combustible atmospheres."
+   ],
+   "objectives": [
+    "Identify International Electrotechnical Commission standards recognized by ABS Rules for electrical equipment in hazardous areas.",
+    "Describe the basis for appropriate certification of electrical components.",
+    "Recognize considerations when navigating inconsistencies among standards."
+   ],
+   "audience": "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [],
+   "price": "USD 150.00",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/7DE4CBBD9AA7A2B75DF4AB7266FEFFFA89DED3EB62A36445935FEC34F3603BE1?v2509051709",
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138702"
+  },
+  {
+   "id": "225921538",
+   "offering_id": "226138703",
+   "title": "Hazardous Areas: Electrical Protection and Equipment Markings",
+   "code": "E-AST033D",
+   "format": "Self-Paced Online",
+   "duration": "1 hour",
+   "tag": "Hazardous Areas",
+   "summary": "This course provides an overview of equipment markings in hazardous areas in accordance with International Electrotechnical Commission standards and ABS Rules.",
+   "description": [
+    "This course provides an overview of equipment markings in hazardous areas in accordance with International Electrotechnical Commission standards and ABS Rules. Learners examine hazard groups, temperature classifications and electrical protection methods to support equipment selection and help prevent ignition risks in hazardous environments."
+   ],
+   "objectives": [
+    "Interpret equipment markings for hazardous areas.",
+    "Identify hazard groups and temperature classifications used to select suitable equipment.",
+    "Describe electrical protection methods used to prevent ignition risks.",
+    "Explain the applicability of electrical protection methods to different hazardous zones."
+   ],
+   "audience": "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [],
+   "price": "USD 150.00",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/9A182502BB9704C1E8A7BEF9BE9561B099D25A7C841B10B101E5C396583E4EB7?v2509051800",
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138703"
+  },
+  {
+   "id": "225921879",
+   "offering_id": "226138706",
+   "title": "Hazardous Areas: Survey and Examination",
+   "code": "",
+   "format": "Self-Paced Online",
+   "duration": "1 hour",
+   "tag": "Hazardous Areas",
+   "summary": "This course explains the key characteristics of the booklet of equipment in hazardous areas and the supporting documentation used to verify electrical equipment on vessels and offshore units.",
+   "description": [
+    "This course explains the key characteristics of the booklet of equipment in hazardous areas and the supporting documentation used to verify electrical equipment on vessels and offshore units. Learners examine permitted electrical equipment and arrangements in hazardous areas to support effective inspection and verification."
+   ],
+   "objectives": [
+    "Describe the key characteristics of the booklet of equipment in hazardous areas.",
+    "Identify electrical equipment and arrangements permitted in hazardous areas.",
+    "Use vessel-specific supporting documentation to inspect and verify electrical equipment in hazardous areas."
+   ],
+   "audience": "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [],
+   "price": "USD 150.00",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/65633B9FBFFEEDA4ED22E32C0807F632BBE9D56896D67D2B05EC0BC62E0732E6?v2109094552",
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138706"
+  },
+  {
+   "id": "226074847",
+   "offering_id": "",
+   "title": "Hull Inspection and Maintenance Program (HIMP): Qualified Inspector",
+   "code": "C-AIS008",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Hull and Structures",
+   "summary": "This three-day course prepares participants to perform hull inspections in support of the ABS Hull Inspection and Maintenance Program (HIMP).",
+   "description": [
+    "This three-day course prepares participants to perform hull inspections in support of the ABS Hull Inspection and Maintenance Program (HIMP). Designed for full-time owner employees serving as qualified inspectors, it builds practical knowledge of hull structure behavior, inspection planning, damage recognition and reporting requirements."
+   ],
+   "objectives": [
+    "Explain the purpose and requirements of the ABS HIMP.",
+    "Recognize loads imposed on hull structures through vessel operations.",
+    "Describe how hull structures respond to operational loads.",
+    "Identify critical structural areas and common in-service failures.",
+    "Interpret shipyard drawings to support inspection planning.",
+    "Apply zoning methodology and inspection criteria.",
+    "Grade structural conditions using established criteria.",
+    "Plan and conduct effective hull inspections.",
+    "Follow essential safety practices, including confined space entry awareness.",
+    "Enter inspection data and support accurate reporting using ABS Nautical Systems Hull Inspection software."
+   ],
+   "audience": "This course is for full-time owner employees designated to perform HIMP inspections, as well as others involved in hull inspection and maintenance activities, including those who conduct or support visual examinations of vessel hull structures, participate in hull maintenance planning, inspection reporting or structural condition assessment, or manage inspection teams responsible for inspection execution and follow-up.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Structural Assessment and Inspection"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/D4BD83F69966DF2ED9BEBEDE4B5A237C5934F7BD27F743273031BB962EDC39E8?v1310101153",
+   "portal_url": ""
+  },
+  {
+   "id": "226074848",
+   "offering_id": "",
+   "title": "Hull Inspections for Superintendents",
+   "code": "C-AIS007",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Hull and Structures",
+   "summary": "This two-day course builds a practical understanding of how to structure and carry out an owner's hull inspection and maintenance program in alignment with the ABS Hull Inspection and Maintenance Program (HIMP).",
+   "description": [
+    "This two-day course builds a practical understanding of how to structure and carry out an owner's hull inspection and maintenance program in alignment with the ABS Hull Inspection and Maintenance Program (HIMP). Participants learn to identify critical structural areas, apply effective inspection techniques and document hull conditions systematically to support periodic surveillance and ongoing maintenance planning."
+   ],
+   "objectives": [
+    "Explain the purpose and structure of a hull inspection and maintenance program aligned with ABS HIMP.",
+    "Identify critical hull structural areas requiring periodic surveillance.",
+    "Apply inspection criteria and planning methods for effective hull inspections.",
+    "Use appropriate inspection techniques to assess hull condition.",
+    "Recognize key safety practices, including confined space entry considerations.",
+    "Apply zoning methodology to organize inspections.",
+    "Grade structural condition and identify defects consistently.",
+    "Prepare inspection reports that support maintenance planning and follow-up actions."
+   ],
+   "audience": "This course is for professionals involved in vessel maintenance, repair planning and drydock execution, including those who serve as marine inspectors, surveyors or superintendents, oversee vessel repair periods, shipyard coordination or maintenance planning, support technical, operational or project management aspects of drydocking or participate in contract review, repair scope development or post-drydock reporting make risk-informed decisions.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Structural Assessment and Inspection"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AIS007_Thumbnail.jpg?.06&v1310101301",
+   "portal_url": ""
+  },
+  {
+   "id": "226074872",
+   "offering_id": "",
+   "title": "Hull Outfitting",
+   "code": "C-AIS012",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Hull and Structures",
+   "summary": "This one-day course examines the hull outfitting components installed during ship fabrication and the classification and statutory requirements that apply to them.",
+   "description": [
+    "This one-day course examines the hull outfitting components installed during ship fabrication and the classification and statutory requirements that apply to them. Participants review anchoring and mooring equipment, emergency towing arrangements, steering systems, watertight bulkhead doors and bow and sideshell openings and ramps, along with the fabrication, testing and survey requirements associated with each."
+   ],
+   "objectives": [
+    "Describe construction survey notification and dock trial requirements.",
+    "Explain anchoring and mooring equipment including anchors, anchor chain, chain stoppers, windlasses, capstans, fairleads and bollards, and their fabrication and test requirements.",
+    "Describe emergency towing arrangements and the associated class and SOLAS requirements.",
+    "Explain steering systems including rudder types, materials, stocks, carriers and testing.",
+    "Describe watertight bulkhead door securing and locking requirements.",
+    "Explain bow, sideshell opening and ramp requirements including inner doors."
+   ],
+   "audience": "This course is for maritime professionals involved in the design, construction, inspection, testing or operation of ship hull outfitting systems, including those who work in shipyards, new construction or vessel conversion projects, conduct or support fabrication, installation, inspection or commissioning activities, review hull outfitting drawings, test results or survey documentation, support vessel operations, maintenance or technical management or need a practical understanding of critical hull outfitting systems.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Marine Engineering"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/A1EE14C117582BB82AEC93A1C854A737DA7E6BEAC9C3286E503AA961D81597B7?v1310101345",
+   "portal_url": ""
+  },
+  {
+   "id": "226074867",
+   "offering_id": "",
+   "title": "Hull Structural Inspection",
+   "code": "C-AIS009",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Hull and Structures",
+   "summary": "This two-day foundation course builds practical knowledge for identifying and evaluating hull structural conditions.",
+   "description": [
+    "This two-day foundation course builds practical knowledge for identifying and evaluating hull structural conditions. Participants learn to recognize critical areas, corrosion, mechanical damage, structural response and weld defects, then apply inspection, repair and nondestructive evaluation principles to support safe vessel operations."
+   ],
+   "objectives": [
+    "Identify critical structural areas and common hull damage.",
+    "Recognize corrosion, fatigue, buckling and weld defects.",
+    "Interpret drawings, welding symbols and inspection information.",
+    "Apply visual and nondestructive evaluation principles.",
+    "Assess repair quality, welding sequence and tank testing considerations.",
+    "Support effective hull inspection and repair decisions."
+   ],
+   "audience": "This foundation course is for maritime professionals who inspect, maintain, repair or oversee vessel hull structures, including those who conduct or support hull, damage or repair inspections, work in ship operations, technical management, maintenance or drydocking, coordinate shipyard repairs or monitor repair quality, review hull drawings, welding activities or inspection findings, or need a practical introduction to hull structure condition, inspection and repair.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Structural Assessment and Inspection"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/B5A78F4F67A6A00D66B0D2C8F55C908B0756097EDECFD1EF9F2BB45CC76713E6?v1310101417",
+   "portal_url": ""
+  },
+  {
+   "id": "226079095",
+   "offering_id": "",
+   "title": "In-Service Classification and Statutory Surveys for MODUs",
+   "code": "C-AIS010",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Offshore",
+   "summary": "This three-day course builds a practical understanding of in-service classification and statutory survey requirements for mobile offshore drilling units (MODUs).",
+   "description": [
+    "This three-day course builds a practical understanding of in-service classification and statutory survey requirements for mobile offshore drilling units (MODUs). Participants learn how class and regulatory requirements apply after delivery, what to expect during periodic surveys and how to prepare using the International Maritime Organization (IMO) MODU Code, ABS Rules and applicable regulations."
+   ],
+   "objectives": [
+    "Explain in-service class and statutory survey requirements for MODUs.",
+    "Interpret key provisions of the IMO MODU Code and related regulations.",
+    "Identify survey expectations for safety, fire protection and life-saving systems.",
+    "Apply pollution prevention and operational compliance requirements.",
+    "Describe survey considerations for drilling systems and cranes.",
+    "Prepare for surveys using planning tools and checklists.",
+    "Recognize structural, welding and fabrication issues that affect compliance."
+   ],
+   "audience": "This course is for professionals who maintain class and statutory compliance for MODUs, including those who manage or support in-service survey preparation, oversee MODU inspection or regulatory compliance, need to understand owner responsibilities for surveys, or work with units subject to IMO and class rules.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Survey and Vetting Readiness"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AIS010_Thumbnail.jpg?.06&v1310101501",
+   "portal_url": ""
+  },
+  {
+   "id": "226074837",
+   "offering_id": "",
+   "title": "Internal Auditing and Nonconformity Report Writing",
+   "code": "C-ARC001",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Auditing",
+   "summary": "Writing effective audit and nonconformity reports remains a challenging task for those involved in the internal audit process.",
+   "description": [
+    "Writing effective audit and nonconformity reports remains a challenging task for those involved in the internal audit process. This one-day course provides an overview of the essentials of good audit and nonconformity report writing. Through practical exercises and case studies, participants enhance their skills in producing well-structured, concise and impactful reports."
+   ],
+   "objectives": [
+    "Conduct an audit.",
+    "Identify and handle nonconformities.",
+    "Write nonconformity reports.",
+    "Handle corrective action requests (CARs).",
+    "Prepare internal audit reporting.",
+    "Apply International Association of Classification Societies (IACS) and ABS guidelines."
+   ],
+   "audience": "This course is for personnel involved in the internal auditing process.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC001_Thumbnail.jpg?.06&v1310101534",
+   "portal_url": ""
+  },
+  {
+   "id": "226074859",
+   "offering_id": "",
+   "title": "Introduction to Natural Gas Liquids",
+   "code": "C-AST013",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Gas Carriers",
+   "summary": "This one-day course introduces the science behind natural gas, including its characteristics and properties, and the activities and supporting technologies for managing natural gas behaviors.",
+   "description": [
+    "This one-day course introduces the science behind natural gas, including its characteristics and properties, and the activities and supporting technologies for managing natural gas behaviors. Natural gas liquids (NGLs) are components of natural gas separated from a gaseous state in the form of liquids. NGLs are hydrocarbons belonging to the same family of molecules as natural gas and crude oil and can be expensive to handle, store and transport."
+   ],
+   "objectives": [
+    "Recall the characteristics of natural gas properties based on mass and matter, gas laws, and percentages and molecular weight.",
+    "Describe energy demand and natural gas production.",
+    "Discuss the value chains for dry and wet gases, gas processing and fractionation, liquefaction, reliquefaction and regasification.",
+    "Explain states of matter, gas laws and gas components based on percentages and molecular weight.",
+    "Describe ships carrying liquefied gases, including the IGC Code and ABS Rules, saturated vapor pressure and gas carrier design."
+   ],
+   "audience": "This course is for marine and energy professionals who need a foundational understanding of natural gas liquids and their value chains, including shipowners, operators and shore-based personnel supporting liquefied gas transportation, marine engineers, technical staff and superintendents, personnel involved in gas processing, storage, transportation or terminal operations or professionals who support liquefied gas carrier design, operation or compliance activities.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Asset Operations and Reliability"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/A024329C7FDBB4920180E960F3D655CDA67CEDADAC9F4CC843E183388FC882D4?v1310101626",
+   "portal_url": ""
+  },
+  {
+   "id": "226074838",
+   "offering_id": "",
+   "title": "Inventory of Hazardous Materials (IHM) On Board",
+   "code": "C-ARC002",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Maritime",
+   "summary": "This one-day course introduces the fundamentals of Inventory of Hazardous Materials (IHM) regulations, including those of the Hong Kong Convention and the European Union (EU).",
+   "description": [
+    "This one-day course introduces the fundamentals of Inventory of Hazardous Materials (IHM) regulations, including those of the Hong Kong Convention and the European Union (EU). Participants become familiar with International Maritime Organization (IMO) and EU regulations related to IHM, industry requirements and practices, IHM guidelines from ABS and the European Maritime Safety Agency (EMSA) and the requirements of the EU Ship Recycling Regulation (SRR). On completion, participants should be able to compile and maintain an IHM on board."
+   ],
+   "objectives": [
+    "Describe the process to become an approved ABS IHM service provider.",
+    "Identify examples of hazardous materials on ships.",
+    "Recognize how hazardous materials can harm people and the environment.",
+    "Explain key requirements under IHM regulations.",
+    "Develop an inventory of hazardous materials.",
+    "Describe the inspection, survey and certification process.",
+    "Explain the ship recycling plan and how to develop one."
+   ],
+   "audience": "This course is for professionals involved in environmental compliance, vessel operations, ship management, technical support, inspection or ship recycling preparation, including those who need to understand IHM regulatory requirements and onboard application, support development, review or maintenance of IHM documentation, participate in vessel surveys, inspections or certification activities or work with shipowners, managers, operators or service providers on recycling compliance.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC002_Thumbnail.jpg?.06&v1310101707",
+   "portal_url": ""
+  },
+  {
+   "id": "224266683",
+   "offering_id": "",
+   "title": "ISM Code Internal Auditor",
+   "code": "C-ARC003",
+   "format": "Classroom and Virtual Class",
+   "duration": "3 days",
+   "tag": "Auditing",
+   "summary": "This three-day course provides the knowledge and techniques to plan, conduct and report internal audits of a safety management system (SMS) under the International Safety Management (ISM) Code.",
+   "description": [
+    "This three-day course provides the knowledge and techniques to plan, conduct and report internal audits of a safety management system (SMS) under the International Safety Management (ISM) Code. Through immersive visual scenarios, group discussions and workshops, participants build practical audit skills, identify nonconformances and strengthen audit competency."
+   ],
+   "objectives": [
+    "Describe ISM Code Parts A and B.",
+    "Apply ISM risk management principles.",
+    "Develop an internal audit program.",
+    "Differentiate facts from inferences.",
+    "Conduct an internal audit.",
+    "Identify nonconformances and corrective actions.",
+    "Prepare internal audit reports."
+   ],
+   "audience": "This course suits ship and shore professionals with safety and environmental duties, including those who serve in supervisory roles in shipowning, operating or management firms, need to develop or improve internal audit skills for ISM Code compliance, are tasked with maintaining or enhancing a safety management system, or seek certification as internal auditors.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC003_Thumbnail.jpg?.06&v1310102010",
+   "portal_url": ""
+  },
+  {
+   "id": "226074839",
+   "offering_id": "",
+   "title": "ISM Code Lead Internal Auditor",
+   "code": "C-ARC004",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Auditing",
+   "summary": "This advanced three-day course helps experienced auditors sharpen their approach and deepen their understanding of the International Safety Management (ISM) Code.",
+   "description": [
+    "This advanced three-day course helps experienced auditors sharpen their approach and deepen their understanding of the International Safety Management (ISM) Code. Through discussions, case studies and workshops, participants build skills to assess safety management systems (SMS) with consistency and confidence while staying current with the International Maritime Organization (IMO) awareness."
+   ],
+   "objectives": [
+    "Interpret the ISM Code, including its latest revisions, with greater confidence.",
+    "Evaluate the integrity and continual improvement of a safety management system.",
+    "Apply effective auditing techniques to support sound, consistent decision making.",
+    "Identify and assess nonconformities and prepare clear, effective audit reports.",
+    "Interpret related industry standards in the context of internal audits.",
+    "Analyze real-world audit scenarios through practical case studies."
+   ],
+   "audience": "This course is intended for professionals who already have internal auditing experience and want to advance their capability as lead internal auditors for ISM Code and related management system audits. It is especially valuable for those who hold an internal auditor certificate from the International Association of Classification Societies (IACS), have conducted at least three internal audits, or need to strengthen audit judgment and reporting.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC004_Thumbnail.jpg?.06&v1310101953",
+   "portal_url": ""
+  },
+  {
+   "id": "226074875",
+   "offering_id": "",
+   "title": "ISM ISPS MLC (2006) Internal Auditor Awareness",
+   "code": "C-ARC005",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Auditing",
+   "summary": "This three-day course engages internal auditing skills across safety, security and maritime labour management systems.",
+   "description": [
+    "This three-day course engages internal auditing skills across safety, security and maritime labour management systems. Participants will reinforce their ability to plan, conduct, report and follow up audits against the International Safety Management (ISM) Code, International Ship and Port Facility Security (ISPS) Code and Maritime Labour Convention, 2006 (MLC, 2006)."
+   ],
+   "objectives": [
+    "Recall the ISM, ISPS and MLC, 2006 requirements.",
+    "Plan integrated internal audits with clear scope, criteria and checklists.",
+    "Gather objective evidence through interviews, records and sampling.",
+    "Write factual findings and audit reports.",
+    "Verify corrective action and follow-up effectiveness."
+   ],
+   "audience": "This course is designed for experienced shipboard and shore-based personnel who conduct or support internal audits of safety, security and maritime labour management systems, including Designated Persons Ashore and support personnel, marine superintendents, fleet auditors and HSQE officers, Company Security Officers and compliance personnel, crewing and MLC support staff, or senior officers with internal audit responsibilities",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/143611FFA0F2FF97E5C6BCE7ADA1298A8577D923B379B534CF37D2D36BD17A72?v2910072625",
+   "portal_url": ""
+  },
+  {
+   "id": "226074870",
+   "offering_id": "",
+   "title": "ISM ISPS MLC (2006) Lead Internal Auditor",
+   "code": "C-ARC014",
+   "format": "Virtual Class",
+   "duration": "5 days",
+   "tag": "Auditing",
+   "summary": "This five-day specialization course prepares internal auditors to lead effective audits of safety, security and crew welfare requirements.",
+   "description": [
+    "This five-day specialization course prepares internal auditors to lead effective audits of safety, security and crew welfare requirements. Through practical workshops, participants develop the skills to plan, conduct and report audits against the International Safety Management (ISM) Code, the International Ship and Port Facility Security (ISPS) Code and the Maritime Labour Convention, 2006 (MLC, 2006)."
+   ],
+   "objectives": [
+    "Plan integrated audits, including scope, criteria, teams and checklists.",
+    "Lead audit teams and conduct effective meetings.",
+    "Collect and evaluate objective evidence through interviews and sampling.",
+    "Assess ISM, ISPS and MLC, 2006 compliance and document findings.",
+    "Verify corrective actions and use audit results to drive continual improvement."
+   ],
+   "audience": "This course is for shipboard and shore-based professionals who lead or support internal audits of safety, security and maritime labor management systems, including those who serve as Designated Persons Ashore, fleet managers, superintendents or marine assurance personnel, conduct company and ship safety internal audits and ship security audits, manage safety, quality, security or compliance activities, support MLC, 2006 compliance, or have internal auditing experience and are preparing to lead integrated audits.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/2B672E0C45C74D7C91DDDF7792BC07AA373A148B964AB7294061121F2934F10D?v1310101925",
+   "portal_url": ""
+  },
+  {
+   "id": "226074840",
+   "offering_id": "",
+   "title": "ISPS Code Internal Auditor",
+   "code": "C-ARC006",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Auditing",
+   "summary": "This two-day course provides a practical understanding of how to plan, conduct and document internal security audits under the International Ship and Port Facility Security (ISPS) Code.",
+   "description": [
+    "This two-day course provides a practical understanding of how to plan, conduct and document internal security audits under the International Ship and Port Facility Security (ISPS) Code. Participants learn how audits support compliance and continual improvement of ship security plans, especially for vessels operating in higher-risk regions."
+   ],
+   "objectives": [
+    "Explain core maritime security principles and audit fundamentals.",
+    "Interpret the requirements of ISPS Code Parts A and B.",
+    "Recognize applicable flag State-specific security requirements.",
+    "Develop an effective internal security audit program.",
+    "Plan and carry out internal audits of ship security systems and processes.",
+    "Prepare clear audit reports with findings, corrective actions and follow-up measures.",
+    "Support continual improvement of ship security plan implementation."
+   ],
+   "audience": "This course is designed for personnel responsible for implementing, auditing, reviewing or supporting ship security plans, including those who serve in shipboard or shore-based security roles, conduct or support internal security audits, oversee compliance with ISPS Code requirements, or need a stronger practical understanding of maritime security audit processes.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC006_Thumbnail.jpg?.06&v1310102103",
+   "portal_url": ""
+  },
+  {
+   "id": "226074874",
+   "offering_id": "",
+   "title": "ISPS Code: Company Security Officer",
+   "code": "C-ARC007",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Maritime Security",
+   "summary": "This two-day course builds the knowledge to lead and support an effective maritime security program under the International Ship and Port Facility Security (ISPS) Code.",
+   "description": [
+    "This two-day course builds the knowledge to lead and support an effective maritime security program under the International Ship and Port Facility Security (ISPS) Code. Participants explore practical maritime security requirements, from threat awareness and risk assessment to drills, contingency planning and security administration, so they can support the development, implementation and maintenance of an effective and compliant Ship Security Plan (SSP)."
+   ],
+   "objectives": [
+    "Explain Company Security Officer (CSO) duties.",
+    "Interpret maritime security requirements.",
+    "Recognize threats and vulnerabilities.",
+    "Identify security equipment and its purpose.",
+    "Support security assessments and plans.",
+    "Support drills and contingency actions.",
+    "Maintain records for ISPS Code compliance."
+   ],
+   "audience": "This course is designed for personnel who have Company Security Officer responsibilities or who support company-level maritime security management, including those who oversee fleet security programs, support ISPS Code compliance, review plans, drills and response, or manage security records and processes. It is especially valuable for Company Security Officers, Deputy Company Security Officers, marine superintendents, designated security personnel, compliance professionals and shore-based staff involved in vessel security oversight.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC007_Thumbnail.jpg?.06&v1310102932",
+   "portal_url": ""
+  },
+  {
+   "id": "226074869",
+   "offering_id": "",
+   "title": "Liquefied CO2 Carriers",
+   "code": "C-AST014",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Gas Carriers",
+   "summary": "This one-day course builds foundational understanding of liquefied carbon dioxide (LCO2) carriers and the role they play in carbon capture and storage projects.",
+   "description": [
+    "This one-day course builds foundational understanding of liquefied carbon dioxide (LCO2) carriers and the role they play in carbon capture and storage projects. Participants learn how cargo properties, containment concepts, impurities, operations and safety considerations affect reliable marine transport."
+   ],
+   "objectives": [
+    "Explain the role of LCO2 shipping in the carbon capture and storage value chain.",
+    "Describe key cargo properties and pressure-temperature considerations.",
+    "Identify main containment concepts and cargo quality issues.",
+    "Recognize cargo handling, pressure management and voyage considerations.",
+    "Identify key operational and safety risks for LCO2 carriers."
+   ],
+   "audience": "This course is for marine professionals and shipping stakeholders who need introductory knowledge of LCO2 carrier design, cargo characteristics and operational considerations, including technical managers and project managers, naval architects and marine engineers, surveyors and operations staff, and chartering, commercial and shore-based personnel supporting carbon capture, utilization and storage projects.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Asset Operations and Reliability"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/9454DAA2A3798373FBB8B3FE6663D9F8B80FFD4E95E8B7CF150CB2717C7F1CB0?v1310103012",
+   "portal_url": ""
+  },
+  {
+   "id": "226074860",
+   "offering_id": "",
+   "title": "LNG as a Marine Fuel",
+   "code": "C-AST019",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Marine Fuels",
+   "summary": "This three-day course gives you a practical understanding of liquefied natural gas (LNG) as a marine fuel and the key technical, operational and safety factors behind LNG-fueled vessels.",
+   "description": [
+    "This three-day course gives you a practical understanding of liquefied natural gas (LNG) as a marine fuel and the key technical, operational and safety factors behind LNG-fueled vessels. Learn how LNG supports emissions reduction and compliance and how vessel design, fuel systems and bunkering work together."
+   ],
+   "objectives": [
+    "Explain the main benefits and challenges of LNG as a marine fuel.",
+    "Recognize the key safety and risk considerations associated with LNG.",
+    "Identify the main rules and regulations that apply to LNG-fueled vessels.",
+    "Describe the major shipboard systems used for LNG fuel storage, supply, control and safety.",
+    "Discuss the fundamentals of LNG bunkering operations and ABS survey activities."
+   ],
+   "audience": "This course is for professionals in the design, construction or operation of LNG-fueled vessels, including those who work on LNG-fueled vessel projects or LNG fuel system installations, review plans or verify compliance for LNG-fueled ships, support LNG fuel system design, arrangement or integration activities, participate in LNG bunkering operations or related operational planning, or need a stronger working knowledge of LNG fuel systems, safety considerations and applicable requirements.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Marine Fuel Management"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST019_Thumbnail.jpg?.06&v1310103041",
+   "portal_url": ""
+  },
+  {
+   "id": "226074861",
+   "offering_id": "",
+   "title": "LNG-Fueled Vessels: Technical and Operational Overview",
+   "code": "C-AST020",
+   "format": "Virtual Class",
+   "duration": "1 day",
+   "tag": "Marine Fuels",
+   "summary": "This one-day course gives shipboard and shoreside personnel a practical understanding of LNG-fueled vessel systems, operations and ABS requirements.",
+   "description": [
+    "This one-day course gives shipboard and shoreside personnel a practical understanding of LNG-fueled vessel systems, operations and ABS requirements. You will learn the technical and operational fundamentals of LNG as a marine fuel, including vessel arrangements, fuel-handling systems, propulsion technologies and key operating hazards. The course also explains how ABS classification requirements apply to gas-fueled vessels and highlights lessons drawn from operating experience"
+   ],
+   "objectives": [
+    "Explain the key technical and operational principles of LNG-fueled vessels.",
+    "Identify ABS classification requirements applicable to LNG-fueled ships.",
+    "Describe ship arrangements, bunkering systems and fuel gas supply systems.",
+    "Describe the function of reliquefaction units and gas combustion units.",
+    "Compare dual-fuel diesel, single gas-fuel engines and dual-fuel gas turbines.",
+    "Recognize survey considerations and major operating hazards associated with LNG-fueled vessels."
+   ],
+   "audience": "This course is for shipboard and shoreside personnel who need a stronger working knowledge of LNG-fueled vessel design, operation and ABS requirements, including those who support the operation of LNG-fueled vessels, work with fuel systems, machinery systems or vessel technical management, need an introduction to ABS requirements for gas-fueled ships or want practical insight into LNG-fueled vessel operating experience.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Marine Fuel Management"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST020_Thumbnail.jpg?.06&v1310103108",
+   "portal_url": ""
+  },
+  {
+   "id": "226079096",
+   "offering_id": "",
+   "title": "Machinery Outfitting",
+   "code": "C-AIS013",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Engineering",
+   "summary": "This two-day course examines the critical issues associated with machinery outfitting components and how to assess them in line with classification and statutory requirements.",
+   "description": [
+    "This two-day course examines the critical issues associated with machinery outfitting components and how to assess them in line with classification and statutory requirements. Participants review the machinery installation and testing process associated with the fabrication of steel ships and become more familiar with ABS requirements for installing main machinery plants and equipment."
+   ],
+   "objectives": [
+    "Assess propulsion and maneuvering machinery including propellers, thrusters and dynamic positioning systems, propulsion shafting, steering and reduction gears.",
+    "Evaluate prime movers including steam turbines, diesel engines, turbochargers and gas turbines.",
+    "Review auxiliaries and auxiliary systems including auxiliary boilers and pressure vessels, main propulsion boilers, air compressors and air reservoirs, cargo and ballast pumps, valve remote systems and gas detection systems in tankers.",
+    "Assess piping systems."
+   ],
+   "audience": "This course is for professionals involved in the design, construction, installation, inspection, testing or approval of shipboard machinery systems, including those who support new construction or machinery outfitting projects, review plans or verify compliance with classification and statutory requirements, perform shipyard installation, testing or commissioning activities or need practical knowledge of propulsion, auxiliary, piping, electrical or automation systems",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Marine Engineering"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/88E94CE89391360E33F53BECD5151EC8BEEC927DB8BA173A939AE835C9DB699B?v1310103154",
+   "portal_url": ""
+  },
+  {
+   "id": "226074864",
+   "offering_id": "",
+   "title": "Marine Crisis Management and Emergency Response",
+   "code": "C-AML003",
+   "format": "Classroom and Virtual Class",
+   "duration": "1 day",
+   "tag": "Safety",
+   "summary": "This one-day course prepares participants to lead a coordinated crisis response across shipboard and shore-based operations.",
+   "description": [
+    "This one-day course prepares participants to lead a coordinated crisis response across shipboard and shore-based operations. Participants apply the four-phase emergency management framework of prevention, preparedness, response and recovery through real-world maritime case studies and hands-on exercises aligned with International Maritime Organization (IMO) guidelines and the Incident Command System (ICS)."
+   ],
+   "objectives": [
+    "Apply the four-phase crisis management framework to maritime scenarios.",
+    "Design and evaluate emergency response plans using ICS principles.",
+    "Coordinate shipboard and shore-based crisis communication strategies.",
+    "Conduct risk assessments to identify and prioritize maritime hazards.",
+    "Lead structured incident escalation and stakeholder notification processes.",
+    "Assess organizational resilience through real-world case study analysis."
+   ],
+   "audience": "This course is designed for maritime professionals responsible for emergency preparedness and crisis response, including those who manage or support shore-based emergency response teams, serve in shipboard command or safety management roles, oversee crisis communication and media response for maritime organizations, or develop or maintain contingency and emergency response plans.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Leadership and Management"
+   ],
+   "skills": [
+    "Human Factors and Operational Performance"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AML003_Thumbnail.jpg?.06&v1310103227",
+   "portal_url": ""
+  },
+  {
+   "id": "226074849",
+   "offering_id": "",
+   "title": "Marine Terminal Management and Self-Assessment Implementation",
+   "code": "C-AIS011",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Tankers",
+   "summary": "This three-day course builds a practical understanding of the Oil Companies International Marine Forum (OCIMF) Marine Terminal Management and Self-Assessment (MTMSA) framework and how to apply it in terminal operations.",
+   "description": [
+    "This three-day course builds a practical understanding of the Oil Companies International Marine Forum (OCIMF) Marine Terminal Management and Self-Assessment (MTMSA) framework and how to apply it in terminal operations. It covers the MTMSA elements, the Site Verification Guide (SVG), preparation for third-party audits and key implementation challenges across oil and gas terminals."
+   ],
+   "objectives": [
+    "Navigate the OCIMF MTMSA framework.",
+    "Interpret key MTMSA elements across terminal operations and management systems.",
+    "Assess terminal practices against core MTMSA expectations.",
+    "Evaluate critical transfer operations, maintenance management and management of change.",
+    "Manage specialized risk for safety, security and environmental protection.",
+    "Use the Site Verification Guide to support implementation readiness.",
+    "Prepare more effectively for third-party audits and site reviews.",
+    "Identify gaps between procedures and practice to overcome implementation barriers."
+   ],
+   "audience": "This course is for professionals involved in the management, operation, assessment or improvement of marine terminal systems and practices, including those who manage terminal operations, health, safety, security and environment, maintenance or marine assurance activities, support implementation or review of terminal management systems, prepare sites for internal reviews, external audits or third-party verification, or need a stronger working knowledge of MTMSA expectations and practical application.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Survey and Vetting Readiness"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/AC56F2B0291F96073635DEE42C6ADA1264C2DF42F861624A0D2B664BFA27C029?v1310103326",
+   "portal_url": ""
+  },
+  {
+   "id": "226074832",
+   "offering_id": "",
+   "title": "Maritime Incident Investigation and Root Cause Analysis",
+   "code": "C-ASC003",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Safety",
+   "summary": "Many incidents, hazardous occurrences and near misses aboard maritime assets stem from human error and can result in considerable loss.",
+   "description": [
+    "Many incidents, hazardous occurrences and near misses aboard maritime assets stem from human error and can result in considerable loss. This two-day course shows participants how to identify and understand contributory factors and root causes so preventive measures can be put in place. Using the ABS Guidance Notes on the Investigation of Marine Incidents, participants apply the ABS Marine Root Cause Analysis Technique (MaRCAT) through a series of group workshops."
+   ],
+   "objectives": [
+    "Describe the fundamentals of incident investigation and the stages involved.",
+    "Gather and preserve the data needed to carry out an incident investigation.",
+    "Conduct investigation interviews in an effective manner.",
+    "Sort and analyze the various data obtained in the investigation process.",
+    "Apply root cause analysis techniques to identify causal factors and their root causes.",
+    "Prepare an investigation report for the El Faro incident with intermediate causes and recommendations."
+   ],
+   "audience": "This course is for personnel who investigate, manage or support the review of maritime incidents, near misses and hazardous occurrences, including those who lead or participate in vessel or shore-based investigations, manage safety, quality, reliability or environmental performance, support corrective action and continuous improvement programs or need to strengthen incident investigation and root cause analysis skills. It is especially valuable for marine superintendents, safety personnel, designated persons ashore, fleet managers, shipboard officers and other personnel responsible for incident follow-up.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Safety, Security and Risk"
+   ],
+   "skills": [
+    "Incident Investigation and Root Cause Analysis"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/19078E266E74020DE8E102050F0C642FA03BFD383F1505DDAD2FE5590EC0EC01?v1310103358",
+   "portal_url": ""
+  },
+  {
+   "id": "226074841",
+   "offering_id": "",
+   "title": "Maritime Labour Convention (ILO MLC, 2006) Compliance",
+   "code": "C-ARC010",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Maritime Labour",
+   "summary": "In this two-day course, participants learn the requirements contained within the ILO MLC, 2006, using Guidance for Maritime Labour Convention, 2006 as reference material.",
+   "description": [
+    "The International Labour Organization (ILO) Maritime Labour Convention, 2006 provides the most comprehensive code to date addressing seafarers' rights and the obligations of flag States and shipowners with respect to those rights. The Convention consolidates and updates standards from 68 existing ILO instruments into one document. In this two-day course, participants learn the requirements contained within the ILO MLC, 2006, using Guidance for Maritime Labour Convention, 2006 as reference material."
+   ],
+   "objectives": [
+    "Describe the background of the International Labour Organization and its structure.",
+    "Explain the roles and responsibilities of key players in the ILO MLC, 2006.",
+    "Interpret the intent of the five titles of the ILO MLC, 2006, including mandatory requirements and guidelines.",
+    "Identify inspection and certification requirements for compliance.",
+    "Describe the Declaration of Maritime Labour Compliance.",
+    "Review examples of manuals and procedures shipowners may develop.",
+    "Handle and resolve deficiencies.",
+    "Handle crew complaints.",
+    "Address port and flag State issues."
+   ],
+   "audience": "This course is for shipboard and shore-based personnel responsible for supporting Maritime Labour Convention compliance, including those who manage ship operations, crewing or seafarer welfare, serve as masters, officers, superintendents or fleet managers, support safety, quality, human resources or compliance functions, prepare vessels, records and procedures for flag State or port State inspection or develop or maintain company procedures for ongoing compliance",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/4350522584549B6B6C59DE9C6952013B037248900B5EBF6AC35C3683DE335533?v1310103438",
+   "portal_url": ""
+  },
+  {
+   "id": "226074842",
+   "offering_id": "",
+   "title": "Maritime Labour Convention (ILO MLC, 2006) Internal Inspector",
+   "code": "C-ARC011",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Maritime Labour",
+   "summary": "This two-day course combines individual exercises with case studies and explains the onboard verification process step by step from the internal inspector's perspective.",
+   "description": [
+    "The International Labour Organization (ILO) Maritime Labour Convention, 2006 is a comprehensive international employment convention addressing seafarers' rights to decent conditions and fair competition for shipowners. This two-day course combines individual exercises with case studies and explains the onboard verification process step by step from the internal inspector's perspective."
+   ],
+   "objectives": [
+    "Describe Convention provisions concerning inspections.",
+    "Explain flag and Port State Control inspections for compliance, enforcement and certification.",
+    "Identify applicable national requirements.",
+    "Describe the Declaration of Maritime Labour Compliance and the Maritime Labour Certificate.",
+    "Apply guidelines and a practical approach for conducting internal inspections concerning maritime labor issues.",
+    "Explain Convention provisions for onboard working and living conditions.",
+    "Handle crew complaints."
+   ],
+   "audience": "This course is designed for ship managers, superintendents and designated company personnel involved in implementing procedures for their organization to maintain compliance with the ILO MLC, 2006.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/C5871ABE3A7734DCB18E2AE7883F10FE734D2F6124B9D630BD2CF3A220DB9B4B?v1310103514",
+   "portal_url": ""
+  },
+  {
+   "id": "226074833",
+   "offering_id": "",
+   "title": "Maritime Risk Assessment",
+   "code": "C-ASC005",
+   "format": "Classroom and Virtual Class",
+   "duration": "1 day",
+   "tag": "Safety",
+   "summary": "Risk assessment is a systematic process for identifying hazards that could affect an organization's ability to conduct business, analyzing what could happen if a hazard occurs and determining ways to eliminate or control it.",
+   "description": [
+    "Risk assessment is a systematic process for identifying hazards that could affect an organization's ability to conduct business, analyzing what could happen if a hazard occurs and determining ways to eliminate or control it. In the maritime industry those risks primarily affect the safety of a vessel, a facility or an operation. This one-day course introduces fundamental risk concepts including qualitative and quantitative risk analysis, hazard identification and risk estimation, giving decision makers the tools to make better informed management choices."
+   ],
+   "objectives": [
+    "Describe basic theories and principles of hazard identification and risk assessment.",
+    "Distinguish qualitative and quantitative methodologies.",
+    "Review the capabilities and limitations of each tool and when to use them.",
+    "Explain how hazards are ranked and prioritized.",
+    "Apply risk management and mitigation approaches."
+   ],
+   "audience": "This course is for maritime professionals who identify, assess, manage or oversee operational risk, including those who support shipboard or shore-based safety management activities, develop or review job safety analyses and risk assessments, manage marine operations, maintenance or emergency preparedness, participate in hazard identification or risk control activities. It is especially valuable for masters, officers, superintendents, safety professionals, operations personnel, and shore-based staff involved in risk-informed decision-making.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Safety, Security and Risk"
+   ],
+   "skills": [
+    "Process Safety and Risk Control"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/F08F9B68770666BAD544CCAB5CEE398A42A34641AD8E746B899DEB5E63FB159E?v1310103551",
+   "portal_url": ""
+  },
+  {
+   "id": "226074843",
+   "offering_id": "",
+   "title": "MARPOL and SOLAS Requirements",
+   "code": "C-ARC012",
+   "format": "Classroom and Virtual Class",
+   "duration": "2 days",
+   "tag": "Maritime",
+   "summary": "This two-day primer introduces the International Convention for the Prevention of Pollution from Ships (MARPOL) and the International Convention for the Safety of Life at Sea (SOLAS), covering concepts, definitions and requirements as well as the ABS plan review process for compliance.",
+   "description": [
+    "This two-day primer introduces the International Convention for the Prevention of Pollution from Ships (MARPOL) and the International Convention for the Safety of Life at Sea (SOLAS), covering concepts, definitions and requirements as well as the ABS plan review process for compliance. Practical examples illustrate solutions for meeting the requirements and highlight the most common noncompliance issues."
+   ],
+   "objectives": [
+    "Describe shipboard emergency plans for oil and marine pollution (SOPEP and SMPEP).",
+    "Explain oily water separating equipment.",
+    "Describe ballast and cargo oil piping.",
+    "Apply intact and damage stability principles.",
+    "Perform subdivision and damage calculations.",
+    "Explain floodable length and damage stability.",
+    "Describe structural fire protection.",
+    "Identify lifesaving appliances.",
+    "Describe machinery and electrical installations.",
+    "Explain unattended machinery space requirements."
+   ],
+   "audience": "This course is suitable for designers and shipyard engineers seeking knowledge about vessel statutory compliance with MARPOL and SOLAS regulations.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Regulations and Compliance"
+   ],
+   "skills": [
+    "Safety Management Systems and Auditing"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC012_Thumbnail.jpg?.06&v1310103630",
+   "portal_url": ""
+  },
+  {
+   "id": "226074862",
+   "offering_id": "",
+   "title": "Methanol as Marine Fuel",
+   "code": "C-AST016",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Marine Fuels",
+   "summary": "This three-day course introduces methanol as a marine fuel, focusing on the safety, operational, regulatory and design factors that set it apart from conventional and alternative fuels.",
+   "description": [
+    "This three-day course introduces methanol as a marine fuel, focusing on the safety, operational, regulatory and design factors that set it apart from conventional and alternative fuels. Participants gain foundational knowledge of methanol's properties, regulatory drivers, vessel arrangement, fuel containment, supply, bunkering and hazard management."
+   ],
+   "objectives": [
+    "Explain the main drivers for adopting methanol as a marine fuel.",
+    "Describe the properties of methanol that affect vessel design, handling and operation.",
+    "Identify key safety and health risks associated with methanol-fueled vessels.",
+    "Recognize the main regulatory and class considerations, including the International Code of Safety for Ships Using Gases or Other Low-flashpoint Fuels (IGF) Code and interim guidelines.",
+    "Describe the core systems and arrangements used for methanol fuel containment, supply and bunkering.",
+    "Describe the role of control, monitoring and ABS survey activities for methanol-fueled vessels."
+   ],
+   "audience": "This course is for professionals who need a methanol-specific understanding of marine fuel, including those who support the design, construction or retrofit of methanol-fueled vessels, evaluate methanol fuel system arrangements, safety features or bunkering concepts, review regulatory, class or risk-based requirements for methanol-fueled ships, or support compliance, planning or technical decision making related to methanol as marine fuel.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Marine Fuel Management"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST016_Thumbnail.jpg?.06&v1310103711",
+   "portal_url": ""
+  },
+  {
+   "id": "226074850",
+   "offering_id": "",
+   "title": "Orientation to In-Service Classification and Statutory Surveys",
+   "code": "C-AIS005",
+   "format": "Classroom and Virtual Class",
+   "duration": "3 days",
+   "tag": "Classification",
+   "summary": "The classification process and its interrelationship with international and flag regulations is not always well understood.",
+   "description": [
+    "The classification process and its interrelationship with international and flag regulations is not always well understood. Structured for those in a supervisory role within a shipowning, operating or management company, this three-day course provides insight into the evolution of classification and statutory requirements, with particular emphasis on in-service surveys."
+   ],
+   "objectives": [
+    "Describe the evolution of classification societies and the International Association of Classification Societies (IACS).",
+    "Explain the scope of classification surveys including the surveyor's role, class surveys, surveys during construction, damage surveys, transfer of class, surveys during sale of a vessel, equipment certification, cargo gear surveys and dual or double class.",
+    "Explain the relationship between classification and statutory surveys.",
+    "Describe the scope of statutory surveys including delegation of authority by flag Administrations, the status of the surveyor, load line surveys, safety construction, safety equipment and safety radio surveys, intervals and scope, MARPOL surveys and other related statutory work."
+   ],
+   "audience": "This course is specifically structured for those in a supervisory role within a shipowning, operating or management company.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Survey and Vetting Readiness"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/72B9DBF868F28B96D8045C76DD4049ABEBE9FBEDA534B44E7CA67EB47DCBCBC9?v1310103840",
+   "portal_url": ""
+  },
+  {
+   "id": "226074871",
+   "offering_id": "",
+   "title": "Orientation to New Construction Classification and Statutory Surveys",
+   "code": "C-AIS015",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Classification",
+   "summary": "Marine classification verifies compliance with statutory regulations and recognized standards.",
+   "description": [
+    "Marine classification verifies compliance with statutory regulations and recognized standards. It protects capital investment, demonstrates responsible stewardship and meets underwriting requirements. For newbuilds, surveyors attend the vessel during construction and sea trials to confirm construction compliance, and materials and principal equipment including engines and alternators are certified at that time. This three-day course addresses the steps for classification and certification of a vessel from order to delivery, introduces the roles of engineering and survey, and covers the requirements for plan reviews of hull, machinery, piping and other vessel systems along with the scope of surveys during construction."
+   ],
+   "objectives": [
+    "Explain the classification and statutory survey process.",
+    "Navigate key ABS Rules, class notations and approval pathways.",
+    "Recognize plan review requirements for hull, machinery, piping and electrical systems.",
+    "Identify survey, testing and certification activities during construction.",
+    "Apply key requirements for welding, coatings, cargo gear and sea trials.",
+    "Ensure MARPOL and SOLAS requirement application."
+   ],
+   "audience": "This foundation course is for professionals who support the design, construction, inspection or delivery of new vessels, including those who work in shipyards, shipbuilding projects or new construction supervision, support vessel owners, operators or technical management teams, review drawings, manage construction quality or coordinate testing activities, interface with classification societies, flag Administrations or recognized organizations or need a practical understanding of new construction classification and statutory survey requirements.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Survey and Vetting Readiness"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/CE9C574B1AF95850DFF6B792D5D96E34F51FC31A27842BAE954C40944C46E63A?v1310103831",
+   "portal_url": ""
+  },
+  {
+   "id": "226074868",
+   "offering_id": "",
+   "title": "Powertrain Vibration",
+   "code": "C-AST017",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Engineering",
+   "summary": "This two-day course develops practical knowledge of vibration in marine propulsion powertrains.",
+   "description": [
+    "This two-day course develops practical knowledge of vibration in marine propulsion powertrains. Explore shaft alignment, bearing performance, torsional, lateral and axial vibration, computational modeling and measurement methods to identify vibration risks, support reliable operation and prevent machinery damage. The course combines core theory with practical interpretation to help participants evaluate powertrain performance and identify machinery risks."
+   ],
+   "objectives": [
+    "Identify powertrain components and conditions that influence vibration.",
+    "Explain shaft alignment principles and bearing load distribution.",
+    "Recognize torsional, lateral, axial and torsio-axial vibration risks.",
+    "Interpret vibration measurement methods and results.",
+    "Evaluate alignment verification data and common failure indicators.",
+    "Apply ABS requirements to propulsion shafting vibration assessments."
+   ],
+   "audience": "This course is for marine professionals involved in the design, construction, operation, maintenance, inspection or troubleshooting of propulsion systems, including marine engineers, superintendents and technical managers, shipyard engineers and commissioning personnel, vessel operators and maintenance professionals, naval architects and propulsion system designers or personnel supporting shaft alignment, vibration analysis or condition monitoring.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Propulsion and Machinery Reliability"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/C7909446694A1D2C9D57037AA5BD2FBB0C81A9F927CAAF2FFB24CA895C02DC01?v1310103905",
+   "portal_url": ""
+  },
+  {
+   "id": "226074866",
+   "offering_id": "",
+   "title": "Risk Assessment Implementation",
+   "code": "C-ASC004",
+   "format": "Virtual Class",
+   "duration": "2 days",
+   "tag": "Safety",
+   "summary": "This two-day course introduces fundamental qualitative and quantitative risk concepts, common hazard identification (HAZID) and risk estimation.",
+   "description": [
+    "This two-day course introduces fundamental qualitative and quantitative risk concepts, common hazard identification (HAZID) and risk estimation. Through mock HAZID exercises, participants learn to assess and prioritize routine and non-routine risks using a risk matrix. The course focuses on organizing and managing qualitative risk assessment information."
+   ],
+   "objectives": [
+    "Describe basic theories and principles of hazard identification and risk assessment.",
+    "Apply qualitative and quantitative methodologies including What-If analysis, HAZID and job hazard analysis.",
+    "Decide when to apply risk assessment.",
+    "Review the capabilities and limitations of the tools and when to use them.",
+    "Rank and prioritize hazards.",
+    "Apply risk management and mitigation."
+   ],
+   "audience": "This course is for maritime personnel who identify, assess, manage or communicate operational risk, including safety, quality and environmental professionals, vessel operators, shore-based managers and superintendents, engineers, surveyors, inspectors and technical personnel, operations, maintenance and project personnel or team members who participate in hazard identification, job safety analysis or risk assessment workshops.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Safety, Security and Risk"
+   ],
+   "skills": [
+    "Process Safety and Risk Control"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/8C6A97C6EABFA03CED08FB1DFB735F2948FBB0A416036820A31692CB452875DE?v1310103947",
+   "portal_url": ""
+  },
+  {
+   "id": "226074851",
+   "offering_id": "",
+   "title": "Tanker Management and Self-Assessment (TMSA 3) Essentials",
+   "code": "C-AIS006",
+   "format": "Classroom and Virtual Class",
+   "duration": "2 days",
+   "tag": "Tankers",
+   "summary": "This two-day course covers the structure and requirements of TMSA 3 and addresses the new requirements in comparison with TMSA 2.",
+   "description": [
+    "Developed by the Oil Companies International Marine Forum (OCIMF), the Tanker Management and Self-Assessment (TMSA) program gives companies a means to improve and measure their safety management systems. This two-day course covers the structure and requirements of TMSA 3 and addresses the new requirements in comparison with TMSA 2. Participants become familiar with incorporating TMSA 3 requirements into a marine integrated management system, assessing it to promote continual improvement and performing an onboard TMSA review and verification using a typical checklist. This course satisfies the requirements for element 9 of the Tanker Management and Self-Assessment standard."
+   ],
+   "objectives": [
+    "Review fast facts and frequently asked questions.",
+    "Apply the analysis and structure approach.",
+    "Conduct risk assessment.",
+    "Describe the TMSA 3 elements.",
+    "Interpret revised TMSA provisions.",
+    "Identify training needs per TMSA 3 and current industry standards.",
+    "Support continual improvement.",
+    "Perform onboard TMSA review and verification."
+   ],
+   "audience": "This course is for tanker operator personnel responsible for safety management systems, self-assessments, audits, risk management or fleet performance improvement, including shore-based managers and superintendents, Designated Persons Ashore and safety, quality and environmental personnel, internal auditors and personnel who support TMSA reviews or marine, technical and operations personnel involved in tanker management.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Inspections, Standards, and Classification"
+   ],
+   "skills": [
+    "Survey and Vetting Readiness"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/1C23840BB1C93D0073802CE6731DC96ABC164536FAC2C20A7586369FE01A1FEF?v1310104031",
+   "portal_url": ""
+  },
+  {
+   "id": "226074865",
+   "offering_id": "",
+   "title": "Train the Trainer (USCG Accepted)",
+   "code": "C-AML004",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Instructor Training",
+   "summary": "Participants learn to plan outcome-based programs, apply adult learning principles and evaluate trainee competency through classroom instruction, workshops and a live teaching presentation.",
+   "description": [
+    "This three-day course equips maritime professionals with the instructional and assessment skills needed to deliver effective training that meets Standards of Training, Certification and Watchkeeping (STCW) and United States Coast Guard (USCG) requirements. Participants learn to plan outcome-based programs, apply adult learning principles and evaluate trainee competency through classroom instruction, workshops and a live teaching presentation."
+   ],
+   "objectives": [
+    "Apply STCW training and assessment requirements to course delivery.",
+    "Plan structured lesson content using outcome-based learning methods.",
+    "Select instructional techniques matched to adult learning styles.",
+    "Design and use effective training aids and presentation materials.",
+    "Develop learning programs using the instructional systems design process.",
+    "Evaluate trainee competency through recognized assessment methods."
+   ],
+   "audience": "This course is designed for current and aspiring maritime instructors, assessors and training program managers who need to meet STCW and USCG qualification requirements, including maritime instructors seeking USCG-recognized instructor credentials, designated examiners responsible for assessing seafarer competency, training managers overseeing STCW-compliant course programs and subject matter experts transitioning into instructional roles.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Leadership and Management"
+   ],
+   "skills": [
+    "Human Factors and Operational Performance"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AML004_Thumbnail.jpg?.06&v1310104102",
+   "portal_url": ""
+  },
+  {
+   "id": "226074863",
+   "offering_id": "",
+   "title": "Welding, Metallurgy and Non-Destructive Evaluations",
+   "code": "C-AST018",
+   "format": "Virtual Class",
+   "duration": "5 days",
+   "tag": "Materials and Welding",
+   "summary": "Welds are commonly used to join two or more metal parts, and because these connections encounter loads and fatigue during product lifetime they can fail if not created to proper specification.",
+   "description": [
+    "Welds are commonly used to join two or more metal parts, and because these connections encounter loads and fatigue during product lifetime they can fail if not created to proper specification. This five-day course provides the knowledge to carry out welding inspections, understand the basics of nondestructive examination and meet the welding requirements of the ABS Rules. It covers materials and welding technology, current welding evaluation practices for marine construction and repair and the important aspects of steel welding and nondestructive evaluation, with ABS Rule requirements highlighted through practical examples and case studies."
+   ],
+   "objectives": [
+    "Describe the fundamentals of welding and metallurgy.",
+    "Explain steel production and properties.",
+    "Assess the mechanical properties of materials.",
+    "Apply basic welding metallurgy.",
+    "Explain heat flow and residual stresses.",
+    "Perform standard tests.",
+    "Select filler metals.",
+    "Interpret weld joint geometry and welding terminology.",
+    "Identify welding positions, welds and welding symbols.",
+    "Describe welding of high-strength, low-alloy steel.",
+    "Recognize welding discontinuities and welding sequence.",
+    "Plan weld and structure repairs.",
+    "Prepare a welding procedure specification (WPS).",
+    "Interpret procedure qualification records (PQR).",
+    "Apply nondestructive examination methods.",
+    "Conduct visual inspection."
+   ],
+   "audience": "This course is for professionals who support welding, fabrication, inspection or repair activities in the marine and offshore industries, including marine and offshore engineers, surveyors, inspectors and quality assurance personnel, shipyard, fabrication and repair personnel, welding supervisors, coordinators and technical staff, or owners’ representatives and project personnel who review welding work. It is especially valuable for personnel who need a stronger working knowledge of welding quality, materials behavior and nondestructive evaluation methods.",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Specialized and Technical"
+   ],
+   "skills": [
+    "Marine Engineering"
+   ],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/9F1EBB7641E5D4D221026BFA5C0791B4D211042058ECB6CA9A24756889B28500?v1310104252",
+   "portal_url": ""
+  }
+ ],
+ "updated": "2026-11-04T18:43:12Z"
+}

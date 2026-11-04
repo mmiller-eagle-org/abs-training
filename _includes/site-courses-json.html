@@ -1,0 +1,8 @@
+<!-- Every course page (hand-written and generated from the portal snapshot) for assets/js/course-catalog.js.
+     "search" holds the page's full text so search matches descriptions, objectives, audience and skills.
+     "</" is written as "<\/" so no course text can close this script element. -->
+<script type="application/json" id="site-courses">
+[{% for course in site.courses %}{% assign snapshot = site.data.catalog.courses | where: "id", course.course_id | first %}{% capture search_text %}{{ course.content | strip_html }} {{ course.objectives | join: " " }} {{ course.audience }} {{ course.skills | join: " " }} {{ snapshot.categories | join: " " }}{% endcapture %}
+    {"id": {{ course.course_id | jsonify }}, "title": {{ course.title | jsonify }}, "description": {{ course.description | jsonify | replace: "</", "<\/" }}, "tag": {{ course.tag | jsonify }}, "duration": {{ course.duration | jsonify }}, "format": {{ course.format | jsonify }}, "code": {{ course.code | default: snapshot.code | jsonify }}, "url": {{ course.url | relative_url | jsonify }}, "search": {{ search_text | normalize_whitespace | strip | jsonify | replace: "</", "<\/" }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+]
+</script>

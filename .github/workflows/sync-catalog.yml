@@ -1,0 +1,76 @@
+# Copies every course's details (description, objectives, audience, code, format, duration, tag) from the
+# ABS Training portal into _data/catalog.json and generated pages in _courses/, so each course has a full
+# page on abs-training.com. The portal's pages can't be read from the visitor's browser, so this runs here.
+#
+# Daily and on demand it commits straight to main, only when something changed and only after the site
+# builds; that publishes the change. On pull requests that touch the sync, it only checks the portal.
+# The script refuses to write if the portal returns far fewer courses than before (see scripts/sync_catalog.py).
+name: Sync course catalog
+
+on:
+  schedule:
+    - cron: "17 10 * * *"   # daily, 10:17 UTC
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - scripts/sync_catalog.py
+      - .github/workflows/sync-catalog.yml
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: sync-catalog
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check the portal (pull requests)
+        if: github.event_name == 'pull_request'
+        run: python scripts/sync_catalog.py --check
+
+      - name: Fetch the portal catalog
+        if: github.event_name != 'pull_request'
+        run: python scripts/sync_catalog.py
+
+      - name: Look for changes
+        id: diff
+        if: github.event_name != 'pull_request'
+        run: |
+          git add -A _data _courses
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No catalog changes."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --cached --stat
+          fi
+
+      - name: Build the site with the new data
+        if: steps.diff.outputs.changed == 'true'
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Commit to main and publish
+        if: steps.diff.outputs.changed == 'true' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Sync course catalog from the ABS Training portal"
+          git push origin HEAD:main
+          # Pushes made with the workflow token may not start a Pages build on their own
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages build request failed; the next push will publish."

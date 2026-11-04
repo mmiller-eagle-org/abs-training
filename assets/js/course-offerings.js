@@ -118,8 +118,14 @@
         return isFinite(n) && n > 0 && n < 1000 ? n : null;
     }
 
+    // offeringType S = self-paced online, H = channel (online bundle): open all the time, not a dated class
+    function isSelfPaced(o) {
+        return (o.offeringType === 'S' || o.offeringType === 'H') && o.isEOI !== 'Y' && !/^zzz/i.test(o.offeringName || '') &&
+            !!o.courseDetailsURL;
+    }
+
     function isRealOffering(o) {
-        return o.isEOI !== 'Y' && !/^zzz/i.test(o.offeringName || '') && parseStart(o.startDate);
+        return o.isEOI !== 'Y' && !isSelfPaced(o) && !/^zzz/i.test(o.offeringName || '') && parseStart(o.startDate);
     }
 
     var PAGE_SIZE = 50;
@@ -154,7 +160,8 @@
                     upcoming: items.filter(isRealOffering)
                         .filter(function (o) { return parseStart(o.startDate) >= today; })
                         .sort(function (a, b) { return parseStart(a.startDate) - parseStart(b.startDate); }),
-                    interest: items.filter(function (o) { return o.isEOI === 'Y'; })[0] || null
+                    interest: items.filter(function (o) { return o.isEOI === 'Y'; })[0] || null,
+                    selfPaced: items.filter(isSelfPaced)[0] || null
                 };
             }, function (err) {
                 clearTimeout(timer);
