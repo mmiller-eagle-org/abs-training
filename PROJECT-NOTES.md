@@ -244,7 +244,7 @@ Test scripts and working files from the original chat are stored locally (not in
 - `audit\verify_consent.py`: 27 checks of the cookie banner and consent behavior (all passing on November 3).
 - `audit\verify_tracking.py`: data layer event checks (see the note above).
 - `audit\overflow.py`: no sideways scroll at 320–1280px.
-- Course catalog: `C:\Users\MAMILLER\.copilot\session-state\b592b914-c422-41c0-976b-87ed7d76e88b\files\verify_catalog.py <site-preview folder> <screenshot folder>`. It routes `https://abs-training.com/**` to the built site so the live feeds' CORS rule applies, then checks search (including description text and course codes), filters, deep links, empty and error states, generated, hand-written, self-paced and no-description course pages, the fallback course view (simulated by removing a course from the page's course list), analytics events, keyboard order, axe-core and 320px layouts (90 checks).
+- Course catalog: `C:\Users\MAMILLER\.copilot\session-state\b592b914-c422-41c0-976b-87ed7d76e88b\files\verify_catalog.py <site-preview folder> <screenshot folder>`. It routes `https://abs-training.com/**` to the built site so the live feeds' CORS rule applies, then checks search (including description text and course codes), filters, deep links, empty and error states, generated, hand-written, self-paced and no-description course pages, the fallback course view (simulated by removing a course from the page's course list), analytics events, keyboard order, axe-core, the header course links and their aria-current state, and 320px layouts (95 checks).
 - `gtm-abs-training-import.json`: a GTM container import file.
 
 They use Playwright for Python with Microsoft Edge, and must set a normal browser user agent for the Seertech feed.
