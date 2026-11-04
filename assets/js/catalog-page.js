@@ -105,7 +105,7 @@
         heading.appendChild(link);
         article.appendChild(heading);
 
-        if (c.description) article.appendChild(el('p', 'mt-2 font-serif text-sm leading-relaxed text-gray-600', c.description));
+        if (c.description) article.appendChild(el('p', 'mt-2 line-clamp-3 font-serif text-sm leading-relaxed text-gray-600', c.description));
         if (match.rank === 3) {
             var why = el('p', 'mt-2 flex items-center gap-1.5 text-xs font-medium text-gray-600');
             why.appendChild(icon('manage_search', 'text-[18px] text-abs-blue-mid'));
