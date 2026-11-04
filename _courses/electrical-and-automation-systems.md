@@ -3,7 +3,7 @@
 # replaced on the next sync. To write this page by hand, remove "generated: true".
 generated: true
 title: "Electrical and Automation Systems"
-description: "This two-day course provides an in-depth discussion of the critical issues associated with installing and testing the electrical and automation systems used in the fabrication of steel ships, and how…"
+description: "Participants become familiar with ABS requirements for the installation and testing of electrical and automation systems."
 course_id: "226074856"
 code: "C-AST008"
 tag: "Engineering"

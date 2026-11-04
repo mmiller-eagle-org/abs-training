@@ -3,7 +3,7 @@
 # replaced on the next sync. To write this page by hand, remove "generated: true".
 generated: true
 title: "Classification Requirements of Underwater Submersibles"
-description: "This two-day course gives you a practical understanding of the ABS classification requirements that apply to submarine rescue systems, with a focus on rescue submersibles and the supporting systems…"
+description: "This two-day course gives you a practical understanding of the ABS classification requirements that apply to submarine rescue systems, with a focus on rescue submersibles and the supporting systems required for safe design, construction, certification and continued service."
 course_id: "226074873"
 code: "C-AIS001"
 tag: "Offshore"

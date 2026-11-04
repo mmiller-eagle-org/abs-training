@@ -3,7 +3,7 @@
 # replaced on the next sync. To write this page by hand, remove "generated: true".
 generated: true
 title: "Maritime Risk Assessment"
-description: "Risk assessment is a systematic process for identifying hazards that could affect an organization's ability to conduct business, analyzing what could happen if a hazard occurs and determining ways to…"
+description: "Risk assessment is a systematic process for identifying hazards that could affect an organization's ability to conduct business, analyzing what could happen if a hazard occurs and determining ways to eliminate or control it."
 course_id: "226074833"
 code: "C-ASC005"
 tag: "Safety"

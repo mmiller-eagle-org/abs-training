@@ -3,7 +3,7 @@
 # replaced on the next sync. To write this page by hand, remove "generated: true".
 generated: true
 title: "Maritime Labour Convention (ILO MLC, 2006) Compliance"
-description: "The International Labour Organization (ILO) Maritime Labour Convention, 2006 provides the most comprehensive code to date addressing seafarers' rights and the obligations of flag States and…"
+description: "In this two-day course, participants learn the requirements contained within the ILO MLC, 2006, using Guidance for Maritime Labour Convention, 2006 as reference material."
 course_id: "226074841"
 code: "C-ARC010"
 tag: "Maritime Labour"

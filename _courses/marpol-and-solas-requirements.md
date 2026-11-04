@@ -3,7 +3,7 @@
 # replaced on the next sync. To write this page by hand, remove "generated: true".
 generated: true
 title: "MARPOL and SOLAS Requirements"
-description: "This two-day primer introduces the International Convention for the Prevention of Pollution from Ships (MARPOL) and the International Convention for the Safety of Life at Sea (SOLAS), covering…"
+description: "This two-day primer introduces the International Convention for the Prevention of Pollution from Ships (MARPOL) and the International Convention for the Safety of Life at Sea (SOLAS), covering concepts, definitions and requirements as well as the ABS plan review process for compliance."
 course_id: "226074843"
 code: "C-ARC012"
 tag: "Maritime"

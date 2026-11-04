@@ -66,7 +66,7 @@
             // The portal page for a real offering holds the full description; the course ID alone does not open it
             var offering = result.upcoming[0] || result.selfPaced || result.interest;
             if (offering && offering.courseDetailsURL) details.href = offering.courseDetailsURL;
-            q('jump-label').textContent = result.selfPaced && !result.upcoming.length ? 'Enroll' : 'View Dates';
+            q('jump-label').textContent = result.selfPaced && !result.upcoming.length ? 'How to Enroll' : 'View Dates';
             q('jump').hidden = false;
         });
     }

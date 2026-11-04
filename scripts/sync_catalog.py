@@ -250,16 +250,19 @@ def sentence_case_item(text):
 
 
 def summary_of(paragraphs, limit=200):
-    """A one or two sentence summary for cards and the page hero: the description's own opening."""
+    """A complete one or two sentence summary for cards and the page hero, taken from the description."""
     text = ' '.join(paragraphs)
     sentences = re.split(r'(?<=[.!?])\s+(?=[A-Z])', text)
     summary = sentences[0] if sentences else ''
     # A short opener ("Chart a course for safety and compliance!") reads better with the next sentence
     if len(summary) < 70 and len(sentences) > 1 and len(summary) + 1 + len(sentences[1]) <= limit:
         summary += ' ' + sentences[1]
-    if len(summary) > limit + 20:
-        cut = summary[:limit].rsplit(' ', 1)[0].rstrip(',;:')
-        summary = cut + '\u2026'
+    # A very long opener: use a shorter sentence that describes the course, else keep the whole sentence.
+    # Summaries are never cut off mid-sentence.
+    if len(summary) > limit:
+        for s in sentences[1:3]:
+            if len(s) <= limit and re.match(r'^(Participants|In this|This [\w-]*\s*course|You will|The course)\b', s):
+                return s
     return summary
 
 
@@ -445,12 +448,13 @@ def page_text(course):
         lines.append('{% raw %}')
         lines.extend('<p>' + p + '</p>' for p in body)
         lines.append('{% endraw %}')
-    return '\r\n'.join(lines) + '\r\n'
+    return '\n'.join(lines) + '\n'
 
 
 def write_if_changed(path, text):
+    """Writes LF line endings, as the repository stores them; a Windows checkout's CRLF copy counts as equal."""
     old = open(path, encoding='utf-8', newline='').read() if os.path.exists(path) else None
-    if old == text:
+    if old is not None and old.replace('\r\n', '\n') == text:
         return False
     with open(path, 'w', encoding='utf-8', newline='') as f:
         f.write(text)

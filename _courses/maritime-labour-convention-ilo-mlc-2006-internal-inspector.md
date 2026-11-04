@@ -3,7 +3,7 @@
 # replaced on the next sync. To write this page by hand, remove "generated: true".
 generated: true
 title: "Maritime Labour Convention (ILO MLC, 2006) Internal Inspector"
-description: "The International Labour Organization (ILO) Maritime Labour Convention, 2006 is a comprehensive international employment convention addressing seafarers' rights to decent conditions and fair competition for shipowners."
+description: "This two-day course combines individual exercises with case studies and explains the onboard verification process step by step from the internal inspector's perspective."
 course_id: "226074842"
 code: "C-ARC011"
 tag: "Maritime Labour"
