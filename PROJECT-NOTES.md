@@ -40,11 +40,12 @@ Notes:
 | Path | What it is |
 |---|---|
 | `_config.yml` | Site settings, portal URLs, GTM and GA4 IDs, the `courses` collection |
-| `index.html` | Home page: hero with course search box, Setting The Standard For Training, Training by Industry, Featured Courses (live next date), How Can We Help, newsletter |
+| `index.html` | Home page: hero (Browse Courses, Contact Us), Setting The Standard For Training, Training by Industry, Featured Courses (live next date), How Can We Help, newsletter |
 | `courses/index.html` | **Course Catalog** at `/courses/`: search and browse every course (see Course catalog below) |
 | `courses/view.html` | **Course view** at `/courses/view/?id=<course ID>`: a fallback for a course added on the portal since the last daily sync. `noindex`, not in the sitemap. |
-| `_courses/*.md` | One file per course page, 56 in all: 9 hand-written and 47 generated from the portal (`generated: true`). Front matter: `title`, `description` (one-sentence summary), `course_id` (Seertech ID), `tag`, `duration`, `format`, `objectives`, `audience`, optional `code`, `prerequisites`, `skills`, `featured_order` |
-| `_data/catalog.json` | Portal snapshot of every course (description, objectives, audience, code, format, duration, tag, categories, skills, price, image), written by the daily sync. The course layout reads the course code from it for hand-written pages. |
+| `_courses/*.md` | One file per course page, 56 in all, **every one generated from the portal** by the daily sync (`generated: true`). Do not edit them; the next sync overwrites them. Front matter: `title`, `description` (one-sentence summary), `course_id` (Seertech ID), `code`, `tag`, `duration`, `format`, `objectives`, `audience`, optional `prerequisites`, `skills`, `portal_url` |
+| `_data/featured.yml` | The home page's Featured Courses: course IDs in display order (up to six shown) |
+| `_data/catalog.json` | Portal snapshot of every course (description, objectives, audience, code, format, duration, tag, categories, skills, price, image), written by the daily sync. The course layout falls back to it for the course code. |
 | `scripts/sync_catalog.py`, `.github/workflows/sync-catalog.yml` | The daily portal sync (see Course pages from the portal below). `scripts/` is excluded from the site build. |
 | `_layouts/default.html` | Page shell. Consent Mode defaults and the saved choice are applied here before GTM loads. A page with `noindex: true` in its front matter gets a robots `noindex` tag. |
 | `_layouts/course.html` | Course page, including the live **Upcoming Classes** panel |
@@ -63,7 +64,9 @@ Notes:
 
 ### Courses
 
-Course pages live at `/courses/<file-name>/`. A course appears on the home page only if it has `featured_order`.
+Course pages live at `/courses/<file-name>/`. All 56 are created, updated and deleted by the daily sync (below). A page keeps its file name, and so its URL, for as long as the course stays on the portal; new courses get a file name made from their title.
+
+**Featured Courses on the home page** come from `_data/featured.yml`: a list of course IDs in display order. To change them, edit that file (find a course's ID in its page's `course_id`, or in the portal URL as `in_rcoId`). The home page shows the first six whose course still exists, and skips any ID whose course has left the portal.
 
 | Featured order | Course | Seertech ID |
 |---|---|---|
@@ -77,19 +80,19 @@ Course pages live at `/courses/<file-name>/`. A course appears on the home page 
 | not featured | Orientation to In-Service Classification and Statutory Surveys | 226074850 |
 | not featured | Gas Carrier Systems and Cargo Handling Equipment Introduction | 226074858 |
 
-New portal courses get a page automatically the next day (see below). To write a course page by hand instead, edit its generated file and delete the `generated: true` line (and the comment above it); the sync never touches hand-written pages. The class dates fill in automatically.
+New portal courses get a page automatically the next day, and a course removed from the portal loses its page. There are no hand-written course pages any more: course text, objectives, audience and format are changed on the portal, and topic tags in `TAG_RULES` in `scripts/sync_catalog.py`. The nine pages that used to be hand-written (the six featured courses, TMSA 3 Essentials, In-Service Classification orientation and Gas Carrier Systems) were switched to the sync on November 4, 2026, keeping their URLs; their summaries changed from short hand-written lines to the portal description's opening sentence.
 
 ### Course pages from the portal (daily sync)
 
 - The portal's course detail pages hold each course's description, objectives and audience, but they do not allow other sites to read them in the browser. So the **Sync course catalog** workflow (`.github/workflows/sync-catalog.yml`) runs `scripts/sync_catalog.py` every day at 10:17 UTC and on demand (Actions > Sync course catalog > Run workflow).
 - **It commits straight to `main`** (as github-actions[bot]) when something changed, after a successful Jekyll build, and then asks GitHub Pages to rebuild. That is how new or edited portal courses appear on the site without a pull request. Data-only commits titled "Sync course catalog from the ABS Training portal" are expected in the history. On pull requests that change the sync, it only checks the portal and writes nothing.
 - What it does: opens an anonymous portal session (no login), reads the portal's own catalog search (all 56 courses), then for each course reads the course details page (Description, Objectives, Audience, any Prerequisites), the course code (SKU, for example C-AST019) and categories/skills widgets, and the public offerings feed for formats. Online courses fall back to their offering page. HTML is converted to plain text and escaped; page bodies sit inside `{% raw %}` so portal text cannot run as Markdown or Liquid.
-- Mapping into the page fields hand-written pages use:
+- Mapping into the page fields:
   - `description` (the summary on cards and the page hero): the description's first sentence, kept whole (never cut off). A short opener is joined with the next sentence; an opener over 200 characters is replaced by a following "Participants…" / "In this course…" sentence when there is one.
   - `duration`: "Three-Day" becomes "3 days", "one-Hour" becomes "1 hour".
-  - `format`: Self-Paced Online, Online Bundle, Classroom, Virtual Class, or Classroom and Virtual Class when the course has offerings of both kinds.
+  - `format`: Self-Paced Online, Online Bundle, Classroom, Virtual Class, or Classroom and Virtual Class when the course has both kinds. A virtual-class course on the portal that currently has only classroom dates (with a Register Interest entry for virtual) counts as both.
   - `tag`: chosen by `TAG_RULES` at the top of `scripts/sync_catalog.py` (title words first, then the portal's skills, then its categories), using the site's words (Auditing, Safety, Maritime, Offshore, Tankers, Gas Carriers, Classification, Instructor Training) plus Marine Fuels, Engineering, Hull and Structures, Hazardous Areas, Materials and Welding, Maritime Security, Maritime Labour and Leadership. Edit that list to relabel courses.
-- **Safety checks:** nothing is written if the portal returns fewer than 20 courses or under 80% of the previous count, or if more than 20% of course pages fail. A course whose page fails keeps its previous snapshot. Generated pages for courses removed from the portal are deleted. Output uses LF line endings, as the repository stores them.
+- **Safety checks:** nothing is written if the portal returns fewer than 20 courses or under 80% of the previous count, or if more than 20% of course pages fail. A course whose page fails keeps its previous snapshot. Pages for courses removed from the portal are deleted, but only after those checks pass. Output uses LF line endings, as the repository stores them.
 - Run it locally: `python scripts/sync_catalog.py --check` (fetch and report only) or `python scripts/sync_catalog.py` (update `_data/catalog.json` and `_courses/`). Python 3 standard library only.
 - Three portal courses have no description on the portal: 223753426 ABS: Ammonia as Marine Fuel Introduction, 224892634 ASC003 Maritime Incident Investigation and 226417341 Final Examination (NDE). Their pages show "A full description of this course is not available yet" with the training email.
 
@@ -107,7 +110,7 @@ New portal courses get a page automatically the next day (see below). To write a
 - **Merge with course pages:** courses in `_courses/` replace the feed record with the same ID (their title, description, topic tag, duration, format and page link win). Course pages missing from the feed are still listed and searchable. 226074832 (Maritime Incident Investigation and Root Cause Analysis) is on the portal's own catalog but not in CatalogOut, so it appears only through its course page.
 - **All 56 courses are listed**, matching the portal catalog: the 55 feed records plus 226074832 from its course page. This includes 226417341 "Final Examination: Welding, Metallurgy, Inspections and Nondestructive Evaluation (NDE)" and 224892634 "ASC003 Maritime Incident Investigation" (Classroom), which were kept at the owner's request on November 4, 2026. Only titles starting `zzz` (test data) are skipped (`isListed` in `assets/js/course-catalog.js`).
 - Format filter: Virtual Class, Classroom, Self-Paced Online, Online Bundle, with counts for the current search. Course pages use their front-matter `format` ("Classroom and Virtual Class" counts as both).
-- Links: `/courses/?q=fuel&format=virtual` opens a search, and `/courses/#course-search` focuses the search box. The home page hero search box submits to `/courses/?q=`.
+- Links: `/courses/?q=fuel&format=virtual` opens a search, and `/courses/#course-search` focuses the search box. The home page hero has no search box (removed November 4, 2026 at the owner's request); its **Browse Courses** button and the Setting The Standard **Search Courses** button open the catalog.
 - If the feed fails, the page lists the course pages on this site with a notice and a link to the portal catalog. With no JavaScript, it lists the course pages and the portal link.
 - Every course has its own page now. A course that appears in the live feed before the daily sync has copied it links to `/courses/view/?id=<course ID>`, which shows the title, format, the live Upcoming Classes panel and a **Full Course Details** link to the portal. Course IDs that have a page redirect to it. Unknown IDs show "Course Not Found".
 - Self-paced online courses and bundles have no class dates. Their Upcoming Classes panel becomes **Start Anytime** with an **Enroll Now** button to the portal.
@@ -189,12 +192,13 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 | [#9](https://github.com/mmiller-eagle-org/abs-training/pull/9) | Nov 2 | GA4 through GTM, Consent Mode v2, cookie banner, site events |
 | [#10](https://github.com/mmiller-eagle-org/abs-training/pull/10) | Nov 2 | Cookie Policy page; Search Courses and Course Calendar buttons; title-case buttons site-wide |
 | [#11](https://github.com/mmiller-eagle-org/abs-training/pull/11) | Nov 3 | US date format; redesigned Upcoming Classes panel (12-hour times with GMT offset, weekday and length, seats, compact Register button, empty/error/loading states, screen-reader fixes, 10-second feed timeout); these notes |
-| [#12](https://github.com/mmiller-eagle-org/abs-training/pull/12) | **open** | On-site Course Catalog at `/courses/` with live search and format filter; a full page for all 56 courses generated from the portal by a daily sync workflow that commits to `main`; fallback course view; home hero search box; catalog links moved on site; self-paced Enroll Now; `search` event |
+| [#12](https://github.com/mmiller-eagle-org/abs-training/pull/12) | Nov 4 | On-site Course Catalog at `/courses/` with live search and format filter; a full page for all 56 courses generated from the portal by a daily sync workflow that commits to `main`; fallback course view; home hero search box; catalog links moved on site; self-paced Enroll Now; `search` event |
+| (this branch) | **open** | All 56 course pages come from the portal sync (the nine hand-written pages switched over, keeping their URLs); Featured Courses list moved to `_data/featured.yml`; home hero search box removed (Browse Courses is the red button again) |
 
 ## Outstanding items
 
 ### Course catalog
-- [ ] Review and merge [#12](https://github.com/mmiller-eagle-org/abs-training/pull/12), the course catalog.
+- [ ] Review and merge the pull request that moves all course pages to the sync.
 - [ ] In GTM, send the new `search` event to GA4: add `search` to the site-actions trigger and a data layer variable for `search_term` (GA4 reports it as a built-in parameter). Until then it stays in the data layer only.
 - [ ] Ask Seertech why 226074832 (Maritime Incident Investigation and Root Cause Analysis) is missing from the CatalogOut feed although it is in the portal catalog and has classes.
 - [ ] Ask the portal team to add descriptions for 223753426 (ABS: Ammonia as Marine Fuel Introduction), 224892634 (ASC003) and 226417341 (Final Examination). The next daily sync picks them up.
@@ -244,7 +248,7 @@ Test scripts and working files from the original chat are stored locally (not in
 - `audit\verify_consent.py`: 27 checks of the cookie banner and consent behavior (all passing on November 3).
 - `audit\verify_tracking.py`: data layer event checks (see the note above).
 - `audit\overflow.py`: no sideways scroll at 320–1280px.
-- Course catalog: `C:\Users\MAMILLER\.copilot\session-state\b592b914-c422-41c0-976b-87ed7d76e88b\files\verify_catalog.py <site-preview folder> <screenshot folder>`. It routes `https://abs-training.com/**` to the built site so the live feeds' CORS rule applies, then checks search (including description text and course codes), filters, deep links, empty and error states, generated, hand-written, self-paced and no-description course pages, the fallback course view (simulated by removing a course from the page's course list), analytics events, keyboard order, axe-core, the header course links and their aria-current state, and 320px layouts (95 checks).
+- Course catalog: `C:\Users\MAMILLER\.copilot\session-state\b592b914-c422-41c0-976b-87ed7d76e88b\files\verify_catalog.py <site-preview folder> <screenshot folder>`. It routes `https://abs-training.com/**` to the built site so the live feeds' CORS rule applies, then checks search (including description text and course codes), filters, deep links, empty and error states, generated, featured, self-paced and no-description course pages, the Featured Courses list and hero, the fallback course view (simulated by removing a course from the page's course list), analytics events, keyboard order, axe-core, the header course links and their aria-current state, and 320px layouts (95 checks).
 - `gtm-abs-training-import.json`: a GTM container import file.
 
 They use Playwright for Python with Microsoft Edge, and must set a normal browser user agent for the Seertech feed.

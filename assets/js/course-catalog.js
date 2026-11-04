@@ -1,5 +1,5 @@
 // Course list for the on-site catalog (/courses/) and course view (/courses/view/): the site's course pages
-// (_courses/: hand-written plus the ones scripts/sync_catalog.py generates from the portal every day), merged
+// (_courses/, all generated from the portal every day by scripts/sync_catalog.py), merged
 // with the Seertech public CatalogOut feed so a course added on the portal since the last sync still appears
 // (linked to /courses/view/). The feed allows abs-training.com by CORS and needs no login.
 (function () {
@@ -114,8 +114,8 @@
         });
     }
 
-    // Every listed course, A to Z. Course pages win over feed records with the same ID, and course pages
-    // missing from the feed (such as 226074832) are still included.
+    // Every listed course, A to Z. Course pages win over feed records with the same ID. Courses that the
+    // CatalogOut feed leaves out (such as 226074832) still appear, since the sync reads the portal's own search.
     function merge(feedItems) {
         var courses = siteCourses();
         var byId = {};
