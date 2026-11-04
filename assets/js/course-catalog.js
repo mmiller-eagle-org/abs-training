@@ -9,9 +9,6 @@
     // A stalled feed would otherwise leave "Loading courses…" on screen forever
     var TIMEOUT_MS = 10000;
 
-    // Feed records that are not courses a visitor can take: a final exam and a legacy internal classroom record
-    var HIDDEN_IDS = { '226417341': true, '224892634': true };
-
     var FORMATS = {
         virtual: { label: 'Virtual Class', icon: 'laptop_windows' },
         classroom: { label: 'Classroom', icon: 'groups' },
@@ -44,10 +41,10 @@
         return text.length >= 40 && !/(\.\.\.|\u2026)$/.test(text) ? text : '';
     }
 
+    // Every feed record is listed, matching the portal catalog, except zzz_UAT… test data
     function isListed(item) {
         var title = item.courseTitle || '';
-        return item.courseId && title && !HIDDEN_IDS[String(item.courseId)] && !/^zzz/i.test(title) &&
-            !/^final examination/i.test(title);
+        return item.courseId && title && !/^zzz/i.test(title);
     }
 
     function viewUrl(id) {
