@@ -36,7 +36,7 @@
         setTitle(course.title);
         q('format').textContent = course.formatText;
         q('lede').textContent = course.description ||
-            'Live class dates for this course are below. Registration and payment are completed on the ABS Training portal.';
+            'Find dates and registration details below. Registration and payment are completed on the ABS Training portal.';
 
         var meta = q('meta');
         course.formats.forEach(function (f) {
