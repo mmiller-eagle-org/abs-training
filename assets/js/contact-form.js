@@ -69,6 +69,7 @@
         if (v.valueMissing) {
             if (input.type === 'checkbox') return 'Check this box to send your message.';
             if (input.name === 'abs_countryregion') return 'Choose your country.';
+            if (input.name === 'description') return 'Tell us how we can help.';
             return name ? 'Enter your ' + name.toLowerCase() + '.' : 'This field is required.';
         }
         if (input.type === 'email' && (v.typeMismatch || v.patternMismatch)) {
