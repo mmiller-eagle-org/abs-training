@@ -210,7 +210,7 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 | [#12](https://github.com/mmiller-eagle-org/abs-training/pull/12) | Nov 4 | On-site Course Catalog at `/courses/` with live search and format filter; a full page for all 56 courses generated from the portal by a daily sync workflow that commits to `main`; fallback course view; home hero search box; catalog links moved on site; self-paced Enroll Now; `search` event |
 | [#13](https://github.com/mmiller-eagle-org/abs-training/pull/13) | Nov 4 | All 56 course pages come from the portal sync (the nine hand-written pages switched over, keeping their URLs); Featured Courses list moved to `_data/featured.yml`; home hero search box removed (Browse Courses is the red button again) |
 | [#14](https://github.com/mmiller-eagle-org/abs-training/pull/14) | Nov 5 | Hero sentence: "training to help improve" (also the site description) |
-| (this branch) | **open** | Contact Us page at `/contact/` with the Dynamics 365 form; Contact Us links and course pages point to it; `generate_lead` event; Dynamics cookie tied to advertising consent |
+| [#15](https://github.com/mmiller-eagle-org/abs-training/pull/15) | **open** | Contact Us page at `/contact/` with the Dynamics 365 form; Contact Us links and course pages point to it; `generate_lead` event; Dynamics cookie tied to advertising consent |
 
 ## Outstanding items
 
