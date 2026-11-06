@@ -13,7 +13,7 @@
 //   contact_click            any mailto: link                 link_url
 //   generate_lead            Contact Us form sent successfully   form_name, course_name (sent by assets/js/contact-form.js)
 //   outbound_click           link to the portal or another site   link_name, link_url
-// Every click event also carries link_location (header, footer, or the section's heading id).
+// Every click event also carries link_location (header, footer, or the heading id of its section or aside).
 // Add ?track_debug=1 to a URL to log events to the browser console.
 (function () {
     window.dataLayer = window.dataLayer || [];
@@ -40,7 +40,7 @@
         if (a.closest('[data-offerings]')) return 'upcoming_classes';
         if (a.closest('header')) return 'header';
         if (a.closest('footer')) return 'footer';
-        var section = a.closest('section[aria-labelledby]');
+        var section = a.closest('section[aria-labelledby], aside[aria-labelledby]');
         return section ? section.getAttribute('aria-labelledby') : 'page';
     }
 
