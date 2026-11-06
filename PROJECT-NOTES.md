@@ -219,7 +219,7 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 | [#15](https://github.com/mmiller-eagle-org/abs-training/pull/15) | Nov 6 | Contact Us page at `/contact/` with the Dynamics 365 form; Contact Us links and course pages point to it; `generate_lead` event; Dynamics cookie tied to advertising consent; switched to form `86a9a3fa-…` |
 | [#16](https://github.com/mmiller-eagle-org/abs-training/pull/16) | Nov 6 | Thank You page at `/contact/thank-you/` after a successful contact form submission (`generate_lead` sent from there); the form's two checkbox boxes line up with the fields |
 | [#17](https://github.com/mmiller-eagle-org/abs-training/pull/17) | Nov 6 | The site no longer redirects after the contact form; Dynamics' form redirect URL does it. The lead flag carries the course to the Thank You page. |
-| (this branch) | **open** | Contact Us page sidebar with the How Can We Help cards (email card instead of Contact Us); nav "Support" renamed **Contact Us** and linked to `/contact/` |
+| [#18](https://github.com/mmiller-eagle-org/abs-training/pull/18) | **open** | Contact Us page sidebar with the How Can We Help cards (email card instead of Contact Us); nav "Support" renamed **Contact Us** and linked to `/contact/` |
 
 ## Outstanding items
 
