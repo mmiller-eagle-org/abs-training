@@ -52,6 +52,9 @@
         // A course that appears with the page is read with it; a slow load replaces "Loading course…", so say so
         if (Date.now() - loadStarted > 1500) statusNode.textContent = course.title + ' loaded.';
 
+        var contact = q('contact');
+        if (contact) contact.href = contact.getAttribute('href') + '?course=' + encodeURIComponent(course.title);
+
         var details = q('details');
         if (course.detailsUrl) details.href = course.detailsUrl;
 

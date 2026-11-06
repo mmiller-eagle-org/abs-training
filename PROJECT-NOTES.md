@@ -1,7 +1,7 @@
 # ABS Training website: project notes
 
 Handoff notes for abs-training.com: how the site works, what has been done, and what is still open.
-Last updated November 4, 2026.
+Last updated November 6, 2026.
 
 ## At a glance
 
@@ -13,7 +13,7 @@ Last updated November 4, 2026.
 | Generator | Jekyll (built by GitHub Pages). Tailwind CSS from its CDN, Montserrat and Maitree from Google Fonts, Material Symbols icons. |
 | LMS | Seertech at https://portal.abs-training.com (site `abs`, region `gl`, language `en-us`) |
 | Analytics | Google Tag Manager `GTM-5W4KPWDJ` loading Google Analytics 4 `G-0LT6YRRFZH`, with a custom cookie banner (Consent Mode v2) |
-| Contact email used on the site | abstraining@eagle.org |
+| Contact | Contact Us page `/contact/` (Microsoft Dynamics 365 form); email abstraining@eagle.org shown there and on the Cookie Policy |
 
 This file is excluded from the website build in `_config.yml`, so it is not published as a page. It is visible to anyone who views the repository.
 
@@ -55,6 +55,7 @@ Notes:
 | `_includes/nav.html`, `footer.html` | Header (menu button below 1024px; Log In moves into the menu below 360px) and footer |
 | `_includes/consent-banner.html`, `assets/js/consent.js` | Cookie banner and the Cookie Settings button |
 | `cookie-policy.html` | Cookie Policy page at `/cookie-policy/` |
+| `contact.html`, `assets/js/contact-form.js` | **Contact Us** page at `/contact/` with the Dynamics 365 form (see Contact Us form below) |
 | `assets/js/course-offerings.js` | Loads class dates from the Seertech feed and formats them |
 | `assets/js/course-catalog.js` | Loads the all-courses feed, merges the course pages and matches search words |
 | `assets/js/catalog-page.js`, `assets/js/course-view.js` | Page logic for `/courses/` and `/courses/view/` |
@@ -115,6 +116,19 @@ New portal courses get a page automatically the next day, and a course removed f
 - Every course has its own page now. A course that appears in the live feed before the daily sync has copied it links to `/courses/view/?id=<course ID>`, which shows the title, format, the live Upcoming Classes panel and a **Full Course Details** link to the portal. Course IDs that have a page redirect to it. Unknown IDs show "Course Not Found".
 - Self-paced online courses and bundles have no class dates. Their Upcoming Classes panel becomes **Start Anytime** with an **Enroll Now** button to the portal.
 
+### Contact Us form (`/contact/`)
+
+- The page embeds ABS's Microsoft Dynamics 365 Customer Insights - Journeys form exactly as supplied (form ID `86a9a3fa-0bda-f111-a05d-7c1e52474379`, org `6a66b64d-3e30-42dc-bbc2-cefdc7f9fc29`, US region). The FormLoader script loads only on this page. Submissions go straight from the visitor's browser to Dynamics and create a lead; nothing passes through this site.
+- Visible fields: First Name, Last Name, Email, Business Phone, Company Name, Job Title, Country (a lookup that suggests values as you type), Comments / Questions, a required acknowledgment box, and an optional marketing opt-in. Hidden fields set by Dynamics: Lead Name "ABSB-RT ABS-Training Contact Us Form", Lead Type, Lead Source "Website", Topic Names "Training Solutions", Campaign "Marketing-Undefined", and ABSG Page URL, which the form fills with the page address (including `?course=`). There is no CAPTCHA on this form.
+- `assets/js/contact-form.js` (loaded before the FormLoader):
+  - **Cookies:** the form sets no cookies or storage when it loads. After a successful submission Dynamics would set `msdynmkt_formsubmissionid` (1 year), which links the browser to the CRM record. The script's `window.disableCookiesUsage` (Dynamics' documented switch) blocks it unless the visitor saved **Advertising** consent in the cookie banner. Listed in the Cookie Policy.
+  - When the form appears, Dynamics records a "form visit" with the page address only (no cookies or identifiers).
+  - **From a course page:** course pages link to `/contact/?course=<course title>`. The page shows the course above the form and adds "I would like to know more about: <course>" to Comments if empty. The course name also goes into `generate_lead`.
+  - **Accessibility fixes after the form loads:** removes placeholders and mismatched titles, adds `autocomplete` to name, email, phone, company and job title, and marks the Privacy Policy link as opening a new tab. It also replaces the browser's validation bubbles with written errors under each field (`aria-invalid` + `aria-describedby`, focus on the first, count announced). After sending, it announces Dynamics' result message and moves focus to it. Brand and contrast fixes (field borders, focus outline, error colors, no extra side inset) are in a `<style>` block in `contact.html`.
+  - If the form hasn't loaded after 15 seconds, the page shows the email address instead.
+- The form's own CSS sets `body { background: #fff }`, redefines `--abs-blue` and similar on `:root` (unused by the site), and loads Montserrat from Google Fonts. None of these change how the site looks.
+- Testing: never submit the live form from tests; each submission creates a real lead. The browser test answers the form's `/visits` call locally and aborts any other POST to Dynamics except `/lookup` (read-only dropdown values).
+
 ### Live class dates (Seertech feed)
 
 - Feed: `https://portal.abs-training.com/ws/report/out/abs/CatalogObjectOfferingsOut?offset=1&limit=50&date_from=%25&available_only=Y&content_object_id=<course id>&p_region=gl&location=%25&offering_language=%25`. It is public, needs a course ID, and pages with `offset` and `hasMore`. There is no all-courses version of this feed (CatalogOut lists courses but not their dates), so the site has no combined class calendar; the portal's course calendar is linked instead.
@@ -163,7 +177,8 @@ Do not use the generic Seertech site `iplus`; its catalog is empty.
 | `search` | Catalog search, once typing pauses for 1.5 seconds or on submit (once per term) | search_term |
 | `register_click` | **Register** on a scheduled class, or **Enroll Now** on a self-paced course | course_id, course_name, offering_id, class_date, class_format ("Self-paced online" for Enroll Now, with no class_date) |
 | `register_interest_click` | **Register Interest** | course_id, course_name, offering_id |
-| `contact_click` | Any email link (GA redacts the address) | link_location |
+| `generate_lead` | Contact Us form sent successfully (Dynamics `d365mkt-afterformsubmit` with `successful: true`) | form_name (`contact_us`), course_name when the visitor came from a course page, link_location `contact_form`. No personal data. |
+| `contact_click` | Any email link (GA redacts the address). Since November 6, 2026 the Contact Us buttons go to `/contact/`, so this now fires only for the email links on the contact page and Cookie Policy. | link_location |
 | `outbound_click` | Portal and other external links | link_name, link_url |
 
 Every click event includes `link_location` (header, footer, upcoming_classes, or the section's heading ID, such as `results-title` for catalog results). On the course view page, `view_item` uses the course format as its category. Add `?track_debug=1` to any page URL to log events to the browser console.
@@ -174,7 +189,7 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 
 - The banner shows until the visitor chooses. **Accept All** and **Reject All** look identical; **Customize** offers Analytics and Advertising separately. The choice is stored in local storage (`abs_consent_v1`) and applied before GTM loads on later pages. The footer **Cookie Settings** button reopens it.
 - Before a choice: EEA, UK and Switzerland default to denied (cookieless pings only). Elsewhere defaults to granted, except advertising is denied when the browser sends Global Privacy Control.
-- Rejecting deletes existing `_ga`, `_gcl` cookies and Google's `_gcl_ls` storage.
+- Rejecting deletes existing `_ga`, `_gcl` cookies and Google's `_gcl_ls` storage; rejecting advertising also deletes the Dynamics `msdynmkt_` cookie.
 - To turn all tracking off, set `analytics.gtm_id: ""` in `_config.yml`.
 
 ## Change history
@@ -193,12 +208,13 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 | [#10](https://github.com/mmiller-eagle-org/abs-training/pull/10) | Nov 2 | Cookie Policy page; Search Courses and Course Calendar buttons; title-case buttons site-wide |
 | [#11](https://github.com/mmiller-eagle-org/abs-training/pull/11) | Nov 3 | US date format; redesigned Upcoming Classes panel (12-hour times with GMT offset, weekday and length, seats, compact Register button, empty/error/loading states, screen-reader fixes, 10-second feed timeout); these notes |
 | [#12](https://github.com/mmiller-eagle-org/abs-training/pull/12) | Nov 4 | On-site Course Catalog at `/courses/` with live search and format filter; a full page for all 56 courses generated from the portal by a daily sync workflow that commits to `main`; fallback course view; home hero search box; catalog links moved on site; self-paced Enroll Now; `search` event |
-| [#13](https://github.com/mmiller-eagle-org/abs-training/pull/13) | **open** | All 56 course pages come from the portal sync (the nine hand-written pages switched over, keeping their URLs); Featured Courses list moved to `_data/featured.yml`; home hero search box removed (Browse Courses is the red button again) |
+| [#13](https://github.com/mmiller-eagle-org/abs-training/pull/13) | Nov 4 | All 56 course pages come from the portal sync (the nine hand-written pages switched over, keeping their URLs); Featured Courses list moved to `_data/featured.yml`; home hero search box removed (Browse Courses is the red button again) |
+| [#14](https://github.com/mmiller-eagle-org/abs-training/pull/14) | Nov 5 | Hero sentence: "training to help improve" (also the site description) |
+| [#15](https://github.com/mmiller-eagle-org/abs-training/pull/15) | **open** | Contact Us page at `/contact/` with the Dynamics 365 form; Contact Us links and course pages point to it; `generate_lead` event; Dynamics cookie tied to advertising consent |
 
 ## Outstanding items
 
 ### Course catalog
-- [ ] Review and merge [#13](https://github.com/mmiller-eagle-org/abs-training/pull/13), which moves all course pages to the sync. Check the new summaries on the nine former hand-written pages (listed in the PR).
 - [ ] In GTM, send the new `search` event to GA4: add `search` to the site-actions trigger and a data layer variable for `search_term` (GA4 reports it as a built-in parameter). Until then it stays in the data layer only.
 - [ ] Ask Seertech why 226074832 (Maritime Incident Investigation and Root Cause Analysis) is missing from the CatalogOut feed although it is in the portal catalog and has classes.
 - [ ] Ask the portal team to add descriptions for 223753426 (ABS: Ammonia as Marine Fuel Introduction), 224892634 (ASC003) and 226417341 (Final Examination). The next daily sync picks them up.
@@ -206,8 +222,19 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 - [ ] Optional: review the topic tags chosen by `TAG_RULES` in `scripts/sync_catalog.py`, and the long portal descriptions used as summaries for a few courses (for example Classification Requirements of Underwater Submersibles).
 - [ ] Optional: show each result's next class date in the catalog (one offerings-feed request per course, so load only the visible cards).
 
+### Contact Us form
+- [ ] After merging, send **one real test** from https://abs-training.com/contact/ and confirm the lead arrives in Dynamics with Lead Source "Website", Topic "Training Solutions" and the ABSG Page URL. (abs-training.com is already allowed for external form hosting: the submit endpoint answers its CORS preflight.)
+- [ ] In GTM, add `generate_lead` to the site-actions trigger (with data layer variables `form_name` and `course_name`), publish, then mark `generate_lead` as a **key event** in GA4 and use it as the Google Ads conversion for leads.
+- [ ] In the Dynamics form editor (these can't be fixed from the website):
+  - Leave the required "I acknowledge that ABS may contact me" box **unchecked** by default; a pre-checked required box isn't an active choice.
+  - Add a visible required marker to that box's label and short help text under Country ("Start typing, then choose your country").
+  - Remove placeholders that repeat the labels ("Business Email *") and fix input titles that don't match labels ("Account Name", "Description", "Field label"). The site script removes these after loading, but the source should be clean.
+  - Add `autocomplete` values for name, email, phone, company and job title if the editor allows (the site adds them after loading).
+  - Field borders (#999) are under 3:1; the site overrides them to #6B7280.
+- [ ] Optional: the hidden "What type of organization do you represent?" (industrycode) field is not shown on this form; make it visible in Dynamics if you want visitors to answer it.
+
 ### Google Analytics
-- [ ] In GA4 (Admin > Data display > Events), mark `register_click`, `register_interest_click` and `contact_click` as **key events**. They have been sending since November 2.
+- [ ] In GA4 (Admin > Data display > Events), mark `register_click`, `register_interest_click` and `contact_click` as **key events**. They have been sending since November 2. (Add `generate_lead` too once its GTM trigger exists; see Contact Us form.)
 - [ ] Add `portal.abs-training.com` to the GA4 web stream's domain list (Admin > Data streams > Configure tag settings > Configure your domains) so visits that continue to the portal are not counted as new sessions. This only matters once the portal also runs GTM (see Seertech below).
 - [ ] Build saved reports or an exploration for Register clicks by course, class date, format and traffic source.
 
@@ -248,7 +275,8 @@ Test scripts and working files from the original chat are stored locally (not in
 - `audit\verify_consent.py`: 27 checks of the cookie banner and consent behavior (all passing on November 3).
 - `audit\verify_tracking.py`: data layer event checks (see the note above).
 - `audit\overflow.py`: no sideways scroll at 320–1280px.
-- Course catalog: `C:\Users\MAMILLER\.copilot\session-state\b592b914-c422-41c0-976b-87ed7d76e88b\files\verify_catalog.py <site-preview folder> <screenshot folder>`. It routes `https://abs-training.com/**` to the built site so the live feeds' CORS rule applies, then checks search (including description text and course codes), filters, deep links, empty and error states, generated, featured, self-paced and no-description course pages, the Featured Courses list and hero, the fallback course view (simulated by removing a course from the page's course list), analytics events, keyboard order, axe-core, the header course links and their aria-current state, and 320px layouts (95 checks).
+- Course catalog: `C:\Users\MAMILLER\.copilot\session-state\b592b914-c422-41c0-976b-87ed7d76e88b\files\verify_catalog.py <site-preview folder> <screenshot folder>`. It routes `https://abs-training.com/**` to the built site so the live feeds' CORS rule applies, then checks search (including description text and course codes), filters, deep links, empty and error states, generated, featured, self-paced and no-description course pages, the Featured Courses list and hero, the fallback course view (simulated by removing a course from the page's course list), analytics events, keyboard order, axe-core, the header course links and their aria-current state, and 320px layouts (100 checks).
+- Contact page: `...\files\verify_contact.py <site-preview folder> <screenshot folder>` (50 checks: form loads, no cookies on load, consent switch, field clean-up, written errors and focus, course prefill, `generate_lead` from a simulated Dynamics event, result-message focus, 15-second fallback, Contact Us links, keyboard order, axe-core at desktop and 320px). It never submits.
 - `gtm-abs-training-import.json`: a GTM container import file.
 
 They use Playwright for Python with Microsoft Edge, and must set a normal browser user agent for the Seertech feed.

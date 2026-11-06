@@ -56,7 +56,7 @@ layout: default
                         {% if about_text != "" %}
                         {{ content }}
                         {% else %}
-                        <p>A full description of this course is not available yet. For details, email <a href="mailto:abstraining@eagle.org" class="font-bold text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm">abstraining@eagle.org</a>.</p>
+                        <p>A full description of this course is not available yet. For details, <a href="{{ '/contact/' | relative_url }}?course={{ page.title | url_encode }}" class="font-bold text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm">contact our training team</a>.</p>
                         {% endif %}
                     </div>
                 </section>
@@ -93,6 +93,12 @@ layout: default
                     <p class="font-serif text-gray-700 leading-relaxed">{{ page.audience | escape }}</p>
                 </section>
                 {% endif %}
+
+                <section aria-labelledby="questions-title">
+                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <h2 id="questions-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">Have</span> <span class="font-extrabold">Questions?</span></h2>
+                    <p class="font-serif text-gray-700 leading-relaxed">Our team can help with this course, group training or bringing it to your site. <a href="{{ '/contact/' | relative_url }}?course={{ page.title | url_encode }}" class="font-bold text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm">Send us a message about this course</a>.</p>
+                </section>
             </div>
 
             {% include upcoming-classes.html course_id=page.course_id %}

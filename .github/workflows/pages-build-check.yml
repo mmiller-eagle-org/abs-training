@@ -24,9 +24,9 @@ jobs:
       - name: Check expected pages exist
         run: |
           set -e
-          for f in index.html cookie-policy/index.html courses/index.html courses/view/index.html sitemap.xml robots.txt CNAME \
+          for f in index.html cookie-policy/index.html contact/index.html courses/index.html courses/view/index.html sitemap.xml robots.txt CNAME \
                    assets/js/course-offerings.js assets/js/upcoming-classes.js assets/js/course-catalog.js \
-                   assets/js/catalog-page.js assets/js/course-view.js assets/js/analytics.js assets/js/consent.js; do
+                   assets/js/catalog-page.js assets/js/course-view.js assets/js/contact-form.js assets/js/analytics.js assets/js/consent.js; do
             test -f "_site/$f" || { echo "Missing _site/$f"; exit 1; }
           done
           count=$(find _site/courses -mindepth 2 -name index.html -not -path '_site/courses/view/*' | wc -l)

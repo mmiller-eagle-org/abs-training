@@ -11,6 +11,7 @@
 //                            course_id, course_name, offering_id, class_date, class_format
 //   register_interest_click  Register interest (no classes)   course_id, course_name, offering_id
 //   contact_click            any mailto: link                 link_url
+//   generate_lead            Contact Us form sent successfully   form_name, course_name (sent by assets/js/contact-form.js)
 //   outbound_click           link to the portal or another site   link_name, link_url
 // Every click event also carries link_location (header, footer, or the section's heading id).
 // Add ?track_debug=1 to a URL to log events to the browser console.
