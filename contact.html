@@ -11,8 +11,21 @@ permalink: /contact/
     #contact-form .marketingForm select,
     #contact-form .marketingForm textarea,
     #contact-form .marketingForm .phoneCountryCode { border-color: #6B7280 !important; }
-    #contact-form .marketingForm .twoOptionFormFieldBlock > div,
-    #contact-form .marketingForm .consentBlock { border-color: #6B7280 !important; }
+    #contact-form .marketingForm .consentBlock > div,
+    #contact-form .marketingForm .twoOptionFormFieldBlock div.twooption_checkbox > div { border-color: #6B7280 !important; }
+    /* The acknowledgment box had 28px side padding that the opt-in box below it didn't, so the two bordered boxes
+       had different widths. Both now line up with the fields, with the same 28px gap above, between and below. */
+    #contact-form .marketingForm .twoOptionFormFieldBlock,
+    #contact-form .marketingForm .consentBlock { padding: 0 !important; margin: 0 !important; }
+    #contact-form .marketingForm .twoOptionFormFieldBlock { margin-top: 20px !important; }
+    #contact-form .marketingForm .consentBlock { margin-top: 28px !important; }
+    /* Below 768px the form adds 20px side padding inside our card; remove it so every field lines up */
+    @media only screen and (max-width: 768px) {
+        #contact-form .marketingForm .textFormFieldBlock, #contact-form .marketingForm .phoneFormFieldBlock,
+        #contact-form .marketingForm .lookupFormFieldBlock, #contact-form .marketingForm .optionSetFormFieldBlock,
+        #contact-form .marketingForm .dateTimeFormFieldBlock,
+        #contact-form .marketingForm div[data-editorblocktype="SubmitButton"] { padding-left: 0 !important; padding-right: 0 !important; }
+    }
     /* One clear focus outline everywhere, matching the site's buttons and links */
     #contact-form .marketingForm input:focus-visible,
     #contact-form .marketingForm select:focus-visible,

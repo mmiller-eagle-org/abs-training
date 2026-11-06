@@ -24,9 +24,9 @@ jobs:
       - name: Check expected pages exist
         run: |
           set -e
-          for f in index.html cookie-policy/index.html contact/index.html courses/index.html courses/view/index.html sitemap.xml robots.txt CNAME \
+          for f in index.html cookie-policy/index.html contact/index.html contact/thank-you/index.html courses/index.html courses/view/index.html sitemap.xml robots.txt CNAME \
                    assets/js/course-offerings.js assets/js/upcoming-classes.js assets/js/course-catalog.js \
-                   assets/js/catalog-page.js assets/js/course-view.js assets/js/contact-form.js assets/js/analytics.js assets/js/consent.js; do
+                   assets/js/catalog-page.js assets/js/course-view.js assets/js/contact-form.js assets/js/thank-you.js assets/js/analytics.js assets/js/consent.js; do
             test -f "_site/$f" || { echo "Missing _site/$f"; exit 1; }
           done
           count=$(find _site/courses -mindepth 2 -name index.html -not -path '_site/courses/view/*' | wc -l)
@@ -37,6 +37,9 @@ jobs:
           # The course view page must stay out of search results and the sitemap
           grep -q 'name="robots" content="noindex' _site/courses/view/index.html
           ! grep -q '/courses/view/' _site/sitemap.xml
+          # The Thank You page is only reached after sending the contact form
+          grep -q 'name="robots" content="noindex' _site/contact/thank-you/index.html
+          ! grep -q '/contact/thank-you/' _site/sitemap.xml
           # Every course page, including the ones generated from the portal snapshot, is in the sitemap
           inmap=$(grep -c '/courses/[a-z0-9-]*/</loc>' _site/sitemap.xml)
           echo "Course pages in sitemap: $inmap"
