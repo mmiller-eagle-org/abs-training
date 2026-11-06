@@ -215,7 +215,7 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 | [#13](https://github.com/mmiller-eagle-org/abs-training/pull/13) | Nov 4 | All 56 course pages come from the portal sync (the nine hand-written pages switched over, keeping their URLs); Featured Courses list moved to `_data/featured.yml`; home hero search box removed (Browse Courses is the red button again) |
 | [#14](https://github.com/mmiller-eagle-org/abs-training/pull/14) | Nov 5 | Hero sentence: "training to help improve" (also the site description) |
 | [#15](https://github.com/mmiller-eagle-org/abs-training/pull/15) | Nov 6 | Contact Us page at `/contact/` with the Dynamics 365 form; Contact Us links and course pages point to it; `generate_lead` event; Dynamics cookie tied to advertising consent; switched to form `86a9a3fa-…` |
-| (this branch) | **open** | Thank You page at `/contact/thank-you/` after a successful contact form submission (`generate_lead` sent from there); the form's two checkbox boxes line up with the fields |
+| [#16](https://github.com/mmiller-eagle-org/abs-training/pull/16) | **open** | Thank You page at `/contact/thank-you/` after a successful contact form submission (`generate_lead` sent from there); the form's two checkbox boxes line up with the fields |
 
 ## Outstanding items
 
