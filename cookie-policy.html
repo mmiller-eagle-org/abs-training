@@ -3,7 +3,7 @@ layout: default
 title: Cookie Policy
 description: How abs-training.com uses cookies and similar technologies, and how to change your choices.
 permalink: /cookie-policy/
-last_updated: November 2, 2026
+last_updated: November 6, 2026
 ---
 {% assign tracking_on = false %}{% if site.analytics.gtm_id and site.analytics.gtm_id != "" %}{% assign tracking_on = true %}{% endif %}
 {% assign ga_cookie = site.analytics.ga4_id | default: "G-XXXXXXX" | remove: "G-" | prepend: "_ga_" %}
@@ -25,7 +25,7 @@ last_updated: November 2, 2026
             </nav>
             <p class="eyebrow text-white mb-4">Legal</p>
             <h1 id="policy-title" class="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-4">Cookie Policy</h1>
-            <p class="text-sm text-white/80">Last updated <time datetime="2026-11-02">{{ page.last_updated }}</time></p>
+            <p class="text-sm text-white/80">Last updated <time datetime="2026-11-06">{{ page.last_updated }}</time></p>
         </div>
     </div>
 </section>
@@ -106,7 +106,7 @@ last_updated: November 2, 2026
                 <div>
                     <h3 id="advertising-title" class="font-sans text-lg font-bold text-abs-blue">Advertising</h3>
                     <p class="mt-2">
-                        Google Ads cookies tell us when someone who clicked one of our ads goes on to register for a course, so we can measure and improve our advertising. Google may also set its own cookies on its domains.
+                        Google Ads cookies tell us when someone who clicked one of our ads goes on to register for a course, so we can measure and improve our advertising. Google may also set its own cookies on its domains. If you send our Contact Us form, Microsoft Dynamics 365 can also set a marketing cookie, but only when advertising cookies are allowed.
                     </p>
                     <div {{ table_wrap }} role="region" aria-labelledby="advertising-title">
                         <table class="min-w-full divide-y divide-gray-200 font-sans">
@@ -116,6 +116,7 @@ last_updated: November 2, 2026
                                 <tr><td {{ name }}>_gcl_aw</td><td {{ td }}>Google Ads (first-party)</td><td {{ td }}>Stores the ad click ID when you arrive from a Google ad.</td><td {{ td }}>90 days</td></tr>
                                 <tr><td {{ name }}>_gcl_ls</td><td {{ td }}>Google Ads (local storage)</td><td {{ td }}>Stores ad click information as a backup to the cookies above.</td><td {{ td }}>Until removed by Google or your browser</td></tr>
                                 <tr><td {{ name }}>GCL_AW_P and others</td><td {{ td }}>Google (third-party: google.com, doubleclick.net)</td><td {{ td }}>Set by Google to measure ad clicks and conversions.</td><td {{ td }}>Up to 90 days; see Google’s policies</td></tr>
+                                <tr><td {{ name }}>msdynmkt_formsubmissionid</td><td {{ td }}>Microsoft Dynamics 365 (first-party)</td><td {{ td }}>Set only after you send the Contact Us form, and only if you allow advertising cookies. Links your browser to your inquiry in our customer system so later marketing emails and visits can be connected to it.</td><td {{ td }}>1 year</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -144,6 +145,7 @@ last_updated: November 2, 2026
                     <li><strong class="font-semibold text-abs-blue">Tailwind CSS</strong> (cdn.tailwindcss.com): page styling.</li>
                     <li><strong class="font-semibold text-abs-blue">ABS</strong> (ww2.eagle.org) and <strong class="font-semibold text-abs-blue">Unsplash</strong> (images.unsplash.com): images.</li>
                     <li><strong class="font-semibold text-abs-blue">ABS Training portal</strong> (portal.abs-training.com): upcoming class dates shown on course pages.</li>
+                    <li><strong class="font-semibold text-abs-blue">Microsoft Dynamics 365</strong> (mkt.dynamics.com): the Contact Us form. When the form is shown it records a visit with the page address only; what you type is sent to ABS when you submit the form.</li>
                 </ul>
                 <p>Links to the ABS Training portal, eagle.org and LinkedIn take you to sites with their own cookie and privacy policies.</p>
             </section>

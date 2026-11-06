@@ -54,6 +54,8 @@
         if (!c.analytics) clearCookies('_ga');
         if (!c.ads) {
             clearCookies('_gcl');
+            // Dynamics 365 contact form (contact.html): links the browser to its CRM record after a submission
+            clearCookies('msdynmkt_');
             try { localStorage.removeItem('_gcl_ls'); } catch (e) {}
         }
     }

@@ -1,0 +1,111 @@
+---
+layout: default
+title: Contact Us
+description: Ask the ABS Training team about courses, group or on-site training, class dates and registration.
+permalink: /contact/
+---
+<!-- Brand and accessibility fixes on top of the Dynamics form's own styles -->
+<style>
+    /* The form's #999 field borders are under 3:1 on white (WCAG 1.4.11) */
+    #contact-form .marketingForm input:not([type="checkbox"]):not([type="radio"]),
+    #contact-form .marketingForm select,
+    #contact-form .marketingForm textarea,
+    #contact-form .marketingForm .phoneCountryCode { border-color: #6B7280 !important; }
+    #contact-form .marketingForm .twoOptionFormFieldBlock > div,
+    #contact-form .marketingForm .consentBlock { border-color: #6B7280 !important; }
+    /* One clear focus outline everywhere, matching the site's buttons and links */
+    #contact-form .marketingForm input:focus-visible,
+    #contact-form .marketingForm select:focus-visible,
+    #contact-form .marketingForm textarea:focus-visible,
+    #contact-form .marketingForm a:focus-visible,
+    #contact-form .marketingForm button:focus-visible {
+        outline: 2px solid #002A4E !important; outline-offset: 2px; box-shadow: none !important;
+    }
+    #contact-form .marketingForm .phoneFormFieldBlock .phoneCountryCode:focus-within { outline: 2px solid #002A4E; outline-offset: 2px; }
+    #contact-form .marketingForm .phoneFormFieldBlock input:focus-visible { outline: none !important; }
+    #contact-form .marketingForm [aria-invalid="true"] { border-color: #B51227 !important; border-width: 2px !important; }
+    #contact-form .contact-error {
+        margin: 6px 0 0; font-family: Montserrat, Arial, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4;
+        color: #B51227; text-transform: none; letter-spacing: normal;
+    }
+    #contact-form .contact-error::before { content: "\26A0\FE0E\00A0"; content: "\26A0\FE0E\00A0" / ""; }
+    /* The form's outer wrapper is navy; the card around it is white */
+    #contact-form .marketingForm > [data-layout] { background-color: transparent !important; }
+    #contact-form .marketingForm .columnContainer { padding-left: 0 !important; padding-right: 0 !important; }
+</style>
+<!-- CONTACT HEADER -->
+<section class="relative overflow-hidden bg-abs-blue" aria-labelledby="contact-title">
+    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" fetchpriority="high"
+         class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
+         onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
+    <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
+    <div class="absolute inset-0 bg-abs-blue/65"></div>
+
+    <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-16">
+        <div class="max-w-5xl mx-auto">
+            <nav aria-label="Breadcrumb" class="mb-6">
+                <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-white/80">
+                    <li><a href="{{ '/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Home</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li aria-current="page" class="text-white">Contact Us</li>
+                </ol>
+            </nav>
+            <p class="eyebrow text-white mb-4">ABS Training</p>
+            <h1 id="contact-title" class="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-5">Contact Us</h1>
+            <p class="font-serif text-white leading-relaxed max-w-2xl">Questions about a course, class dates, group training or bringing a course to your site? Send us a message and our training team will get back to you.</p>
+        </div>
+    </div>
+</section>
+
+<div class="py-12 lg:py-16 bg-gray-50">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_300px] gap-10 lg:gap-12 items-start">
+            <section aria-labelledby="form-title" class="rounded-xl border border-gray-200 bg-white p-6 sm:p-8 shadow-card">
+                <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                <h2 id="form-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-2"><span class="font-light">Send us a</span> <span class="font-extrabold">Message</span></h2>
+                <p class="text-sm text-gray-700 mb-2" data-contact-course hidden></p>
+                <p class="text-sm text-gray-700 mb-6">Fields marked <span class="font-bold text-abs-red-dark" aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+
+                <!-- Status for screen readers: form loading, validation and sending -->
+                <p role="status" class="sr-only" data-contact-status></p>
+
+                <!-- Must run before the Dynamics FormLoader: sets its cookie switch and event listeners -->
+                <script src="{{ '/assets/js/contact-form.js' | relative_url }}"></script>
+                <div id="contact-form" data-contact-form data-form-name="contact_us">
+<!-- ABS-Training Contact Us Form -->
+<div
+        data-form-id='ab2e9fa7-06da-f111-a05d-7c1e52474379'
+        data-form-api-url='https://public-usa.mkt.dynamics.com/api/v1.0/orgs/6a66b64d-3e30-42dc-bbc2-cefdc7f9fc29/landingpageforms'
+        data-cached-form-url='https://assets-usa.mkt.dynamics.com/6a66b64d-3e30-42dc-bbc2-cefdc7f9fc29/digitalassets/forms/ab2e9fa7-06da-f111-a05d-7c1e52474379' ></div>
+        <script src = 'https://formui-usa1.mkt.dynamics.com/usa/FormLoader/FormLoader.bundle.js' ></script>
+<!-- End ABS-Training Contact Us Form -->
+                </div>
+
+                <p class="text-sm text-gray-600" data-contact-loading>Loading the contact form…</p>
+                <div class="rounded-lg border border-[#9A6700] bg-[#FFF7E6] p-4 text-sm leading-relaxed text-gray-800" data-contact-fallback hidden>
+                    The contact form could not be loaded. Please email us at
+                    <a href="mailto:abstraining@eagle.org" class="font-bold text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm">abstraining@eagle.org</a>.
+                </div>
+                <noscript>
+                    <p class="text-sm leading-relaxed text-gray-800">The contact form needs JavaScript. Please email us at <a href="mailto:abstraining@eagle.org" class="font-bold text-abs-blue underline underline-offset-2">abstraining@eagle.org</a>.</p>
+                </noscript>
+            </section>
+
+            <aside aria-labelledby="email-title" class="space-y-8">
+                <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-card">
+                    <h2 id="email-title" class="flex items-center gap-2 text-base font-bold text-abs-blue mb-2">
+                        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">mail</span> Prefer Email?
+                    </h2>
+                    <p class="text-sm leading-relaxed text-gray-700">Write to the training team at <a href="mailto:abstraining@eagle.org" class="font-bold text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm break-words">abstraining@eagle.org</a>.</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-card">
+                    <h2 class="flex items-center gap-2 text-base font-bold text-abs-blue mb-2">
+                        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">menu_book</span> Looking for a Course?
+                    </h2>
+                    <p class="text-sm leading-relaxed text-gray-700 mb-4">Search every course, see class dates and register.</p>
+                    <a href="{{ '/courses/' | relative_url }}" class="btn btn-outline">Browse Courses</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
