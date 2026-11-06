@@ -6,11 +6,15 @@
 //   - /contact/?course=<course title> (from course pages) adds the course to the Comments box.
 //   - The form only has the browser's own validation bubbles, so each problem is also written under its
 //     field (aria-invalid + aria-describedby) and focus moves to the first one.
-//   - Analytics: generate_lead (form_name, course_name) after a successful submission. No personal data.
+//   - Analytics and Thank You page: after a successful submission (Dynamics d365mkt-afterformsubmit with
+//     successful: true) the visitor goes to /contact/thank-you/ (with ?course=). A one-time sessionStorage flag
+//     (abs_lead_pending) tells that page to send generate_lead (form_name, course_name). No personal data.
+//     A failed submission stays here and shows Dynamics' error message.
 // The form itself sets the hidden "ABSG Page URL" field to this page's address, including ?course=.
 (function () {
     var LOAD_TIMEOUT_MS = 15000;
     var MAX_COURSE = 150;
+    var THANK_YOU_PATH = '/contact/thank-you/';
 
     window.disableCookiesUsage = function () {
         try {
@@ -178,10 +182,21 @@
 
     document.addEventListener('d365mkt-afterformsubmit', function (e) {
         var ok = !!(e.detail && e.detail.successful);
-        if (ok) track('generate_lead', { form_name: 'contact_us', course_name: course || undefined, link_location: 'contact_form' });
-        var fallbackText = ok ? 'Thank you. Your message has been sent.'
-            : 'Your message could not be sent. Please try again or email abstraining@eagle.org.';
-        // Dynamics replaces the form with its own result message; announce that exact text and move focus to it
+        if (ok) {
+            // The Thank You page sends generate_lead from a one-time flag, so the event isn't lost when this page
+            // unloads and isn't sent when someone opens the Thank You page directly or reloads it
+            var lead = { form_name: 'contact_us', course_name: course || undefined, t: Date.now() };
+            try {
+                sessionStorage.setItem('abs_lead_pending', JSON.stringify(lead));
+            } catch (err) {
+                track('generate_lead', { form_name: lead.form_name, course_name: lead.course_name, link_location: 'contact_form' });
+            }
+            announce('Thank you. Your message has been sent.');
+            window.location.assign(THANK_YOU_PATH + (course ? '?course=' + encodeURIComponent(course) : ''));
+            return;
+        }
+        var fallbackText = 'Your message could not be sent. Please try again or email abstraining@eagle.org.';
+        // Dynamics shows its error message in place of the form; announce that exact text and move focus to it
         // so keyboard and screen-reader users are not left on a control that no longer exists
         var tries = 0;
         (function findResult() {

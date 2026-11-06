@@ -1,0 +1,69 @@
+---
+layout: default
+title: Thank You
+description: Thank you for contacting ABS Training.
+permalink: /contact/thank-you/
+sitemap: false
+noindex: true
+---
+<!-- Shown after a successful Contact Us form submission (assets/js/contact-form.js redirects here).
+     Not indexed and not in the sitemap. assets/js/thank-you.js sends generate_lead once per submission. -->
+<section class="relative overflow-hidden bg-abs-blue" aria-labelledby="thank-you-title">
+    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" fetchpriority="high"
+         class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
+         onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
+    <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
+    <div class="absolute inset-0 bg-abs-blue/65"></div>
+
+    <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-16">
+        <div class="max-w-5xl mx-auto">
+            <nav aria-label="Breadcrumb" class="mb-6">
+                <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-white/80">
+                    <li><a href="{{ '/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Home</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li><a href="{{ '/contact/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Contact Us</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li aria-current="page" class="text-white">Thank You</li>
+                </ol>
+            </nav>
+            <p class="eyebrow text-white mb-4">Contact Us</p>
+            <h1 id="thank-you-title" class="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-5">Thank You</h1>
+            <p class="font-serif text-white leading-relaxed max-w-2xl">We received your message. A member of our training team will be in touch.</p>
+        </div>
+    </div>
+</section>
+
+<div class="py-12 lg:py-16 bg-gray-50">
+    <div class="container mx-auto px-6 lg:px-8">
+        <section aria-labelledby="next-title" class="max-w-3xl mx-auto rounded-xl border border-gray-200 bg-white p-6 sm:p-8 lg:p-10 shadow-card">
+            <div class="flex items-start gap-4">
+                <span class="hidden sm:flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E6EAEF] text-abs-blue" aria-hidden="true">
+                    <span class="material-symbols-outlined text-[26px]">mark_email_read</span>
+                </span>
+                <div class="min-w-0">
+                    <h2 id="next-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-3"><span class="font-light">While you</span> <span class="font-extrabold">Wait</span></h2>
+                    <p class="font-serif text-gray-700 leading-relaxed mb-2" data-thank-you-course hidden></p>
+                    <p class="font-serif text-gray-700 leading-relaxed mb-6">Browse our courses or check upcoming class dates.</p>
+                    <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
+                        <a href="{{ '/courses/' | relative_url }}" class="btn btn-primary">Browse Courses</a>
+                        <a href="https://portal.abs-training.com/lmt/clmscoursecalendar.prMain?site=abs&amp;in_language_logged_out=en-us&amp;in_region=gl" class="inline-flex items-center gap-1.5 min-h-[44px] font-bold text-sm text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm">
+                            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">calendar_month</span> View the Course Calendar
+                        </a>
+                        <a href="#" class="inline-flex items-center gap-1.5 min-h-[44px] font-bold text-sm text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm" data-thank-you-back hidden>
+                            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_back</span> <span data-thank-you-back-label></span>
+                        </a>
+                    </div>
+                    <p class="mt-8 border-t border-gray-200 pt-6 text-sm leading-relaxed text-gray-700">
+                        Urgent question? Email <a href="mailto:abstraining@eagle.org" class="font-bold text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm">abstraining@eagle.org</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Course titles and pages, so ?course=<title> can offer "Back to <course>" -->
+<script type="application/json" id="course-links">
+{ {% for course in site.courses %}{{ course.title | jsonify }}: {{ course.url | relative_url | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} }
+</script>
+<script src="{{ '/assets/js/thank-you.js' | relative_url }}"></script>
