@@ -25,7 +25,10 @@ permalink: /contact/
     }
     #contact-form .marketingForm .phoneFormFieldBlock .phoneCountryCode:focus-within { outline: 2px solid #002A4E; outline-offset: 2px; }
     #contact-form .marketingForm .phoneFormFieldBlock input:focus-visible { outline: none !important; }
-    #contact-form .marketingForm [aria-invalid="true"] { border-color: #B51227 !important; border-width: 2px !important; }
+    #contact-form .marketingForm input[aria-invalid="true"]:not([type="checkbox"]):not([type="radio"]),
+    #contact-form .marketingForm select[aria-invalid="true"],
+    #contact-form .marketingForm textarea[aria-invalid="true"] { border-color: #B51227 !important; border-width: 2px !important; }
+    #contact-form .marketingForm input[type="checkbox"][aria-invalid="true"] { outline: 2px solid #B51227; outline-offset: 2px; }
     #contact-form .contact-error {
         margin: 6px 0 0; font-family: Montserrat, Arial, sans-serif; font-size: 13px; font-weight: 600; line-height: 1.4;
         color: #B51227; text-transform: none; letter-spacing: normal;
