@@ -1,8 +1,12 @@
-// Thank You page (/contact/thank-you/), shown after a successful Contact Us form submission.
+// Thank You page (/contact/thank-you/). Dynamics sends visitors here after a successful Contact Us submission
+// (the form's redirect URL, set in the Dynamics form editor; the site itself doesn't redirect).
 //   - generate_lead: sent only when assets/js/contact-form.js left the one-time sessionStorage flag
-//     abs_lead_pending (set just before redirecting here). The flag is removed at once, so a reload, the back
-//     button or opening this page directly never sends it again. Flags older than 30 minutes are ignored.
-//   - ?course=<course title> (from a course page): names the course and offers "Back to <course>".
+//     abs_lead_pending (saved when Dynamics reported success, just before it redirects). The flag is removed at
+//     once, so a reload, the back button or opening this page directly never sends it again. Flags older than
+//     30 minutes are ignored.
+//   - The course the visitor asked about (from the flag, or ?course=<course title> as a fallback) is named on
+//     the page with a "Back to <course>" link. Dynamics' redirect doesn't keep ?course=, so the flag is the
+//     usual source.
 (function () {
     var KEY = 'abs_lead_pending';
     var MAX_AGE_MS = 30 * 60 * 1000;
@@ -13,7 +17,8 @@
         lead = JSON.parse(sessionStorage.getItem(KEY));
         sessionStorage.removeItem(KEY);
     } catch (e) {}
-    if (lead && lead.form_name && Date.now() - Number(lead.t) < MAX_AGE_MS) {
+    if (!(lead && lead.form_name && Date.now() - Number(lead.t) < MAX_AGE_MS)) lead = null;
+    if (lead) {
         try {
             if (window.absAnalytics) {
                 window.absAnalytics.track('generate_lead', {
@@ -24,7 +29,7 @@
         } catch (e) {}
     }
 
-    var course = (new URLSearchParams(window.location.search).get('course') || '')
+    var course = String((lead && lead.course_name) || new URLSearchParams(window.location.search).get('course') || '')
         .replace(/[\u0000-\u001f<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, MAX_COURSE);
     if (!course) return;
 
