@@ -1,7 +1,7 @@
 # ABS Training website: project notes
 
 Handoff notes for abs-training.com: how the site works, what has been done, and what is still open.
-Last updated November 6, 2026.
+Last updated November 6, 2026 (Thank You page).
 
 ## At a glance
 
@@ -56,6 +56,7 @@ Notes:
 | `_includes/consent-banner.html`, `assets/js/consent.js` | Cookie banner and the Cookie Settings button |
 | `cookie-policy.html` | Cookie Policy page at `/cookie-policy/` |
 | `contact.html`, `assets/js/contact-form.js` | **Contact Us** page at `/contact/` with the Dynamics 365 form (see Contact Us form below) |
+| `contact-thank-you.html`, `assets/js/thank-you.js` | **Thank You** page at `/contact/thank-you/`, shown after a successful submission. `noindex`, not in the sitemap. |
 | `assets/js/course-offerings.js` | Loads class dates from the Seertech feed and formats them |
 | `assets/js/course-catalog.js` | Loads the all-courses feed, merges the course pages and matches search words |
 | `assets/js/catalog-page.js`, `assets/js/course-view.js` | Page logic for `/courses/` and `/courses/view/` |
@@ -124,8 +125,11 @@ New portal courses get a page automatically the next day, and a course removed f
   - **Cookies:** the form sets no cookies or storage when it loads. After a successful submission Dynamics would set `msdynmkt_formsubmissionid` (1 year), which links the browser to the CRM record. The script's `window.disableCookiesUsage` (Dynamics' documented switch) blocks it unless the visitor saved **Advertising** consent in the cookie banner. Listed in the Cookie Policy.
   - When the form appears, Dynamics records a "form visit" with the page address only (no cookies or identifiers).
   - **From a course page:** course pages link to `/contact/?course=<course title>`. The page shows the course above the form and adds "I would like to know more about: <course>" to Comments if empty. The course name also goes into `generate_lead`.
-  - **Accessibility fixes after the form loads:** removes placeholders and mismatched titles, adds `autocomplete` to name, email, phone, company and job title, and marks the Privacy Policy link as opening a new tab. It also replaces the browser's validation bubbles with written errors under each field (`aria-invalid` + `aria-describedby`, focus on the first, count announced). After sending, it announces Dynamics' result message and moves focus to it. Brand and contrast fixes (field borders, focus outline, error colors, no extra side inset) are in a `<style>` block in `contact.html`.
+  - **Accessibility fixes after the form loads:** removes placeholders and mismatched titles, adds `autocomplete` to name, email, phone, company and job title, and marks the Privacy Policy link as opening a new tab. It also replaces the browser's validation bubbles with written errors under each field (`aria-invalid` + `aria-describedby`, focus on the first, count announced). After sending, it announces Dynamics' result message and moves focus to it. Brand and contrast fixes are in a `<style>` block in `contact.html`: field and checkbox-box borders #6B7280, focus outline, error colors, and layout (the form's own side padding is removed so every field and both checkbox boxes share one width and left edge at all screen sizes, with 28px between the comments, the two boxes and Submit).
   - If the form hasn't loaded after 15 seconds, the page shows the email address instead.
+  - **After sending:** when Dynamics reports success (`d365mkt-afterformsubmit` with `successful: true`), the script saves a one-time `abs_lead_pending` flag in session storage (form name and course only) and sends the visitor to `/contact/thank-you/` (with `?course=` when they came from a course page). The Thank You page sends `generate_lead` from that flag and deletes it, so the lead counts once even though the contact page unloads, and a reload, the back button or a direct visit never counts it. Flags older than 30 minutes are ignored. If session storage is unavailable, the event is sent before leaving the page instead. A failed submission stays on the contact page and focuses Dynamics' error message.
+  - The redirect is done by the site, not by a Dynamics redirect URL. Alternative: set the form's redirect URL to `https://abs-training.com/contact/thank-you/` in the Dynamics editor; if you do, the site script still works but `?course=` and the lead flag depend on the script running first.
+  - **Thank You page:** confirmation, **Browse Courses**, **View the Course Calendar** (portal), **Back to <course>** when the course name matches a course page, and abstraining@eagle.org for urgent questions. It doesn't promise a response time.
 - The form's own CSS sets `body { background: #fff }`, redefines `--abs-blue` and similar on `:root` (unused by the site), and loads Montserrat from Google Fonts. None of these change how the site looks.
 - Testing: never submit the live form from tests; each submission creates a real lead. The browser test answers the form's `/visits` call locally and aborts any other POST to Dynamics except `/lookup` (read-only dropdown values).
 
@@ -177,7 +181,7 @@ Do not use the generic Seertech site `iplus`; its catalog is empty.
 | `search` | Catalog search, once typing pauses for 1.5 seconds or on submit (once per term) | search_term |
 | `register_click` | **Register** on a scheduled class, or **Enroll Now** on a self-paced course | course_id, course_name, offering_id, class_date, class_format ("Self-paced online" for Enroll Now, with no class_date) |
 | `register_interest_click` | **Register Interest** | course_id, course_name, offering_id |
-| `generate_lead` | Contact Us form sent successfully (Dynamics `d365mkt-afterformsubmit` with `successful: true`) | form_name (`contact_us`), course_name when the visitor came from a course page, link_location `contact_form`. No personal data. |
+| `generate_lead` | Contact Us form sent successfully, sent from the Thank You page (see Contact Us form) | form_name (`contact_us`), course_name when the visitor came from a course page, link_location `contact_form`. No personal data. |
 | `contact_click` | Any email link (GA redacts the address). Since November 6, 2026 the Contact Us buttons go to `/contact/`, so this now fires only for the email links on the contact page and Cookie Policy. | link_location |
 | `outbound_click` | Portal and other external links | link_name, link_url |
 
@@ -210,7 +214,8 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 | [#12](https://github.com/mmiller-eagle-org/abs-training/pull/12) | Nov 4 | On-site Course Catalog at `/courses/` with live search and format filter; a full page for all 56 courses generated from the portal by a daily sync workflow that commits to `main`; fallback course view; home hero search box; catalog links moved on site; self-paced Enroll Now; `search` event |
 | [#13](https://github.com/mmiller-eagle-org/abs-training/pull/13) | Nov 4 | All 56 course pages come from the portal sync (the nine hand-written pages switched over, keeping their URLs); Featured Courses list moved to `_data/featured.yml`; home hero search box removed (Browse Courses is the red button again) |
 | [#14](https://github.com/mmiller-eagle-org/abs-training/pull/14) | Nov 5 | Hero sentence: "training to help improve" (also the site description) |
-| [#15](https://github.com/mmiller-eagle-org/abs-training/pull/15) | **open** | Contact Us page at `/contact/` with the Dynamics 365 form; Contact Us links and course pages point to it; `generate_lead` event; Dynamics cookie tied to advertising consent |
+| [#15](https://github.com/mmiller-eagle-org/abs-training/pull/15) | Nov 6 | Contact Us page at `/contact/` with the Dynamics 365 form; Contact Us links and course pages point to it; `generate_lead` event; Dynamics cookie tied to advertising consent; switched to form `86a9a3fa-…` |
+| (this branch) | **open** | Thank You page at `/contact/thank-you/` after a successful contact form submission (`generate_lead` sent from there); the form's two checkbox boxes line up with the fields |
 
 ## Outstanding items
 
@@ -276,7 +281,7 @@ Test scripts and working files from the original chat are stored locally (not in
 - `audit\verify_tracking.py`: data layer event checks (see the note above).
 - `audit\overflow.py`: no sideways scroll at 320–1280px.
 - Course catalog: `C:\Users\MAMILLER\.copilot\session-state\b592b914-c422-41c0-976b-87ed7d76e88b\files\verify_catalog.py <site-preview folder> <screenshot folder>`. It routes `https://abs-training.com/**` to the built site so the live feeds' CORS rule applies, then checks search (including description text and course codes), filters, deep links, empty and error states, generated, featured, self-paced and no-description course pages, the Featured Courses list and hero, the fallback course view (simulated by removing a course from the page's course list), analytics events, keyboard order, axe-core, the header course links and their aria-current state, and 320px layouts (100 checks).
-- Contact page: `...\files\verify_contact.py <site-preview folder> <screenshot folder>` (50 checks: form loads, no cookies on load, consent switch, field clean-up, written errors and focus, course prefill, `generate_lead` from a simulated Dynamics event, result-message focus, 15-second fallback, Contact Us links, keyboard order, axe-core at desktop and 320px). It never submits.
+- Contact and Thank You pages: `...\files\verify_contact.py <site-preview folder> <screenshot folder>` (83 checks, including the redirect from a simulated success event, one `generate_lead` per submission, no event on reload, direct visit or stale flag, no redirect on failure, box alignment at 320/390/1440px, and form loads, no cookies on load, consent switch, field clean-up, written errors and focus, course prefill, `generate_lead` from a simulated Dynamics event, result-message focus, 15-second fallback, Contact Us links, keyboard order, axe-core at desktop and 320px). It never submits.
 - `gtm-abs-training-import.json`: a GTM container import file.
 
 They use Playwright for Python with Microsoft Edge, and must set a normal browser user agent for the Seertech feed.
