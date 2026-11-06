@@ -70,7 +70,10 @@
         if (input.type === 'email' && (v.typeMismatch || v.patternMismatch)) {
             return 'Enter an email address like name@company.com.';
         }
-        return input.validationMessage || 'Check this field.';
+        if (v.tooLong) return 'Shorten this to ' + input.maxLength + ' characters or fewer.';
+        if (v.typeMismatch && input.type === 'url') return 'Enter a web address starting with https://.';
+        if (input.type === 'tel') return 'Enter a phone number using digits, starting with + and the country code.';
+        return name ? 'Check your ' + name.toLowerCase() + '.' : 'Check this field.';
     }
 
     function describe(input, id, add) {
@@ -139,6 +142,14 @@
         Array.prototype.forEach.call(form.querySelectorAll('a[target="_blank"]'), function (a) {
             if (!a.querySelector('.sr-only')) a.appendChild(el('span', 'sr-only', ' (opens in a new tab)'));
         });
+        // Lets browsers fill in the visitor's details (WCAG 1.3.5). Country is left alone: it is a Dynamics
+        // lookup whose suggestions would clash with browser autofill.
+        var AUTOCOMPLETE = { firstname: 'given-name', lastname: 'family-name', emailaddress1: 'email', telephone1: 'tel',
+            companyname: 'organization', jobtitle: 'organization-title' };
+        Object.keys(AUTOCOMPLETE).forEach(function (name) {
+            var input = form.querySelector('[name="' + name + '"]');
+            if (input) input.setAttribute('autocomplete', AUTOCOMPLETE[name]);
+        });
 
         form.addEventListener('invalid', onInvalid, true);
         form.addEventListener('input', onEdit, true);
@@ -167,18 +178,22 @@
 
     document.addEventListener('d365mkt-afterformsubmit', function (e) {
         var ok = !!(e.detail && e.detail.successful);
-        var heading = q('#form-title');
-        if (ok) {
-            track('generate_lead', { form_name: 'contact_us', course_name: course || undefined, link_location: 'contact_form' });
-            announce('Thank you. Your message has been sent.');
-        } else {
-            announce('Your message could not be sent. Please try again or email abstraining@eagle.org.');
-        }
-        // The form is replaced by Dynamics' result message, so focus would otherwise be lost
-        if (heading) {
-            heading.setAttribute('tabindex', '-1');
-            heading.focus();
-        }
+        if (ok) track('generate_lead', { form_name: 'contact_us', course_name: course || undefined, link_location: 'contact_form' });
+        var fallbackText = ok ? 'Thank you. Your message has been sent.'
+            : 'Your message could not be sent. Please try again or email abstraining@eagle.org.';
+        // Dynamics replaces the form with its own result message; announce that exact text and move focus to it
+        // so keyboard and screen-reader users are not left on a control that no longer exists
+        var tries = 0;
+        (function findResult() {
+            var result = q('#contact-form .onFormSubmittedFeedbackMessage');
+            if (!result && tries++ < 20) return setTimeout(findResult, 100);
+            var target = result || q('#form-title');
+            announce((result && result.textContent.replace(/\s+/g, ' ').trim()) || fallbackText);
+            if (target) {
+                target.setAttribute('tabindex', '-1');
+                target.focus();
+            }
+        })();
     });
 
     function ready() {
