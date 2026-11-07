@@ -8,7 +8,7 @@ course_id: "226074851"
 code: "C-AIS006"
 tag: "Tankers"
 duration: "2 days"
-format: "Classroom and Virtual Class"
+format: "Virtual Class"
 objectives:
   - "Review fast facts and frequently asked questions."
   - "Apply the analysis and structure approach."

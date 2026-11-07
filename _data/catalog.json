@@ -1626,7 +1626,7 @@
    "offering_id": "",
    "title": "Orientation to New Construction Classification and Statutory Surveys",
    "code": "C-AIS015",
-   "format": "Virtual Class",
+   "format": "Classroom and Virtual Class",
    "duration": "3 days",
    "tag": "Classification",
    "summary": "Marine classification verifies compliance with statutory regulations and recognized standards.",
@@ -1725,7 +1725,7 @@
    "offering_id": "",
    "title": "Tanker Management and Self-Assessment (TMSA 3) Essentials",
    "code": "C-AIS006",
-   "format": "Classroom and Virtual Class",
+   "format": "Virtual Class",
    "duration": "2 days",
    "tag": "Tankers",
    "summary": "This two-day course covers the structure and requirements of TMSA 3 and addresses the new requirements in comparison with TMSA 2.",
@@ -1832,5 +1832,5 @@
    "portal_url": ""
   }
  ],
- "updated": "2026-11-06T17:30:21Z"
+ "updated": "2026-11-07T16:26:29Z"
 }

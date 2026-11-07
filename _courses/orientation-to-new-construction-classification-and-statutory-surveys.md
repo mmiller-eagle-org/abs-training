@@ -8,7 +8,7 @@ course_id: "226074871"
 code: "C-AIS015"
 tag: "Classification"
 duration: "3 days"
-format: "Virtual Class"
+format: "Classroom and Virtual Class"
 objectives:
   - "Explain the classification and statutory survey process."
   - "Navigate key ABS Rules, class notations and approval pathways."
