@@ -8,7 +8,7 @@ course_id: "226074843"
 code: "C-ARC012"
 tag: "Maritime"
 duration: "2 days"
-format: "Classroom and Virtual Class"
+format: "Virtual Class"
 objectives:
   - "Describe shipboard emergency plans for oil and marine pollution (SOPEP and SMPEP)."
   - "Explain oily water separating equipment."

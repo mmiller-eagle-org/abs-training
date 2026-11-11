@@ -8,7 +8,7 @@ course_id: "226074864"
 code: "C-AML003"
 tag: "Safety"
 duration: "1 day"
-format: "Classroom and Virtual Class"
+format: "Virtual Class"
 objectives:
   - "Apply the four-phase crisis management framework to maritime scenarios."
   - "Design and evaluate emergency response plans using ICS principles."
