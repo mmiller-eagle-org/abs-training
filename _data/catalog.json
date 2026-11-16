@@ -1595,7 +1595,7 @@
    "offering_id": "",
    "title": "Orientation to In-Service Classification and Statutory Surveys",
    "code": "C-AIS005",
-   "format": "Classroom and Virtual Class",
+   "format": "Virtual Class",
    "duration": "3 days",
    "tag": "Classification",
    "summary": "The classification process and its interrelationship with international and flag regulations is not always well understood.",
@@ -1832,5 +1832,5 @@
    "portal_url": ""
   }
  ],
- "updated": "2026-11-12T18:18:52Z"
+ "updated": "2026-11-16T20:27:39Z"
 }

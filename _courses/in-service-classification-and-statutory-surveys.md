@@ -8,7 +8,7 @@ course_id: "226074850"
 code: "C-AIS005"
 tag: "Classification"
 duration: "3 days"
-format: "Classroom and Virtual Class"
+format: "Virtual Class"
 objectives:
   - "Describe the evolution of classification societies and the International Association of Classification Societies (IACS)."
   - "Explain the scope of classification surveys including the surveyor's role, class surveys, surveys during construction, damage surveys, transfer of class, surveys during sale of a vessel, equipment certification, cargo gear surveys and dual or double class."
