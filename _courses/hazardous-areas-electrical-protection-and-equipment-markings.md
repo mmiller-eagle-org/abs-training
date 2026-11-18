@@ -16,6 +16,7 @@ objectives:
   - "Explain the applicability of electrical protection methods to different hazardous zones."
 audience: "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors."
 portal_url: "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138703"
+image: "/assets/images/courses/225921538.jpg"
 ---
 {% raw %}
 <p>This course provides an overview of equipment markings in hazardous areas in accordance with International Electrotechnical Commission standards and ABS Rules. Learners examine hazard groups, temperature classifications and electrical protection methods to support equipment selection and help prevent ignition risks in hazardous environments.</p>

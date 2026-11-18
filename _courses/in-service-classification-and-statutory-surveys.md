@@ -17,6 +17,7 @@ objectives:
 audience: "This course is specifically structured for those in a supervisory role within a shipowning, operating or management company."
 skills:
   - "Survey and Vetting Readiness"
+image: "/assets/images/courses/226074850.jpg"
 ---
 {% raw %}
 <p>The classification process and its interrelationship with international and flag regulations is not always well understood. Structured for those in a supervisory role within a shipowning, operating or management company, this three-day course provides insight into the evolution of classification and statutory requirements, with particular emphasis on in-service surveys.</p>

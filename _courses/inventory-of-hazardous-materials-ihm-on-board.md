@@ -20,6 +20,7 @@ objectives:
 audience: "This course is for professionals involved in environmental compliance, vessel operations, ship management, technical support, inspection or ship recycling preparation, including those who need to understand IHM regulatory requirements and onboard application, support development, review or maintenance of IHM documentation, participate in vessel surveys, inspections or certification activities or work with shipowners, managers, operators or service providers on recycling compliance."
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/226074838.jpg"
 ---
 {% raw %}
 <p>This one-day course introduces the fundamentals of Inventory of Hazardous Materials (IHM) regulations, including those of the Hong Kong Convention and the European Union (EU). Participants become familiar with International Maritime Organization (IMO) and EU regulations related to IHM, industry requirements and practices, IHM guidelines from ABS and the European Maritime Safety Agency (EMSA) and the requirements of the EU Ship Recycling Regulation (SRR). On completion, participants should be able to compile and maintain an IHM on board.</p>

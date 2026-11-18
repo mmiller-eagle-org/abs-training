@@ -19,6 +19,7 @@ objectives:
 audience: "This course is designed for maritime professionals responsible for emergency preparedness and crisis response, including those who manage or support shore-based emergency response teams, serve in shipboard command or safety management roles, oversee crisis communication and media response for maritime organizations, or develop or maintain contingency and emergency response plans."
 skills:
   - "Human Factors and Operational Performance"
+image: "/assets/images/courses/226074864.jpg"
 ---
 {% raw %}
 <p>This one-day course prepares participants to lead a coordinated crisis response across shipboard and shore-based operations. Participants apply the four-phase emergency management framework of prevention, preparedness, response and recovery through real-world maritime case studies and hands-on exercises aligned with International Maritime Organization (IMO) guidelines and the Incident Command System (ICS).</p>

@@ -18,6 +18,7 @@ objectives:
 audience: "This course is for marine and energy professionals who need a foundational understanding of natural gas liquids and their value chains, including shipowners, operators and shore-based personnel supporting liquefied gas transportation, marine engineers, technical staff and superintendents, personnel involved in gas processing, storage, transportation or terminal operations or professionals who support liquefied gas carrier design, operation or compliance activities."
 skills:
   - "Asset Operations and Reliability"
+image: "/assets/images/courses/226074859.jpg"
 ---
 {% raw %}
 <p>This one-day course introduces the science behind natural gas, including its characteristics and properties, and the activities and supporting technologies for managing natural gas behaviors. Natural gas liquids (NGLs) are components of natural gas separated from a gaseous state in the form of liquids. NGLs are hydrocarbons belonging to the same family of molecules as natural gas and crude oil and can be expensive to handle, store and transport.</p>

@@ -20,6 +20,7 @@ objectives:
 audience: "This course suits ship and shore professionals with safety and environmental duties, including those who serve in supervisory roles in shipowning, operating or management firms, need to develop or improve internal audit skills for ISM Code compliance, are tasked with maintaining or enhancing a safety management system, or seek certification as internal auditors."
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/224266683.jpg"
 ---
 {% raw %}
 <p>This three-day course provides the knowledge and techniques to plan, conduct and report internal audits of a safety management system (SMS) under the International Safety Management (ISM) Code. Through immersive visual scenarios, group discussions and workshops, participants build practical audit skills, identify nonconformances and strengthen audit competency.</p>

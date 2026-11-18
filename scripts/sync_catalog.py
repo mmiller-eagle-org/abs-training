@@ -10,9 +10,16 @@ The portal's course detail pages do not allow other sites to read them in the br
 runs on a schedule (.github/workflows/sync-catalog.yml) and commits the result. Standard library
 only. The portal firewall blocks non-browser user agents, so requests send a desktop browser's.
 
+Each course's portal image is copied into assets/images/courses/ (<course id>.jpg at 800x400 and
+<course id>-400.jpg at 400x200) so the site doesn't load images from the portal. An image is downloaded
+again only when its portal URL changes. Images need Pillow (pip install Pillow); without it, or if a
+download fails, the course keeps its previous image and the text sync carries on.
+
 Usage:
-  python scripts/sync_catalog.py           fetch, then update _data/catalog.json and _courses/
-  python scripts/sync_catalog.py --check   fetch and validate only; writes nothing
+  python scripts/sync_catalog.py                fetch, then update _data/catalog.json, _courses/ and the images
+  python scripts/sync_catalog.py --check        fetch and validate only; writes nothing
+  python scripts/sync_catalog.py --images-only  no text fetch: copy images for the courses already in
+                                                _data/catalog.json and rewrite their pages
 
 Exit codes: 0 = done (changed or not), 1 = portal problem or failed safety check (nothing written).
 """
@@ -31,6 +38,14 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_FILE = os.path.join(ROOT, '_data', 'catalog.json')
 COURSES_DIR = os.path.join(ROOT, '_courses')
+IMAGES_DIR = os.path.join(ROOT, 'assets', 'images', 'courses')
+IMAGES_URL = '/assets/images/courses/'
+# Saved sizes: the 2:1 page/card image and a small copy for phones and narrow cards
+IMAGE_SIZES = ((800, 400, ''), (400, 200, '-400'))
+IMAGE_QUALITY = 78
+# Portal images outside this width:height range are logos or banners, not course photos
+IMAGE_RATIO_RANGE = (1.4, 2.8)
+IMAGE_MIN_WIDTH = 400
 
 PORTAL = 'https://portal.abs-training.com'
 CATALOG_URL = PORTAL + '/catalog/abs/region/gl/lang/en-us/'
@@ -110,6 +125,18 @@ class Portal:
                 time.sleep(REQUEST_PAUSE)
                 with self.opener.open(urllib.request.Request(url, headers=headers), timeout=40) as r:
                     return r.read().decode('utf-8', 'replace')
+            except Exception:
+                if attempt == tries - 1:
+                    raise
+                time.sleep(3 * (attempt + 1))
+
+    def get_bytes(self, url, tries=3):
+        headers = {'User-Agent': USER_AGENT, 'Referer': CATALOG_URL}
+        for attempt in range(tries):
+            try:
+                time.sleep(REQUEST_PAUSE)
+                with self.opener.open(urllib.request.Request(url, headers=headers), timeout=40) as r:
+                    return r.read()
             except Exception:
                 if attempt == tries - 1:
                     raise
@@ -385,6 +412,80 @@ def fetch_course(portal, result):
     }
 
 
+# ----------------------------------------------------------------------------------------- images
+def image_paths(cid):
+    return [os.path.join(IMAGES_DIR, '%s%s.jpg' % (cid, suffix)) for _, _, suffix in IMAGE_SIZES]
+
+
+def save_image(data, cid):
+    """Crops the portal image to 2:1 around its center, saves the sizes in IMAGE_SIZES as JPEG and returns
+    the site path, or '' when the image is a logo or banner rather than a course photo."""
+    from PIL import Image, ImageOps
+    import io
+    img = ImageOps.exif_transpose(Image.open(io.BytesIO(data)))
+    ratio = img.width / float(img.height)
+    if img.width < IMAGE_MIN_WIDTH or not IMAGE_RATIO_RANGE[0] <= ratio <= IMAGE_RATIO_RANGE[1]:
+        return ''
+    if img.mode != 'RGB':
+        background = Image.new('RGB', img.size, (255, 255, 255))
+        background.paste(img, mask=img.convert('RGBA').split()[-1])
+        img = background
+    os.makedirs(IMAGES_DIR, exist_ok=True)
+    for (w, h, _), path in zip(IMAGE_SIZES, image_paths(cid)):
+        ImageOps.fit(img, (w, h), Image.LANCZOS).save(path, 'JPEG', quality=IMAGE_QUALITY, optimize=True,
+                                                     progressive=True)
+    return IMAGES_URL + cid + '.jpg'
+
+
+def sync_images(portal, courses, previous):
+    """Sets image_file on each course, downloading only new or changed portal images, then deletes image
+    files that no course uses. Never raises: a course whose image can't be fetched keeps its old one."""
+    try:
+        import PIL  # noqa: F401
+        have_pillow = True
+    except ImportError:
+        have_pillow = False
+        print('WARNING: Pillow is not installed, so course images were not updated (pip install Pillow)')
+    fetched = skipped = 0
+    for c in courses:
+        old = previous.get(c['id'], {})
+        kept = old.get('image_file') if all(os.path.exists(p) for p in image_paths(c['id'])) else ''
+        if not c.get('image'):
+            c['image_file'] = ''
+            continue
+        if old.get('image') == c['image'] and (kept or old.get('image_skipped')):
+            c['image_file'] = kept
+            if old.get('image_skipped'):
+                c['image_skipped'] = True
+            continue
+        c['image_file'] = kept
+        if not have_pillow:
+            continue
+        try:
+            c['image_file'] = save_image(portal.get_bytes(c['image']), c['id'])
+            if c['image_file']:
+                fetched += 1
+            else:
+                c['image_skipped'] = True
+                skipped += 1
+                print('NOTE: portal image for %s %s is a logo or banner; the site uses its default photo'
+                      % (c['id'], c['title']))
+        except Exception as e:
+            print('WARNING: kept the previous image for %s %s (%s)' % (c['id'], c['title'], e))
+    used = set()
+    for c in courses:
+        if c.get('image_file'):
+            used.update(os.path.basename(p) for p in image_paths(c['id']))
+    removed = []
+    if os.path.isdir(IMAGES_DIR):
+        for name in sorted(os.listdir(IMAGES_DIR)):
+            if re.match(r'^\d+(-\d+)?\.jpg$', name) and name not in used:
+                os.remove(os.path.join(IMAGES_DIR, name))
+                removed.append(name)
+    print('Images: %d courses with an image, %d downloaded, %d skipped as logos, %d files removed' % (
+        sum(1 for c in courses if c.get('image_file')), fetched, skipped, len(removed)))
+
+
 # --------------------------------------------------------------------------------- writing
 def read_front_matter(path):
     text = open(path, encoding='utf-8').read()
@@ -447,6 +548,8 @@ def page_text(course):
         lines.extend('  - ' + q(s) for s in course['skills'])
     if course['portal_url']:
         lines.append('portal_url: ' + q(course['portal_url']))
+    if course.get('image_file'):
+        lines.append('image: ' + q(course['image_file']))
     lines.append('---')
     # Plain paragraphs, escaped, inside {% raw %} so portal text can never run as Markdown or Liquid
     body = [html.escape(p, quote=False) for p in course['description']]
@@ -470,6 +573,8 @@ def write_if_changed(path, text):
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
     parser.add_argument('--check', action='store_true', help='fetch and validate only; write nothing')
+    parser.add_argument('--images-only', action='store_true',
+                        help='copy images for the courses in _data/catalog.json without fetching course text')
     args = parser.parse_args()
 
     previous = {}
@@ -480,6 +585,15 @@ def main():
             previous = {}
 
     portal = Portal()
+    if args.images_only:
+        if not previous:
+            print('ERROR: _data/catalog.json is missing or unreadable. Nothing written.')
+            return 1
+        courses = sorted(previous.values(), key=lambda c: c['title'].lower())
+        sync_images(portal, courses, previous)
+        write_all(courses)
+        return 0
+
     portal.start()
     results, total = portal.search_results()
     print('Portal lists %d courses (reported total %d)' % (len(results), total))
@@ -518,8 +632,16 @@ def main():
     if args.check:
         for c in courses:
             print('  %-10s %-24s %-28s %-9s %s' % (c['id'], c['tag'], c['format'], c['duration'], c['title']))
+        print('Courses with a portal image: %d' % sum(1 for c in courses if c['image']))
         return 0
 
+    sync_images(portal, courses, previous)
+    write_all(courses)
+    return 0
+
+
+def write_all(courses):
+    """Writes one page per course and _data/catalog.json, and deletes pages of courses no longer listed."""
     pages = existing_pages()
     used = set(os.listdir(COURSES_DIR))
     changed = []
@@ -548,7 +670,6 @@ def main():
     if write_if_changed(DATA_FILE, json.dumps(data, ensure_ascii=False, indent=1) + '\n'):
         changed.append('_data/catalog.json')
     print('Changed: %s' % (', '.join(changed) if changed else 'nothing'))
-    return 0
 
 
 if __name__ == '__main__':

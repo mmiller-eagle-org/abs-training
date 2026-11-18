@@ -19,6 +19,7 @@ objectives:
 audience: "This course is for personnel involved in the internal auditing process."
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/226074837.jpg"
 ---
 {% raw %}
 <p>Writing effective audit and nonconformity reports remains a challenging task for those involved in the internal audit process. This one-day course provides an overview of the essentials of good audit and nonconformity report writing. Through practical exercises and case studies, participants enhance their skills in producing well-structured, concise and impactful reports.</p>

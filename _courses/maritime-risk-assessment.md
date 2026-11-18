@@ -18,6 +18,7 @@ objectives:
 audience: "This course is for maritime professionals who identify, assess, manage or oversee operational risk, including those who support shipboard or shore-based safety management activities, develop or review job safety analyses and risk assessments, manage marine operations, maintenance or emergency preparedness, participate in hazard identification or risk control activities. It is especially valuable for masters, officers, superintendents, safety professionals, operations personnel, and shore-based staff involved in risk-informed decision-making."
 skills:
   - "Process Safety and Risk Control"
+image: "/assets/images/courses/226074833.jpg"
 ---
 {% raw %}
 <p>Risk assessment is a systematic process for identifying hazards that could affect an organization's ability to conduct business, analyzing what could happen if a hazard occurs and determining ways to eliminate or control it. In the maritime industry those risks primarily affect the safety of a vessel, a facility or an operation. This one-day course introduces fundamental risk concepts including qualitative and quantitative risk analysis, hazard identification and risk estimation, giving decision makers the tools to make better informed management choices.</p>

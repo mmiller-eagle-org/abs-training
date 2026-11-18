@@ -18,6 +18,7 @@ objectives:
 audience: "This course is for professionals in the design, construction or operation of LNG-fueled vessels, including those who work on LNG-fueled vessel projects or LNG fuel system installations, review plans or verify compliance for LNG-fueled ships, support LNG fuel system design, arrangement or integration activities, participate in LNG bunkering operations or related operational planning, or need a stronger working knowledge of LNG fuel systems, safety considerations and applicable requirements."
 skills:
   - "Marine Fuel Management"
+image: "/assets/images/courses/226074860.jpg"
 ---
 {% raw %}
 <p>This three-day course gives you a practical understanding of liquefied natural gas (LNG) as a marine fuel and the key technical, operational and safety factors behind LNG-fueled vessels. Learn how LNG supports emissions reduction and compliance and how vessel design, fuel systems and bunkering work together.</p>

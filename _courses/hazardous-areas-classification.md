@@ -18,6 +18,7 @@ objectives:
 audience: "This course is for professionals involved in the design, construction, installation, inspection or approval of equipment in hazardous areas on ships and offshore units, including marine and offshore engineers, electrical engineers and designers, surveyors and inspectors, shipyard and technical personnel or personnel responsible for hazardous area compliance"
 skills:
   - "Survey and Vetting Readiness"
+image: "/assets/images/courses/226074846.jpg"
 ---
 {% raw %}
 <p>This one-day course highlights how hazardous areas are classified on ships and offshore units, and the common principles behind the various codes and standards that apply. Participants discuss the criteria and precautions for selecting and installing equipment in hazardous areas based on ABS Rules and industry standards, and learn how addressing hazardous area issues early in the design process avoids suboptimal solutions later.</p>

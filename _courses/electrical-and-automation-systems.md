@@ -26,6 +26,7 @@ objectives:
 audience: "This course is for engineers, surveyors, inspectors and technical personnel involved in the design, construction, review, inspection, testing or approval of marine electrical and automation systems. It is especially relevant to professionals supporting shipyard installation, commissioning, new construction or retrofit projects, and those who review plans for class and statutory compliance."
 skills:
   - "Electrical and Automation Systems"
+image: "/assets/images/courses/226074856.jpg"
 ---
 {% raw %}
 <p>This two-day course provides an in-depth discussion of the critical issues associated with installing and testing the electrical and automation systems used in the fabrication of steel ships, and how to assess those issues in line with classification and statutory requirements. Participants become familiar with ABS requirements for the installation and testing of electrical and automation systems.</p>

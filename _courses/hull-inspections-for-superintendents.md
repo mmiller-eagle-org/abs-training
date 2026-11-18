@@ -21,6 +21,7 @@ objectives:
 audience: "This course is for professionals involved in vessel maintenance, repair planning and drydock execution, including those who serve as marine inspectors, surveyors or superintendents, oversee vessel repair periods, shipyard coordination or maintenance planning, support technical, operational or project management aspects of drydocking or participate in contract review, repair scope development or post-drydock reporting make risk-informed decisions."
 skills:
   - "Structural Assessment and Inspection"
+image: "/assets/images/courses/226074848.jpg"
 ---
 {% raw %}
 <p>This two-day course builds a practical understanding of how to structure and carry out an owner's hull inspection and maintenance program in alignment with the ABS Hull Inspection and Maintenance Program (HIMP). Participants learn to identify critical structural areas, apply effective inspection techniques and document hull conditions systematically to support periodic surveillance and ongoing maintenance planning.</p>

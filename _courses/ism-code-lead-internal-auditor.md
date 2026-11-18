@@ -19,6 +19,7 @@ objectives:
 audience: "This course is intended for professionals who already have internal auditing experience and want to advance their capability as lead internal auditors for ISM Code and related management system audits. It is especially valuable for those who hold an internal auditor certificate from the International Association of Classification Societies (IACS), have conducted at least three internal audits, or need to strengthen audit judgment and reporting."
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/226074839.jpg"
 ---
 {% raw %}
 <p>This advanced three-day course helps experienced auditors sharpen their approach and deepen their understanding of the International Safety Management (ISM) Code. Through discussions, case studies and workshops, participants build skills to assess safety management systems (SMS) with consistency and confidence while staying current with the International Maritime Organization (IMO) awareness.</p>

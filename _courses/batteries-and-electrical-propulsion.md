@@ -19,6 +19,7 @@ objectives:
 audience: "This course is for maritime and offshore professionals involved in the specification, integration, operation or oversight of battery-based propulsion and power systems, including those who design or integrate electrical and hybrid propulsion systems, operate or manage vessels, rigs or offshore units using or considering Li-ion batteries, work in engineering, health, safety, quality and environment or technical management and need to understand battery-related risks and requirements, or support class, regulatory compliance, surveys or inspections involving energy storage systems."
 skills:
   - "Propulsion and Machinery Reliability"
+image: "/assets/images/courses/226074854.jpg"
 ---
 {% raw %}
 <p>This one-day course gives a practical, application-focused understanding of lithium-ion (Li-ion) batteries in marine and offshore environments. Participants learn how batteries support propulsion and power generation, how they integrate into hybrid systems and what is required to use them safely and in compliance with classification and regulatory requirements.</p>

@@ -19,6 +19,7 @@ objectives:
 audience: "This course is for maritime personnel who identify, assess, manage or communicate operational risk, including safety, quality and environmental professionals, vessel operators, shore-based managers and superintendents, engineers, surveyors, inspectors and technical personnel, operations, maintenance and project personnel or team members who participate in hazard identification, job safety analysis or risk assessment workshops."
 skills:
   - "Process Safety and Risk Control"
+image: "/assets/images/courses/226074866.jpg"
 ---
 {% raw %}
 <p>This two-day course introduces fundamental qualitative and quantitative risk concepts, common hazard identification (HAZID) and risk estimation. Through mock HAZID exercises, participants learn to assess and prioritize routine and non-routine risks using a risk matrix. The course focuses on organizing and managing qualitative risk assessment information.</p>

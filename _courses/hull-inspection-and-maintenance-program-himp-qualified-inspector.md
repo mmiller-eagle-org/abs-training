@@ -23,6 +23,7 @@ objectives:
 audience: "This course is for full-time owner employees designated to perform HIMP inspections, as well as others involved in hull inspection and maintenance activities, including those who conduct or support visual examinations of vessel hull structures, participate in hull maintenance planning, inspection reporting or structural condition assessment, or manage inspection teams responsible for inspection execution and follow-up."
 skills:
   - "Structural Assessment and Inspection"
+image: "/assets/images/courses/226074847.jpg"
 ---
 {% raw %}
 <p>This three-day course prepares participants to perform hull inspections in support of the ABS Hull Inspection and Maintenance Program (HIMP). Designed for full-time owner employees serving as qualified inspectors, it builds practical knowledge of hull structure behavior, inspection planning, damage recognition and reporting requirements.</p>

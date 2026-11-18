@@ -7,6 +7,9 @@ layout: default
 {%- endcomment -%}
 {%- assign snapshot = site.data.catalog.courses | where: "id", page.course_id | first -%}
 {%- assign course_code = page.code | default: snapshot.code -%}
+{%- comment -%} Course photo copied from the portal by the sync; courses without one use the default photo {%- endcomment -%}
+{%- assign course_image = page.image | default: "/assets/images/course-default.jpg" -%}
+{%- assign course_image_small = course_image | replace: ".jpg", "-400.jpg" -%}
 {%- assign self_paced = false -%}
 {%- if page.format contains "Online" -%}{%- assign self_paced = true -%}{%- endif -%}
 <!-- COURSE HEADER -->
@@ -18,7 +21,8 @@ layout: default
     <div class="absolute inset-0 bg-abs-blue/65"></div>
 
     <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-20">
-        <div class="max-w-5xl mx-auto">
+        <div class="max-w-5xl mx-auto lg:grid lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center lg:gap-12">
+          <div class="min-w-0">
             <nav aria-label="Breadcrumb" class="mb-6">
                 <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-white/80">
                     <li><a href="{{ '/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Home</a></li>
@@ -39,6 +43,11 @@ layout: default
             <a href="#dates" class="btn btn-lg btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">
                 {% if self_paced %}How to Enroll{% else %}View Dates{% endif %} <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_downward</span>
             </a>
+          </div>
+            <!-- Illustrative photo next to the title, so it has empty alt text -->
+            <img src="{{ course_image | relative_url }}" srcset="{{ course_image_small | relative_url }} 400w, {{ course_image | relative_url }} 800w"
+                 sizes="(min-width: 1024px) 360px, (min-width: 640px) 448px, calc(100vw - 48px)" width="800" height="400" alt="" decoding="async"
+                 class="mt-10 lg:mt-0 w-full max-w-md lg:max-w-none h-auto aspect-[2/1] rounded-xl object-cover shadow-card ring-1 ring-white/20">
         </div>
     </div>
 </section>
@@ -114,6 +123,7 @@ layout: default
     "description": {{ page.description | default: page.title | jsonify }},{% if course_code %}
     "courseCode": {{ course_code | jsonify }},{% endif %}
     "url": {{ page.url | absolute_url | jsonify }},
+    "image": {{ course_image | absolute_url | jsonify }},
     "inLanguage": "en",
     "provider": {
         "@type": "Organization",

@@ -14,6 +14,7 @@ objectives:
   - "Recognize the role of hazardous area classification in evaluating electrical installations."
 audience: "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors."
 portal_url: "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138044"
+image: "/assets/images/courses/225921103.jpg"
 ---
 {% raw %}
 <p>Chart a course for safety and compliance! This course explains the basics of hazardous areas and the fire triangle. Be aware of possible hazardous areas and methods to reduce the likelihood of ignition sources that could ignite a flammable atmosphere. Upon completion of this module, you will be able to recall the basics of hazardous areas and the three methods used to classify them.</p>

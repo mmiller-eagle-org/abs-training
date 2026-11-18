@@ -22,6 +22,7 @@ objectives:
 audience: "This course is for shipboard and shore-based personnel responsible for supporting Maritime Labour Convention compliance, including those who manage ship operations, crewing or seafarer welfare, serve as masters, officers, superintendents or fleet managers, support safety, quality, human resources or compliance functions, prepare vessels, records and procedures for flag State or port State inspection or develop or maintain company procedures for ongoing compliance"
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/226074841.jpg"
 ---
 {% raw %}
 <p>The International Labour Organization (ILO) Maritime Labour Convention, 2006 provides the most comprehensive code to date addressing seafarers' rights and the obligations of flag States and shipowners with respect to those rights. The Convention consolidates and updates standards from 68 existing ILO instruments into one document. In this two-day course, participants learn the requirements contained within the ILO MLC, 2006, using Guidance for Maritime Labour Convention, 2006 as reference material.</p>

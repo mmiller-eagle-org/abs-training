@@ -24,6 +24,7 @@ objectives:
 audience: "This course is for professionals involved in the operation, inspection or oversight of gas carrier systems, including those who operate or supervise cargo system activities, support gas carrier engineering or design, inspect or maintain cargo-related systems or need stronger knowledge of cargo safety systems."
 skills:
   - "Asset Operations and Reliability"
+image: "/assets/images/courses/226074858.jpg"
 ---
 {% raw %}
 <p>This two-day course explains the ship loading and discharging operations cycle from a gas-free condition until a cargo change is planned, along with an overview of the systems involved in cargo handling operations. Gas carriers use cargo handling systems designed for liquefied gases in bulk, including discharging and control systems featuring main cargo pumps, booster pumps, cargo heaters, level gauging and a high-level alarm system.</p>
