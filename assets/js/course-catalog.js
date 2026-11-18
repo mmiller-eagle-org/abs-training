@@ -62,7 +62,8 @@
             return {
                 id: String(c.id), title: c.title, description: c.description || '', tag: c.tag || '',
                 duration: c.duration || '', formats: siteFormats(c.format || ''), formatText: c.format || '',
-                url: c.url, onSite: true, inFeed: false, code: c.code || '', detailsUrl: '', search: c.search || ''
+                url: c.url, onSite: true, inFeed: false, code: c.code || '', detailsUrl: '', search: c.search || '',
+                industries: Array.isArray(c.industries) ? c.industries : []
             };
         });
     }
@@ -74,7 +75,7 @@
             id: id, title: item.courseTitle.trim(), description: usefulDescription(item.shortDescription), tag: '',
             duration: '', formats: [format], formatText: FORMATS[format].label, url: viewUrl(id), onSite: false,
             inFeed: true, code: item.courseIdentifier && item.courseIdentifier !== id ? item.courseIdentifier : '',
-            detailsUrl: item.courseDetailsURL || ''
+            detailsUrl: item.courseDetailsURL || '', industries: []
         };
     }
 

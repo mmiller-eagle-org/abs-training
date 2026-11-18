@@ -7,6 +7,7 @@
 //   select_item              course card clicked          ecommerce.items[0] = the course, item_list_name
 //                            ("Featured Courses" on the home page, "Course Catalog" on /courses/)
 //   search                   course search on /courses/   search_term (sent by assets/js/catalog-page.js)
+//   select_content           home page Training by Industry tile clicked   content_type "industry", content_id (marine, ...)
 //   register_click           Register on a scheduled class, or Enroll Now on a self-paced course
 //                            course_id, course_name, offering_id, class_date, class_format
 //   register_interest_click  Register interest (no classes)   course_id, course_name, offering_id
@@ -75,6 +76,11 @@
             track('select_item', { item_list_name: card.dataset.listName || 'Featured Courses', link_location: where }, [courseItem({
                 id: card.dataset.courseId, name: card.dataset.courseName, category: card.dataset.courseTag
             })]);
+            return;
+        }
+
+        if (a.dataset.industry) {
+            track('select_content', { content_type: 'industry', content_id: a.dataset.industry, link_location: where });
             return;
         }
 

@@ -1,0 +1,60 @@
+# Training by Industry: the home page tiles and the Industry filter on the Course Catalog (/courses/).
+# Tiles appear on the home page in this order and link to /courses/?industry=<id>.
+#
+# Which courses belong to an industry, checked for each course:
+#   1. The portal's Market Sector tags, once the portal team adds them. The daily sync copies them into
+#      market_sectors on each course; a course whose tags match an industry's portal_names is in it.
+#      A tagged course follows its tags only, and the starter lists below are ignored for it.
+#   2. Until then, this starter list: everything except the courses in all_courses_except, or the
+#      courses listed under courses. Course IDs are the portal's (course_id on each course page).
+#      A course can be in more than one industry. Edit freely; the site updates on the next build.
+industries:
+  - id: marine
+    label: Marine
+    image: https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_765469201.jpg
+    portal_names: [Marine, Maritime]
+    # Every course except ones only about offshore units; new portal courses land here until tagged
+    all_courses_except:
+      - "226074834"  # Fire and Lifesaving Aspects of Floating Offshore Installations
+      - "226074844"  # FPSO Classification Requirements and Risk-Based Inspection (RBI)
+      - "226074845"  # FPSOs FSOs Structural Assessment
+      - "226079095"  # In-Service Classification and Statutory Surveys for MODUs
+  - id: offshore
+    label: Offshore
+    image: https://images.unsplash.com/photo-1727434032773-af3cd98375ba?q=80&w=3132&auto=format&fit=crop
+    portal_names: [Offshore, Offshore Energy, Oil and Gas]
+    # Offshore units, hazardous areas, risk, gas liquids, welding and NDE
+    courses:
+      - "226074873"  # Classification Requirements of Underwater Submersibles
+      - "226417341"  # Final Examination: Welding, Metallurgy, Inspections and Nondestructive Evaluation (NDE)
+      - "226074834"  # Fire and Lifesaving Aspects of Floating Offshore Installations
+      - "226074844"  # FPSO Classification Requirements and Risk-Based Inspection (RBI)
+      - "226074845"  # FPSOs FSOs Structural Assessment
+      - "225921103"  # Fundamentals of Hazardous Areas
+      - "225921278"  # Hazardous Area Zoning Classification
+      - "226074846"  # Hazardous Areas Classification
+      - "226137654"  # Hazardous Areas Self-Paced Training Bundle
+      - "225921282"  # Hazardous Areas: Certifications and Standards
+      - "225921538"  # Hazardous Areas: Electrical Protection and Equipment Markings
+      - "225921879"  # Hazardous Areas: Survey and Examination
+      - "226079095"  # In-Service Classification and Statutory Surveys for MODUs
+      - "226074859"  # Introduction to Natural Gas Liquids
+      - "226074866"  # Risk Assessment Implementation
+      - "226074863"  # Welding, Metallurgy and Non-Destructive Evaluations
+  - id: government
+    label: Government
+    image: /assets/images/industry-government.jpg
+    image_size: [1200, 675]
+    image_position: 60% 50%
+    portal_names: [Government, Government and Military, Naval]
+    # Naval and government shipbuilding, repair and sustainment, plus the USCG-accepted course
+    courses:
+      - "226074873"  # Classification Requirements of Underwater Submersibles
+      - "226074855"  # Drydocking and Repairs
+      - "226417341"  # Final Examination: Welding, Metallurgy, Inspections and Nondestructive Evaluation (NDE)
+      - "226074872"  # Hull Outfitting
+      - "226074867"  # Hull Structural Inspection
+      - "226079096"  # Machinery Outfitting
+      - "226074871"  # Orientation to New Construction Classification and Statutory Surveys
+      - "226074865"  # Train the Trainer (USCG Accepted)
+      - "226074863"  # Welding, Metallurgy and Non-Destructive Evaluations

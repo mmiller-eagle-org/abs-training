@@ -1,0 +1,26 @@
+{%- comment -%}
+  Sets course_industries to the industry ids (from _data/industries.yml) that include.course belongs to.
+  A course with Market Sector tags from the portal (market_sectors, copied by the sync) follows its tags;
+  otherwise the starter lists in _data/industries.yml decide.
+{%- endcomment -%}
+{%- assign course_industries = "" -%}
+{%- assign course_sectors = include.course.market_sectors -%}
+{%- assign course_key = include.course.course_id | append: "" -%}
+{%- for industry in site.data.industries.industries -%}
+  {%- assign industry_hit = false -%}
+  {%- if course_sectors and course_sectors.size > 0 -%}
+    {%- for sector in course_sectors -%}
+      {%- assign sector_name = sector | downcase | strip -%}
+      {%- for name in industry.portal_names -%}
+        {%- assign portal_name = name | downcase | strip -%}
+        {%- if sector_name == portal_name -%}{%- assign industry_hit = true -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- elsif industry.all_courses_except -%}
+    {%- unless industry.all_courses_except contains course_key -%}{%- assign industry_hit = true -%}{%- endunless -%}
+  {%- elsif industry.courses contains course_key -%}
+    {%- assign industry_hit = true -%}
+  {%- endif -%}
+  {%- if industry_hit -%}{%- assign course_industries = course_industries | append: industry.id | append: " " -%}{%- endif -%}
+{%- endfor -%}
+{%- assign course_industries = course_industries | strip | split: " " -%}

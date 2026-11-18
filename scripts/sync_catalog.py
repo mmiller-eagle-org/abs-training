@@ -268,6 +268,38 @@ def summary_of(paragraphs, limit=200):
     return summary
 
 
+SECTOR_GROUP = re.compile(r'market\s*sector|industr', re.I)
+SECTOR_PREFIX = re.compile(r'^(?:market\s*sector|industry)\s*:\s*(.+)$', re.I)
+
+
+def course_categories(widget):
+    """Splits the portal's category list into categories, skills and market sectors.
+
+    The portal lists top-level entries (class "parent") with their sub-entries ("child-1", ...) right
+    after them, for example: Safety, Security and Risk / Search by Skill / > Incident Investigation.
+    Sub-entries of a Market Sector (or Industry) group, or entries written as "Market Sector: Marine",
+    are market sectors; other sub-entries are skills. The group headings themselves are left out.
+    """
+    categories, skills, sectors = [], [], []
+    group = ''
+    for level, raw in re.findall(r'<p class="(parent|child-\d+)"[^>]*>(.*?)</p>', widget, re.S):
+        text = clean(raw)
+        if not text:
+            continue
+        prefixed = SECTOR_PREFIX.match(text)
+        if prefixed:
+            sectors.append(prefixed.group(1).strip())
+        elif level == 'parent':
+            group = text
+            if text.lower() != 'search by skill' and not SECTOR_GROUP.search(text):
+                categories.append(text)
+        elif SECTOR_GROUP.search(group):
+            sectors.append(text)
+        else:
+            skills.append(text)
+    return categories, skills, list(dict.fromkeys(sectors))
+
+
 def pick_tag(title, skills, categories):
     for kind, pattern, tag in TAG_RULES:
         values = {'title': [title], 'skill': skills, 'category': categories}[kind]
@@ -330,9 +362,7 @@ def fetch_course(portal, result):
             except Exception:
                 widgets[name.group(1)] = ''
 
-    categories = [clean(c) for c in re.findall(r'<p class="parent"[^>]*>(.*?)</p>', widgets.get('LMT_WIDGET_COURSE_CATEGORIES', ''), re.S)]
-    skills = [clean(c) for c in re.findall(r'<p class="child-\d+"[^>]*>(.*?)</p>', widgets.get('LMT_WIDGET_COURSE_CATEGORIES', ''), re.S)]
-    categories = [c for c in categories if c and c.lower() != 'search by skill']
+    categories, skills, market_sectors = course_categories(widgets.get('LMT_WIDGET_COURSE_CATEGORIES', ''))
     code = first(r'<label>SKU</label>(.*?)</span>', widgets.get('LMT_WIDGET_CONTENT_ATTRIBUTES', ''))
 
     offering_types = []
@@ -379,6 +409,7 @@ def fetch_course(portal, result):
         'other_sections': other,
         'categories': categories,
         'skills': skills,
+        'market_sectors': market_sectors,
         'price': first(r'class="cost">(.*?)</span>', meta1),
         'image': urllib.parse.urljoin(PORTAL, html.unescape(image)) if image else '',
         'portal_url': OFFERING_URL.format(oid=oid) if result.get('pictogram') in ('self-paced', 'assessment', 'channel') else '',
@@ -445,6 +476,9 @@ def page_text(course):
     if course['skills']:
         lines.append('skills:')
         lines.extend('  - ' + q(s) for s in course['skills'])
+    if course.get('market_sectors'):
+        lines.append('market_sectors:')
+        lines.extend('  - ' + q(s) for s in course['market_sectors'])
     if course['portal_url']:
         lines.append('portal_url: ' + q(course['portal_url']))
     lines.append('---')
