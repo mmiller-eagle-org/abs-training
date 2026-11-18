@@ -7,6 +7,7 @@ layout: default
 {%- endcomment -%}
 {%- assign snapshot = site.data.catalog.courses | where: "id", page.course_id | first -%}
 {%- assign course_code = page.code | default: snapshot.code -%}
+{%- if course_code == "" -%}{%- assign course_code = nil -%}{%- endif -%}
 {%- comment -%} Course photo copied from the portal by the sync. Courses without one get a plain navy header,
   and the default photo only for structured data. {%- endcomment -%}
 {%- assign course_image = page.image | default: "/assets/images/course-default.jpg" -%}
