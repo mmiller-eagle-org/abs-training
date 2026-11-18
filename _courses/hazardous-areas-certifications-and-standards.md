@@ -15,6 +15,7 @@ objectives:
   - "Recognize considerations when navigating inconsistencies among standards."
 audience: "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors."
 portal_url: "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138702"
+image: "/assets/images/courses/225921282.jpg"
 ---
 {% raw %}
 <p>This course provides an orientation to standards governing the design and installation of electrical equipment in hazardous areas. Learners examine International Electrotechnical Commission standards recognized by ABS Rules, navigate inconsistencies among standards and recognize the basis for appropriate certification of electrical components used in potentially combustible atmospheres.</p>

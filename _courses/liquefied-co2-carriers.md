@@ -18,6 +18,7 @@ objectives:
 audience: "This course is for marine professionals and shipping stakeholders who need introductory knowledge of LCO2 carrier design, cargo characteristics and operational considerations, including technical managers and project managers, naval architects and marine engineers, surveyors and operations staff, and chartering, commercial and shore-based personnel supporting carbon capture, utilization and storage projects."
 skills:
   - "Asset Operations and Reliability"
+image: "/assets/images/courses/226074869.jpg"
 ---
 {% raw %}
 <p>This one-day course builds foundational understanding of liquefied carbon dioxide (LCO2) carriers and the role they play in carbon capture and storage projects. Participants learn how cargo properties, containment concepts, impurities, operations and safety considerations affect reliable marine transport.</p>

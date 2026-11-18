@@ -29,6 +29,7 @@ objectives:
 audience: "This course is for professionals who support welding, fabrication, inspection or repair activities in the marine and offshore industries, including marine and offshore engineers, surveyors, inspectors and quality assurance personnel, shipyard, fabrication and repair personnel, welding supervisors, coordinators and technical staff, or owners’ representatives and project personnel who review welding work. It is especially valuable for personnel who need a stronger working knowledge of welding quality, materials behavior and nondestructive evaluation methods."
 skills:
   - "Marine Engineering"
+image: "/assets/images/courses/226074863.jpg"
 ---
 {% raw %}
 <p>Welds are commonly used to join two or more metal parts, and because these connections encounter loads and fatigue during product lifetime they can fail if not created to proper specification. This five-day course provides the knowledge to carry out welding inspections, understand the basics of nondestructive examination and meet the welding requirements of the ABS Rules. It covers materials and welding technology, current welding evaluation practices for marine construction and repair and the important aspects of steel welding and nondestructive evaluation, with ABS Rule requirements highlighted through practical examples and case studies.</p>

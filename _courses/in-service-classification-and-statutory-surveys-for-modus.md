@@ -20,6 +20,7 @@ objectives:
 audience: "This course is for professionals who maintain class and statutory compliance for MODUs, including those who manage or support in-service survey preparation, oversee MODU inspection or regulatory compliance, need to understand owner responsibilities for surveys, or work with units subject to IMO and class rules."
 skills:
   - "Survey and Vetting Readiness"
+image: "/assets/images/courses/226079095.jpg"
 ---
 {% raw %}
 <p>This three-day course builds a practical understanding of in-service classification and statutory survey requirements for mobile offshore drilling units (MODUs). Participants learn how class and regulatory requirements apply after delivery, what to expect during periodic surveys and how to prepare using the International Maritime Organization (IMO) MODU Code, ABS Rules and applicable regulations.</p>

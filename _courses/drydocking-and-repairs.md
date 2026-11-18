@@ -21,6 +21,7 @@ objectives:
 audience: "This course is for professionals involved in vessel maintenance, repair planning and drydock execution, including those who serve as marine inspectors, surveyors or superintendents, oversee vessel repair periods, shipyard coordination or maintenance planning, support technical, operational or project management aspects of drydocking, or participate in contract review, repair scope development or post-drydock reporting."
 skills:
   - "Asset Operations and Reliability"
+image: "/assets/images/courses/226074855.jpg"
 ---
 {% raw %}
 <p>This two-day course provides a practical understanding of the planning, coordination and oversight required for successful drydocking and repair projects. Participants learn to prepare for docking, manage repair activities, support classification survey requirements and oversee the commercial and operational decisions that affect safety, schedule, quality and cost.</p>

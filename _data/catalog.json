@@ -22,7 +22,8 @@
    "skills": [],
    "price": "USD 500.00",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/E0291B0095780843DA026105F65B98C91FABDDC52DDE7713962EABB250046D63?v1109121925",
-   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=223753431"
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=223753431",
+   "image_file": "/assets/images/courses/223753426.jpg"
   },
   {
    "id": "226070634",
@@ -58,7 +59,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ASC001_Thumbnail.jpg?.06&v0810121950",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226070634.jpg"
   },
   {
    "id": "226074852",
@@ -92,7 +94,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/992E7EAC9C882F7FC89D68AA8BC1DB19E9F0BA03C757D96B1C61792205A39583?v0810122125",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074852.jpg"
   },
   {
    "id": "224892634",
@@ -116,7 +119,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/D19A5A05CBE309571481F28B980CD0762C8C7D8BA3838AFB0A9CF1F2C165AEB6?v0810094708",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/224892634.jpg"
   },
   {
    "id": "226074854",
@@ -149,7 +153,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST005_Thumbnail.jpg?.06&v0810122228",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074854.jpg"
   },
   {
    "id": "226074835",
@@ -182,7 +187,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AML001_Thumbnail.jpg?.06&v1111101659",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074835.jpg"
   },
   {
    "id": "226074873",
@@ -214,7 +220,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AIS001_Thumbnail.jpg?.06&v0810122403",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074873.jpg"
   },
   {
    "id": "226074836",
@@ -251,7 +258,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/806C3C04E8CD88BA0034BA1419301AF2B2990AF469616FE4A01F474E2086C79F?v0810122526",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074836.jpg"
   },
   {
    "id": "226074855",
@@ -286,7 +294,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/65052A719BC392B2D5BEFBCB74800B764E0522289F35FD2A7FF530CCB6116DC7?v1310095900",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074855.jpg"
   },
   {
    "id": "226074856",
@@ -326,7 +335,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/6A3FB713AD88BD9D4BB6CFBDB9537C3E1C635157FA212B9B76D0332580E84975?v1310100018",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074856.jpg"
   },
   {
    "id": "226417341",
@@ -346,7 +356,9 @@
    "skills": [],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/logo-footer.png?v0511101546",
-   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226837651"
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226837651",
+   "image_file": "",
+   "image_skipped": true
   },
   {
    "id": "226074834",
@@ -384,7 +396,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/3D37D78578AFFEF33BC8721E950AE9DFC204A1F9629C0D71523C7C21D2C6C30F?v1310100141",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074834.jpg"
   },
   {
    "id": "226074844",
@@ -418,7 +431,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/26D51C648C5BED0FF1F8BAAC1E2BE7FF0948058DA9EA1263C81D515C19703876?v1310100225",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074844.jpg"
   },
   {
    "id": "226074845",
@@ -452,7 +466,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/CEDEE65DFDEA96818BF32573721D7EA5E68C6CBA1F085071D1BAA74A09E078EA?v2610122637",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074845.jpg"
   },
   {
    "id": "225921103",
@@ -480,7 +495,8 @@
    "skills": [],
    "price": "USD 150.00",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/ECB4755161AF7DAF6A5543C7D925BA3F83912A2E921488919D66DAE4655FB5A1?v2109094442",
-   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138044"
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138044",
+   "image_file": "/assets/images/courses/225921103.jpg"
   },
   {
    "id": "226074857",
@@ -512,7 +528,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/C031DB4A3CAD70994D8F46E9C5489400C6B1DA999A68A2C9B4F6257D06F49111?v1310100432",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074857.jpg"
   },
   {
    "id": "226074858",
@@ -550,7 +567,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST012_Thumbnail.jpg?.06&v0911094406",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074858.jpg"
   },
   {
    "id": "225921278",
@@ -578,7 +596,8 @@
    "skills": [],
    "price": "USD 150.00",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/F1388FA532FD7F4F627CAE85F0A7AAA9E8CFCE81CE99CEE07CD76DB39EE5B82C?v2109094503",
-   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138165"
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138165",
+   "image_file": "/assets/images/courses/225921278.jpg"
   },
   {
    "id": "226074846",
@@ -610,7 +629,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/192A01C3F36171B52035944291CF652518BC2FF5788AA5BCC28EE236CAAFDE98?v1310100605",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074846.jpg"
   },
   {
    "id": "226137654",
@@ -632,7 +652,8 @@
    "skills": [],
    "price": "USD 150.00",
    "image": "",
-   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226137655"
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226137655",
+   "image_file": ""
   },
   {
    "id": "225921282",
@@ -660,7 +681,8 @@
    "skills": [],
    "price": "USD 150.00",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/7DE4CBBD9AA7A2B75DF4AB7266FEFFFA89DED3EB62A36445935FEC34F3603BE1?v2509051709",
-   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138702"
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138702",
+   "image_file": "/assets/images/courses/225921282.jpg"
   },
   {
    "id": "225921538",
@@ -689,7 +711,8 @@
    "skills": [],
    "price": "USD 150.00",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/9A182502BB9704C1E8A7BEF9BE9561B099D25A7C841B10B101E5C396583E4EB7?v2509051800",
-   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138703"
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138703",
+   "image_file": "/assets/images/courses/225921538.jpg"
   },
   {
    "id": "225921879",
@@ -717,7 +740,8 @@
    "skills": [],
    "price": "USD 150.00",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/65633B9FBFFEEDA4ED22E32C0807F632BBE9D56896D67D2B05EC0BC62E0732E6?v2109094552",
-   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138706"
+   "portal_url": "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138706",
+   "image_file": "/assets/images/courses/225921879.jpg"
   },
   {
    "id": "226074847",
@@ -754,7 +778,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/D4BD83F69966DF2ED9BEBEDE4B5A237C5934F7BD27F743273031BB962EDC39E8?v1310101153",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074847.jpg"
   },
   {
    "id": "226074848",
@@ -789,7 +814,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AIS007_Thumbnail.jpg?.06&v1310101301",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074848.jpg"
   },
   {
    "id": "226074872",
@@ -822,7 +848,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/A1EE14C117582BB82AEC93A1C854A737DA7E6BEAC9C3286E503AA961D81597B7?v1310101345",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074872.jpg"
   },
   {
    "id": "226074867",
@@ -855,7 +882,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/B5A78F4F67A6A00D66B0D2C8F55C908B0756097EDECFD1EF9F2BB45CC76713E6?v1310101417",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074867.jpg"
   },
   {
    "id": "226079095",
@@ -889,7 +917,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AIS010_Thumbnail.jpg?.06&v1310101501",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226079095.jpg"
   },
   {
    "id": "226074837",
@@ -922,7 +951,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC001_Thumbnail.jpg?.06&v1310101534",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074837.jpg"
   },
   {
    "id": "226074859",
@@ -954,7 +984,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/A024329C7FDBB4920180E960F3D655CDA67CEDADAC9F4CC843E183388FC882D4?v1310101626",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074859.jpg"
   },
   {
    "id": "226074838",
@@ -988,7 +1019,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC002_Thumbnail.jpg?.06&v1310101707",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074838.jpg"
   },
   {
    "id": "224266683",
@@ -1022,7 +1054,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC003_Thumbnail.jpg?.06&v0511114313",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/224266683.jpg"
   },
   {
    "id": "226074839",
@@ -1055,7 +1088,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC004_Thumbnail.jpg?.06&v1310101953",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074839.jpg"
   },
   {
    "id": "226074875",
@@ -1087,7 +1121,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/143611FFA0F2FF97E5C6BCE7ADA1298A8577D923B379B534CF37D2D36BD17A72?v2910072625",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074875.jpg"
   },
   {
    "id": "226074870",
@@ -1119,7 +1154,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/2B672E0C45C74D7C91DDDF7792BC07AA373A148B964AB7294061121F2934F10D?v1310101925",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074870.jpg"
   },
   {
    "id": "226074840",
@@ -1153,7 +1189,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC006_Thumbnail.jpg?.06&v1310102103",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074840.jpg"
   },
   {
    "id": "226074874",
@@ -1187,7 +1224,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC007_Thumbnail.jpg?.06&v1310102932",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074874.jpg"
   },
   {
    "id": "226074869",
@@ -1219,7 +1257,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/9454DAA2A3798373FBB8B3FE6663D9F8B80FFD4E95E8B7CF150CB2717C7F1CB0?v1310103012",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074869.jpg"
   },
   {
    "id": "226074860",
@@ -1251,7 +1290,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST019_Thumbnail.jpg?.06&v1310103041",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074860.jpg"
   },
   {
    "id": "226074861",
@@ -1284,7 +1324,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST020_Thumbnail.jpg?.06&v1310103108",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074861.jpg"
   },
   {
    "id": "226079096",
@@ -1315,7 +1356,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/88E94CE89391360E33F53BECD5151EC8BEEC927DB8BA173A939AE835C9DB699B?v1310103154",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226079096.jpg"
   },
   {
    "id": "226074864",
@@ -1348,7 +1390,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AML003_Thumbnail.jpg?.06&v1310103227",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074864.jpg"
   },
   {
    "id": "226074849",
@@ -1383,7 +1426,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/AC56F2B0291F96073635DEE42C6ADA1264C2DF42F861624A0D2B664BFA27C029?v1310103326",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074849.jpg"
   },
   {
    "id": "226074832",
@@ -1416,7 +1460,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/19078E266E74020DE8E102050F0C642FA03BFD383F1505DDAD2FE5590EC0EC01?v1310103358",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074832.jpg"
   },
   {
    "id": "226074841",
@@ -1452,7 +1497,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/4350522584549B6B6C59DE9C6952013B037248900B5EBF6AC35C3683DE335533?v1310103438",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074841.jpg"
   },
   {
    "id": "226074842",
@@ -1486,7 +1532,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/C5871ABE3A7734DCB18E2AE7883F10FE734D2F6124B9D630BD2CF3A220DB9B4B?v1310103514",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074842.jpg"
   },
   {
    "id": "226074833",
@@ -1518,7 +1565,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/F08F9B68770666BAD544CCAB5CEE398A42A34641AD8E746B899DEB5E63FB159E?v1310103551",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074833.jpg"
   },
   {
    "id": "226074843",
@@ -1555,7 +1603,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-ARC012_Thumbnail.jpg?.06&v1310103630",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074843.jpg"
   },
   {
    "id": "226074862",
@@ -1588,7 +1637,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AST016_Thumbnail.jpg?.06&v1310103711",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074862.jpg"
   },
   {
    "id": "226074850",
@@ -1619,7 +1669,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/72B9DBF868F28B96D8045C76DD4049ABEBE9FBEDA534B44E7CA67EB47DCBCBC9?v1310103840",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074850.jpg"
   },
   {
    "id": "226074871",
@@ -1652,7 +1703,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/CE9C574B1AF95850DFF6B792D5D96E34F51FC31A27842BAE954C40944C46E63A?v0611074955",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074871.jpg"
   },
   {
    "id": "226074868",
@@ -1685,7 +1737,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/C7909446694A1D2C9D57037AA5BD2FBB0C81A9F927CAAF2FFB24CA895C02DC01?v1310103905",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074868.jpg"
   },
   {
    "id": "226074866",
@@ -1718,7 +1771,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/8C6A97C6EABFA03CED08FB1DFB735F2948FBB0A416036820A31692CB452875DE?v1310103947",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074866.jpg"
   },
   {
    "id": "226074851",
@@ -1753,7 +1807,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/1C23840BB1C93D0073802CE6731DC96ABC164536FAC2C20A7586369FE01A1FEF?v1310104031",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074851.jpg"
   },
   {
    "id": "226074865",
@@ -1786,7 +1841,8 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/pv2/220099387/78/images/courseicons/C-AML004_Thumbnail.jpg?.06&v1310104102",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074865.jpg"
   },
   {
    "id": "226074863",
@@ -1829,8 +1885,9 @@
    ],
    "price": "",
    "image": "https://portal.abs-training.com/content-server/public/resource/220099387/9F1EBB7641E5D4D221026BFA5C0791B4D211042058ECB6CA9A24756889B28500?v1310104252",
-   "portal_url": ""
+   "portal_url": "",
+   "image_file": "/assets/images/courses/226074863.jpg"
   }
  ],
- "updated": "2026-11-16T20:27:39Z"
+ "updated": "2026-11-18T15:38:02Z"
 }

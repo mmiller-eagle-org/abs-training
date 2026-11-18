@@ -20,6 +20,7 @@ objectives:
 audience: "This course is for maritime professionals involved in alternative fuel adoption, vessel design, compliance and operations, including those who support vessel design, engineering or newbuilding projects, work in safety, risk, compliance or environmental roles, oversee fuel system design, machinery or shipboard operations, or participate in fuel transition planning, approvals or survey activities."
 skills:
   - "Marine Fuel Management"
+image: "/assets/images/courses/226074852.jpg"
 ---
 {% raw %}
 <p>This three-day course provides a practical introduction to ammonia as a marine fuel and its role in the maritime energy transition. Participants learn why ammonia is gaining attention as a zero-carbon fuel option, how it supports compliance with tightening emissions requirements and the operational, safety and technical factors to consider when designing, operating and supporting ammonia-fueled vessels.</p>

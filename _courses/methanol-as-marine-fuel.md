@@ -19,6 +19,7 @@ objectives:
 audience: "This course is for professionals who need a methanol-specific understanding of marine fuel, including those who support the design, construction or retrofit of methanol-fueled vessels, evaluate methanol fuel system arrangements, safety features or bunkering concepts, review regulatory, class or risk-based requirements for methanol-fueled ships, or support compliance, planning or technical decision making related to methanol as marine fuel."
 skills:
   - "Marine Fuel Management"
+image: "/assets/images/courses/226074862.jpg"
 ---
 {% raw %}
 <p>This three-day course introduces methanol as a marine fuel, focusing on the safety, operational, regulatory and design factors that set it apart from conventional and alternative fuels. Participants gain foundational knowledge of methanol's properties, regulatory drivers, vessel arrangement, fuel containment, supply, bunkering and hazard management.</p>

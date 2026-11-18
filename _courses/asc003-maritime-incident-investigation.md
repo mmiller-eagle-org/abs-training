@@ -9,4 +9,5 @@ tag: "Safety"
 format: "Classroom"
 skills:
   - "Incident Investigation and Root Cause Analysis"
+image: "/assets/images/courses/224892634.jpg"
 ---

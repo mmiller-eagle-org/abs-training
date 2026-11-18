@@ -20,6 +20,7 @@ objectives:
 audience: "This course is for professionals involved in the design, review, delivery and operation of FPSO projects, including those who design or engineer offshore floating production or storage facilities, plan or manage FPSO projects and conversions, oversee installation, operations or technical compliance, or support owners, operators, shipyards and engineering teams working with ABS-classed assets."
 skills:
   - "Survey and Vetting Readiness"
+image: "/assets/images/courses/226074844.jpg"
 ---
 {% raw %}
 <p>This four-day course builds a practical understanding of the classification requirements for floating production, storage and offloading units (FPSOs) and floating storage units (FSOs). Participants learn how ABS Rules, Guides, standards and regulations are applied across the design, conversion, installation and operation of F(P)SO projects to better evaluate technical requirements, reduce project risk and support sound classification decisions.</p>

@@ -19,6 +19,7 @@ objectives:
 audience: "This course is for personnel who investigate, manage or support the review of maritime incidents, near misses and hazardous occurrences, including those who lead or participate in vessel or shore-based investigations, manage safety, quality, reliability or environmental performance, support corrective action and continuous improvement programs or need to strengthen incident investigation and root cause analysis skills. It is especially valuable for marine superintendents, safety personnel, designated persons ashore, fleet managers, shipboard officers and other personnel responsible for incident follow-up."
 skills:
   - "Incident Investigation and Root Cause Analysis"
+image: "/assets/images/courses/226074832.jpg"
 ---
 {% raw %}
 <p>Many incidents, hazardous occurrences and near misses aboard maritime assets stem from human error and can result in considerable loss. This two-day course shows participants how to identify and understand contributory factors and root causes so preventive measures can be put in place. Using the ABS Guidance Notes on the Investigation of Marine Incidents, participants apply the ABS Marine Root Cause Analysis Technique (MaRCAT) through a series of group workshops.</p>

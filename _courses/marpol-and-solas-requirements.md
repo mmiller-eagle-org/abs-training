@@ -23,6 +23,7 @@ objectives:
 audience: "This course is suitable for designers and shipyard engineers seeking knowledge about vessel statutory compliance with MARPOL and SOLAS regulations."
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/226074843.jpg"
 ---
 {% raw %}
 <p>This two-day primer introduces the International Convention for the Prevention of Pollution from Ships (MARPOL) and the International Convention for the Safety of Life at Sea (SOLAS), covering concepts, definitions and requirements as well as the ABS plan review process for compliance. Practical examples illustrate solutions for meeting the requirements and highlight the most common noncompliance issues.</p>

@@ -106,11 +106,22 @@
     function card(match) {
         var c = match.course;
         var item = el('li', 'flex');
-        var article = el('article', 'group relative flex w-full flex-col rounded-lg border border-gray-200 border-t-4 border-t-abs-blue bg-white p-5 lg:p-6 shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2 focus-within:ring-offset-gray-50');
+        var article = el('article', 'group relative flex w-full flex-col overflow-hidden rounded-lg border border-gray-200 border-t-4 border-t-abs-blue bg-white p-5 lg:p-6 shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2 focus-within:ring-offset-gray-50');
         article.dataset.courseId = c.id;
         article.dataset.courseName = c.title;
         article.dataset.courseTag = c.tag || c.formatText;
         article.dataset.listName = 'Course Catalog';
+        // Illustrative photo above the title: empty alt, since the title link already names the course
+        var photo = el('img', '-mx-5 -mt-5 mb-4 lg:-mx-6 lg:-mt-6 block h-auto max-w-none w-[calc(100%+2.5rem)] lg:w-[calc(100%+3rem)] aspect-[2/1] object-cover');
+        photo.src = c.image;
+        photo.srcset = c.image.replace(/\.jpg$/, '-400.jpg') + ' 400w, ' + c.image + ' 800w';
+        photo.sizes = '(min-width: 768px) 500px, calc(100vw - 48px)';
+        photo.width = 800;
+        photo.height = 400;
+        photo.alt = '';
+        photo.loading = 'lazy';
+        photo.decoding = 'async';
+        article.appendChild(photo);
         if (c.tag) article.appendChild(el('span', 'tag tag-gray self-start mb-3', c.tag));
 
         var heading = el('h3', 'text-base lg:text-lg font-bold leading-snug text-abs-blue transition-colors group-hover:text-abs-red');

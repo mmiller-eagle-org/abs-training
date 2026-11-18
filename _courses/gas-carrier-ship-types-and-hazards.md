@@ -18,6 +18,7 @@ objectives:
 audience: "This course is for professionals who work with gas carriers or need foundational knowledge of gas carriage, including shipboard officers and crew, ship operators and technical managers, marine superintendents and safety personnel, engineers, surveyors and inspectors or shipyard and terminal personnel supporting gas carrier operations."
 skills:
   - "Asset Operations and Reliability"
+image: "/assets/images/courses/226074857.jpg"
 ---
 {% raw %}
 <p>Safeguarding the crew, the ship and the marine environment is the first priority. This one-day course covers the differences between ships carrying liquefied gas in bulk, cargo hazards and ship survival capabilities, along with an overview of gas carrier safety systems. Hazards include fire and explosion risk from flammable cargo, structural damage from cargo carried at high pressure and low temperature, and health risk from toxic cargo released into the environment.</p>

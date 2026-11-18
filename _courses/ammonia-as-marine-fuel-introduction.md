@@ -7,4 +7,5 @@ course_id: "223753426"
 tag: "Marine Fuels"
 format: "Self-Paced Online"
 portal_url: "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=223753431"
+image: "/assets/images/courses/223753426.jpg"
 ---

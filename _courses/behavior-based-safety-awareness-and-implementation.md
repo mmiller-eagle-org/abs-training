@@ -19,6 +19,7 @@ objectives:
 audience: "This course is for anyone responsible for influencing or improving workplace safety performance, including those who work in health, safety and environment or health, safety, quality and environment roles, supervise or lead frontline teams in industrial, maritime, offshore or facility operations, participate in or manage safety programs, observation initiatives or safety committees, or are involved in implementing, maintaining or enhancing a safety management system."
 skills:
   - "Human Factors and Operational Performance"
+image: "/assets/images/courses/226074835.jpg"
 ---
 {% raw %}
 <p>This one-day interactive course builds a practical understanding of behavior-based safety (BBS) and how it strengthens an organization's safety culture. Participants cover the fundamentals of occupational health and safety as they relate to human behavior, explore BBS concepts and methodologies and practice observation and feedback techniques they can apply immediately to reduce workplace risk and support safer, more consistent performance.</p>

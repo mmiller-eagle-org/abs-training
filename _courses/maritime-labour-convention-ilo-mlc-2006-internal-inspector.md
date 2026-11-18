@@ -20,6 +20,7 @@ objectives:
 audience: "This course is designed for ship managers, superintendents and designated company personnel involved in implementing procedures for their organization to maintain compliance with the ILO MLC, 2006."
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/226074842.jpg"
 ---
 {% raw %}
 <p>The International Labour Organization (ILO) Maritime Labour Convention, 2006 is a comprehensive international employment convention addressing seafarers' rights to decent conditions and fair competition for shipowners. This two-day course combines individual exercises with case studies and explains the onboard verification process step by step from the internal inspector's perspective.</p>
