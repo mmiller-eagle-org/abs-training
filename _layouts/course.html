@@ -7,22 +7,26 @@ layout: default
 {%- endcomment -%}
 {%- assign snapshot = site.data.catalog.courses | where: "id", page.course_id | first -%}
 {%- assign course_code = page.code | default: snapshot.code -%}
-{%- comment -%} Course photo copied from the portal by the sync; courses without one use the default photo {%- endcomment -%}
+{%- comment -%} Course photo copied from the portal by the sync. Courses without one get a plain navy header,
+  and the default photo only for structured data. {%- endcomment -%}
 {%- assign course_image = page.image | default: "/assets/images/course-default.jpg" -%}
 {%- assign course_image_small = course_image | replace: ".jpg", "-400.jpg" -%}
 {%- assign self_paced = false -%}
 {%- if page.format contains "Online" -%}{%- assign self_paced = true -%}{%- endif -%}
-<!-- COURSE HEADER -->
-<section class="relative overflow-hidden bg-abs-blue" aria-labelledby="course-title">
-    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" fetchpriority="high"
-         class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
-         onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
-    <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
-    <div class="absolute inset-0 bg-abs-blue/65"></div>
+<!-- COURSE HEADER: the course's own photo behind a navy gradient, or plain navy when it has no photo.
+     White text needs at least 80% navy behind it (the breadcrumb is white at 80% opacity): on desktop the text
+     column stays inside the solid-to-90% part on the left, and on phones the whole photo sits under 80%+ navy. -->
+<section class="relative overflow-hidden {% if page.image %}bg-abs-blue{% else %}bg-gradient-to-br from-abs-blue-dark via-abs-blue to-abs-blue-mid{% endif %}" aria-labelledby="course-title">
+    {% if page.image %}
+    <img src="{{ course_image | relative_url }}" srcset="{{ course_image_small | relative_url }} 400w, {{ course_image | relative_url }} 800w"
+         sizes="(min-width: 1024px) 62vw, 100vw" width="800" height="400" alt="" fetchpriority="high" decoding="async"
+         class="absolute inset-y-0 right-0 h-full w-full lg:w-[62%] object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-abs-blue via-abs-blue/85 to-abs-blue/80 lg:bg-gradient-to-r lg:from-abs-blue lg:from-35% lg:via-abs-blue/90 lg:via-60% lg:to-abs-blue/35"></div>
+    {% endif %}
 
     <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-20">
-        <div class="max-w-5xl mx-auto lg:grid lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center lg:gap-12">
-          <div class="min-w-0">
+        <div class="max-w-5xl mx-auto">
+          <div class="min-w-0 lg:max-w-xl">
             <nav aria-label="Breadcrumb" class="mb-6">
                 <ol class="flex flex-wrap items-center gap-2 text-xs font-medium text-white/80">
                     <li><a href="{{ '/' | relative_url }}" class="hover:text-white focus-visible:outline-none focus-visible:underline">Home</a></li>
@@ -44,10 +48,6 @@ layout: default
                 {% if self_paced %}How to Enroll{% else %}View Dates{% endif %} <span class="material-symbols-outlined text-[20px] btn-arrow" aria-hidden="true">arrow_downward</span>
             </a>
           </div>
-            <!-- Illustrative photo next to the title, so it has empty alt text -->
-            <img src="{{ course_image | relative_url }}" srcset="{{ course_image_small | relative_url }} 400w, {{ course_image | relative_url }} 800w"
-                 sizes="(min-width: 1024px) 360px, (min-width: 640px) 448px, calc(100vw - 48px)" width="800" height="400" alt="" decoding="async"
-                 class="mt-10 lg:mt-0 w-full max-w-md lg:max-w-none h-auto aspect-[2/1] rounded-xl object-cover shadow-card ring-1 ring-white/20">
         </div>
     </div>
 </section>
