@@ -40,7 +40,7 @@ Notes:
 | Path | What it is |
 |---|---|
 | `_config.yml` | Site settings, portal URLs, GTM and GA4 IDs, the `courses` collection |
-| `index.html` | Home page: hero (Browse Courses, Contact Us), Setting The Standard For Training, Training by Industry, Featured Courses (live next date), How Can We Help, newsletter |
+| `index.html` | Home page: hero (Browse Courses, Contact Us), Setting The Standard For Training, Training by Industry (three static tiles: Marine, Offshore, Government), Featured Courses (live next date), How Can We Help, newsletter |
 | `courses/index.html` | **Course Catalog** at `/courses/`: search and browse every course (see Course catalog below) |
 | `courses/view.html` | **Course view** at `/courses/view/?id=<course ID>`: a fallback for a course added on the portal since the last daily sync. `noindex`, not in the sitemap. |
 | `_courses/*.md` | One file per course page, 56 in all, **every one generated from the portal** by the daily sync (`generated: true`). Do not edit them; the next sync overwrites them. Front matter: `title`, `description` (one-sentence summary), `course_id` (Seertech ID), `code`, `tag`, `duration`, `format`, `objectives`, `audience`, optional `prerequisites`, `skills`, `portal_url` |
@@ -219,7 +219,8 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 | [#15](https://github.com/mmiller-eagle-org/abs-training/pull/15) | Nov 6 | Contact Us page at `/contact/` with the Dynamics 365 form; Contact Us links and course pages point to it; `generate_lead` event; Dynamics cookie tied to advertising consent; switched to form `86a9a3fa-…` |
 | [#16](https://github.com/mmiller-eagle-org/abs-training/pull/16) | Nov 6 | Thank You page at `/contact/thank-you/` after a successful contact form submission (`generate_lead` sent from there); the form's two checkbox boxes line up with the fields |
 | [#17](https://github.com/mmiller-eagle-org/abs-training/pull/17) | Nov 6 | The site no longer redirects after the contact form; Dynamics' form redirect URL does it. The lead flag carries the course to the Thank You page. |
-| [#18](https://github.com/mmiller-eagle-org/abs-training/pull/18) | **open** | Contact Us page sidebar with the How Can We Help cards (email card instead of Contact Us); nav "Support" renamed **Contact Us** and linked to `/contact/` |
+| [#18](https://github.com/mmiller-eagle-org/abs-training/pull/18) | Nov 6 | Contact Us page sidebar with the How Can We Help cards (email card instead of Contact Us); nav "Support" renamed **Contact Us** and linked to `/contact/` |
+| #19 | **open** | Training by Industry: removed the Digital and Cyber tile and renamed Maritime to **Marine**; the three tiles sit in one row from tablet width up |
 
 ## Outstanding items
 
@@ -229,6 +230,7 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 - [ ] Ask the portal team to add descriptions for 223753426 (ABS: Ammonia as Marine Fuel Introduction), 224892634 (ASC003) and 226417341 (Final Examination). The next daily sync picks them up.
 - [ ] After merging, watch the first scheduled **Sync course catalog** run (Actions tab) and confirm it either reports "No catalog changes" or commits and the Pages build follows.
 - [ ] Optional: review the topic tags chosen by `TAG_RULES` in `scripts/sync_catalog.py`, and the long portal descriptions used as summaries for a few courses (for example Classification Requirements of Underwater Submersibles).
+- [ ] Later: link the home page Training by Industry tiles (Marine, Offshore, Government) to the catalog filtered by the portal's Market Sector tags. Needs those tags in the sync data and a sector filter on `/courses/`.
 - [ ] Optional: show each result's next class date in the catalog (one offerings-feed request per course, so load only the visible cards).
 
 ### Contact Us form
