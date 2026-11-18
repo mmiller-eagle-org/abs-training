@@ -1,12 +1,14 @@
-// Course Catalog page (/courses/): search box, format filter and results.
-// Data comes from assets/js/course-catalog.js. The URL keeps ?q= and ?format= so searches can be shared
-// and other pages can link to a search. Analytics: "search" (search_term) once typing settles or on submit;
+// Course Catalog page (/courses/): search box, industry and format filters, and results.
+// Data comes from assets/js/course-catalog.js. The URL keeps ?q=, ?industry= and ?format= so searches can be
+// shared and other pages can link to them (the home page's Training by Industry tiles link to ?industry=).
+// Industries and their courses are set in _data/industries.yml. Analytics: "search" (search_term) once typing settles or on submit;
 // result clicks send select_item with item_list_name "Course Catalog" (assets/js/analytics.js).
 (function () {
     var cat = window.absCatalog;
     var form = document.querySelector('[data-catalog-form]');
     var input = document.getElementById('course-search');
     var filter = document.querySelector('[data-format-filter]');
+    var industryFilter = document.querySelector('[data-industry-filter]');
     var results = document.querySelector('[data-results]');
     var noticeBox = document.querySelector('[data-results-notice]');
     var summary = document.querySelector('[data-results-summary]');
@@ -18,6 +20,13 @@
     var courses = null;
     var query = '';
     var format = '';
+    var industry = '';
+    // Industry id -> label, from the filter's options
+    var industries = {};
+    Array.prototype.forEach.call(industryFilter.querySelectorAll('[data-industry-option]'), function (option) {
+        var id = option.getAttribute('data-industry-option');
+        if (id) industries[id] = option.getAttribute('data-industry-label');
+    });
     // Feed keyword results per search word: word -> { id: true }. Words still loading are in pending.
     var wordMatches = {};
     var pending = {};
@@ -52,14 +61,19 @@
         query = (params.get('q') || '').slice(0, MAX_QUERY).trim();
         var f = params.get('format') || '';
         format = cat.formats[f] ? f : '';
+        var i = params.get('industry') || '';
+        industry = industries[i] ? i : '';
         input.value = query;
         var radio = filter.querySelector('input[value="' + format + '"]');
         if (radio) radio.checked = true;
+        var industryRadio = industryFilter.querySelector('input[value="' + industry + '"]');
+        if (industryRadio) industryRadio.checked = true;
     }
 
     function writeUrl() {
         var params = new URLSearchParams(window.location.search);
         if (query) params.set('q', query); else params.delete('q');
+        if (industry) params.set('industry', industry); else params.delete('industry');
         if (format) params.set('format', format); else params.delete('format');
         var search = params.toString();
         history.replaceState(null, '', window.location.pathname + (search ? '?' + search : '') + window.location.hash);
@@ -148,10 +162,11 @@
         badge.appendChild(icon('search_off', 'text-[28px]'));
         wrap.appendChild(badge);
         wrap.appendChild(el('h3', 'text-lg font-bold text-abs-blue', 'No Courses Found'));
-        var where = format ? ' in ' + cat.formats[format].label : '';
+        var kind = filterLabel();
+        var where = kind ? ' in ' + kind : '';
         var text = query
             ? 'No courses match ' + quoted(query) + where + '. Check the spelling, try a broader word such as auditor or fuel, or clear the search.'
-            : 'No ' + (format ? cat.formats[format].label + ' ' : '') + 'courses are listed right now. Clear the search to see every course.';
+            : 'No ' + (kind ? kind + ' ' : '') + 'courses are listed right now. Clear the search to see every course.';
         wrap.appendChild(el('p', 'mx-auto mt-2 mb-6 max-w-lg font-serif text-sm leading-relaxed text-gray-600', text));
         var actions = el('div', 'flex flex-wrap justify-center gap-3');
         var clear = el('button', 'btn btn-primary', 'Clear Search');
@@ -165,8 +180,13 @@
         return wrap;
     }
 
+    // Active filters in words, such as "Offshore Virtual Class"
+    function filterLabel() {
+        return [industry ? industries[industry] : '', format ? cat.formats[format].label : ''].filter(Boolean).join(' ');
+    }
+
     function summaryText(count) {
-        var kind = format ? cat.formats[format].label + ' ' : '';
+        var kind = filterLabel() ? filterLabel() + ' ' : '';
         var noun = count === 1 ? 'course' : 'courses';
         if (query) return count + ' ' + kind + noun + (count === 1 ? ' matches ' : ' match ') + quoted(query);
         return count + ' ' + kind + noun;
@@ -185,14 +205,27 @@
     function render(announceDelay) {
         if (!courses) return;
         var found = matches();
-        var counts = { '': found.length };
+        function inIndustry(m) { return !industry || m.course.industries.indexOf(industry) !== -1; }
+        function inFormat(m) { return !format || m.course.formats.indexOf(format) !== -1; }
+        // Each filter's counts reflect the search and the other filter's choice
+        var forFormats = found.filter(inIndustry);
+        var counts = { '': forFormats.length };
         cat.formatOrder.forEach(function (f) { counts[f] = 0; });
-        found.forEach(function (m) { m.course.formats.forEach(function (f) { counts[f]++; }); });
+        forFormats.forEach(function (m) { m.course.formats.forEach(function (f) { counts[f]++; }); });
         Array.prototype.forEach.call(filter.querySelectorAll('[data-format-option]'), function (option) {
             option.querySelector('[data-format-count]').textContent = '(' + counts[option.getAttribute('data-format-option')] + ')';
         });
+        var forIndustries = found.filter(inFormat);
+        var industryCounts = { '': forIndustries.length };
+        Object.keys(industries).forEach(function (id) { industryCounts[id] = 0; });
+        forIndustries.forEach(function (m) {
+            m.course.industries.forEach(function (id) { if (id in industryCounts) industryCounts[id]++; });
+        });
+        Array.prototype.forEach.call(industryFilter.querySelectorAll('[data-industry-option]'), function (option) {
+            option.querySelector('[data-industry-count]').textContent = '(' + industryCounts[option.getAttribute('data-industry-option')] + ')';
+        });
 
-        var shown = format ? found.filter(function (m) { return m.course.formats.indexOf(format) !== -1; }) : found;
+        var shown = forFormats.filter(inFormat);
         var searching = !shown.length && isSearching();
         results.textContent = '';
         if (shown.length) {
@@ -207,7 +240,7 @@
 
         var text = searching ? 'Searching course descriptions\u2026' : summaryText(shown.length);
         summary.textContent = text;
-        clearButton.hidden = !(query || format);
+        clearButton.hidden = !(query || format || industry);
         if (!searching && announceDelay !== undefined) {
             announce(shown.length ? text + '.' : 'No courses found.', announceDelay);
         }
@@ -261,7 +294,9 @@
     function clearAll() {
         input.value = '';
         format = '';
+        industry = '';
         filter.querySelector('input[value=""]').checked = true;
+        industryFilter.querySelector('input[value=""]').checked = true;
         setQuery('', true);
         input.focus();
     }
@@ -274,6 +309,12 @@
     filter.addEventListener('change', function (e) {
         if (e.target.name !== 'format') return;
         format = e.target.value;
+        render(300);
+        writeUrl();
+    });
+    industryFilter.addEventListener('change', function (e) {
+        if (e.target.name !== 'industry') return;
+        industry = e.target.value;
         render(300);
         writeUrl();
     });
@@ -318,7 +359,7 @@
     cat.loadAll()
         .then(function (list) {
             courses = list;
-            render(query ? 100 : undefined);
+            render(query || industry || format ? 100 : undefined);
             searchFeed();
             if (query) track(true);
         })

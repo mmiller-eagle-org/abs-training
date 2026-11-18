@@ -50,7 +50,7 @@ layout: default
         </div>
     </section>
 
-    <!-- INDUSTRY SECTORS: image tiles (not links; Seertech has no industry-specific course pages to link to) -->
+    <!-- INDUSTRY SECTORS: image tiles linking to the Course Catalog filtered by industry -->
     <section class="py-16 lg:py-24 bg-gray-50" aria-labelledby="industries-title">
         <div class="container mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -59,37 +59,24 @@ layout: default
                 <p class="font-serif text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">Targeted technical and safety training tailored to the unique challenges of your operational environment.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Tile 1: Marine -->
-                <div class="relative h-80 rounded-xl overflow-hidden shadow-card">
-                    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_765469201.jpg" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-abs-blue opacity-60"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 text-center">
-                        <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
-                        <h3 class="text-white text-xl font-bold">Marine</h3>
-                    </div>
-                </div>
-
-                <!-- Tile 2: Offshore -->
-                <div class="relative h-80 rounded-xl overflow-hidden shadow-card">
-                    <img src="https://images.unsplash.com/photo-1727434032773-af3cd98375ba?q=80&w=3132&auto=format&fit=crop" alt="" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-abs-blue opacity-60"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 text-center">
-                        <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
-                        <h3 class="text-white text-xl font-bold">Offshore</h3>
-                    </div>
-                </div>
-
-                <!-- Tile 3: Government -->
-                <div class="relative h-80 rounded-xl overflow-hidden shadow-card">
-                    <img src="/assets/images/industry-government.jpg" alt="" width="1200" height="675" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-[60%_50%]">
-                    <div class="absolute inset-0 bg-abs-blue opacity-60"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 text-center">
-                        <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
-                        <h3 class="text-white text-xl font-bold">Government</h3>
-                    </div>
-                </div>
-            </div>
+            <!-- Tiles, their photos and which courses each one shows are set in _data/industries.yml -->
+            <ul class="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
+                {% for industry in site.data.industries.industries %}
+                <li>
+                    <a href="{{ '/courses/' | relative_url }}?industry={{ industry.id }}#results-title" data-industry="{{ industry.id }}"
+                       class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-shadow duration-300 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
+                        <img src="{{ industry.image }}" alt=""{% if industry.image_size %} width="{{ industry.image_size[0] }}" height="{{ industry.image_size[1] }}"{% endif %} loading="lazy" decoding="async"
+                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"{% if industry.image_position %} style="object-position: {{ industry.image_position }}"{% endif %}>
+                        <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity group-hover:opacity-70"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-6 text-center">
+                            <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
+                            <h3 class="text-white text-xl font-bold">{{ industry.label | escape }}</h3>
+                            <span class="mt-3 inline-flex min-h-[32px] items-center gap-1 rounded-full bg-abs-red px-4 text-xs font-bold uppercase tracking-wider text-white transition-colors group-hover:bg-abs-red-dark">View Courses <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1 motion-reduce:transition-none" aria-hidden="true">arrow_forward</span></span>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </section>
 

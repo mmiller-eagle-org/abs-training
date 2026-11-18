@@ -51,8 +51,28 @@ permalink: /courses/
             <div class="flex flex-col gap-6 mb-8">
                 <div>
                     <span class="block w-12 h-1 bg-abs-red mb-4"></span>
-                    <h2 id="results-title" class="text-2xl lg:text-3xl text-abs-blue uppercase tracking-tight"><span class="font-light">Browse</span> <span class="font-extrabold">Courses</span></h2>
+                    <h2 id="results-title" class="scroll-mt-6 text-2xl lg:text-3xl text-abs-blue uppercase tracking-tight"><span class="font-light">Browse</span> <span class="font-extrabold">Courses</span></h2>
                 </div>
+
+                <fieldset class="min-w-0" data-industry-filter>
+                    <legend class="mb-3 text-xs font-bold uppercase tracking-wider text-gray-700">Industry</legend>
+                    <div class="flex flex-wrap gap-2">
+                        <label class="relative cursor-pointer" data-industry-option="" data-industry-label="">
+                            <input type="radio" name="industry" value="" class="peer sr-only" checked>
+                            <span class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border-2 border-abs-blue-light bg-white px-4 text-sm font-bold text-abs-blue transition-colors hover:border-abs-blue hover:bg-[#E6EAEF] peer-checked:border-abs-blue peer-checked:bg-abs-blue peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-abs-blue peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-gray-50">
+                                All <span class="font-medium" data-industry-count></span>
+                            </span>
+                        </label>
+                        {% for industry in site.data.industries.industries %}
+                        <label class="relative cursor-pointer" data-industry-option="{{ industry.id }}" data-industry-label="{{ industry.label | escape }}">
+                            <input type="radio" name="industry" value="{{ industry.id }}" class="peer sr-only">
+                            <span class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border-2 border-abs-blue-light bg-white px-4 text-sm font-bold text-abs-blue transition-colors hover:border-abs-blue hover:bg-[#E6EAEF] peer-checked:border-abs-blue peer-checked:bg-abs-blue peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-abs-blue peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-gray-50">
+                                {{ industry.label | escape }} <span class="font-medium" data-industry-count></span>
+                            </span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                </fieldset>
 
                 <fieldset class="min-w-0" data-format-filter>
                     <legend class="mb-3 text-xs font-bold uppercase tracking-wider text-gray-700">Format</legend>

@@ -40,11 +40,13 @@ Notes:
 | Path | What it is |
 |---|---|
 | `_config.yml` | Site settings, portal URLs, GTM and GA4 IDs, the `courses` collection |
-| `index.html` | Home page: hero (Browse Courses, Contact Us), Setting The Standard For Training, Training by Industry (three static tiles: Marine, Offshore, Government), Featured Courses (live next date), How Can We Help, newsletter |
+| `index.html` | Home page: hero (Browse Courses, Contact Us), Setting The Standard For Training, Training by Industry (Marine, Offshore and Government tiles, each linking to the catalog filtered by that industry), Featured Courses (live next date), How Can We Help, newsletter |
 | `courses/index.html` | **Course Catalog** at `/courses/`: search and browse every course (see Course catalog below) |
 | `courses/view.html` | **Course view** at `/courses/view/?id=<course ID>`: a fallback for a course added on the portal since the last daily sync. `noindex`, not in the sitemap. |
 | `_courses/*.md` | One file per course page, 56 in all, **every one generated from the portal** by the daily sync (`generated: true`). Do not edit them; the next sync overwrites them. Front matter: `title`, `description` (one-sentence summary), `course_id` (Seertech ID), `code`, `tag`, `duration`, `format`, `objectives`, `audience`, optional `prerequisites`, `skills`, `portal_url` |
 | `_data/featured.yml` | The home page's Featured Courses: course IDs in display order (up to six shown) |
+| `_data/industries.yml` | Training by Industry: the home page tiles (label, photo) and which courses each industry's catalog filter shows |
+| `_includes/course-industries.html` | Works out a course's industries from its portal Market Sector tags or the starter lists in `_data/industries.yml` |
 | `_data/catalog.json` | Portal snapshot of every course (description, objectives, audience, code, format, duration, tag, categories, skills, price, image), written by the daily sync. The course layout falls back to it for the course code. |
 | `scripts/sync_catalog.py`, `.github/workflows/sync-catalog.yml` | The daily portal sync (see Course pages from the portal below). `scripts/` is excluded from the site build. |
 | `_layouts/default.html` | Page shell. Consent Mode defaults and the saved choice are applied here before GTM loads. A page with `noindex: true` in its front matter gets a robots `noindex` tag. |
@@ -123,8 +125,13 @@ New portal courses get a page automatically the next day, and a course removed f
 - How the page searches: each word is matched instantly against what the site has: title, summary, topic tag, format, course code, and each course page's full text (description, objectives, audience, skills and portal categories, written into the page by `_includes/site-courses-json.html`). Words of 3+ letters are also sent to the feed one at a time, so a course matches when **every** word is found either on the site or in its portal description. Results are ordered: all words in the title, then other site matches, then portal-description matches (labeled "Found in the full course description"), each A to Z.
 - **Merge with course pages:** courses in `_courses/` replace the feed record with the same ID (their title, description, topic tag, duration, format and page link win). Course pages missing from the feed are still listed and searchable. 226074832 (Maritime Incident Investigation and Root Cause Analysis) is on the portal's own catalog but not in CatalogOut, so it appears only through its course page.
 - **All 56 courses are listed**, matching the portal catalog: the 55 feed records plus 226074832 from its course page. This includes 226417341 "Final Examination: Welding, Metallurgy, Inspections and Nondestructive Evaluation (NDE)" and 224892634 "ASC003 Maritime Incident Investigation" (Classroom), which were kept at the owner's request on November 4, 2026. Only titles starting `zzz` (test data) are skipped (`isListed` in `assets/js/course-catalog.js`).
+- **Industry filter:** All, Marine, Offshore, Government (from `_data/industries.yml`), with counts. The home page's Training by Industry tiles open `/courses/?industry=<id>#results-title`. Which courses an industry shows, checked per course:
+  1. **The portal's Market Sector tags**, once the portal team adds them. The sync reads them from each course's categories widget (sub-entries of a "Market Sector" or "Industry" group, or entries written "Market Sector: Marine") into `market_sectors` on the course page and in `_data/catalog.json`. A tagged course belongs to every industry whose `portal_names` include one of its tags, and the starter lists are ignored for it. Check the tag spellings against `portal_names` when they appear.
+  2. **Until then, the starter lists** in `_data/industries.yml`: Marine is every course except four offshore-unit courses (so new portal courses land there), Offshore lists 16 courses (offshore units, hazardous areas, risk, gas liquids, welding and NDE) and Government lists 9 (naval and government shipbuilding, repair and sustainment, plus Train the Trainer (USCG Accepted)). A course can be in several. These were a first pass written on November 18, 2026 for the owner to review. Edit the file; the site updates on the next build.
+  - As of November 18, 2026 the portal has no Market Sector tags (its public filters are Category, Skill, Delivery Method, Location and dates).
+  - A course in the live feed that the sync hasn't copied yet has no industry, so it shows only under All.
 - Format filter: Virtual Class, Classroom, Self-Paced Online, Online Bundle, with counts for the current search. Course pages use their front-matter `format` ("Classroom and Virtual Class" counts as both).
-- Links: `/courses/?q=fuel&format=virtual` opens a search, and `/courses/#course-search` focuses the search box. The home page hero has no search box (removed November 4, 2026 at the owner's request); its **Browse Courses** button and the Setting The Standard **Search Courses** button open the catalog.
+- Links: `/courses/?q=fuel&industry=offshore&format=virtual` opens a search (each part optional), and `/courses/#course-search` focuses the search box. The home page hero has no search box (removed November 4, 2026 at the owner's request); its **Browse Courses** button and the Setting The Standard **Search Courses** button open the catalog.
 - If the feed fails, the page lists the course pages on this site with a notice and a link to the portal catalog. With no JavaScript, it lists the course pages and the portal link.
 - Every course has its own page now. A course that appears in the live feed before the daily sync has copied it links to `/courses/view/?id=<course ID>`, which shows the title, format, the live Upcoming Classes panel and a **Full Course Details** link to the portal. Course IDs that have a page redirect to it. Unknown IDs show "Course Not Found".
 - Self-paced online courses and bundles have no class dates. Their Upcoming Classes panel becomes **Start Anytime** with an **Enroll Now** button to the portal.
@@ -190,6 +197,7 @@ Do not use the generic Seertech site `iplus`; its catalog is empty.
 | Event | When | Details |
 |---|---|---|
 | `view_item` | Course page viewed | course ID, name, category |
+| `select_content` | Home page Training by Industry tile clicked | `content_type` "industry", `content_id` (marine, offshore, government) |
 | `select_item` | Course card clicked | course + list name: "Featured Courses" (home) or "Course Catalog" (`/courses/`) |
 | `search` | Catalog search, once typing pauses for 1.5 seconds or on submit (once per term) | search_term |
 | `register_click` | **Register** on a scheduled class, or **Enroll Now** on a self-paced course | course_id, course_name, offering_id, class_date, class_format ("Self-paced online" for Enroll Now, with no class_date) |
@@ -232,7 +240,8 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 | [#17](https://github.com/mmiller-eagle-org/abs-training/pull/17) | Nov 6 | The site no longer redirects after the contact form; Dynamics' form redirect URL does it. The lead flag carries the course to the Thank You page. |
 | [#18](https://github.com/mmiller-eagle-org/abs-training/pull/18) | Nov 6 | Contact Us page sidebar with the How Can We Help cards (email card instead of Contact Us); nav "Support" renamed **Contact Us** and linked to `/contact/` |
 | [#19](https://github.com/mmiller-eagle-org/abs-training/pull/19) | Nov 18 | Training by Industry: removed the Digital and Cyber tile and renamed Maritime to **Marine**; the three tiles sit in one row from tablet width up |
-| #21 | **open** | Course photos copied from the portal by the daily sync into `assets/images/courses/`, shown on course pages, catalog cards and Featured Courses |
+| #20 | **open** | Industry filter on the Course Catalog (`?industry=`), Training by Industry tiles link to it; industries and starter course lists in `_data/industries.yml`; the sync reads portal Market Sector tags when they exist |
+| [#21](https://github.com/mmiller-eagle-org/abs-training/pull/21) | Nov 18 | Course photos copied from the portal by the daily sync into `assets/images/courses/`, shown on course pages, catalog cards and Featured Courses |
 
 ## Outstanding items
 
@@ -242,7 +251,9 @@ Every click event includes `link_location` (header, footer, upcoming_classes, or
 - [ ] Ask the portal team to add descriptions for 223753426 (ABS: Ammonia as Marine Fuel Introduction), 224892634 (ASC003) and 226417341 (Final Examination). The next daily sync picks them up.
 - [ ] After merging, watch the first scheduled **Sync course catalog** run (Actions tab) and confirm it either reports "No catalog changes" or commits and the Pages build follows.
 - [ ] Optional: review the topic tags chosen by `TAG_RULES` in `scripts/sync_catalog.py`, and the long portal descriptions used as summaries for a few courses (for example Classification Requirements of Underwater Submersibles).
-- [ ] Later: link the home page Training by Industry tiles (Marine, Offshore, Government) to the catalog filtered by the portal's Market Sector tags. Needs those tags in the sync data and a sector filter on `/courses/`.
+- [ ] Review the starter industry lists in `_data/industries.yml` (which courses show under Marine, Offshore and Government).
+- [ ] Ask the portal team to add Market Sector tags to each course (Marine, Offshore, Government). The daily sync picks them up and they replace the starter lists course by course; check the spellings match `portal_names` in `_data/industries.yml`.
+- [ ] In GTM, add `select_content` to the site-actions trigger (with `content_type` and `content_id`) if you want industry tile clicks in GA4.
 - [ ] Optional: show each result's next class date in the catalog (one offerings-feed request per course, so load only the visible cards).
 
 - [ ] Optional: the home, Course Catalog, Contact Us and Thank You page headers still load the shared ABS photo from eagle.org at full size (about 15 MB, shown blurred). Course pages no longer do. A smaller local copy, or a different header for those pages, would make them load much faster.
