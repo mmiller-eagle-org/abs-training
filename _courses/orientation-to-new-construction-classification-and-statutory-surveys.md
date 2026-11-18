@@ -19,6 +19,7 @@ objectives:
 audience: "This foundation course is for professionals who support the design, construction, inspection or delivery of new vessels, including those who work in shipyards, shipbuilding projects or new construction supervision, support vessel owners, operators or technical management teams, review drawings, manage construction quality or coordinate testing activities, interface with classification societies, flag Administrations or recognized organizations or need a practical understanding of new construction classification and statutory survey requirements."
 skills:
   - "Survey and Vetting Readiness"
+image: "/assets/images/courses/226074871.jpg"
 ---
 {% raw %}
 <p>Marine classification verifies compliance with statutory regulations and recognized standards. It protects capital investment, demonstrates responsible stewardship and meets underwriting requirements. For newbuilds, surveyors attend the vessel during construction and sea trials to confirm construction compliance, and materials and principal equipment including engines and alternators are certified at that time. This three-day course addresses the steps for classification and certification of a vessel from order to delivery, introduces the roles of engineering and survey, and covers the requirements for plan reviews of hull, machinery, piping and other vessel systems along with the scope of surveys during construction.</p>

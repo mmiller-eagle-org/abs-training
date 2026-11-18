@@ -19,6 +19,7 @@ objectives:
 audience: "This course is for shipboard and shoreside personnel who need a stronger working knowledge of LNG-fueled vessel design, operation and ABS requirements, including those who support the operation of LNG-fueled vessels, work with fuel systems, machinery systems or vessel technical management, need an introduction to ABS requirements for gas-fueled ships or want practical insight into LNG-fueled vessel operating experience."
 skills:
   - "Marine Fuel Management"
+image: "/assets/images/courses/226074861.jpg"
 ---
 {% raw %}
 <p>This one-day course gives shipboard and shoreside personnel a practical understanding of LNG-fueled vessel systems, operations and ABS requirements. You will learn the technical and operational fundamentals of LNG as a marine fuel, including vessel arrangements, fuel-handling systems, propulsion technologies and key operating hazards. The course also explains how ABS classification requirements apply to gas-fueled vessels and highlights lessons drawn from operating experience</p>

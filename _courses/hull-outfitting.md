@@ -19,6 +19,7 @@ objectives:
 audience: "This course is for maritime professionals involved in the design, construction, inspection, testing or operation of ship hull outfitting systems, including those who work in shipyards, new construction or vessel conversion projects, conduct or support fabrication, installation, inspection or commissioning activities, review hull outfitting drawings, test results or survey documentation, support vessel operations, maintenance or technical management or need a practical understanding of critical hull outfitting systems."
 skills:
   - "Marine Engineering"
+image: "/assets/images/courses/226074872.jpg"
 ---
 {% raw %}
 <p>This one-day course examines the hull outfitting components installed during ship fabrication and the classification and statutory requirements that apply to them. Participants review anchoring and mooring equipment, emergency towing arrangements, steering systems, watertight bulkhead doors and bow and sideshell openings and ramps, along with the fabrication, testing and survey requirements associated with each.</p>

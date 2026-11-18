@@ -21,6 +21,7 @@ objectives:
 audience: "This course is for professionals involved in the management, operation, assessment or improvement of marine terminal systems and practices, including those who manage terminal operations, health, safety, security and environment, maintenance or marine assurance activities, support implementation or review of terminal management systems, prepare sites for internal reviews, external audits or third-party verification, or need a stronger working knowledge of MTMSA expectations and practical application."
 skills:
   - "Survey and Vetting Readiness"
+image: "/assets/images/courses/226074849.jpg"
 ---
 {% raw %}
 <p>This three-day course builds a practical understanding of the Oil Companies International Marine Forum (OCIMF) Marine Terminal Management and Self-Assessment (MTMSA) framework and how to apply it in terminal operations. It covers the MTMSA elements, the Site Verification Guide (SVG), preparation for third-party audits and key implementation challenges across oil and gas terminals.</p>

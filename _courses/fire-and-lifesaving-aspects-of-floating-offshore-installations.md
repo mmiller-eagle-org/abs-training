@@ -24,6 +24,7 @@ objectives:
 audience: "This course is for professionals who design, construct, operate, inspect or support floating offshore installations, including offshore engineers, designers and project personnel, regulatory and safety professionals, inspectors and construction personnel, operations and maintenance personnel responsible for fire and lifesaving systems or personnel who need a practical understanding of fire, explosion, evacuation and rescue considerations for floating offshore facilities."
 skills:
   - "Asset Operations and Reliability"
+image: "/assets/images/courses/226074834.jpg"
 ---
 {% raw %}
 <p>A fire at sea poses significant risk because a crew cannot walk away and rely on a local fire department. Offshore oil and gas exploration and production require particularly extensive safety measures given the hydrocarbon production and processing systems and their associated utility and safety systems. This two-day course covers the principal fire and lifesaving concerns of floating offshore installations, including the classification and statutory requirements that apply to each category of installation.</p>

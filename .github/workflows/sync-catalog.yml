@@ -1,6 +1,7 @@
 # Copies every course's details (description, objectives, audience, code, format, duration, tag) from the
 # ABS Training portal into _data/catalog.json and generated pages in _courses/, so each course has a full
-# page on abs-training.com. The portal's pages can't be read from the visitor's browser, so this runs here.
+# page on abs-training.com, and copies each course's photo into assets/images/courses/. The portal's pages
+# can't be read from the visitor's browser, so this runs here.
 #
 # Daily and on demand it commits straight to main, only when something changed and only after the site
 # builds; that publishes the change. On pull requests that touch the sync, it only checks the portal.
@@ -35,6 +36,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Pillow (resizes the course photos)
+        run: pip install --quiet "Pillow>=10,<13"
+
       - name: Check the portal (pull requests)
         if: github.event_name == 'pull_request'
         run: python scripts/sync_catalog.py --check
@@ -47,7 +51,7 @@ jobs:
         id: diff
         if: github.event_name != 'pull_request'
         run: |
-          git add -A _data _courses
+          git add -A _data _courses assets/images/courses
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No catalog changes."

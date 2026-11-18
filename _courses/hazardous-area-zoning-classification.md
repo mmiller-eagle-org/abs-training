@@ -14,6 +14,7 @@ objectives:
   - "Distinguish between Divisions 1 and 2 based on the likelihood of explosive atmospheres during normal and abnormal conditions."
 audience: "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors."
 portal_url: "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138165"
+image: "/assets/images/courses/225921278.jpg"
 ---
 {% raw %}
 <p>This course provides an in-depth overview of hazardous area zoning classification for vessels and offshore units. Learners examine Zone and Division systems, their applications and differences, and the requirements in ABS Rules and industry standards for identifying hazardous locations.</p>

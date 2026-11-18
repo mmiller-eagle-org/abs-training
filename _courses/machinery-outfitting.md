@@ -17,6 +17,7 @@ objectives:
 audience: "This course is for professionals involved in the design, construction, installation, inspection, testing or approval of shipboard machinery systems, including those who support new construction or machinery outfitting projects, review plans or verify compliance with classification and statutory requirements, perform shipyard installation, testing or commissioning activities or need practical knowledge of propulsion, auxiliary, piping, electrical or automation systems"
 skills:
   - "Marine Engineering"
+image: "/assets/images/courses/226079096.jpg"
 ---
 {% raw %}
 <p>This two-day course examines the critical issues associated with machinery outfitting components and how to assess them in line with classification and statutory requirements. Participants review the machinery installation and testing process associated with the fabrication of steel ships and become more familiar with ABS requirements for installing main machinery plants and equipment.</p>

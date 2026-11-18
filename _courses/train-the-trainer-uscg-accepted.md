@@ -19,6 +19,7 @@ objectives:
 audience: "This course is designed for current and aspiring maritime instructors, assessors and training program managers who need to meet STCW and USCG qualification requirements, including maritime instructors seeking USCG-recognized instructor credentials, designated examiners responsible for assessing seafarer competency, training managers overseeing STCW-compliant course programs and subject matter experts transitioning into instructional roles."
 skills:
   - "Human Factors and Operational Performance"
+image: "/assets/images/courses/226074865.jpg"
 ---
 {% raw %}
 <p>This three-day course equips maritime professionals with the instructional and assessment skills needed to deliver effective training that meets Standards of Training, Certification and Watchkeeping (STCW) and United States Coast Guard (USCG) requirements. Participants learn to plan outcome-based programs, apply adult learning principles and evaluate trainee competency through classroom instruction, workshops and a live teaching presentation.</p>

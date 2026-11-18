@@ -20,6 +20,7 @@ objectives:
 audience: "This course is designed for personnel who have Company Security Officer responsibilities or who support company-level maritime security management, including those who oversee fleet security programs, support ISPS Code compliance, review plans, drills and response, or manage security records and processes. It is especially valuable for Company Security Officers, Deputy Company Security Officers, marine superintendents, designated security personnel, compliance professionals and shore-based staff involved in vessel security oversight."
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/226074874.jpg"
 ---
 {% raw %}
 <p>This two-day course builds the knowledge to lead and support an effective maritime security program under the International Ship and Port Facility Security (ISPS) Code. Participants explore practical maritime security requirements, from threat awareness and risk assessment to drills, contingency planning and security administration, so they can support the development, implementation and maintenance of an effective and compliant Ship Security Plan (SSP).</p>

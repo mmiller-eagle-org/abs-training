@@ -17,6 +17,8 @@
         bundle: { label: 'Online Bundle', icon: 'library_books' }
     };
     var FORMAT_ORDER = ['virtual', 'classroom', 'online', 'bundle'];
+    // Card photo for courses without their own (portal photos are copied to assets/images/courses/ by the sync)
+    var DEFAULT_IMAGE = '/assets/images/course-default.jpg';
 
     // offeringType S = self-paced online, H = channel (a bundle of online courses)
     function feedFormat(item) {
@@ -62,7 +64,8 @@
             return {
                 id: String(c.id), title: c.title, description: c.description || '', tag: c.tag || '',
                 duration: c.duration || '', formats: siteFormats(c.format || ''), formatText: c.format || '',
-                url: c.url, onSite: true, inFeed: false, code: c.code || '', detailsUrl: '', search: c.search || ''
+                url: c.url, onSite: true, inFeed: false, code: c.code || '', detailsUrl: '', search: c.search || '',
+                image: c.image || DEFAULT_IMAGE
             };
         });
     }
@@ -74,7 +77,7 @@
             id: id, title: item.courseTitle.trim(), description: usefulDescription(item.shortDescription), tag: '',
             duration: '', formats: [format], formatText: FORMATS[format].label, url: viewUrl(id), onSite: false,
             inFeed: true, code: item.courseIdentifier && item.courseIdentifier !== id ? item.courseIdentifier : '',
-            detailsUrl: item.courseDetailsURL || ''
+            detailsUrl: item.courseDetailsURL || '', image: DEFAULT_IMAGE
         };
     }
 

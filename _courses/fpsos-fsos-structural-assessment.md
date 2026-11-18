@@ -20,6 +20,7 @@ objectives:
 audience: "This course is intended for companies considering either a newbuild FPSO or conversion to an FPSO."
 skills:
   - "Structural Assessment and Inspection"
+image: "/assets/images/courses/226074845.jpg"
 ---
 {% raw %}
 <p>Whether converting an oil tanker to a floating production, storage and offloading unit (FPSO) or building new, structural assessment is central to a successful project. This three-day course covers the requirements for verification of FPSO and FSO structures as outlined in the ABS Rules for Building and Classing Floating Production Installations. Participants are guided through the ABS design review process to build an understanding of how to prepare submissions for classification review.</p>

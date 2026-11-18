@@ -14,6 +14,7 @@ objectives:
   - "Use vessel-specific supporting documentation to inspect and verify electrical equipment in hazardous areas."
 audience: "Personnel involved in the design, installation, operation, maintenance, inspection or management of electrical equipment in hazardous areas on vessels and offshore units, including shipyard personnel, site build teams, superintendents, technical managers, electrical engineers and surveyors."
 portal_url: "https://portal.abs-training.com/lmt/!clmsCatalogDetails.prMain?site=abs&in_region=gl&in_language_identifier=en-us&in_offeringId=226138706"
+image: "/assets/images/courses/225921879.jpg"
 ---
 {% raw %}
 <p>This course explains the key characteristics of the booklet of equipment in hazardous areas and the supporting documentation used to verify electrical equipment on vessels and offshore units. Learners examine permitted electrical equipment and arrangements in hazardous areas to support effective inspection and verification.</p>

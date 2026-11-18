@@ -19,6 +19,7 @@ objectives:
 audience: "This foundation course is for maritime professionals who inspect, maintain, repair or oversee vessel hull structures, including those who conduct or support hull, damage or repair inspections, work in ship operations, technical management, maintenance or drydocking, coordinate shipyard repairs or monitor repair quality, review hull drawings, welding activities or inspection findings, or need a practical introduction to hull structure condition, inspection and repair."
 skills:
   - "Structural Assessment and Inspection"
+image: "/assets/images/courses/226074867.jpg"
 ---
 {% raw %}
 <p>This two-day foundation course builds practical knowledge for identifying and evaluating hull structural conditions. Participants learn to recognize critical areas, corrosion, mechanical damage, structural response and weld defects, then apply inspection, repair and nondestructive evaluation principles to support safe vessel operations.</p>

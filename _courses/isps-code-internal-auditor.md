@@ -20,6 +20,7 @@ objectives:
 audience: "This course is designed for personnel responsible for implementing, auditing, reviewing or supporting ship security plans, including those who serve in shipboard or shore-based security roles, conduct or support internal security audits, oversee compliance with ISPS Code requirements, or need a stronger practical understanding of maritime security audit processes."
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/226074840.jpg"
 ---
 {% raw %}
 <p>This two-day course provides a practical understanding of how to plan, conduct and document internal security audits under the International Ship and Port Facility Security (ISPS) Code. Participants learn how audits support compliance and continual improvement of ship security plans, especially for vessels operating in higher-risk regions.</p>

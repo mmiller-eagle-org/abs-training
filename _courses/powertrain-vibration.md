@@ -19,6 +19,7 @@ objectives:
 audience: "This course is for marine professionals involved in the design, construction, operation, maintenance, inspection or troubleshooting of propulsion systems, including marine engineers, superintendents and technical managers, shipyard engineers and commissioning personnel, vessel operators and maintenance professionals, naval architects and propulsion system designers or personnel supporting shaft alignment, vibration analysis or condition monitoring."
 skills:
   - "Propulsion and Machinery Reliability"
+image: "/assets/images/courses/226074868.jpg"
 ---
 {% raw %}
 <p>This two-day course develops practical knowledge of vibration in marine propulsion powertrains. Explore shaft alignment, bearing performance, torsional, lateral and axial vibration, computational modeling and measurement methods to identify vibration risks, support reliable operation and prevent machinery damage. The course combines core theory with practical interpretation to help participants evaluate powertrain performance and identify machinery risks.</p>

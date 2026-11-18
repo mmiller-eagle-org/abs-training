@@ -18,6 +18,7 @@ objectives:
 audience: "This course is designed for experienced shipboard and shore-based personnel who conduct or support internal audits of safety, security and maritime labour management systems, including Designated Persons Ashore and support personnel, marine superintendents, fleet auditors and HSQE officers, Company Security Officers and compliance personnel, crewing and MLC support staff, or senior officers with internal audit responsibilities"
 skills:
   - "Safety Management Systems and Auditing"
+image: "/assets/images/courses/226074875.jpg"
 ---
 {% raw %}
 <p>This three-day course engages internal auditing skills across safety, security and maritime labour management systems. Participants will reinforce their ability to plan, conduct, report and follow up audits against the International Safety Management (ISM) Code, International Ship and Port Facility Security (ISPS) Code and Maritime Labour Convention, 2006 (MLC, 2006).</p>
