@@ -103,6 +103,34 @@
             white-space: nowrap;
             flex-shrink: 0;
         }
+        /* Accent bars and strips: the ABS colorful pattern from the graphics team (yellow, red, navy, blue) in
+           place of plain red bars, so the page picks up the artwork's colors in small doses. Decorative only. */
+        .accent-bar, .accent-strip {
+            background-color: #DA1F33;
+            background-image: url("{{ '/assets/images/training/bg-colorful-768.jpg' | relative_url }}");
+            background-image: image-set(url("{{ '/assets/images/training/bg-colorful-768.webp' | relative_url }}") type("image/webp"), url("{{ '/assets/images/training/bg-colorful-768.jpg' | relative_url }}") type("image/jpeg"));
+            background-size: cover;
+            background-position: center;
+        }
+        .accent-bar { border-radius: 9999px; }
+
+        /* Frosted glass panel (home hero, wide screens): navy at 70% with a strong blur, so the banner shows through
+           softly. White text needs at least 65% navy over the banner's brightest areas (measured), so don't go lower.
+           Browsers without backdrop-filter, and visitors who ask for less transparency, get solid navy. */
+        @media (min-width: 1024px) {
+            .glass-panel {
+                background-color: rgba(0, 42, 78, 0.7);
+                -webkit-backdrop-filter: blur(24px) saturate(1.2);
+                backdrop-filter: blur(24px) saturate(1.2);
+                border: 1px solid rgba(255, 255, 255, 0.22);
+            }
+            @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+                .glass-panel { background-color: #002A4E; }
+            }
+            @media (prefers-reduced-transparency: reduce) {
+                .glass-panel { background-color: #002A4E; -webkit-backdrop-filter: none; backdrop-filter: none; }
+            }
+        }
     </style>
 
     <!-- ABS Digital Components -->

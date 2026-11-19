@@ -61,7 +61,7 @@ layout: default
         <div class="max-w-5xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_340px] gap-12 lg:gap-14 items-start">
             <div class="space-y-12">
                 <section aria-labelledby="about-title">
-                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <span class="block w-12 h-1 accent-bar mb-4"></span>
                     <h2 id="about-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">About this</span> <span class="font-extrabold">Course</span></h2>
                     <div class="font-serif text-gray-700 leading-relaxed space-y-4">
                         {%- assign about_text = content | strip_html | strip -%}
@@ -75,7 +75,7 @@ layout: default
 
                 {% if page.prerequisites %}
                 <section aria-labelledby="prerequisites-title">
-                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <span class="block w-12 h-1 accent-bar mb-4"></span>
                     <h2 id="prerequisites-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">Before you</span> <span class="font-extrabold">Start</span></h2>
                     <ul class="list-disc space-y-2 pl-5 font-serif text-gray-700 leading-relaxed">
                         {% for item in page.prerequisites %}<li>{{ item | escape }}</li>{% endfor %}
@@ -85,7 +85,7 @@ layout: default
 
                 {% if page.objectives %}
                 <section aria-labelledby="learn-title">
-                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <span class="block w-12 h-1 accent-bar mb-4"></span>
                     <h2 id="learn-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-5"><span class="font-light">What you'll</span> <span class="font-extrabold">Learn</span></h2>
                     <ul class="space-y-3">
                         {% for objective in page.objectives %}
@@ -100,14 +100,14 @@ layout: default
 
                 {% if page.audience %}
                 <section aria-labelledby="audience-title">
-                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <span class="block w-12 h-1 accent-bar mb-4"></span>
                     <h2 id="audience-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">Who should</span> <span class="font-extrabold">Attend</span></h2>
                     <p class="font-serif text-gray-700 leading-relaxed">{{ page.audience | escape }}</p>
                 </section>
                 {% endif %}
 
                 <section aria-labelledby="questions-title">
-                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <span class="block w-12 h-1 accent-bar mb-4"></span>
                     <h2 id="questions-title" class="text-2xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">Have</span> <span class="font-extrabold">Questions?</span></h2>
                     <p class="font-serif text-gray-700 leading-relaxed">Our team can help with this course, group training or bringing it to your site. <a href="{{ '/contact/' | relative_url }}?course={{ page.title | url_encode }}" class="font-bold text-abs-blue underline underline-offset-2 hover:text-abs-blue-mid focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-abs-blue focus-visible:ring-offset-2 rounded-sm">Send us a message about this course</a>.</p>
                 </section>
