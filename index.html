@@ -2,12 +2,12 @@
 layout: default
 ---
     <!-- TIER 2 BANNER: the ABS training header banner. On desktop it fills the section and the text sits on a solid
-         navy panel on the left; on phones the banner is a full-color strip above the text. No text is over the artwork. -->
+         frosted-glass navy panel on the left (.glass-panel); on phones the banner is a full-color strip above the text. -->
     <section class="relative overflow-hidden bg-abs-blue" aria-labelledby="hero-title">
         {% include training-picture.html name="header-banner" widths="768,1280,2000" width="2000" height="846" sizes="100vw" priority="true" hidden="true" class="pointer-events-none block w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:object-cover lg:object-[70%_50%]" %}
 
         <div class="relative container mx-auto px-6 lg:px-8 py-10 lg:py-24">
-            <div class="max-w-xl lg:rounded-xl lg:bg-abs-blue lg:p-12 lg:shadow-card-hover">
+            <div class="glass-panel max-w-xl lg:rounded-xl lg:p-12 lg:shadow-card-hover">
                 <p class="eyebrow text-white mb-4">ABS Training</p>
                 <h1 id="hero-title" class="text-4xl lg:text-6xl font-extrabold text-white leading-tight mb-5"><span class="inline-block">Train smart.</span> <span class="inline-block">Work safer.</span></h1>
                 <p class="font-serif text-white text-lg leading-relaxed mb-8">
@@ -19,6 +19,7 @@ layout: default
                 </div>
             </div>
         </div>
+        <div class="accent-strip absolute inset-x-0 bottom-0 h-1.5" aria-hidden="true"></div>
     </section>
 
     <!-- WHY ABS TRAINING: Media Feature -->
@@ -33,7 +34,7 @@ layout: default
                     {% include training-picture.html name="setting-standard" widths="800,1400" width="2000" height="1334" sizes="(min-width: 1280px) 608px, (min-width: 768px) 768px, 100vw" class="block w-full h-auto" %}
                 </div>
                 <div class="-mt-6 flex flex-col justify-center rounded-b-xl bg-white px-8 pb-10 pt-12 shadow-[0_16px_26px_-16px_rgba(0,42,78,0.35)] sm:px-12 xl:mt-0 xl:-ml-[38.9%] xl:flex-1 xl:rounded-b-none xl:rounded-r-xl xl:py-10 xl:pl-[calc(38.9%_+_3rem)] xl:pr-12">
-                    <span class="block w-10 h-1 bg-abs-red mb-5"></span>
+                    <span class="block w-10 h-1 accent-bar mb-5"></span>
                     <h2 id="why-title" class="text-2xl lg:text-3xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">Setting The Standard</span> <span class="font-extrabold">For Training</span></h2>
                     <p class="font-serif text-gray-600 leading-relaxed mb-8">
                         A network of instructors is available worldwide in key maritime and industrial regions, offering flexible delivery options: in person, virtual or tailored training on-site at your office.
@@ -56,7 +57,7 @@ layout: default
         {% include training-picture.html name="bg-grey" widths="768,1280,2000" width="2000" height="1333" sizes="100vw" hidden="true" class="pointer-events-none absolute inset-0 h-full w-full object-cover" %}
         <div class="relative container mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="block w-16 h-1 bg-abs-red mx-auto mb-5"></span>
+                <span class="block w-16 h-1 accent-bar mx-auto mb-5"></span>
                 <h2 id="industries-title" class="text-3xl lg:text-4xl text-abs-blue uppercase tracking-tight"><span class="font-light">Training by</span> <span class="font-extrabold">Industry</span></h2>
                 <p class="font-serif text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">Targeted technical and safety training tailored to the unique challenges of your operational environment.</p>
             </div>
@@ -75,7 +76,7 @@ layout: default
                         {% include training-picture.html name=industry.image fallback="png" widths="600,960" width="1458" height="972" sizes="(min-width: 1280px) 400px, (min-width: 768px) 33vw, 100vw" class="relative z-10 block w-full h-auto" %}
                         <div class="mx-[12.9%] mb-2 flex-1 rounded-b-xl bg-white px-4 pb-7 text-center shadow-[0_14px_22px_-14px_rgba(0,42,78,0.35)] transition-shadow duration-300 group-hover:shadow-[0_18px_28px_-14px_rgba(0,42,78,0.45)]"
                              style="margin-top: -{{ card_lift }}%; padding-top: calc({{ card_lift }}% + 1.25rem);">
-                            <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
+                            <span class="block w-8 h-1 accent-bar mx-auto mb-3"></span>
                             <h3 class="text-abs-blue text-xl font-bold">{{ industry.label | escape }}</h3>
                             <span class="mt-3 inline-flex min-h-[32px] items-center gap-1 rounded-full bg-abs-red px-4 text-xs font-bold uppercase tracking-wider text-white transition-colors group-hover:bg-abs-red-dark">View Courses <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1 motion-reduce:transition-none" aria-hidden="true">arrow_forward</span></span>
                         </div>
@@ -91,7 +92,7 @@ layout: default
         <div class="container mx-auto px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-10">
                 <div>
-                    <span class="block w-16 h-1 bg-abs-red mb-5"></span>
+                    <span class="block w-16 h-1 accent-bar mb-5"></span>
                     <h2 id="courses-title" class="text-3xl lg:text-4xl text-abs-blue uppercase tracking-tight"><span class="font-light">Featured</span> <span class="font-extrabold">Courses</span></h2>
                     <p class="font-serif text-gray-600 mt-3">Our most popular courses.</p>
                 </div>
@@ -109,7 +110,7 @@ layout: default
                 {% if course and featured_shown < 6 %}
                 {% assign featured_shown = featured_shown | plus: 1 %}
                 {% assign card_image = course.image | default: "/assets/images/course-default.jpg" %}
-                <article data-course-id="{{ course.course_id }}" data-course-name="{{ course.title | escape }}" data-course-tag="{{ course.tag | escape }}" class="group relative overflow-hidden bg-white rounded-lg border border-gray-200 border-t-4 border-t-abs-blue shadow-card flex flex-col transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
+                <article data-course-id="{{ course.course_id }}" data-course-name="{{ course.title | escape }}" data-course-tag="{{ course.tag | escape }}" class="group relative overflow-hidden bg-white rounded-lg border border-gray-200 border-t-4 border-t-[#FFAD0A] shadow-card flex flex-col transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-card-hover focus-within:ring-2 focus-within:ring-abs-blue focus-within:ring-offset-2">
                     <img src="{{ card_image | relative_url }}" srcset="{{ card_image | replace: '.jpg', '-400.jpg' | relative_url }} 400w, {{ card_image | relative_url }} 800w"
                          sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, calc(100vw - 48px)" width="800" height="400" alt="" loading="lazy" decoding="async"
                          class="w-full h-auto aspect-[2/1] object-cover">
@@ -138,7 +139,7 @@ layout: default
         {% include training-picture.html name="bg-grey" widths="768,1280,2000" width="2000" height="1333" sizes="100vw" hidden="true" class="pointer-events-none absolute inset-0 h-full w-full object-cover" %}
         <div class="relative container mx-auto px-6 lg:px-8">
             <div class="text-center mb-10">
-                <span class="block w-16 h-1 bg-abs-red mx-auto mb-5"></span>
+                <span class="block w-16 h-1 accent-bar mx-auto mb-5"></span>
                 <h2 id="help-title" class="text-3xl lg:text-4xl text-abs-blue uppercase tracking-tight"><span class="font-light">How can we</span> <span class="font-extrabold">help?</span></h2>
             </div>
 
@@ -154,7 +155,7 @@ layout: default
         <div class="relative container mx-auto px-6 lg:px-8">
             <div class="max-w-5xl mx-auto rounded-xl border border-white/25 bg-abs-blue p-8 sm:p-10 lg:px-12 lg:py-10 shadow-card-hover flex flex-col md:flex-row md:items-center md:justify-between gap-8">
                 <div class="max-w-xl">
-                    <span class="block w-12 h-1 bg-abs-red mb-4"></span>
+                    <span class="block w-12 h-1 accent-bar mb-4"></span>
                     <h2 id="newsletter-title" class="text-2xl lg:text-3xl text-white uppercase tracking-tight mb-3">
                         <span class="font-light">Stay informed with</span> <span class="font-extrabold">ABS Training</span>
                     </h2>
