@@ -25,8 +25,15 @@ layout: default
     <!-- WHY ABS TRAINING: Media Feature -->
     <section class="py-16 lg:py-24 bg-white" aria-labelledby="why-title">
         <div class="container mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 rounded-xl overflow-hidden bg-white shadow-card-hover">
-                <div class="p-8 lg:p-14 flex flex-col justify-center">
+            <!-- One card: the artwork is the left (top on smaller screens) and the white card body continues from it.
+                 The artwork is shown whole; its own slanted frame is the card's left edge. On wide screens the body slides
+                 in behind the artwork from the corner where the slant meets the bottom (22.2% of the artwork's width), so
+                 the card's bottom edge and shadow start there; on smaller screens it tucks up under the artwork's bottom. -->
+            <div class="mx-auto max-w-3xl xl:max-w-none xl:flex xl:items-stretch">
+                <div class="relative z-10 xl:w-1/2 xl:shrink-0">
+                    {% include training-picture.html name="setting-standard" widths="800,1400" width="2000" height="1334" sizes="(min-width: 1280px) 608px, (min-width: 768px) 768px, 100vw" class="block w-full h-auto" %}
+                </div>
+                <div class="-mt-6 flex flex-col justify-center rounded-b-xl bg-white px-8 pb-10 pt-12 shadow-[0_16px_26px_-16px_rgba(0,42,78,0.35)] sm:px-12 xl:mt-0 xl:-ml-[38.9%] xl:flex-1 xl:rounded-b-none xl:rounded-r-xl xl:py-10 xl:pl-[calc(38.9%_+_3rem)] xl:pr-12">
                     <span class="block w-10 h-1 accent-bar mb-5"></span>
                     <h2 id="why-title" class="text-2xl lg:text-3xl text-abs-blue uppercase tracking-tight mb-4"><span class="font-light">Setting The Standard</span> <span class="font-extrabold">For Training</span></h2>
                     <p class="font-serif text-gray-600 leading-relaxed mb-8">
@@ -40,10 +47,6 @@ layout: default
                             <span class="material-symbols-outlined text-[20px]" aria-hidden="true">calendar_month</span> Course Calendar
                         </a>
                     </div>
-                </div>
-                <!-- ABS training artwork on white; shown whole, never cropped -->
-                <div class="flex items-center justify-center bg-white px-6 pb-8 lg:p-10">
-                    {% include training-picture.html name="setting-standard" widths="800,1400" width="2000" height="1334" sizes="(min-width: 1280px) 560px, (min-width: 1024px) 45vw, 100vw" class="w-full h-auto" %}
                 </div>
             </div>
         </div>
