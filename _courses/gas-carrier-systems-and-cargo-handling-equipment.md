@@ -8,7 +8,7 @@ course_id: "226074858"
 code: "C-AST012"
 tag: "Gas Carriers"
 duration: "2 days"
-format: "Classroom and Virtual Class"
+format: "Virtual Class"
 objectives:
   - "Explain the sequence of cargo handling operations and procedures including preloading, loading, discharging, unloading, preparing for cargo entry and inspection."
   - "Recognize high-level control and monitoring systems and associated tasks within the cargo control room."

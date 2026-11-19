@@ -528,7 +528,7 @@
    "offering_id": "",
    "title": "Gas Carrier Systems and Cargo Handling Equipment Introduction",
    "code": "C-AST012",
-   "format": "Classroom and Virtual Class",
+   "format": "Virtual Class",
    "duration": "2 days",
    "tag": "Gas Carriers",
    "summary": "This two-day course explains the ship loading and discharging operations cycle from a gas-free condition until a cargo change is planned, along with an overview of the systems involved in cargo handling operations.",
@@ -1921,5 +1921,5 @@
    "image_file": "/assets/images/courses/226074863.jpg"
   }
  ],
- "updated": "2026-11-18T18:52:04Z"
+ "updated": "2026-11-19T19:00:43Z"
 }
