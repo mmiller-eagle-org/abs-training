@@ -9,8 +9,9 @@ noindex: true
 {% include site-courses-json.html %}
 <!-- Generic page for courses that have no page of their own in _courses/: /courses/view/?id=<Seertech course ID>.
      Filled in by assets/js/course-view.js. Not indexed and not in the sitemap. -->
-<!-- Plain navy header, as on course pages without a photo -->
-<section class="relative overflow-hidden bg-gradient-to-br from-abs-blue-dark via-abs-blue to-abs-blue-mid" aria-labelledby="course-title">
+<!-- Blue tile pattern header, as on course pages without a photo -->
+<section class="relative overflow-hidden bg-abs-blue" aria-labelledby="course-title">
+    {% include page-header-bg.html %}
 
     <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-20">
         <div class="max-w-5xl mx-auto">

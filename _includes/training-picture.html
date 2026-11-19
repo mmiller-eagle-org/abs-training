@@ -1,0 +1,15 @@
+{%- comment -%}
+  Responsive picture for the ABS training graphics in assets/images/training/ (WebP with a JPEG fallback).
+  name: file prefix, such as "marine"; widths: comma-separated saved widths, smallest first ("600,960");
+  width/height: the original's size (reserves space so the layout doesn't jump); sizes: the img sizes attribute;
+  class: classes for the img; priority=true loads it first (heroes), otherwise it loads lazily;
+  hidden=true hides a purely decorative background from assistive technology; fallback: the non-WebP format
+  ("jpg" by default, "png" for artwork with a transparent background).
+  Every graphic is illustrative or decorative, so alt is empty.
+{%- endcomment -%}
+{%- assign tp_widths = include.widths | split: "," -%}
+{%- assign tp_ext = include.fallback | default: "jpg" -%}
+{%- assign tp_base = "/assets/images/training/" | relative_url | append: include.name -%}
+{%- capture tp_webp -%}{% for w in tp_widths %}{{ tp_base }}-{{ w }}.webp {{ w }}w{% unless forloop.last %}, {% endunless %}{% endfor %}{%- endcapture -%}
+{%- capture tp_jpg -%}{% for w in tp_widths %}{{ tp_base }}-{{ w }}.{{ tp_ext }} {{ w }}w{% unless forloop.last %}, {% endunless %}{% endfor %}{%- endcapture -%}
+<picture{% if include.hidden %} aria-hidden="true"{% endif %}><source type="image/webp" srcset="{{ tp_webp }}" sizes="{{ include.sizes }}"><img src="{{ tp_base }}-{{ tp_widths[0] }}.{{ tp_ext }}" srcset="{{ tp_jpg }}" sizes="{{ include.sizes }}" width="{{ include.width }}" height="{{ include.height }}" alt=""{% if include.priority %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async" class="{{ include.class }}"></picture>
