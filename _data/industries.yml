@@ -1,7 +1,9 @@
 # Training by Industry: the home page tiles and the Industry filter on the Course Catalog (/courses/).
 # Tiles appear on the home page in this order and link to /courses/?industry=<id>.
-# image: the ABS training artwork in assets/images/training/ (<image>-600 and -960, WebP and JPEG). A Digital and
-# Cyber artwork (cyber) is also saved there for a future tile.
+# image: the ABS training artwork in assets/images/training/ (<image>-600 and -960, WebP and PNG with the white
+# background made transparent). A Digital and Cyber artwork (cyber) is also saved there for a future tile.
+# card_top: where the tile's white card body starts behind the artwork, as a % of the artwork's height. Pick a row
+# where the artwork spans its full width and is mostly opaque (measured per artwork); a new artwork needs its own.
 #
 # Which courses belong to an industry, checked for each course:
 #   1. The portal's Market Sector tags, once the portal team adds them. The daily sync copies them into
@@ -14,6 +16,7 @@ industries:
   - id: marine
     label: Marine
     image: marine
+    card_top: 51
     portal_names: [Marine, Maritime]
     # Every course except ones only about offshore units; new portal courses land here until tagged
     all_courses_except:
@@ -24,6 +27,7 @@ industries:
   - id: offshore
     label: Offshore
     image: offshore
+    card_top: 68
     portal_names: [Offshore, Offshore Energy, Oil and Gas]
     # Offshore units, hazardous areas, risk, gas liquids, welding and NDE
     courses:
@@ -46,6 +50,7 @@ industries:
   - id: government
     label: Government
     image: government
+    card_top: 94
     portal_names: [Government, Government and Military, Naval]
     # Naval and government shipbuilding, repair and sustainment, plus the USCG-accepted course
     courses:

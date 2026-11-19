@@ -34,7 +34,7 @@ Notes:
 - Many files use Windows line endings (CRLF). Keep them as they are and save files as UTF-8 without a byte-order mark.
 - Accessibility target is WCAG 2.2 AA. UI changes have been reviewed with the accessibility-agents specialists (contrast, ARIA, live regions, screen reader) and axe-core. Reports are kept locally in `.a11y-history/` (not committed).
 - Brand rules come from the ABS brand guidelines: ABS Blue `#002A4E`, ABS Red `#DA1F33`, secondary colors in `_includes/head.html`, AP style for copy, and title case on buttons.
-- ABS training graphics (`assets/images/training/`) are shown as delivered, never recolored or cropped through their shapes. The industry and Setting The Standard artwork sits on white, which matches its white background. Text never goes directly on the header banner or the colorful pattern: the home hero text sits on a solid navy panel (on phones, below the banner) and the newsletter text on a solid navy card. White text on the blue pattern needs the navy wash in `_includes/page-header-bg.html`.
+- ABS training graphics (`assets/images/training/`) are shown as delivered, never recolored or cropped through their shapes. Each Training by Industry tile is one card: the artwork (transparent background) is the top and a white card body continues from it, sliding up behind the artwork to `card_top` in `_data/industries.yml` so there's no seam. The Setting The Standard artwork sits on white, which matches its white background. Text never goes directly on the header banner or the colorful pattern: the home hero text sits on a solid navy panel (on phones, below the banner) and the newsletter text on a solid navy card. White text on the blue pattern needs the navy wash in `_includes/page-header-bg.html`.
 ## Site structure
 
 | Path | What it is |
@@ -64,7 +64,7 @@ Notes:
 | `assets/js/course-catalog.js` | Loads the all-courses feed, merges the course pages and matches search words |
 | `assets/js/catalog-page.js`, `assets/js/course-view.js` | Page logic for `/courses/` and `/courses/view/` |
 | `assets/js/analytics.js` | Sends site events to the GTM data layer |
-| `assets/images/training/` | ABS training graphics from the graphics team (November 2026), each as WebP and JPEG at two or three widths: `marine`, `offshore`, `government` and `cyber` (industry artwork; Cyber is saved for a future tile), `setting-standard`, `header-banner`, and the tile patterns `bg-grey`, `bg-blue` and `bg-colorful`. Originals aren't stored here; ask graphics for them |
+| `assets/images/training/` | ABS training graphics from the graphics team (November 2026), each as WebP plus a JPEG fallback at two or three widths: `marine`, `offshore`, `government` and `cyber` (industry artwork, PNG fallback; their white background was converted to transparency, the artwork is otherwise unchanged; Cyber is saved for a future tile), `setting-standard`, `header-banner`, and the tile patterns `bg-grey`, `bg-blue` and `bg-colorful`. Originals aren't stored here; ask graphics for them |
 | `_includes/training-picture.html` | Responsive `<picture>` for those graphics (WebP with JPEG fallback, width/height set, lazy unless `priority`) |
 | `_includes/page-header-bg.html` | Blue tile pattern plus navy wash behind page headers (Course Catalog, Contact Us, Thank You, Cookie Policy, no-photo course pages, `/courses/view/`) |
 | `assets/images/courses/` | Course photos copied from the portal by the sync: `<course id>.jpg` (800?400) and `<course id>-400.jpg` (400?200). Don't edit by hand |
