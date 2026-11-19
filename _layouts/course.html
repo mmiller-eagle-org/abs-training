@@ -8,21 +8,23 @@ layout: default
 {%- assign snapshot = site.data.catalog.courses | where: "id", page.course_id | first -%}
 {%- assign course_code = page.code | default: snapshot.code -%}
 {%- if course_code == "" -%}{%- assign course_code = nil -%}{%- endif -%}
-{%- comment -%} Course photo copied from the portal by the sync. Courses without one get a plain navy header,
+{%- comment -%} Course photo copied from the portal by the sync. Courses without one get the blue tile pattern header,
   and the default photo only for structured data. {%- endcomment -%}
 {%- assign course_image = page.image | default: "/assets/images/course-default.jpg" -%}
 {%- assign course_image_small = course_image | replace: ".jpg", "-400.jpg" -%}
 {%- assign self_paced = false -%}
 {%- if page.format contains "Online" -%}{%- assign self_paced = true -%}{%- endif -%}
-<!-- COURSE HEADER: the course's own photo behind a navy gradient, or plain navy when it has no photo.
+<!-- COURSE HEADER: the course's own photo behind a navy gradient, or the blue tile pattern when it has no photo.
      White text needs at least 80% navy behind it (the breadcrumb is white at 80% opacity): on desktop the text
      column stays inside the solid-to-90% part on the left, and on phones the whole photo sits under 80%+ navy. -->
-<section class="relative overflow-hidden {% if page.image %}bg-abs-blue{% else %}bg-gradient-to-br from-abs-blue-dark via-abs-blue to-abs-blue-mid{% endif %}" aria-labelledby="course-title">
+<section class="relative overflow-hidden bg-abs-blue" aria-labelledby="course-title">
     {% if page.image %}
     <img src="{{ course_image | relative_url }}" srcset="{{ course_image_small | relative_url }} 400w, {{ course_image | relative_url }} 800w"
          sizes="(min-width: 1024px) 62vw, 100vw" width="800" height="400" alt="" fetchpriority="high" decoding="async"
          class="absolute inset-y-0 right-0 h-full w-full lg:w-[62%] object-cover">
     <div class="absolute inset-0 bg-gradient-to-t from-abs-blue via-abs-blue/85 to-abs-blue/80 lg:bg-gradient-to-r lg:from-abs-blue lg:from-35% lg:via-abs-blue/90 lg:via-60% lg:to-abs-blue/35"></div>
+    {% else %}
+    {% include page-header-bg.html %}
     {% endif %}
 
     <div class="relative container mx-auto px-6 lg:px-8 py-12 lg:py-20">

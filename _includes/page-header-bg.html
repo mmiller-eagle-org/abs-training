@@ -1,0 +1,7 @@
+{%- comment -%}
+  Page header background: the ABS blue tile pattern under a navy wash. The wash keeps white text, including the
+  80%-white breadcrumb, at 4.5:1 or better over the pattern's brightest blue (measured on every page that uses it).
+  Don't lighten the wash without re-measuring. Use inside a header section with "relative overflow-hidden".
+{%- endcomment -%}
+{% include training-picture.html name="bg-blue" widths="768,1280,2000" width="2000" height="1333" sizes="100vw" priority="true" hidden="true" class="pointer-events-none absolute inset-0 h-full w-full object-cover" %}
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-abs-blue/60 via-abs-blue/40 to-abs-blue/30" aria-hidden="true"></div>

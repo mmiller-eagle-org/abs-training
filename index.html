@@ -1,22 +1,19 @@
 ---
 layout: default
 ---
-    <!-- TIER 2 BANNER -->
+    <!-- TIER 2 BANNER: the ABS training header banner. On desktop it fills the section and the text sits on a solid
+         navy panel on the left; on phones the banner is a full-color strip above the text. No text is over the artwork. -->
     <section class="relative overflow-hidden bg-abs-blue" aria-labelledby="hero-title">
-        <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" fetchpriority="high"
-             class="absolute inset-0 w-full h-full object-cover scale-110 blur-[6px]"
-             onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
-        <!-- 65% navy tint keeps white text at 4.5:1; do not lower the tint or remove the blur -->
-        <div class="absolute inset-0 bg-abs-blue/65"></div>
+        {% include training-picture.html name="header-banner" widths="768,1280,2000" width="2000" height="846" sizes="100vw" priority="true" hidden="true" class="pointer-events-none block w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:object-cover lg:object-[70%_50%]" %}
 
-        <div class="relative container mx-auto px-6 lg:px-8 py-16 lg:py-28">
-            <div class="max-w-3xl mx-auto text-center">
+        <div class="relative container mx-auto px-6 lg:px-8 py-10 lg:py-24">
+            <div class="max-w-xl lg:rounded-xl lg:bg-abs-blue lg:p-12 lg:shadow-card-hover">
                 <p class="eyebrow text-white mb-4">ABS Training</p>
                 <h1 id="hero-title" class="text-4xl lg:text-6xl font-extrabold text-white leading-tight mb-5"><span class="inline-block">Train smart.</span> <span class="inline-block">Work safer.</span></h1>
-                <p class="font-serif text-white text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+                <p class="font-serif text-white text-lg leading-relaxed mb-8">
                     Equip your workforce with industry-driven regulatory, technical and operational training to help improve the safety, reliability and efficiency of your operations.
                 </p>
-                <div class="flex flex-wrap justify-center gap-3">
+                <div class="flex flex-wrap gap-3">
                     <a href="{{ '/courses/' | relative_url }}" class="btn btn-primary focus-visible:ring-white focus-visible:ring-offset-abs-blue">Browse Courses</a>
                     <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline-light focus-visible:ring-white focus-visible:ring-offset-abs-blue">Contact Us</a>
                 </div>
@@ -43,34 +40,37 @@ layout: default
                         </a>
                     </div>
                 </div>
-                <div class="relative min-h-[280px] lg:min-h-[420px]">
-                    <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_765469201.jpg" alt="" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+                <!-- ABS training artwork on white; shown whole, never cropped -->
+                <div class="flex items-center justify-center bg-white px-6 pb-8 lg:p-10">
+                    {% include training-picture.html name="setting-standard" widths="800,1400" width="2000" height="1334" sizes="(min-width: 1280px) 560px, (min-width: 1024px) 45vw, 100vw" class="w-full h-auto" %}
                 </div>
             </div>
         </div>
     </section>
 
     <!-- INDUSTRY SECTORS: image tiles linking to the Course Catalog filtered by industry -->
-    <section class="py-16 lg:py-24 bg-gray-50" aria-labelledby="industries-title">
-        <div class="container mx-auto px-6 lg:px-8">
+    <section class="relative overflow-hidden py-16 lg:py-24 bg-gray-50" aria-labelledby="industries-title">
+        {% include training-picture.html name="bg-grey" widths="768,1280,2000" width="2000" height="1333" sizes="100vw" hidden="true" class="pointer-events-none absolute inset-0 h-full w-full object-cover" %}
+        <div class="relative container mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
                 <span class="block w-16 h-1 bg-abs-red mx-auto mb-5"></span>
                 <h2 id="industries-title" class="text-3xl lg:text-4xl text-abs-blue uppercase tracking-tight"><span class="font-light">Training by</span> <span class="font-extrabold">Industry</span></h2>
                 <p class="font-serif text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">Targeted technical and safety training tailored to the unique challenges of your operational environment.</p>
             </div>
 
-            <!-- Tiles, their photos and which courses each one shows are set in _data/industries.yml -->
+            <!-- Tiles, their artwork and which courses each one shows are set in _data/industries.yml -->
             <ul class="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
                 {% for industry in site.data.industries.industries %}
-                <li>
+                <li class="flex">
                     <a href="{{ '/courses/' | relative_url }}?industry={{ industry.id }}#results-title" data-industry="{{ industry.id }}"
-                       class="group relative block h-80 rounded-xl overflow-hidden shadow-card transition-shadow duration-300 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-gray-50">
-                        <img src="{{ industry.image }}" alt=""{% if industry.image_size %} width="{{ industry.image_size[0] }}" height="{{ industry.image_size[1] }}"{% endif %} loading="lazy" decoding="async"
-                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"{% if industry.image_position %} style="object-position: {{ industry.image_position }}"{% endif %}>
-                        <div class="absolute inset-0 bg-abs-blue opacity-60 transition-opacity group-hover:opacity-70"></div>
-                        <div class="absolute inset-x-0 bottom-0 p-6 text-center">
+                       class="group flex w-full flex-col overflow-hidden rounded-xl bg-white shadow-card transition-shadow duration-300 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-abs-blue focus-visible:ring-offset-4 focus-visible:ring-offset-transparent">
+                        <!-- ABS training artwork on white, shown whole -->
+                        <div class="px-4 pt-6">
+                            {% include training-picture.html name=industry.image widths="600,960" width="1458" height="972" sizes="(min-width: 1280px) 400px, (min-width: 768px) 33vw, 100vw" class="w-full h-auto transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100" %}
+                        </div>
+                        <div class="mt-auto px-6 pb-7 pt-3 text-center">
                             <span class="block w-8 h-1 bg-abs-red mx-auto mb-3"></span>
-                            <h3 class="text-white text-xl font-bold">{{ industry.label | escape }}</h3>
+                            <h3 class="text-abs-blue text-xl font-bold">{{ industry.label | escape }}</h3>
                             <span class="mt-3 inline-flex min-h-[32px] items-center gap-1 rounded-full bg-abs-red px-4 text-xs font-bold uppercase tracking-wider text-white transition-colors group-hover:bg-abs-red-dark">View Courses <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1 motion-reduce:transition-none" aria-hidden="true">arrow_forward</span></span>
                         </div>
                     </a>
@@ -128,8 +128,9 @@ layout: default
     </section>
 
     <!-- HOW CAN WE HELP: Icon CTA Cards -->
-    <section class="py-16 lg:py-20 bg-gray-50" aria-labelledby="help-title">
-        <div class="container mx-auto px-6 lg:px-8">
+    <section class="relative overflow-hidden py-16 lg:py-20 bg-gray-50" aria-labelledby="help-title">
+        {% include training-picture.html name="bg-grey" widths="768,1280,2000" width="2000" height="1333" sizes="100vw" hidden="true" class="pointer-events-none absolute inset-0 h-full w-full object-cover" %}
+        <div class="relative container mx-auto px-6 lg:px-8">
             <div class="text-center mb-10">
                 <span class="block w-16 h-1 bg-abs-red mx-auto mb-5"></span>
                 <h2 id="help-title" class="text-3xl lg:text-4xl text-abs-blue uppercase tracking-tight"><span class="font-light">How can we</span> <span class="font-extrabold">help?</span></h2>
@@ -141,13 +142,11 @@ layout: default
 
     <!-- NEWSLETTER BAND -->
     <section class="relative overflow-hidden bg-abs-blue py-16 lg:py-20" aria-labelledby="newsletter-title">
-        <img src="https://ww2.eagle.org/content/dam/eagle/Images/shutterstock_2419209235.jpg" alt="" loading="lazy" decoding="async"
-             class="absolute inset-0 w-full h-full object-cover object-center opacity-55"
-             onerror="this.src='https://images.unsplash.com/photo-1559825481-12a05cc00344?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'">
-        <div class="absolute inset-0 bg-gradient-to-r from-abs-blue/90 via-abs-blue/80 to-abs-blue/60"></div>
+        <!-- ABS colorful tile pattern; all text sits on the solid navy card -->
+        {% include training-picture.html name="bg-colorful" widths="768,1280,2000" width="2000" height="1333" sizes="100vw" hidden="true" class="pointer-events-none absolute inset-0 h-full w-full object-cover" %}
 
         <div class="relative container mx-auto px-6 lg:px-8">
-            <div class="max-w-5xl mx-auto rounded-xl border border-white/25 bg-abs-blue/55 backdrop-blur-md p-8 sm:p-10 lg:px-12 lg:py-10 shadow-card-hover flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div class="max-w-5xl mx-auto rounded-xl border border-white/25 bg-abs-blue p-8 sm:p-10 lg:px-12 lg:py-10 shadow-card-hover flex flex-col md:flex-row md:items-center md:justify-between gap-8">
                 <div class="max-w-xl">
                     <span class="block w-12 h-1 bg-abs-red mb-4"></span>
                     <h2 id="newsletter-title" class="text-2xl lg:text-3xl text-white uppercase tracking-tight mb-3">
