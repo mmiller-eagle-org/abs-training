@@ -1,6 +1,6 @@
 {
  "source": "https://portal.abs-training.com/catalog/abs/region/gl/lang/en-us/",
- "count": 55,
+ "count": 56,
  "courses": [
   {
    "id": "226070634",
@@ -1764,9 +1764,46 @@
    ],
    "market_sectors": [],
    "price": "",
-   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/C7909446694A1D2C9D57037AA5BD2FBB0C81A9F927CAAF2FFB24CA895C02DC01?v1310103905",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/C7909446694A1D2C9D57037AA5BD2FBB0C81A9F927CAAF2FFB24CA895C02DC01?v1911015523",
    "portal_url": "",
    "image_file": "/assets/images/courses/226074868.jpg"
+  },
+  {
+   "id": "230487623",
+   "offering_id": "",
+   "title": "Process Safety Management",
+   "code": "C-CSC100",
+   "format": "Virtual Class",
+   "duration": "3 days",
+   "tag": "Safety",
+   "summary": "Offered via ABS Consulting.",
+   "description": [
+    "Offered via ABS Consulting.",
+    "Learn how to interpret the performance-based requirements of the OSHA process safety management (PSM) regulation and the prevention program portion of the EPA risk management program (RMP) rule (the PSM regulations). You will also learn how to develop and implement a cost-effective PSM program for a single facility or an entire corporation."
+   ],
+   "objectives": [
+    "Learn how to determine whether your facility is covered by OSHA's 29 CFR 1910.119 and EPA's 40 CFR 68.",
+    "Develop the understanding necessary to explain the PSM requirements to others in your company who need to understand the issues.",
+    "Discover a range of options for compliance that will allow you to develop a PSM program that addresses your specific needs.",
+    "Download In-Person Agenda.",
+    "Immediately apply what you have learned in the course to help your company satisfy OSHA PSM and related EPA RMP requirements.",
+    "Get up-to-the-minute information on OSHA PSM and EPA regulatory enforcement activities and interpretations.",
+    "Receive guidance from instructors who have real-world experience in developing and installing PSM programs in a variety of facilities."
+   ],
+   "audience": "",
+   "prerequisites": [],
+   "other_sections": {},
+   "categories": [
+    "Safety, Security and Risk"
+   ],
+   "skills": [
+    "Process Safety and Risk Control"
+   ],
+   "market_sectors": [],
+   "price": "",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/42086D444017EDFAA1E5CF654FEDD8DA660E4E29158FF2558FFBAE8E1757BA39?v2011071935",
+   "portal_url": "",
+   "image_file": "/assets/images/courses/230487623.jpg"
   },
   {
    "id": "226074866",
@@ -1921,5 +1958,5 @@
    "image_file": "/assets/images/courses/226074863.jpg"
   }
  ],
- "updated": "2026-11-19T19:00:43Z"
+ "updated": "2026-11-20T18:38:02Z"
 }
