@@ -1769,23 +1769,22 @@
    "image_file": "/assets/images/courses/226074868.jpg"
   },
   {
-   "id": "230487623",
+   "id": "230555562",
    "offering_id": "",
-   "title": "Process Safety Management",
+   "title": "Process Safety Management TEST",
    "code": "C-CSC100",
    "format": "Virtual Class",
    "duration": "3 days",
    "tag": "Safety",
-   "summary": "Offered via ABS Consulting.",
+   "summary": "Offered via our ABS Consulting affiliate. Click here to be redirected to their website for direct enrollment.",
    "description": [
-    "Offered via ABS Consulting.",
+    "Offered via our ABS Consulting affiliate. Click here to be redirected to their website for direct enrollment.",
     "Learn how to interpret the performance-based requirements of the OSHA process safety management (PSM) regulation and the prevention program portion of the EPA risk management program (RMP) rule (the PSM regulations). You will also learn how to develop and implement a cost-effective PSM program for a single facility or an entire corporation."
    ],
    "objectives": [
     "Learn how to determine whether your facility is covered by OSHA's 29 CFR 1910.119 and EPA's 40 CFR 68.",
     "Develop the understanding necessary to explain the PSM requirements to others in your company who need to understand the issues.",
     "Discover a range of options for compliance that will allow you to develop a PSM program that addresses your specific needs.",
-    "Download In-Person Agenda.",
     "Immediately apply what you have learned in the course to help your company satisfy OSHA PSM and related EPA RMP requirements.",
     "Get up-to-the-minute information on OSHA PSM and EPA regulatory enforcement activities and interpretations.",
     "Receive guidance from instructors who have real-world experience in developing and installing PSM programs in a variety of facilities."
@@ -1801,9 +1800,9 @@
    ],
    "market_sectors": [],
    "price": "",
-   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/42086D444017EDFAA1E5CF654FEDD8DA660E4E29158FF2558FFBAE8E1757BA39?v2011071935",
+   "image": "https://portal.abs-training.com/content-server/public/resource/220099387/1FE011CD182A4F79E4C1727C99348DDDAF321E3796E60B13D1562713F6D393F2?v2011105748",
    "portal_url": "",
-   "image_file": "/assets/images/courses/230487623.jpg"
+   "image_file": "/assets/images/courses/230555562.jpg"
   },
   {
    "id": "226074866",
@@ -1958,5 +1957,5 @@
    "image_file": "/assets/images/courses/226074863.jpg"
   }
  ],
- "updated": "2026-11-20T18:38:02Z"
+ "updated": "2026-11-21T17:30:14Z"
 }
